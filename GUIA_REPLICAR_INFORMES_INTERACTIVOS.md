@@ -209,3 +209,13 @@ No se considera terminado un informe si ocurre cualquiera de estos casos:
 - Interactividad encima de esa fidelidad.
 - Transparencia de fuentes y método siempre visible.
 - Entrega estática lista para GitHub Pages.
+
+## 11) Decisión de navegación multiinforme (acuerdo de producto)
+
+Para próximas iteraciones, el comportamiento objetivo del sitio en GitHub Pages será:
+
+- `https://jenarvaezg.github.io/hesperides/` actuará como **catálogo/portada** de todos los informes.
+- Cada informe vivirá en su ruta dedicada por `slug` (ejemplo: `/hesperides/paradoja-inmobiliaria/`).
+- La portada leerá `reports/manifest.json` como fuente única de verdad para listar informes.
+
+Nota: este documento fija la decisión para futuros informes. La portada catálogo no es obligatoria en el mismo cambio de digitalización inicial de cada PDF.

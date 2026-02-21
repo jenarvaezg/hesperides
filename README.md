@@ -61,3 +61,18 @@ Estructura recomendada de cada entrada del catálogo:
 - `reportUrl`: URL del informe original (fuente).
 - `publishedAt`: fecha de publicación.
 - `entry`: fichero de entrada del informe (por ejemplo `index.html`).
+
+## Decisión de producto (raíz del sitio)
+
+Queda acordado para evolución próxima:
+
+- Estado actual: `https://jenarvaezg.github.io/hesperides/` muestra directamente el informe actual.
+- Estado objetivo: `https://jenarvaezg.github.io/hesperides/` será un **catálogo de informes**.
+- Comportamiento objetivo: la portada listará todos los reportes disponibles y enlazará a su ruta por `slug` (por ejemplo, `/hesperides/paradoja-inmobiliaria/`).
+- Alcance actual: esta decisión queda documentada, pero la portada catálogo **no se implementa en este cambio**.
+
+Implementación prevista cuando se active:
+
+- Leer `reports/manifest.json` en la raíz.
+- Pintar cards/listado por cada entrada de `reports`.
+- Mantener cada informe aislado en su propia ruta (`/<slug>/`).
