@@ -1,0 +1,7 @@
+# Local artifacts
+.DS_Store
+informe.txt
+pages/
+
+# Runtime
+*.log
