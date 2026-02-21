@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El dia D de las pensiones ha llegado | Informe Interactivo</title>
+    <meta
+      name="description"
+      content="Version interactiva del informe El dia D de las pensiones ha llegado del Centro Ruth Richardson."
+    />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      sizes="32x32"
+      href="https://hesperides.edu.es/wp-content/uploads/2024/04/cropped-favicon128x128_Mesa-de-trabajo-1-32x32.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script defer src="../../pages/data-dia-d.js"></script>
+    <script defer src="../../pages/app-reports.js"></script>
+  </head>
+  <body>
+    <div class="background-noise" aria-hidden="true"></div>
+
+    <header class="hero">
+      <p class="eyebrow">Centro Ruth Richardson - Universidad de las Hesperides</p>
+      <h1></h1>
+      <p class="lead"></p>
+      <div class="hero-metrics" id="hero-metrics"></div>
+      <p class="caveat" id="data-caveat"></p>
+      <a class="pdf-link" href="#" target="_blank" rel="noopener noreferrer">Abrir informe original</a>
+    </header>
+
+    <main class="layout">
+      <aside class="rail" aria-label="Navegacion por capitulos">
+        <h2>Capitulos</h2>
+        <nav id="chapter-nav"></nav>
+        <div class="rail-legend">
+          <p><span class="badge badge-exacta"></span> Dato exacto del informe</p>
+          <p><span class="badge badge-reconstruida"></span> Serie reconstruida visualmente</p>
+        </div>
+      </aside>
+
+      <section class="content" id="report-sections" aria-label="Contenido del informe interactivo"></section>
+    </main>
+
+    <section class="sources-section">
+      <h2>Fuentes y metodo</h2>
+      <ol id="sources-list"></ol>
+      <p>
+        Esta pagina replica de forma interactiva las magnitudes incluidas en el informe original,
+        priorizando fidelidad de lectura y trazabilidad de fuentes.
+      </p>
+    </section>
+  </body>
+</html>

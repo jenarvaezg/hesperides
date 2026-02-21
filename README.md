@@ -1,21 +1,23 @@
-# Paradoja inmobiliaria · versión interactiva
+# Centro Ruth Richardson · catálogo de informes interactivos
 
-Sitio estático que convierte el PDF:
+Sitio estático que publica un catálogo de informes en la raíz y páginas interactivas por reporte.
 
-- `Informe CRR sobre la Paradoja Inmobiliaria y su Impacto en el Mercado.pdf`
-
-en una lectura vertical con:
-
-- 18 gráficos interactivos.
-- 2 tablas clave.
-- 2 playgrounds de simulación (rentabilidad y desbloqueo de oferta).
+Incluye, entre otros, estos informes:
+- `informes/paradoja-inmobiliaria/index.html`
+- `informes/sistemas-de-pensiones-comparados/index.html`
+- `informes/insostenibilidad-seguridad-social/index.html`
+- `informes/informe-dia-d-pensiones/index.html`
+- `informes/reformas-seguridad-social-espana/index.html`
+- `informes/radiografia-mercado-vivienda-espana/index.html`
+- `informes/turismo-vivienda-canarias/index.html`
 
 ## Estructura
 
-- `index.html`: layout principal y bloques de lectura.
-- `styles.css`: estilo editorial y responsive.
-- `data.js`: datos de gráficos/tablas y metadatos.
-- `app.js`: renderizado de ECharts, navegación y playgrounds.
+- `index.html`: portada catálogo.
+- `catalog.css` y `catalog.js`: interfaz y lógica del catálogo (lee `reports/manifest.json`).
+- `reports/manifest.json`: fuente de verdad del listado de informes.
+- `informes/`: rutas canónicas públicas de los reportes.
+- `pages/` y `paradoja-inmobiliaria/`: implementación previa mantenida para compatibilidad.
 
 ## Ejecución local
 
@@ -44,15 +46,9 @@ Como es un sitio estático sin build, no requiere pipeline adicional.
 - Donde el PDF muestra cifras exactas, se replican directamente.
 - Donde el PDF no incluye tabla numérica explícita, las series están marcadas como `reconstruida visualmente`.
 
-## Escalado a múltiples informes
+## Catálogo de informes
 
-Este repo queda preparado para evolucionar a un portal con varios reportes:
-
-- `reports/manifest.json`: catálogo de informes publicados.
-- `reports/<slug>/`: carpeta por informe (HTML, CSS, JS y assets propios).
-- `index.html` (raíz): puede convertirse en portada/listado leyendo el `manifest`.
-
-Estructura recomendada de cada entrada del catálogo:
+Cada entrada de `reports/manifest.json` usa:
 
 - `id`: identificador único.
 - `slug`: ruta pública del informe.
@@ -62,17 +58,4 @@ Estructura recomendada de cada entrada del catálogo:
 - `publishedAt`: fecha de publicación.
 - `entry`: fichero de entrada del informe (por ejemplo `index.html`).
 
-## Decisión de producto (raíz del sitio)
-
-Queda acordado para evolución próxima:
-
-- Estado actual: `https://jenarvaezg.github.io/hesperides/` muestra directamente el informe actual.
-- Estado objetivo: `https://jenarvaezg.github.io/hesperides/` será un **catálogo de informes**.
-- Comportamiento objetivo: la portada listará todos los reportes disponibles y enlazará a su ruta por `slug` (por ejemplo, `/hesperides/paradoja-inmobiliaria/`).
-- Alcance actual: esta decisión queda documentada, pero la portada catálogo **no se implementa en este cambio**.
-
-Implementación prevista cuando se active:
-
-- Leer `reports/manifest.json` en la raíz.
-- Pintar cards/listado por cada entrada de `reports`.
-- Mantener cada informe aislado en su propia ruta (`/<slug>/`).
+La raíz del sitio (`/`) ya renderiza el catálogo y enlaza cada reporte.

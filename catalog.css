@@ -1,0 +1,257 @@
+:root {
+  --bg: #fffdf8;
+  --panel: #f7f1e3;
+  --ink: #1b1a17;
+  --muted: #585246;
+  --line: #dccca3;
+  --accent: #f3c400;
+  --accent-deep: #7f5b00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.catalog-noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: radial-gradient(circle at 1px 1px, rgba(71, 59, 22, 0.14) 1px, transparent 0);
+  background-size: 6px 6px;
+}
+
+.catalog-hero {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4.75rem 1.25rem 2.25rem;
+}
+
+.catalog-eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.79rem;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.catalog-hero h1 {
+  margin: 0.65rem 0 0;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 5vw, 3.45rem);
+  line-height: 1.05;
+  max-width: 18ch;
+}
+
+.catalog-lead {
+  margin: 1rem 0 1.5rem;
+  max-width: 65ch;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.catalog-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 0.75rem;
+  max-width: 760px;
+}
+
+.metric-card {
+  background: linear-gradient(165deg, #fff5cd 0%, #ffe98a 100%);
+  border: 1px solid #e9cf58;
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+}
+
+.metric-kpi {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 1.65rem;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.metric-label {
+  color: #4a432f;
+  font-size: 0.84rem;
+}
+
+.catalog-link {
+  display: inline-flex;
+  margin-top: 1.15rem;
+  color: #2f2408;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(47, 36, 8, 0.35);
+  padding-bottom: 0.12rem;
+  font-weight: 600;
+}
+
+.catalog-link:hover {
+  border-bottom-color: rgba(47, 36, 8, 0.8);
+}
+
+.catalog-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.75rem;
+}
+
+.catalog-section {
+  background: linear-gradient(180deg, #fffaf0 0%, #fffdf8 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+.catalog-head-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.65rem;
+}
+
+.catalog-head-row h2 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+}
+
+#catalog-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 0.9rem;
+}
+
+.report-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #fff 0%, #fff9e8 55%, #fff 100%);
+  box-shadow: 0 12px 26px rgba(57, 47, 20, 0.08);
+}
+
+.report-date {
+  margin: 0 0 0.6rem;
+  font-size: 0.77rem;
+  color: var(--accent-deep);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.report-card h3 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+  line-height: 1.22;
+}
+
+.report-subtitle {
+  margin: 0.7rem 0 1rem;
+  color: var(--muted);
+  line-height: 1.45;
+  flex-grow: 1;
+}
+
+.report-meta {
+  font-size: 0.82rem;
+  color: #4a463f;
+  margin-bottom: 0.9rem;
+}
+
+.report-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  padding: 0.48rem 0.88rem;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #000;
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: #2e2a24;
+}
+
+.btn-secondary:hover {
+  border-color: #b8a16a;
+}
+
+.catalog-footer {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.25rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 740px) {
+  .catalog-hero {
+    padding-top: 3.3rem;
+  }
+
+  .catalog-metrics {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-card {
+    min-height: 0;
+  }
+}

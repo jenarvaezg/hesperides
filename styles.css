@@ -270,6 +270,20 @@ h1 {
   height: 360px;
 }
 
+.chart-figure-shell {
+  width: 100%;
+  border: 1px solid rgba(128, 110, 62, 0.3);
+  border-radius: 10px;
+  background: #fffef9;
+  overflow: hidden;
+}
+
+.chart-figure-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .chart-canvas--multiples {
   height: auto;
   display: grid;

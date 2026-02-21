@@ -12,7 +12,67 @@
       "reportUrl": "https://hesperides.edu.es/pages/informe-crr-sobre-la-paradoja-inmobiliaria-y-su-impacto-en-el-mercado.html",
       "publishedAt": "2025-01-01",
       "entry": "index.html",
-      "path": "/hesperides/"
+      "path": "/hesperides/informes/paradoja-inmobiliaria/"
+    },
+    {
+      "id": "sistemas-pensiones-comparados-2025",
+      "slug": "sistemas-de-pensiones-comparados",
+      "title": "Sistemas de pensiones comparados",
+      "subtitle": "Que puede aprender Espana de Alemania, Suecia y Chile",
+      "reportUrl": "https://hesperides.edu.es/pages/sistemas_de_pensiones_comparados.html",
+      "publishedAt": "2025-11-26",
+      "entry": "index.html",
+      "path": "/hesperides/informes/sistemas-de-pensiones-comparados/"
+    },
+    {
+      "id": "insostenibilidad-seguridad-social-2025",
+      "slug": "insostenibilidad-seguridad-social",
+      "title": "La (in)sostenibilidad de la Seguridad Social",
+      "subtitle": "Diagnostico fiscal y contributivo del sistema de pensiones",
+      "reportUrl": "https://hesperides.edu.es/pages/la_insostenibilidad_de_la_seguridad_social.html",
+      "publishedAt": "2025-09-01",
+      "entry": "index.html",
+      "path": "/hesperides/informes/insostenibilidad-seguridad-social/"
+    },
+    {
+      "id": "informe-dia-d-pensiones-2025",
+      "slug": "informe-dia-d-pensiones",
+      "title": "El dia D de las pensiones ha llegado",
+      "subtitle": "Se jubila la generacion del baby boom",
+      "reportUrl": "https://hesperides.edu.es/pages/informe_dia_d_pensiones.html",
+      "publishedAt": "2025-07-09",
+      "entry": "index.html",
+      "path": "/hesperides/informes/informe-dia-d-pensiones/"
+    },
+    {
+      "id": "reformas-seguridad-social-2025",
+      "slug": "reformas-seguridad-social-espana",
+      "title": "Las Reformas de la Seguridad Social en Espana",
+      "subtitle": "Un desequilibrio permanente",
+      "reportUrl": "https://hesperides.edu.es/pages/reformas_seguridad_social_espana.html",
+      "publishedAt": "2025-06-06",
+      "entry": "index.html",
+      "path": "/hesperides/informes/reformas-seguridad-social-espana/"
+    },
+    {
+      "id": "radiografia-vivienda-espana-2025",
+      "slug": "radiografia-mercado-vivienda-espana",
+      "title": "Radiografia del mercado de la vivienda en Espana",
+      "subtitle": "Por que el control de alquileres es una mala idea",
+      "reportUrl": "https://hesperides.edu.es/pages/radiografia_mercado_vivienda_espana.html",
+      "publishedAt": "2025-05-24",
+      "entry": "index.html",
+      "path": "/hesperides/informes/radiografia-mercado-vivienda-espana/"
+    },
+    {
+      "id": "turismo-vivienda-canarias-2025",
+      "slug": "turismo-vivienda-canarias",
+      "title": "Turismo y vivienda en Canarias",
+      "subtitle": "Por que restringir el alquiler vacacional no resolvera la crisis habitacional",
+      "reportUrl": "https://hesperides.edu.es/informes/turismo-vivienda-canarias/",
+      "publishedAt": "2025-02-20",
+      "entry": "index.html",
+      "path": "/hesperides/informes/turismo-vivienda-canarias/"
     }
   ]
 }
