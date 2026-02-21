@@ -43,3 +43,21 @@ Como es un sitio estático sin build, no requiere pipeline adicional.
 
 - Donde el PDF muestra cifras exactas, se replican directamente.
 - Donde el PDF no incluye tabla numérica explícita, las series están marcadas como `reconstruida visualmente`.
+
+## Escalado a múltiples informes
+
+Este repo queda preparado para evolucionar a un portal con varios reportes:
+
+- `reports/manifest.json`: catálogo de informes publicados.
+- `reports/<slug>/`: carpeta por informe (HTML, CSS, JS y assets propios).
+- `index.html` (raíz): puede convertirse en portada/listado leyendo el `manifest`.
+
+Estructura recomendada de cada entrada del catálogo:
+
+- `id`: identificador único.
+- `slug`: ruta pública del informe.
+- `title`: título corto para navegación.
+- `subtitle`: bajada descriptiva.
+- `reportUrl`: URL del informe original (fuente).
+- `publishedAt`: fecha de publicación.
+- `entry`: fichero de entrada del informe (por ejemplo `index.html`).
