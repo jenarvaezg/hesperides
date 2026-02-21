@@ -6,6 +6,35 @@
 
   const chartInstances = [];
 
+  function getRepoBasePath() {
+    const path = window.location.pathname || "/";
+    const marker = "/hesperides/";
+    const markerIndex = path.indexOf(marker);
+
+    if (markerIndex >= 0) {
+      return path.slice(0, markerIndex + marker.length);
+    }
+
+    return "/";
+  }
+
+  function resolveAssetUrl(rawUrl) {
+    const value = String(rawUrl || "").trim();
+    if (!value) return value;
+    if (/^(https?:)?\/\//i.test(value) || value.startsWith("data:")) return value;
+    if (value.startsWith("/")) return value;
+
+    const normalized = value.replace(/\\/g, "/");
+    const assetsIndex = normalized.indexOf("assets/");
+    if (assetsIndex >= 0) {
+      const base = getRepoBasePath().replace(/\/+$/, "/");
+      const assetPath = normalized.slice(assetsIndex).replace(/^\/+/, "");
+      return `${base}${assetPath}`;
+    }
+
+    return value;
+  }
+
   const formatNumber = (value, decimals = 1) =>
     new Intl.NumberFormat("es-ES", {
       minimumFractionDigits: decimals,
@@ -330,7 +359,7 @@
     image.className = "chart-figure-image";
     image.loading = "lazy";
     image.alt = chart.title;
-    image.src = chart.imageUrl;
+    image.src = resolveAssetUrl(chart.imageUrl);
     shell.appendChild(image);
 
     host.appendChild(shell);
