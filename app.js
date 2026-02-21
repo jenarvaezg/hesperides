@@ -4,6 +4,18 @@
   const REPORT_URL =
     "https://hesperides.edu.es/pages/informe-crr-sobre-la-paradoja-inmobiliaria-y-su-impacto-en-el-mercado.html";
 
+  function getCatalogHomeHref() {
+    const path = window.location.pathname || "/";
+    const marker = "/hesperides/";
+    const markerIndex = path.indexOf(marker);
+
+    if (markerIndex >= 0) {
+      return `${path.slice(0, markerIndex + marker.length)}index.html`;
+    }
+
+    return "/index.html";
+  }
+
   const formatNumber = (value, decimals = 1) =>
     new Intl.NumberFormat("es-ES", {
       minimumFractionDigits: decimals,
@@ -188,6 +200,7 @@
   function initHero() {
     const heroMetrics = document.getElementById("hero-metrics");
     const caveat = document.getElementById("data-caveat");
+    const pdfLink = document.querySelector(".hero .pdf-link");
 
     const topHousing = report.charts.g2.series[0].data[8];
     const ipc = report.charts.g2.series[0].data[18];
@@ -225,6 +238,14 @@
       .join("");
 
     caveat.textContent = report.meta.caveat;
+
+    if (pdfLink && !document.querySelector(".hero .home-link")) {
+      const homeLink = document.createElement("a");
+      homeLink.className = "pdf-link home-link";
+      homeLink.href = getCatalogHomeHref();
+      homeLink.textContent = "Volver a Informes";
+      pdfLink.insertAdjacentElement("afterend", homeLink);
+    }
   }
 
   function createNav() {

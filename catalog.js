@@ -2,6 +2,15 @@
   const statusEl = document.getElementById("catalog-status");
   const metricsEl = document.getElementById("catalog-metrics");
   const gridEl = document.getElementById("reports-grid");
+  const centerOrder = [
+    "paradoja-inmobiliaria-2025",
+    "sistemas-pensiones-comparados-2025",
+    "insostenibilidad-seguridad-social-2025",
+    "informe-dia-d-pensiones-2025",
+    "reformas-seguridad-social-2025",
+    "radiografia-vivienda-espana-2025",
+    "turismo-vivienda-canarias-2025"
+  ];
 
   const formatDate = (rawDate) => {
     const value = String(rawDate || "").trim();
@@ -151,7 +160,14 @@
     });
   };
 
-  const compareByDateDesc = (a, b) => {
+  const compareByCenterOrder = (a, b) => {
+    const aIndex = centerOrder.indexOf(a.id);
+    const bIndex = centerOrder.indexOf(b.id);
+    const safeA = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex;
+    const safeB = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex;
+
+    if (safeA !== safeB) return safeA - safeB;
+
     const aDate = a.publishedAt || "";
     const bDate = b.publishedAt || "";
     return bDate.localeCompare(aDate);
@@ -167,7 +183,7 @@
       const manifest = await response.json();
       const reports = Array.isArray(manifest.reports) ? manifest.reports.slice() : [];
 
-      reports.sort(compareByDateDesc);
+      reports.sort(compareByCenterOrder);
       renderMetrics(reports);
       renderCards(reports);
 

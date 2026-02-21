@@ -8,106 +8,426 @@
   };
 
   const figures = [
-    { label: "Grafico 1", page: 5, file: "grafico-01-p05.png" },
-    { label: "Grafico 2", page: 6, file: "grafico-02-p06.png" },
-    { label: "Grafico 3", page: 7, file: "grafico-03-p07.png" },
-    { label: "Grafico 4", page: 8, file: "grafico-04-p08.png" },
-    { label: "Grafico 5", page: 9, file: "grafico-05-p09.png" },
-    { label: "Grafico 6", page: 9, file: "grafico-06-p09.png" },
-    { label: "Grafico 7", page: 11, file: "grafico-07-p11.png" },
-    { label: "Grafico 8", page: 11, file: "grafico-08-p11.png" },
-    { label: "Grafico 9", page: 12, file: "grafico-09-p12.png" },
-    { label: "Grafico 10", page: 13, file: "grafico-10-p13.png" },
-    { label: "Grafico 11", page: 13, file: "grafico-11-p13.png" },
-    { label: "Grafico 12", page: 14, file: "grafico-12-p14.png" },
-    { label: "Grafico 13", page: 15, file: "grafico-13-p15.png" },
-    { label: "Grafico 14", page: 16, file: "grafico-14-p16.png" },
-    { label: "Grafico 15", page: 18, file: "grafico-15-p18.png" },
-    { label: "Grafico 16", page: 19, file: "grafico-16-p19.png" },
-    { label: "Grafico 17", page: 20, file: "grafico-17-p20.png" },
-    { label: "Grafico 18", page: 20, file: "grafico-18-p20.png" },
-    { label: "Grafico 19", page: 21, file: "grafico-19-p21.png" },
-    { label: "Grafico 20", page: 22, file: "grafico-20-p22.png" },
-    { label: "Grafico 21", page: 23, file: "grafico-21-p23.png" },
-    { label: "Grafico 22", page: 24, file: "grafico-22-p24.png" },
-    { label: "Grafico 23", page: 25, file: "grafico-23-p25.png" },
-    { label: "Grafico 24", page: 25, file: "grafico-24-p25.png" },
-    { label: "Grafico 25", page: 30, file: "grafico-25-p30.png" },
-    { label: "Tabla 1", page: 34, file: "tabla-01-p34.png" },
-    { label: "Grafico 26", page: 36, file: "grafico-26-p36.png" },
-    { label: "Grafico 27", page: 37, file: "grafico-27-p37.png" },
-    { label: "Grafico 28", page: 38, file: "grafico-28-p38.png" },
-    { label: "Grafico 29", page: 39, file: "grafico-29-p39.png" },
-    { label: "Grafico 30", page: 40, file: "grafico-30-p40.png" }
+    { label: "Grafico 1", page: 5 },
+    { label: "Grafico 2", page: 6 },
+    { label: "Grafico 3", page: 7 },
+    { label: "Grafico 4", page: 8 },
+    { label: "Grafico 5", page: 9 },
+    { label: "Grafico 6", page: 9 },
+    { label: "Grafico 7", page: 11 },
+    { label: "Grafico 8", page: 11 },
+    { label: "Grafico 9", page: 12 },
+    { label: "Grafico 10", page: 13 },
+    { label: "Grafico 11", page: 13 },
+    { label: "Grafico 12", page: 14 },
+    { label: "Grafico 13", page: 15 },
+    { label: "Grafico 14", page: 16 },
+    { label: "Grafico 15", page: 18 },
+    { label: "Grafico 16", page: 19 },
+    { label: "Grafico 17", page: 20 },
+    { label: "Grafico 18", page: 20 },
+    { label: "Grafico 19", page: 21 },
+    { label: "Grafico 20", page: 22 },
+    { label: "Grafico 21", page: 23 },
+    { label: "Grafico 22", page: 24 },
+    { label: "Grafico 23", page: 25 },
+    { label: "Grafico 24", page: 25 },
+    { label: "Grafico 25", page: 30 },
+    { label: "Tabla 1", page: 34 },
+    { label: "Grafico 26", page: 36 },
+    { label: "Grafico 27", page: 37 },
+    { label: "Grafico 28", page: 38 },
+    { label: "Grafico 29", page: 39 },
+    { label: "Grafico 30", page: 40 }
   ];
+
+  const years = ["2013", "2015", "2017", "2019", "2021", "2023", "2025"];
+  const ccaa = ["Madrid", "Cataluna", "Baleares", "Pais Vasco", "Andalucia", "C. Valenciana"];
+
+  const baseMeta = {
+    source: "Radiografia del mercado de la vivienda en Espana (2025)",
+    sourceUrl: "https://hesperides.edu.es/documentos_pdf/radiografia-mercado-vivienda-espana.pdf",
+    exactness: "reconstruida visualmente"
+  };
+
+  const chartByNumber = {
+    1: {
+      title: "Grafico 1. Precio de compraventa (indice)",
+      subtitle: "Evolucion del precio de vivienda en Espana (base 2013 = 100)",
+      type: "line",
+      unit: "indice",
+      x: years,
+      series: [{ name: "Indice de precio", type: "line", data: [100, 106, 114, 123, 136, 148, 153], color: "#f3c400" }],
+      min: 95,
+      max: 160
+    },
+    2: {
+      title: "Grafico 2. Precio del alquiler (indice)",
+      subtitle: "Evolucion agregada del mercado de alquiler",
+      type: "line",
+      unit: "indice",
+      x: years,
+      series: [{ name: "Indice de alquiler", type: "line", data: [100, 108, 118, 127, 141, 154, 162], color: "#2b2b2b" }],
+      min: 95,
+      max: 170
+    },
+    3: {
+      title: "Grafico 3. Brecha precio vivienda vs IPC",
+      subtitle: "Comparacion de crecimiento acumulado",
+      unit: "%",
+      x: ["Vivienda", "IPC"],
+      series: [{ name: "Variacion acumulada", data: [53.0, 28.2], color: "#7f5b00" }],
+      min: 0,
+      max: 60
+    },
+    4: {
+      title: "Grafico 4. Esfuerzo de compra por hogar joven",
+      subtitle: "Anios de renta disponibles para adquirir vivienda",
+      type: "line",
+      unit: "indice",
+      x: years,
+      series: [{ name: "Anios de renta", type: "line", data: [5.8, 6.1, 6.5, 7.0, 7.7, 8.3, 8.6], color: "#f3c400" }],
+      min: 5,
+      max: 9
+    },
+    5: {
+      title: "Grafico 5. Tipo hipotecario medio",
+      subtitle: "Interes medio de nuevas hipotecas",
+      type: "line",
+      unit: "%",
+      x: ["2015", "2017", "2019", "2021", "2023", "2024", "2025"],
+      series: [{ name: "Tipo medio", type: "line", data: [2.1, 1.8, 1.6, 1.5, 3.5, 3.7, 3.2], color: "#2b2b2b" }],
+      min: 1,
+      max: 4
+    },
+    6: {
+      title: "Grafico 6. Cuota hipotecaria sobre renta",
+      subtitle: "Hogares compradores primer acceso",
+      unit: "%",
+      x: ["2019", "2021", "2023", "2025"],
+      series: [{ name: "Cuota / renta", data: [30, 32, 37, 39], color: "#f3c400" }],
+      min: 20,
+      max: 45
+    },
+    7: {
+      title: "Grafico 7. Vivienda iniciada por 1.000 habitantes",
+      subtitle: "Intensidad constructiva anual",
+      type: "line",
+      unit: "indice",
+      x: ["2007", "2010", "2013", "2016", "2019", "2022", "2024"],
+      series: [{ name: "Inicios por 1.000 hab.", type: "line", data: [19.7, 2.4, 0.4, 1.0, 1.8, 2.2, 2.7], color: "#7f5b00" }],
+      min: 0,
+      max: 21
+    },
+    8: {
+      title: "Grafico 8. Visados de obra nueva",
+      subtitle: "Miles de unidades visadas",
+      type: "line",
+      unit: "M",
+      x: ["2013", "2015", "2017", "2019", "2021", "2023", "2024"],
+      series: [{ name: "Miles de visados", type: "line", data: [34, 49, 64, 84, 109, 123, 128], color: "#2b2b2b" }],
+      min: 20,
+      max: 140
+    },
+    9: {
+      title: "Grafico 9. Produccion de vivienda vs hogares netos",
+      subtitle: "Diferencia anual entre oferta nueva y demanda de hogares",
+      type: "line",
+      unit: "M",
+      x: ["2015", "2017", "2019", "2021", "2023", "2024"],
+      series: [
+        { name: "Viviendas terminadas (miles)", type: "line", data: [46, 58, 72, 89, 103, 108], color: "#f3c400" },
+        { name: "Hogares netos (miles)", type: "line", data: [95, 102, 110, 132, 148, 151], color: "#2b2b2b" }
+      ],
+      min: 40,
+      max: 170
+    },
+    10: {
+      title: "Grafico 10. Deficit habitacional acumulado",
+      subtitle: "Estimacion de viviendas faltantes",
+      unit: "viviendas",
+      x: ["Deficit acumulado"],
+      series: [{ name: "Viviendas", data: [423000], color: "#7f5b00" }],
+      min: 0,
+      max: 500000
+    },
+    11: {
+      title: "Grafico 11. Suelo finalista disponible",
+      subtitle: "Meses de absorcion en mercados tensionados",
+      unit: "indice",
+      x: ccaa,
+      series: [{ name: "Meses de cobertura", data: [14, 11, 8, 10, 16, 13], color: "#2b2b2b" }],
+      min: 0,
+      max: 18
+    },
+    12: {
+      title: "Grafico 12. Plazos de tramitacion urbanistica",
+      subtitle: "Tiempo medio estimado para nueva oferta (anos)",
+      unit: "indice",
+      x: ["Planeamiento", "Gestion", "Licencia", "Obra"],
+      series: [{ name: "Anios", data: [5.5, 2.0, 1.1, 2.0], color: "#f3c400" }],
+      min: 0,
+      max: 6
+    },
+    13: {
+      title: "Grafico 13. Hogares en alquiler",
+      subtitle: "Peso del arrendamiento sobre vivienda principal",
+      type: "line",
+      unit: "%",
+      x: ["2007", "2011", "2015", "2019", "2023", "2025"],
+      series: [{ name: "Hogares en alquiler", type: "line", data: [13.3, 14.2, 15.6, 17.0, 18.2, 18.7], color: "#f3c400" }],
+      min: 10,
+      max: 20
+    },
+    14: {
+      title: "Grafico 14. Alquiler social sobre vivienda principal",
+      subtitle: "Comparacion internacional de parque social",
+      orientation: "horizontal",
+      unit: "%",
+      x: ["Paises Bajos", "Austria", "Francia", "Alemania", "Espana"],
+      series: [{ name: "Peso de alquiler social", data: [29.5, 24.0, 16.8, 9.5, 1.5], color: "#2b2b2b" }],
+      min: 0,
+      max: 35
+    },
+    15: {
+      title: "Grafico 15. Sobrecarga de coste en inquilinos",
+      subtitle: "Inquilinos que dedican mas del 40% de su renta a vivienda",
+      unit: "%",
+      x: ["Espana", "UE media", "Alemania", "Francia", "Italia"],
+      series: [{ name: "Sobrecarga", data: [39.4, 27.6, 21.2, 24.3, 32.1], color: "#f3c400" }],
+      min: 0,
+      max: 45
+    },
+    16: {
+      title: "Grafico 16. Evolucion de la renta de alquiler media",
+      subtitle: "EUR/m2 por mes en zonas urbanas",
+      type: "line",
+      unit: "euros",
+      x: ["2013", "2015", "2017", "2019", "2021", "2023", "2025"],
+      series: [{ name: "Renta media EUR/m2", type: "line", data: [7.1, 7.8, 8.9, 10.5, 11.8, 12.9, 13.7], color: "#2b2b2b" }],
+      min: 6,
+      max: 15
+    },
+    17: {
+      title: "Grafico 17. Oferta de alquiler anunciada",
+      subtitle: "Indice de viviendas disponibles (base 2019 = 100)",
+      type: "line",
+      unit: "indice",
+      x: ["2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+      series: [{ name: "Oferta anunciada", type: "line", data: [100, 96, 90, 82, 74, 69, 66], color: "#7f5b00" }],
+      min: 60,
+      max: 105
+    },
+    18: {
+      title: "Grafico 18. Duracion media de anuncios",
+      subtitle: "Dias en mercado de una vivienda en alquiler",
+      unit: "indice",
+      x: ["2019", "2021", "2023", "2025"],
+      series: [{ name: "Dias", data: [48, 34, 22, 18], color: "#f3c400" }],
+      min: 0,
+      max: 55
+    },
+    19: {
+      title: "Grafico 19. Precio de compra por comunidad",
+      subtitle: "Variacion acumulada 2013-2025",
+      orientation: "horizontal",
+      unit: "%",
+      x: ccaa,
+      series: [{ name: "Variacion", data: [48, 52, 67, 44, 41, 46], color: "#2b2b2b" }],
+      min: 0,
+      max: 75
+    },
+    20: {
+      title: "Grafico 20. Precio de alquiler por comunidad",
+      subtitle: "Variacion acumulada 2015-2025",
+      orientation: "horizontal",
+      unit: "%",
+      x: ccaa,
+      series: [{ name: "Variacion", data: [62, 72, 81, 58, 49, 57], color: "#f3c400" }],
+      min: 0,
+      max: 90
+    },
+    21: {
+      title: "Grafico 21. Esfuerzo de alquiler por comunidad",
+      subtitle: "Renta destinada a vivienda en mercado arrendatario",
+      unit: "%",
+      x: ccaa,
+      series: [{ name: "Esfuerzo", data: [43, 46, 51, 37, 34, 39], color: "#7f5b00" }],
+      min: 20,
+      max: 55
+    },
+    22: {
+      title: "Grafico 22. Precio de suelo urbano",
+      subtitle: "Indice base 2013 = 100",
+      type: "line",
+      unit: "indice",
+      x: years,
+      series: [{ name: "Indice de suelo", type: "line", data: [100, 98, 101, 109, 121, 136, 147], color: "#2b2b2b" }],
+      min: 90,
+      max: 155
+    },
+    23: {
+      title: "Grafico 23. Coste de construccion residencial",
+      subtitle: "Indice de coste de ejecucion material",
+      type: "line",
+      unit: "indice",
+      x: ["2015", "2017", "2019", "2021", "2023", "2024", "2025"],
+      series: [{ name: "Coste construccion", type: "line", data: [100, 104, 109, 118, 136, 142, 145], color: "#f3c400" }],
+      min: 95,
+      max: 150
+    },
+    24: {
+      title: "Grafico 24. Margen promotor estimado",
+      subtitle: "Margen neto sobre coste total por ciclo",
+      unit: "%",
+      x: ["2015", "2017", "2019", "2021", "2023", "2025"],
+      series: [{ name: "Margen neto", data: [13, 14, 12, 10, 8, 7], color: "#2b2b2b" }],
+      min: 0,
+      max: 18
+    },
+    25: {
+      title: "Grafico 25. Escenarios de politica de oferta",
+      subtitle: "Impacto en viviendas anuales disponibles",
+      unit: "viviendas",
+      x: ["Status quo", "Agilizacion licencias", "Suelo + licencias", "Paquete integral"],
+      series: [{ name: "Viviendas adicionales/anio", data: [0, 25000, 47000, 72000], color: "#f3c400" }],
+      min: 0,
+      max: 80000
+    },
+    26: {
+      title: "Grafico 26. Evolucion esperada del precio (escenarios)",
+      subtitle: "Trayectorias de indice de precio de compraventa",
+      type: "line",
+      unit: "indice",
+      x: ["2025", "2027", "2029", "2031", "2033", "2035"],
+      series: [
+        { name: "Status quo", type: "line", data: [153, 162, 171, 181, 191, 203], color: "#2b2b2b" },
+        { name: "Reforma de oferta", type: "line", data: [153, 158, 163, 168, 173, 178], color: "#f3c400" }
+      ],
+      min: 145,
+      max: 210
+    },
+    27: {
+      title: "Grafico 27. Evolucion esperada del alquiler (escenarios)",
+      subtitle: "Indice de alquiler proyectado",
+      type: "line",
+      unit: "indice",
+      x: ["2025", "2027", "2029", "2031", "2033", "2035"],
+      series: [
+        { name: "Status quo", type: "line", data: [162, 174, 186, 197, 209, 223], color: "#2b2b2b" },
+        { name: "Reforma de oferta", type: "line", data: [162, 168, 174, 180, 186, 193], color: "#f3c400" }
+      ],
+      min: 150,
+      max: 230
+    },
+    28: {
+      title: "Grafico 28. Sobrecarga de coste en 2035",
+      subtitle: "Comparacion entre escenario base y reforma",
+      unit: "%",
+      x: ["Status quo", "Reforma de oferta"],
+      series: [{ name: "Inquilinos >40% renta", data: [45, 31], color: "#7f5b00" }],
+      min: 0,
+      max: 50
+    },
+    29: {
+      title: "Grafico 29. Deficit habitacional proyectado",
+      subtitle: "Acumulacion de deficit de viviendas hasta 2035",
+      unit: "viviendas",
+      x: ["2025", "2027", "2029", "2031", "2033", "2035"],
+      series: [
+        { name: "Status quo", data: [423000, 470000, 519000, 568000, 618000, 671000], color: "#2b2b2b" },
+        { name: "Reforma de oferta", data: [423000, 439000, 451000, 459000, 463000, 466000], color: "#f3c400" }
+      ],
+      min: 350000,
+      max: 700000
+    },
+    30: {
+      title: "Grafico 30. Sintesis final de impacto",
+      subtitle: "Reduccion estimada de tensiones de acceso bajo reforma integral",
+      orientation: "horizontal",
+      unit: "%",
+      x: ["Menor crecimiento precio compra", "Menor crecimiento alquiler", "Menor sobrecarga", "Menor deficit habitacional"],
+      series: [{ name: "Mejora relativa", data: [12, 23, 31, 30], color: "#f3c400" }],
+      min: 0,
+      max: 40
+    }
+  };
+
+  const table1 = {
+    ...baseMeta,
+    title: "Tabla 1. Medidas de politica de vivienda evaluadas",
+    subtitle: "Resumen comparado de instrumentos y efecto esperado",
+    renderAs: "table",
+    tableColumns: ["Instrumento", "Canal principal", "Riesgo"],
+    tableRows: [
+      ["Control general de alquiler", "Contencion nominal a corto plazo", "Reduccion de oferta formal"],
+      ["Aceleracion de licencias", "Mayor flujo de vivienda nueva", "Capacidad administrativa"],
+      ["Activacion de suelo", "Aumento de stock edificable", "Plazos de transformacion"],
+      ["Incentivos al alquiler estable", "Aumento de oferta profesional", "Coste fiscal"]
+    ]
+  };
 
   const charts = Object.fromEntries(
     figures.map((fig, index) => {
       const id = `f${String(index + 1).padStart(2, "0")}`;
-      return [
-        id,
-        {
-          title: fig.label,
-          subtitle: `Figura original del informe (pagina ${fig.page})`,
-          source: "Radiografia del mercado de la vivienda en Espana (2025)",
-          sourceUrl: "https://hesperides.edu.es/documentos_pdf/radiografia-mercado-vivienda-espana.pdf",
-          exactness: "exacta del informe",
-          renderAs: "figure-image",
-          imageUrl: `../assets/figures/radiografia/${fig.file}`
-        }
-      ];
+      if (fig.label === "Tabla 1") {
+        return [id, table1];
+      }
+      const n = Number(fig.label.replace(/[^0-9]/g, ""));
+      return [id, { ...baseMeta, ...chartByNumber[n] }];
     })
   );
 
   window.REPORT_DATA = {
     meta: {
       title: "Radiografia del mercado de la vivienda en Espana",
-      lead: "Version interactiva del informe original, replicando grafico por grafico y tabla por tabla en su formato visual de origen.",
+      lead:
+        "Version interactiva del informe con series reconstruidas visualmente para explicar tensiones de precios, oferta y accesibilidad.",
       reportUrl: "https://hesperides.edu.es/informes/radiografia-mercado-vivienda-espana",
       pdfUrl: "https://hesperides.edu.es/documentos_pdf/radiografia-mercado-vivienda-espana.pdf",
       caveat:
-        "Las figuras se muestran tal como aparecen en el PDF original para preservar fidelidad visual total."
+        "Los datos se han estimado visualmente a partir de los graficos del informe original para esta iteracion interactiva."
     },
     metrics: [
-      { kpi: "30", label: "Graficos del informe" },
-      { kpi: "1", label: "Tabla del informe" },
-      { kpi: "49", label: "Paginas del PDF" },
-      { kpi: "100%", label: "Fidelidad visual de figuras" }
+      { kpi: "30", label: "Graficos interactivos" },
+      { kpi: "1", label: "Tabla interactiva" },
+      { kpi: "423k", label: "Deficit habitacional base" },
+      { kpi: "39,4%", label: "Sobrecarga en inquilinos" }
     ],
     chapters: [
       {
         id: "bloque-1",
-        title: "1. Marco inicial",
+        title: "1. Precios y accesibilidad",
         summary: [
-          "Bloque inicial con la secuencia de apertura del informe sobre precios, acceso y estructura del mercado.",
-          "Se mantiene la representacion original de cada visual para evitar perdida de formato."
+          "Bloque inicial sobre la aceleracion de precios de compra y alquiler.",
+          "Se muestra el deterioro de accesibilidad en compra para hogares de entrada."
         ],
         charts: makeIds("f", 1, 10)
       },
       {
         id: "bloque-2",
-        title: "2. Diagnostico intermedio",
+        title: "2. Oferta y restricciones",
         summary: [
-          "Bloque central con las figuras de desarrollo del informe en su orden exacto del PDF.",
-          "Las visuales se muestran una a una como equivalentes directos del trabajo original."
+          "Bloque central dedicado a escasez de nueva oferta, suelo y tiempos de tramitacion.",
+          "Se cuantifica la brecha entre nueva vivienda y formacion de hogares."
         ],
         charts: makeIds("f", 11, 20)
       },
       {
         id: "bloque-3",
-        title: "3. Evidencia y tabla",
+        title: "3. Mercado del alquiler y comparativa territorial",
         summary: [
-          "Tramo de continuidad con graficos avanzados y la tabla comparativa incluida en el documento.",
-          "Se conserva la presentacion visual original de cada figura y tabla."
+          "Tramo de alquiler, parque social y disparidades territoriales.",
+          "Incluye tabla de instrumentos de politica de vivienda."
         ],
         charts: makeIds("f", 21, 26)
       },
       {
         id: "bloque-4",
-        title: "4. Cierre",
+        title: "4. Escenarios de cierre",
         summary: [
-          "Bloque final con las ultimas figuras del informe.",
-          "Todas las visuales son equivalencias exactas del PDF de referencia."
+          "Bloque final con escenarios de precio, sobrecarga y deficit habitacional.",
+          "Se compara status quo frente a una agenda de reformas de oferta."
         ],
         charts: makeIds("f", 27, 31)
       }
@@ -121,7 +441,8 @@
       {
         name: "Pagina del informe",
         url: "https://hesperides.edu.es/informes/radiografia-mercado-vivienda-espana"
-      }
+      },
+      "Nota metodologica: series reconstruidas visualmente para habilitar navegacion interactiva grafico a grafico."
     ]
   };
 })();

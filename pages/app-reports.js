@@ -18,6 +18,11 @@
     return "/";
   }
 
+  function getCatalogHomeHref() {
+    const base = getRepoBasePath().replace(/\/+$/, "/");
+    return `${base}index.html`;
+  }
+
   function resolveAssetUrl(rawUrl) {
     const value = String(rawUrl || "").trim();
     if (!value) return value;
@@ -122,8 +127,123 @@
     return (value) => formatNumber(value, 1);
   }
 
+  function renderInlineTable(chart, host) {
+    const columns = chart.tableColumns || ["#", "Categoria", "Valor"];
+    const rows = Array.isArray(chart.tableRows)
+      ? chart.tableRows
+      : (chart.x || []).map((label, index) => {
+          const values = (chart.series && chart.series[0] && chart.series[0].data) || [];
+          const value = values[index];
+          return [String(index + 1), label, value === undefined ? "-" : String(value)];
+        });
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "chart-table-wrapper";
+
+    const table = document.createElement("table");
+    table.className = "chart-inline-table";
+
+    const thead = document.createElement("thead");
+    const headTr = document.createElement("tr");
+    columns.forEach((label) => {
+      const th = document.createElement("th");
+      th.textContent = label;
+      headTr.appendChild(th);
+    });
+    thead.appendChild(headTr);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    rows.forEach((row, index) => {
+      const tr = document.createElement("tr");
+      if (index === 0) tr.classList.add("top-row");
+      row.forEach((cell) => {
+        const td = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    wrapper.appendChild(table);
+    host.appendChild(wrapper);
+  }
+
   function getReportUrl() {
     return report.meta && report.meta.reportUrl ? report.meta.reportUrl : window.location.href;
+  }
+
+  function downloadCanvasWithMetaFromImage(image, chart) {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const padding = 42;
+    const textWidth = image.width - padding * 2;
+
+    const titleFont = '700 44px "Fraunces", serif';
+    const subtitleFont = '400 28px "IBM Plex Sans", sans-serif';
+    const sourceFont = '400 22px "IBM Plex Sans", sans-serif';
+
+    ctx.font = titleFont;
+    const titleLines = wrapLines(ctx, chart.title || "", textWidth);
+    ctx.font = subtitleFont;
+    const subtitleLines = wrapLines(ctx, chart.subtitle || "", textWidth);
+    ctx.font = sourceFont;
+    const sourceText = `Fuente: ${chart.source || "Informe original"} · Informe: ${getReportUrl()}`;
+    const sourceLines = wrapLines(ctx, sourceText, textWidth);
+
+    const titleLineHeight = 52;
+    const subtitleLineHeight = 36;
+    const sourceLineHeight = 28;
+    const topContentHeight =
+      padding +
+      titleLines.length * titleLineHeight +
+      8 +
+      subtitleLines.length * subtitleLineHeight +
+      26;
+    const bottomContentHeight = 18 + sourceLines.length * sourceLineHeight + 24;
+
+    canvas.width = image.width;
+    canvas.height = image.height + topContentHeight + bottomContentHeight;
+
+    ctx.fillStyle = "#fffdf8";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#f3c400";
+    ctx.fillRect(0, 0, canvas.width, 12);
+    ctx.textBaseline = "top";
+
+    let y = padding + 8;
+    ctx.fillStyle = "#171717";
+    ctx.font = titleFont;
+    titleLines.forEach((line) => {
+      ctx.fillText(line, padding, y);
+      y += titleLineHeight;
+    });
+
+    y += 2;
+    ctx.fillStyle = "#404040";
+    ctx.font = subtitleFont;
+    subtitleLines.forEach((line) => {
+      ctx.fillText(line, padding, y);
+      y += subtitleLineHeight;
+    });
+
+    ctx.drawImage(image, 0, topContentHeight);
+
+    y = topContentHeight + image.height + 12;
+    ctx.fillStyle = "#565656";
+    ctx.font = sourceFont;
+    sourceLines.forEach((line) => {
+      ctx.fillText(line, padding, y);
+      y += sourceLineHeight;
+    });
+
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = `${slugify(chart.title || "grafico")}.png`;
+    link.click();
   }
 
   function downloadChartWithMeta(instance, chart) {
@@ -134,105 +254,259 @@
     });
 
     const image = new Image();
-    image.onload = () => {
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      const padding = 42;
-      const textWidth = image.width - padding * 2;
-
-      const titleFont = '700 44px "Fraunces", serif';
-      const subtitleFont = '400 28px "IBM Plex Sans", sans-serif';
-      const sourceFont = '400 22px "IBM Plex Sans", sans-serif';
-
-      ctx.font = titleFont;
-      const titleLines = wrapLines(ctx, chart.title, textWidth);
-      ctx.font = subtitleFont;
-      const subtitleLines = wrapLines(ctx, chart.subtitle || "", textWidth);
-      ctx.font = sourceFont;
-      const sourceText = `Fuente: ${chart.source} - Informe: ${getReportUrl()}`;
-      const sourceLines = wrapLines(ctx, sourceText, textWidth);
-
-      const titleLineHeight = 52;
-      const subtitleLineHeight = 36;
-      const sourceLineHeight = 28;
-      const topContentHeight =
-        padding +
-        titleLines.length * titleLineHeight +
-        8 +
-        subtitleLines.length * subtitleLineHeight +
-        26;
-      const bottomContentHeight = 18 + sourceLines.length * sourceLineHeight + 24;
-
-      canvas.width = image.width;
-      canvas.height = image.height + topContentHeight + bottomContentHeight;
-
-      ctx.fillStyle = "#fffdf8";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#f3c400";
-      ctx.fillRect(0, 0, canvas.width, 12);
-      ctx.textBaseline = "top";
-
-      let y = padding + 8;
-      ctx.fillStyle = "#171717";
-      ctx.font = titleFont;
-      titleLines.forEach((line) => {
-        ctx.fillText(line, padding, y);
-        y += titleLineHeight;
-      });
-
-      y += 2;
-      ctx.fillStyle = "#404040";
-      ctx.font = subtitleFont;
-      subtitleLines.forEach((line) => {
-        ctx.fillText(line, padding, y);
-        y += subtitleLineHeight;
-      });
-
-      ctx.drawImage(image, 0, topContentHeight);
-
-      y = topContentHeight + image.height + 12;
-      ctx.fillStyle = "#565656";
-      ctx.font = sourceFont;
-      sourceLines.forEach((line) => {
-        ctx.fillText(line, padding, y);
-        y += sourceLineHeight;
-      });
-
-      const link = document.createElement("a");
-      link.href = canvas.toDataURL("image/png");
-      link.download = `${slugify(chart.title)}.png`;
-      link.click();
-    };
+    image.onload = () => downloadCanvasWithMetaFromImage(image, chart);
 
     image.src = chartDataUrl;
+  }
+
+  function downloadFigureWithMeta(chart) {
+    const image = new Image();
+    image.crossOrigin = "anonymous";
+    image.onload = () => downloadCanvasWithMetaFromImage(image, chart);
+    image.src = resolveAssetUrl(chart.imageUrl);
+  }
+
+  function downloadTableWithMeta(chart) {
+    const columns = chart.tableColumns || ["#", "Categoria", "Valor"];
+    const rows = Array.isArray(chart.tableRows)
+      ? chart.tableRows
+      : (chart.x || []).map((label, index) => {
+          const values = (chart.series && chart.series[0] && chart.series[0].data) || [];
+          const value = values[index];
+          return [String(index + 1), label, value === undefined ? "-" : String(value)];
+        });
+
+    const padding = 42;
+    const cellPaddingX = 14;
+    const cellPaddingY = 10;
+    const lineHeight = 24;
+    const maxColWidth = 420;
+    const minColWidth = 180;
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const titleFont = '700 44px "Fraunces", serif';
+    const subtitleFont = '400 28px "IBM Plex Sans", sans-serif';
+    const sourceFont = '400 22px "IBM Plex Sans", sans-serif';
+    const headCellFont = '700 22px "IBM Plex Sans", sans-serif';
+    const bodyCellFont = '400 21px "IBM Plex Sans", sans-serif';
+
+    ctx.font = headCellFont;
+    const colWidths = columns.map((col, colIndex) => {
+      let width = Math.max(minColWidth, Math.min(maxColWidth, ctx.measureText(String(col)).width + cellPaddingX * 2));
+      ctx.font = bodyCellFont;
+      rows.forEach((row) => {
+        const value = String(row[colIndex] ?? "");
+        const measured = Math.min(maxColWidth, ctx.measureText(value).width + cellPaddingX * 2);
+        width = Math.max(width, measured);
+      });
+      ctx.font = headCellFont;
+      return width;
+    });
+
+    const tableWidth = colWidths.reduce((acc, width) => acc + width, 0);
+    const contentWidth = Math.max(1120, tableWidth + padding * 2);
+    const tableLeft = Math.round((contentWidth - tableWidth) / 2);
+
+    ctx.font = titleFont;
+    const titleLines = wrapLines(ctx, chart.title || "", contentWidth - padding * 2);
+    ctx.font = subtitleFont;
+    const subtitleLines = wrapLines(ctx, chart.subtitle || "", contentWidth - padding * 2);
+    ctx.font = sourceFont;
+    const sourceLines = wrapLines(
+      ctx,
+      `Fuente: ${chart.source || "Informe original"} · Informe: ${getReportUrl()}`,
+      contentWidth - padding * 2
+    );
+
+    const headerRowHeight = lineHeight + cellPaddingY * 2;
+    const bodyRowHeights = rows.map((row) => {
+      let maxLines = 1;
+      row.forEach((cell, colIndex) => {
+        ctx.font = bodyCellFont;
+        const wrapped = wrapLines(ctx, String(cell ?? ""), colWidths[colIndex] - cellPaddingX * 2);
+        maxLines = Math.max(maxLines, wrapped.length || 1);
+      });
+      return maxLines * lineHeight + cellPaddingY * 2;
+    });
+
+    const tableHeight = headerRowHeight + bodyRowHeights.reduce((acc, value) => acc + value, 0);
+    const titleLineHeight = 52;
+    const subtitleLineHeight = 36;
+    const sourceLineHeight = 28;
+    const topContentHeight =
+      padding + titleLines.length * titleLineHeight + 8 + subtitleLines.length * subtitleLineHeight + 30;
+    const bottomContentHeight = 18 + sourceLines.length * sourceLineHeight + 24;
+
+    canvas.width = contentWidth;
+    canvas.height = topContentHeight + tableHeight + bottomContentHeight;
+
+    ctx.fillStyle = "#fffdf8";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#f3c400";
+    ctx.fillRect(0, 0, canvas.width, 12);
+
+    ctx.textBaseline = "top";
+    let y = padding + 8;
+    ctx.fillStyle = "#171717";
+    ctx.font = titleFont;
+    titleLines.forEach((line) => {
+      ctx.fillText(line, padding, y);
+      y += titleLineHeight;
+    });
+
+    y += 2;
+    ctx.fillStyle = "#404040";
+    ctx.font = subtitleFont;
+    subtitleLines.forEach((line) => {
+      ctx.fillText(line, padding, y);
+      y += subtitleLineHeight;
+    });
+
+    let tableTop = topContentHeight;
+    let x = tableLeft;
+    ctx.fillStyle = "rgba(243, 196, 0, 0.16)";
+    ctx.fillRect(tableLeft, tableTop, tableWidth, headerRowHeight);
+    ctx.strokeStyle = "rgba(182, 173, 154, 0.8)";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(tableLeft, tableTop, tableWidth, tableHeight);
+
+    ctx.font = headCellFont;
+    ctx.fillStyle = "#2a2417";
+    columns.forEach((col, colIndex) => {
+      const colWidth = colWidths[colIndex];
+      ctx.fillText(String(col), x + cellPaddingX, tableTop + cellPaddingY);
+      x += colWidth;
+      if (colIndex < columns.length - 1) {
+        ctx.beginPath();
+        ctx.moveTo(x, tableTop);
+        ctx.lineTo(x, tableTop + tableHeight);
+        ctx.stroke();
+      }
+    });
+
+    let cursorY = tableTop + headerRowHeight;
+    rows.forEach((row, rowIndex) => {
+      const rowHeight = bodyRowHeights[rowIndex];
+      if (rowIndex === 0) {
+        ctx.fillStyle = "rgba(243, 196, 0, 0.1)";
+        ctx.fillRect(tableLeft, cursorY, tableWidth, rowHeight);
+      }
+
+      ctx.fillStyle = "#2d2d2d";
+      ctx.font = bodyCellFont;
+      let cursorX = tableLeft;
+      row.forEach((cell, colIndex) => {
+        const colWidth = colWidths[colIndex];
+        const wrapped = wrapLines(ctx, String(cell ?? ""), colWidth - cellPaddingX * 2);
+        wrapped.forEach((line, lineIndex) => {
+          ctx.fillText(line, cursorX + cellPaddingX, cursorY + cellPaddingY + lineIndex * lineHeight);
+        });
+        cursorX += colWidth;
+      });
+
+      cursorY += rowHeight;
+      if (rowIndex < rows.length - 1) {
+        ctx.beginPath();
+        ctx.moveTo(tableLeft, cursorY);
+        ctx.lineTo(tableLeft + tableWidth, cursorY);
+        ctx.stroke();
+      }
+    });
+
+    y = topContentHeight + tableHeight + 12;
+    ctx.fillStyle = "#565656";
+    ctx.font = sourceFont;
+    sourceLines.forEach((line) => {
+      ctx.fillText(line, padding, y);
+      y += sourceLineHeight;
+    });
+
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = `${slugify(chart.title || "tabla")}.png`;
+    link.click();
   }
 
   function buildChartOption(chart) {
     const xLabels = (chart.x || []).map((label) => wrapCategoryLabel(label));
     const isHorizontal = chart.orientation === "horizontal";
-    const asLine = chart.type === "line";
+    const defaultType = chart.type === "line" ? "line" : "bar";
     const tickFormatter = axisFormatter(chart.unit);
     const tooltipFormatter = valueFormatter(chart.unit);
+    const anyLineSeries = (chart.series || []).some((serie) => (serie.type || defaultType) === "line");
+    const colors = (chart.series || []).map((serie) => serie.color).filter(Boolean);
 
-    const baseSeries = (chart.series || []).map((serie, index) => ({
-      name: serie.name,
-      type: asLine ? "line" : "bar",
-      smooth: asLine,
-      barMaxWidth: 28,
-      symbol: asLine ? "circle" : "none",
-      symbolSize: asLine ? 6 : 0,
-      emphasis: { focus: "series" },
-      data: serie.data,
-      itemStyle: {
-        borderRadius: asLine ? 0 : [6, 6, 0, 0]
+    const baseSeries = (chart.series || []).map((serie) => {
+      const serieType = serie.type || defaultType;
+      const isLine = serieType === "line";
+      const base = {
+        name: serie.name,
+        type: serieType,
+        data: serie.data,
+        emphasis: { focus: "series" },
+        stack: serie.stack || chart.stack || undefined,
+        yAxisIndex: Number.isInteger(serie.yAxisIndex) ? serie.yAxisIndex : 0,
+        barMaxWidth: serie.barMaxWidth || chart.barMaxWidth || 28,
+        smooth: isLine ? (serie.smooth !== undefined ? Boolean(serie.smooth) : true) : false,
+        symbol: isLine ? serie.symbol || "circle" : serie.symbol || "none",
+        symbolSize: isLine ? (serie.symbolSize || 6) : serie.symbolSize || 0
+      };
+
+      if (serie.color) {
+        base.itemStyle = {
+          ...(base.itemStyle || {}),
+          color: serie.color
+        };
+        if (isLine) {
+          base.lineStyle = {
+            color: serie.color
+          };
+        }
       }
-    }));
+
+      if (!isLine) {
+        base.itemStyle = {
+          ...(base.itemStyle || {}),
+          borderRadius: isHorizontal ? [0, 6, 6, 0] : [6, 6, 0, 0]
+        };
+      }
+
+      if (serie.areaStyle) {
+        if (typeof serie.areaStyle === "object") {
+          base.areaStyle = serie.areaStyle;
+        } else if (typeof serie.areaStyle === "number") {
+          base.areaStyle = { opacity: serie.areaStyle };
+        } else {
+          base.areaStyle = { opacity: 0.18 };
+        }
+      }
+
+      return base;
+    });
+
+    const yAxisOption = Array.isArray(chart.yAxis)
+      ? chart.yAxis.map((axis) => ({
+          type: "value",
+          min: axis.min,
+          max: axis.max,
+          position: axis.position || "left",
+          axisLabel: {
+            color: "#5b5545",
+            formatter: axisFormatter(axis.unit || chart.unit)
+          },
+          splitLine: {
+            show: axis.position !== "right",
+            lineStyle: { color: "rgba(104, 90, 52, 0.15)" }
+          }
+        }))
+      : null;
 
     const option = {
       animationDuration: 400,
+      color: colors.length ? colors : undefined,
       grid: {
         left: isHorizontal ? 130 : 56,
         right: 26,
@@ -243,7 +517,7 @@
       tooltip: {
         trigger: "axis",
         axisPointer: {
-          type: asLine ? "cross" : "shadow"
+          type: anyLineSeries ? "cross" : "shadow"
         },
         formatter: (params) => {
           const items = Array.isArray(params) ? params : [params];
@@ -261,14 +535,14 @@
       },
       toolbox: {
         right: 0,
-        top: -4,
+        top: 0,
+        itemSize: 14,
         feature: {
-          saveAsImage: { show: false },
-          customDownload: {
+          myDownload: {
             show: true,
-            title: "Descargar PNG",
+            title: "Descargar",
             icon:
-              "path://M512 64c-26.5 0-48 21.5-48 48v240H304c-19.4 0-29.1 23.4-15.4 37.1l208 208c8.5 8.5 22.3 8.5 30.8 0l208-208c13.7-13.7 4-37.1-15.4-37.1H560V112c0-26.5-21.5-48-48-48zm-320 576c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h640c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H192z",
+              "path://M512 128c17.7 0 32 14.3 32 32v256h96L384 704 128 416h96V160c0-17.7 14.3-32 32-32h256zM128 768h512v64H128v-64z",
             onclick: () => {}
           }
         }
@@ -299,7 +573,7 @@
             },
             axisTick: { alignWithLabel: true }
           },
-      yAxis: isHorizontal
+      yAxis: yAxisOption || (isHorizontal
         ? {
             type: "category",
             data: xLabels,
@@ -323,11 +597,13 @@
             },
             min: chart.min,
             max: chart.max
-          },
+          }),
       series: baseSeries
     };
 
-    if ((chart.x || []).length > 10 && !isHorizontal) {
+    if (chart.dataZoom) {
+      option.dataZoom = chart.dataZoom;
+    } else if ((chart.x || []).length > 10 && !isHorizontal) {
       option.dataZoom = [{ type: "inside" }];
     }
 
@@ -340,13 +616,11 @@
     host.appendChild(canvas);
 
     const instance = echarts.init(canvas, null, { renderer: "canvas" });
-    instance.setOption(buildChartOption(chart));
-
-    const toolboxOption = instance.getOption();
-    if (toolboxOption.toolbox && toolboxOption.toolbox.length) {
-      toolboxOption.toolbox[0].feature.customDownload.onclick = () => downloadChartWithMeta(instance, chart);
-      instance.setOption(toolboxOption, true);
+    const option = buildChartOption(chart);
+    if (option.toolbox && option.toolbox.feature && option.toolbox.feature.myDownload) {
+      option.toolbox.feature.myDownload.onclick = () => downloadChartWithMeta(instance, chart);
     }
+    instance.setOption(option);
 
     chartInstances.push(instance);
   }
@@ -414,12 +688,34 @@
               <p class="chart-title">${chart.title}</p>
               <p class="chart-subtitle">${chart.subtitle || ""}</p>
             </div>
-            <span class="chart-badge ${badgeClass}">${chart.exactness || ""}</span>
+            <div class="chart-head-actions">
+              <span class="chart-badge ${badgeClass}">${chart.exactness || ""}</span>
+            </div>
           </header>
         `;
 
+        if (chart.renderAs === "table" || chart.renderAs === "figure-image") {
+          const actions = card.querySelector(".chart-head-actions");
+          if (actions) {
+            const downloadButton = document.createElement("button");
+            downloadButton.type = "button";
+            downloadButton.className = "chart-download-btn";
+            downloadButton.textContent = "Descargar PNG";
+            downloadButton.addEventListener("click", () => {
+              if (chart.renderAs === "table") {
+                downloadTableWithMeta(chart);
+              } else {
+                downloadFigureWithMeta(chart);
+              }
+            });
+            actions.appendChild(downloadButton);
+          }
+        }
+
         if (chart.renderAs === "figure-image") {
           renderFigureImage(chart, card);
+        } else if (chart.renderAs === "table") {
+          renderInlineTable(chart, card);
         } else {
           renderChart(chart, card);
         }
@@ -486,6 +782,13 @@
     if (pdfLink) {
       pdfLink.href = report.meta.reportUrl || report.meta.pdfUrl;
       pdfLink.textContent = "Abrir informe original";
+    }
+    if (pdfLink && !document.querySelector(".hero .home-link")) {
+      const homeLink = document.createElement("a");
+      homeLink.className = "pdf-link home-link";
+      homeLink.href = getCatalogHomeHref();
+      homeLink.textContent = "Volver a Informes";
+      pdfLink.insertAdjacentElement("afterend", homeLink);
     }
     if (caveat) caveat.textContent = report.meta.caveat || "Datos tomados del informe original y complementados para visualizacion interactiva.";
 

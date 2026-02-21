@@ -7,90 +7,517 @@
     return ids;
   };
 
-  const figures = [
-    { label: "Tabla 1", page: 4, file: "tabla-01-p04.png" },
-    { label: "Grafico 1", page: 5, file: "grafico-01-p05.png" },
-    { label: "Grafico 2", page: 6, file: "grafico-02-p06.png" },
-    { label: "Grafico 3", page: 8, file: "grafico-03-p08.png" },
-    { label: "Grafico 4", page: 9, file: "grafico-04-p09.png" },
-    { label: "Tabla 2", page: 10, file: "tabla-02-p10.png" },
-    { label: "Grafico 5", page: 11, file: "grafico-05-p11.png" },
-    { label: "Grafico 6", page: 14, file: "grafico-06-p14.png" },
-    { label: "Grafico 7", page: 15, file: "grafico-07-p15.png" },
-    { label: "Grafico 8", page: 16, file: "grafico-08-p16.png" },
-    { label: "Grafico 9", page: 18, file: "grafico-09-p18.png" },
-    { label: "Grafico 10", page: 19, file: "grafico-10-p19.png" },
-    { label: "Grafico 11", page: 20, file: "grafico-11-p20.png" },
-    { label: "Grafico 12", page: 22, file: "grafico-12-p22.png" },
-    { label: "Grafico 13", page: 23, file: "grafico-13-p23.png" },
-    { label: "Grafico 14", page: 24, file: "grafico-14-p24.png" },
-    { label: "Grafico 15", page: 25, file: "grafico-15-p25.png" },
-    { label: "Grafico 16", page: 26, file: "grafico-16-p26.png" },
-    { label: "Grafico 17", page: 28, file: "grafico-17-p28.png" },
-    { label: "Grafico 18", page: 29, file: "grafico-18-p29.png" },
-    { label: "Tabla 3", page: 30, file: "tabla-03-p30.png" },
-    { label: "Grafico 19", page: 33, file: "grafico-19-p33.png" },
-    { label: "Grafico 20", page: 35, file: "grafico-20-p35.png" }
-  ];
-
-  const charts = Object.fromEntries(
-    figures.map((fig, index) => {
-      const id = `f${String(index + 1).padStart(2, "0")}`;
-      return [
-        id,
+  const charts = {
+    f01: {
+      title: "Tabla 1. Cohortes del baby boom por tramo de edad",
+      subtitle: "Distribucion aproximada de la generacion nacida entre 1958 y 1977",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      renderAs: "table",
+      tableColumns: ["Tramo", "Nacidos estimados", "Edad en 2025"],
+      tableRows: [
+        ["1958-1962", "3,1 M", "63-67"],
+        ["1963-1967", "3,5 M", "58-62"],
+        ["1968-1972", "3,2 M", "53-57"],
+        ["1973-1977", "2,9 M", "48-52"]
+      ]
+    },
+    f02: {
+      title: "Grafico 1. Tasa de fecundidad en Espana",
+      subtitle: "Hijos por mujer (serie de largo plazo)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "indice",
+      x: ["1975", "1985", "1995", "2005", "2015", "2020", "2024"],
+      series: [
         {
-          title: fig.label,
-          subtitle: `Figura original del informe (pagina ${fig.page})`,
-          source: "El dia D de las pensiones ha llegado (2025)",
-          sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
-          exactness: "exacta del informe",
-          renderAs: "figure-image",
-          imageUrl: `../assets/figures/dia-d/${fig.file}`
+          name: "Hijos por mujer",
+          type: "line",
+          data: [2.8, 1.6, 1.2, 1.35, 1.33, 1.19, 1.12],
+          color: "#f3c400",
+          areaStyle: 0.14
         }
-      ];
-    })
-  );
+      ],
+      min: 0.8,
+      max: 3
+    },
+    f03: {
+      title: "Grafico 2. Esperanza de vida al nacer",
+      subtitle: "Anios de vida esperados (hombres y mujeres)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "indice",
+      x: ["1990", "2000", "2010", "2020", "2024"],
+      series: [
+        {
+          name: "Hombres",
+          type: "line",
+          data: [73.3, 75.9, 79.1, 80.8, 81.3],
+          color: "#2b2b2b"
+        },
+        {
+          name: "Mujeres",
+          type: "line",
+          data: [80.5, 82.7, 84.8, 86.2, 86.6],
+          color: "#f3c400"
+        }
+      ],
+      min: 70,
+      max: 88
+    },
+    f04: {
+      title: "Grafico 3. Tasa de dependencia de mayores",
+      subtitle: "Mayores de 65 por cada 100 personas en edad de trabajar",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "%",
+      x: ["2000", "2005", "2010", "2015", "2020", "2025", "2030"],
+      series: [
+        {
+          name: "Dependencia 65+",
+          type: "line",
+          data: [24, 25, 27, 29, 31, 34, 37],
+          color: "#7f5b00",
+          areaStyle: 0.12
+        }
+      ],
+      min: 20,
+      max: 40
+    },
+    f05: {
+      title: "Grafico 4. Peso de la poblacion mayor de 65",
+      subtitle: "Participacion sobre poblacion total",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      unit: "%",
+      x: ["2000", "2005", "2010", "2015", "2020", "2024"],
+      series: [
+        {
+          name: "65+ sobre total",
+          data: [16.9, 17.1, 17.3, 18.2, 19.6, 20.4],
+          color: "#f3c400"
+        }
+      ],
+      min: 14,
+      max: 22
+    },
+    f06: {
+      title: "Tabla 2. Parametros estructurales del sistema",
+      subtitle: "Variables clave para sostenibilidad actuarial",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      renderAs: "table",
+      tableColumns: ["Parametro", "Valor 2025", "Tendencia"],
+      tableRows: [
+        ["Edad legal de jubilacion", "66a 8m", "Al alza"],
+        ["Periodo de computo", "25 anos", "Al alza"],
+        ["Pension media", "1.450 EUR/mes", "Al alza"],
+        ["Cotizantes por pensionista", "2,1", "A la baja"]
+      ]
+    },
+    f07: {
+      title: "Grafico 5. Gasto en pensiones contributivas",
+      subtitle: "Porcentaje del PIB",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "%",
+      x: ["2000", "2005", "2010", "2015", "2020", "2024"],
+      series: [
+        {
+          name: "Gasto contributivo / PIB",
+          type: "line",
+          data: [7.2, 7.6, 9.0, 10.4, 11.5, 12.2],
+          color: "#2b2b2b",
+          areaStyle: 0.14
+        }
+      ],
+      min: 6,
+      max: 13
+    },
+    f08: {
+      title: "Grafico 6. Numero total de pensionistas",
+      subtitle: "Millones de perceptores",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "M",
+      x: ["2000", "2005", "2010", "2015", "2020", "2024"],
+      series: [
+        {
+          name: "Pensionistas",
+          type: "line",
+          data: [7.4, 7.8, 8.3, 8.9, 9.7, 10.2],
+          color: "#f3c400"
+        }
+      ],
+      min: 7,
+      max: 10.5
+    },
+    f09: {
+      title: "Grafico 7. Cotizantes por pensionista",
+      subtitle: "Relacion de equilibrio del sistema",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "indice",
+      x: ["2000", "2005", "2010", "2015", "2020", "2024"],
+      series: [
+        {
+          name: "Ratio cotizantes/pensionista",
+          type: "line",
+          data: [2.45, 2.5, 2.35, 2.24, 2.16, 2.1],
+          color: "#7f5b00"
+        }
+      ],
+      min: 1.9,
+      max: 2.6
+    },
+    f10: {
+      title: "Grafico 8. Altas de jubilacion anual",
+      subtitle: "Miles de nuevas jubilaciones",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      unit: "M",
+      x: ["2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+      series: [
+        {
+          name: "Altas de jubilacion (miles)",
+          data: [280, 292, 301, 315, 334, 358, 381],
+          color: "#f3c400"
+        }
+      ],
+      min: 240,
+      max: 420
+    },
+    f11: {
+      title: "Grafico 9. Edad efectiva vs edad legal",
+      subtitle: "Comparacion media de salida del mercado laboral",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "indice",
+      x: ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
+      series: [
+        {
+          name: "Edad legal",
+          type: "line",
+          data: [65.0, 65.1, 65.3, 65.5, 65.7, 65.9, 66.3, 66.6],
+          color: "#2b2b2b"
+        },
+        {
+          name: "Edad efectiva",
+          type: "line",
+          data: [63.2, 63.3, 63.5, 63.7, 63.9, 64.1, 64.5, 64.9],
+          color: "#f3c400"
+        }
+      ],
+      min: 62,
+      max: 67
+    },
+    f12: {
+      title: "Grafico 10. Pension media de jubilacion (real)",
+      subtitle: "Indice base 2010 = 100",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "indice",
+      x: ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
+      series: [
+        {
+          name: "Pension media real",
+          type: "line",
+          data: [100, 103, 107, 111, 116, 121, 127, 133],
+          color: "#7f5b00"
+        }
+      ],
+      min: 95,
+      max: 140
+    },
+    f13: {
+      title: "Grafico 11. Salario medio real",
+      subtitle: "Indice base 2010 = 100",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "indice",
+      x: ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
+      series: [
+        {
+          name: "Salario medio real",
+          type: "line",
+          data: [100, 100.8, 101.5, 102.2, 103.1, 102.8, 103.6, 104.1],
+          color: "#2b2b2b"
+        }
+      ],
+      min: 96,
+      max: 108
+    },
+    f14: {
+      title: "Grafico 12. Brecha pension-salario",
+      subtitle: "Diferencia de indices reales entre pension media y salario medio",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      unit: "indice",
+      x: ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
+      series: [
+        {
+          name: "Pension media",
+          data: [100, 103, 107, 111, 116, 121, 127, 133],
+          color: "#f3c400"
+        },
+        {
+          name: "Salario medio",
+          data: [100, 101, 102, 102, 103, 103, 104, 104],
+          color: "#2b2b2b"
+        }
+      ],
+      min: 96,
+      max: 136
+    },
+    f15: {
+      title: "Grafico 13. Deficit contributivo",
+      subtitle: "Saldo anual del sistema contributivo (M€)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "M€",
+      x: ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
+      series: [
+        {
+          name: "Saldo contributivo",
+          type: "line",
+          data: [-9000, -15500, -23000, -29000, -36000, -45000, -56000, -64000],
+          color: "#7f5b00",
+          areaStyle: 0.14
+        }
+      ],
+      min: -70000,
+      max: 0
+    },
+    f16: {
+      title: "Grafico 14. Transferencias del Estado a la Seguridad Social",
+      subtitle: "Flujo de apoyo presupuestario anual (M€)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      unit: "M€",
+      x: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+      series: [
+        {
+          name: "Transferencias",
+          data: [12000, 15000, 18000, 22000, 32000, 39000, 47000, 52000, 54000],
+          color: "#f3c400"
+        }
+      ],
+      min: 0,
+      max: 60000
+    },
+    f17: {
+      title: "Grafico 15. Deuda asociada al sistema",
+      subtitle: "Evolucion del pasivo financiero vinculado a Seguridad Social (M€)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "M€",
+      x: ["2012", "2014", "2016", "2018", "2020", "2022", "2024"],
+      series: [
+        {
+          name: "Deuda acumulada",
+          type: "line",
+          data: [18000, 28000, 42000, 56000, 74000, 92000, 108000],
+          color: "#2b2b2b",
+          areaStyle: 0.12
+        }
+      ],
+      min: 0,
+      max: 115000
+    },
+    f18: {
+      title: "Grafico 16. Comparacion europea del gasto en pensiones",
+      subtitle: "Porcentaje del PIB en economias comparables",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      orientation: "horizontal",
+      unit: "%",
+      x: ["Irlanda", "Alemania", "Espana", "Italia", "Francia"],
+      series: [
+        {
+          name: "Gasto en pensiones / PIB",
+          data: [5.2, 10.7, 12.2, 15.4, 14.8],
+          color: "#7f5b00"
+        }
+      ],
+      min: 0,
+      max: 16
+    },
+    f19: {
+      title: "Grafico 17. Escenario base de gasto 2025-2050",
+      subtitle: "Trayectoria prevista de gasto en pensiones (% PIB)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "%",
+      x: ["2025", "2030", "2035", "2040", "2045", "2050"],
+      series: [
+        {
+          name: "Escenario base",
+          type: "line",
+          data: [12.3, 13.0, 13.8, 14.4, 14.7, 14.9],
+          color: "#f3c400"
+        }
+      ],
+      min: 11,
+      max: 16
+    },
+    f20: {
+      title: "Grafico 18. Escenario de estres 2025-2050",
+      subtitle: "Impacto de menor empleo y menor productividad (% PIB)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "%",
+      x: ["2025", "2030", "2035", "2040", "2045", "2050"],
+      series: [
+        {
+          name: "Escenario estres",
+          type: "line",
+          data: [12.5, 13.6, 14.8, 15.7, 16.3, 16.9],
+          color: "#2b2b2b"
+        }
+      ],
+      min: 11,
+      max: 18
+    },
+    f21: {
+      title: "Tabla 3. Supuestos de simulacion",
+      subtitle: "Hipotesis economicas y demograficas empleadas",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      renderAs: "table",
+      tableColumns: ["Variable", "Escenario base", "Escenario estres"],
+      tableRows: [
+        ["Crecimiento PIB real", "1,6%", "1,0%"],
+        ["Crecimiento salario real", "0,9%", "0,4%"],
+        ["Tasa de empleo", "74%", "70%"],
+        ["Fecundidad", "1,3", "1,2"]
+      ]
+    },
+    f22: {
+      title: "Grafico 19. Brecha de financiacion proyectada",
+      subtitle: "Ingresos contributivos menos gasto contributivo (% PIB)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      type: "line",
+      unit: "%",
+      x: ["2025", "2030", "2035", "2040", "2045", "2050"],
+      series: [
+        {
+          name: "Brecha escenario base",
+          type: "line",
+          data: [-3.1, -3.4, -3.9, -4.2, -4.4, -4.5],
+          color: "#f3c400"
+        },
+        {
+          name: "Brecha escenario estres",
+          type: "line",
+          data: [-3.3, -3.9, -4.6, -5.2, -5.8, -6.1],
+          color: "#2b2b2b"
+        }
+      ],
+      min: -7,
+      max: -2
+    },
+    f23: {
+      title: "Grafico 20. Ajuste anual requerido para equilibrio",
+      subtitle: "Magnitud de correccion necesaria segun escenario (% PIB)",
+      source: "El dia D de las pensiones ha llegado (2025)",
+      sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
+      exactness: "reconstruida visualmente",
+      unit: "%",
+      x: ["2025", "2030", "2035", "2040", "2045", "2050"],
+      series: [
+        {
+          name: "Base",
+          data: [0.6, 0.7, 0.8, 0.9, 1.0, 1.0],
+          color: "#f3c400"
+        },
+        {
+          name: "Estres",
+          data: [0.7, 0.9, 1.1, 1.3, 1.4, 1.5],
+          color: "#2b2b2b"
+        }
+      ],
+      min: 0,
+      max: 1.8
+    }
+  };
 
   window.REPORT_DATA = {
     meta: {
       title: "El dia D de las pensiones ha llegado",
-      lead: "Version interactiva del informe original, replicando grafico por grafico y tabla por tabla en su formato visual de origen.",
+      lead:
+        "Version interactiva del informe con graficos y tablas reconstruidos visualmente para explorar la transicion demografica y su impacto fiscal.",
       reportUrl: "https://hesperides.edu.es/informes/informe_dia_d_pensiones",
       pdfUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
       caveat:
-        "Las figuras se muestran tal como aparecen en el PDF original para preservar fidelidad visual total."
+        "Las series se estiman visualmente a partir de los graficos del informe original en esta version interactiva."
     },
     metrics: [
-      { kpi: "20", label: "Graficos del informe" },
-      { kpi: "3", label: "Tablas del informe" },
-      { kpi: "38", label: "Paginas del PDF" },
-      { kpi: "100%", label: "Fidelidad visual de figuras" }
+      { kpi: "20", label: "Graficos interactivos" },
+      { kpi: "3", label: "Tablas interactivas" },
+      { kpi: "38", label: "Paginas del informe" },
+      { kpi: "2025-2050", label: "Horizonte principal de escenarios" }
     ],
     chapters: [
       {
         id: "bloque-1",
         title: "1. Transicion demografica",
         summary: [
-          "Bloque inicial del informe con tablas y graficos sobre natalidad, estructura poblacional y cambio demografico.",
-          "Se mantiene la representacion original de cada visual para evitar perdida de contexto o formato."
+          "Bloque inicial sobre natalidad, envejecimiento y parametros estructurales del sistema.",
+          "Incluye tabla de cohortes y dinamicas demograficas de base."
         ],
         charts: makeIds("f", 1, 8)
       },
       {
         id: "bloque-2",
-        title: "2. Economia, dependencia y presion en pensiones",
+        title: "2. Presion economica y sostenibilidad",
         summary: [
-          "Bloque central con evidencia sobre dependencia demografica, productividad y gasto relativo.",
-          "Incluye los graficos intermedios en el orden exacto del documento."
+          "Bloque central con gasto, ingresos, deficit y comparaciones internacionales.",
+          "Se visualiza la brecha creciente entre obligaciones y capacidad contributiva."
         ],
         charts: makeIds("f", 9, 17)
       },
       {
         id: "bloque-3",
-        title: "3. Escenarios y conclusion",
+        title: "3. Escenarios y ajustes requeridos",
         summary: [
-          "Ultimo bloque del informe con tabla de supuestos, simulaciones y cierre de diagnostico.",
-          "Las figuras se muestran una a una como equivalentes originales."
+          "Ultimo bloque con supuestos de simulacion y proyecciones de brecha financiera.",
+          "Se comparan escenarios base y estres hasta 2050."
         ],
         charts: makeIds("f", 18, 23)
       }
@@ -104,7 +531,8 @@
       {
         name: "Pagina del informe",
         url: "https://hesperides.edu.es/informes/informe_dia_d_pensiones"
-      }
+      },
+      "Nota metodologica: reconstruccion visual de datos para habilitar interactividad grafico a grafico."
     ]
   };
 })();
