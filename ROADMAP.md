@@ -41,6 +41,10 @@ El catalogo y las 7 rutas de informes estan operativas con arquitectura unificad
   - formateador de tooltip robusto ante `null/undefined` (evita `NaN`),
   - controles de posicion/estilo de leyenda y toolbox por grafico (`legendTop`, `legendLeft`, etc.).
 - Marcadores de `text.ranges` validados y corregidos para evitar cortes vacios de texto en informes.
+- Validacion funcional E2E local (headless) completada:
+  - carga correcta de las 7 rutas de informes,
+  - toggle `graficas + texto` / `solo graficas` operativo en todos los casos,
+  - sin errores de consola durante render inicial.
 
 ## Pendiente prioritario
 1. QA visual manual 1:1 en navegador (desktop + movil) para cerrar pendientes marcados en `docs/QA_BACKLOG_POR_REPORTE.md`.
