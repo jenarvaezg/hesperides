@@ -5,12 +5,12 @@
   },
   "reports": [
     {
-      "id": "paradoja-inmobiliaria-2025",
+      "id": "paradoja-inmobiliaria-2026",
       "slug": "paradoja-inmobiliaria",
       "title": "La paradoja inmobiliaria",
       "subtitle": "Informe CRR sobre la paradoja inmobiliaria y su impacto en el mercado",
       "reportUrl": "https://hesperides.edu.es/pages/informe-crr-sobre-la-paradoja-inmobiliaria-y-su-impacto-en-el-mercado.html",
-      "publishedAt": "2025-01-01",
+      "publishedAt": "2026-01-01",
       "entry": "index.html",
       "path": "/hesperides/informes/paradoja-inmobiliaria/"
     },

@@ -3,7 +3,7 @@
   const metricsEl = document.getElementById("catalog-metrics");
   const gridEl = document.getElementById("reports-grid");
   const centerOrder = [
-    "paradoja-inmobiliaria-2025",
+    "paradoja-inmobiliaria-2026",
     "sistemas-pensiones-comparados-2025",
     "insostenibilidad-seguridad-social-2025",
     "informe-dia-d-pensiones-2025",
@@ -87,6 +87,19 @@
     return metric;
   };
 
+  const normalizeTopicText = (value) =>
+    String(value || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+  const classifyTopic = (report) => {
+    const text = normalizeTopicText(`${report.title || ""} ${report.subtitle || ""}`);
+    if (/(pension|seguridad social|baby boom)/.test(text)) return "pensiones";
+    if (/(vivienda|alquiler|turismo|inmobili)/.test(text)) return "vivienda";
+    return "otros";
+  };
+
   const renderMetrics = (reports) => {
     const dates = reports
       .map((report) => report.publishedAt)
@@ -95,13 +108,28 @@
       .filter((date) => !Number.isNaN(date.getTime()))
       .sort((a, b) => b - a);
 
-    const latestYear = dates.length ? String(dates[0].getFullYear()) : "-";
-    const earliestYear = dates.length ? String(dates[dates.length - 1].getFullYear()) : "-";
+    const topicCounts = reports.reduce(
+      (acc, report) => {
+        const topic = classifyTopic(report);
+        if (topic === "pensiones") acc.pensiones += 1;
+        if (topic === "vivienda") acc.vivienda += 1;
+        if (topic === "otros") acc.otros += 1;
+        return acc;
+      },
+      { pensiones: 0, vivienda: 0, otros: 0 }
+    );
+
+    const latestDate = dates.length ? dates[0] : null;
+    const latestDateLabel = latestDate
+      ? latestDate.toLocaleDateString("es-ES", { day: "2-digit", month: "short", year: "numeric" })
+      : "fecha no disponible";
 
     metricsEl.innerHTML = "";
     metricsEl.appendChild(createMetric(String(reports.length), "Informes interactivos"));
-    metricsEl.appendChild(createMetric(latestYear, "Ultima publicacion"));
-    metricsEl.appendChild(createMetric(`${earliestYear}-${latestYear}`, "Cobertura del catalogo"));
+    metricsEl.appendChild(createMetric(String(topicCounts.pensiones), "Pensiones y Seguridad Social"));
+    metricsEl.appendChild(createMetric(String(topicCounts.vivienda), "Vivienda y turismo residencial"));
+
+    return latestDateLabel;
   };
 
   const buildCard = (report) => {
@@ -184,10 +212,10 @@
       const reports = Array.isArray(manifest.reports) ? manifest.reports.slice() : [];
 
       reports.sort(compareByCenterOrder);
-      renderMetrics(reports);
+      const latestDateLabel = renderMetrics(reports);
       renderCards(reports);
 
-      statusEl.textContent = `${reports.length} informes`; 
+      statusEl.textContent = `${reports.length} informes · ultima publicacion: ${latestDateLabel}`;
     } catch (error) {
       metricsEl.innerHTML = "";
       gridEl.innerHTML =

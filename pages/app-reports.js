@@ -11,6 +11,8 @@
   const VIEW_MODE_CHARTS = "charts";
   let currentViewMode = VIEW_MODE_MIXED;
   let liveTextBlocksByChapter = {};
+  let liveTextFootnotesByChapter = {};
+  let liveTextGlobalFootnotes = {};
   let viewToggleButton = null;
 
   function getRepoBasePath() {
@@ -83,6 +85,78 @@
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/\s+/g, " ")
       .trim();
+  }
+
+  function escapeHtml(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function isHeadingLikeLine(line) {
+    const headingPattern =
+      /^(?:[0-9]+(?:\.[0-9]+)*[.)-]?\s+.+|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?|bibliografia|bibliografía)$/i;
+    return headingPattern.test(String(line || "").trim());
+  }
+
+  function isPotentialFootnoteDefinitionLine(line) {
+    const trimmed = String(line || "").trim();
+    if (!trimmed) return null;
+
+    const match = trimmed.match(/^([1-9]\d?)\s+(.+)$/);
+    if (!match) return null;
+    if (trimmed.startsWith(`${match[1]}.`)) return null;
+
+    const number = Number(match[1]);
+    if (!Number.isFinite(number) || number < 1 || number > 40) return null;
+
+    const content = match[2].trim();
+    if (!content || content.length < 10) return null;
+
+    const normalized = normalizeLookup(content);
+    const strongSignals =
+      /(?:https?:\/\/|www\.|disponible en|ver |para mas informacion|para más informacion|para más información|enlace|doi|ley)/i;
+
+    if (!strongSignals.test(normalized) && content.length < 46) return null;
+    if (isHeadingLikeLine(content)) return null;
+
+    return { number, content };
+  }
+
+  function collectFootnoteDefinitionsFromLines(lines) {
+    const definitions = {};
+    const consumedIndices = new Set();
+
+    for (let index = 0; index < lines.length; index += 1) {
+      const candidate = isPotentialFootnoteDefinitionLine(lines[index]);
+      if (!candidate) continue;
+
+      const parts = [candidate.content];
+      consumedIndices.add(index);
+
+      for (let lookahead = index + 1; lookahead < lines.length; lookahead += 1) {
+        const nextLine = String(lines[lookahead] || "").trim();
+        if (!nextLine) {
+          consumedIndices.add(lookahead);
+          index = lookahead;
+          break;
+        }
+        if (isHeadingLikeLine(nextLine)) break;
+        if (isPotentialFootnoteDefinitionLine(nextLine)) break;
+        if (/^(grafico|gráfico|tabla)\s+[0-9]{1,3}$/i.test(nextLine)) break;
+
+        parts.push(nextLine);
+        consumedIndices.add(lookahead);
+        index = lookahead;
+      }
+
+      definitions[candidate.number] = parts.join(" ").replace(/\s+/g, " ").trim();
+    }
+
+    return { definitions, consumedIndices };
   }
 
   function cleanSourceTextLines(rawText) {
@@ -192,6 +266,107 @@
     return String(text || "")
       .replace(/^\s*[0-9]+(?:\.[0-9]+)*[.)-]?\s+/, "")
       .trim();
+  }
+
+  function registerFootnoteReference(number, context) {
+    const value = Number(number);
+    if (!Number.isFinite(value) || value < 1 || value > 40) return null;
+
+    if (!context.seen.has(value)) {
+      context.seen.add(value);
+      context.order.push(value);
+    }
+
+    return value;
+  }
+
+  function renderInlineFootnoteReferences(text, footnoteContext) {
+    const rawText = String(text || "");
+    const pattern =
+      /(\b\d{4})([1-9]\d?)\.(?=\s|$|[,:;!?])|([A-Za-zÁÉÍÓÚÜÑáéíóúüñ)\]])([1-9]\d?)\.(?=\s|$|[,:;!?])|(^|\s)([1-9]\d?)\.(?=\s|$|[,:;!?])/g;
+
+    const shouldIgnoreByContext = (matchStartIndex) => {
+      const leftContext = normalizeLookup(rawText.slice(Math.max(0, matchStartIndex - 40), matchStartIndex));
+      return /\b(grafico|grafica|tabla|figura|seccion|capitulo|pagina|ano|punto)\s*$/.test(leftContext);
+    };
+
+    let html = "";
+    let cursor = 0;
+    let match;
+
+    while ((match = pattern.exec(rawText)) !== null) {
+      const start = match.index;
+      const end = start + match[0].length;
+      html += escapeHtml(rawText.slice(cursor, start));
+
+      let prefix = "";
+      let refNumber = null;
+
+      if (match[1] && match[2]) {
+        prefix = match[1];
+        refNumber = match[2];
+      } else if (match[3] && match[4]) {
+        prefix = match[3];
+        refNumber = match[4];
+      } else {
+        if (shouldIgnoreByContext(start)) {
+          html += escapeHtml(match[0]);
+          cursor = end;
+          continue;
+        }
+        prefix = match[5] || "";
+        refNumber = match[6];
+      }
+
+      html += escapeHtml(prefix);
+      const resolved = registerFootnoteReference(refNumber, footnoteContext);
+      if (resolved) {
+        html += `<sup class="footnote-ref">[${resolved}]</sup>`;
+      } else {
+        html += escapeHtml(match[0]);
+      }
+
+      cursor = end;
+    }
+
+    html += escapeHtml(rawText.slice(cursor));
+    return html;
+  }
+
+  function createChapterFootnoteContext(chapterId) {
+    return {
+      definitions: {
+        ...(liveTextGlobalFootnotes || {}),
+        ...(liveTextFootnotesByChapter[chapterId] || {})
+      },
+      seen: new Set(),
+      order: []
+    };
+  }
+
+  function renderChapterFootnotes(footnoteContext, chapterContainer) {
+    if (!footnoteContext || !Array.isArray(footnoteContext.order) || !footnoteContext.order.length) return;
+
+    const wrapper = document.createElement("section");
+    wrapper.className = "chapter-footnotes";
+
+    const title = document.createElement("h3");
+    title.textContent = "Notas al pie";
+    wrapper.appendChild(title);
+
+    const list = document.createElement("ol");
+    footnoteContext.order.forEach((number) => {
+      const item = document.createElement("li");
+      const text =
+        footnoteContext.definitions[number] ||
+        "Nota del informe original: contenido de nota no disponible en la extracción textual.";
+
+      item.innerHTML = `<span class="footnote-label">[${number}]</span> ${escapeHtml(text)}`;
+      list.appendChild(item);
+    });
+
+    wrapper.appendChild(list);
+    chapterContainer.appendChild(wrapper);
   }
 
   function extractChartReference(text) {
@@ -1170,7 +1345,7 @@
     syncViewModeUI();
   }
 
-  function renderChapterLiveText(blocks, chapterContainer) {
+  function renderChapterLiveText(blocks, chapterContainer, footnoteContext) {
     if (!Array.isArray(blocks) || !blocks.length) return;
 
     const wrapper = document.createElement("div");
@@ -1191,14 +1366,14 @@
       if (block.type === "bullet") {
         const bullet = document.createElement("p");
         bullet.className = "chapter-text-bullet";
-        bullet.textContent = `• ${block.text}`;
+        bullet.innerHTML = `• ${renderInlineFootnoteReferences(block.text, footnoteContext)}`;
         wrapper.appendChild(bullet);
         return;
       }
 
       const paragraph = document.createElement("p");
       paragraph.className = "chapter-text-paragraph";
-      paragraph.textContent = block.text;
+      paragraph.innerHTML = renderInlineFootnoteReferences(block.text, footnoteContext);
       wrapper.appendChild(paragraph);
     });
 
@@ -1218,6 +1393,9 @@
       const rawText = await response.text();
       const lines = cleanSourceTextLines(rawText);
       const chapterBlocks = {};
+      const chapterFootnotes = {};
+      const globalFootnoteExtraction = collectFootnoteDefinitionsFromLines(lines);
+      liveTextGlobalFootnotes = globalFootnoteExtraction.definitions;
       let cursor = 0;
 
       textConfig.ranges.forEach((range) => {
@@ -1233,11 +1411,17 @@
         }
 
         const segment = lines.slice(resolvedStart, endIndex);
-        chapterBlocks[chapterId] = linesToTextBlocks(segment);
+        const extraction = collectFootnoteDefinitionsFromLines(segment);
+        const chapterDefinitions = extraction.definitions;
+        const contentLines = segment.filter((line, index) => !extraction.consumedIndices.has(index));
+
+        chapterBlocks[chapterId] = linesToTextBlocks(contentLines);
+        chapterFootnotes[chapterId] = chapterDefinitions;
         cursor = endIndex;
       });
 
       liveTextBlocksByChapter = chapterBlocks;
+      liveTextFootnotesByChapter = chapterFootnotes;
       renderSections();
       syncViewModeUI();
     } catch (error) {
@@ -1292,6 +1476,7 @@
         article.appendChild(p);
       });
 
+      const chapterFootnoteContext = createChapterFootnoteContext(sectionId);
       const chapterNarrative = buildChapterNarrativePlan(sectionId, chapter.title, chapter.charts || []);
 
       (chapter.charts || []).forEach((chartKey) => {
@@ -1300,7 +1485,7 @@
 
         const narrativeBeforeChart = chapterNarrative.beforeByChart[chartKey];
         if (narrativeBeforeChart && narrativeBeforeChart.length) {
-          renderChapterLiveText(narrativeBeforeChart, article);
+          renderChapterLiveText(narrativeBeforeChart, article, chapterFootnoteContext);
         }
 
         const card = document.createElement("article");
@@ -1357,8 +1542,10 @@
       });
 
       if (chapterNarrative.tailBlocks && chapterNarrative.tailBlocks.length) {
-        renderChapterLiveText(chapterNarrative.tailBlocks, article);
+        renderChapterLiveText(chapterNarrative.tailBlocks, article, chapterFootnoteContext);
       }
+
+      renderChapterFootnotes(chapterFootnoteContext, article);
 
       container.appendChild(article);
     });
