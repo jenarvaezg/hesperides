@@ -1,46 +1,50 @@
 # QA Backlog por reporte
 
 ## /insostenibilidad-seguridad-social
-- Grafico 2: estirar el eje Y un poco hacia abajo (aprox. hasta 32%).
-- Grafico 8: revisar si falta leyenda.
-- Grafico 10: mostrar los numeros dentro de las barras siempre visibles, evitando overlap.
-- Grafico 12: ajustar fidelidad visual final:
-  - quitar bordes redondeados,
-  - alinear mejor positivos y negativos respecto al eje cero.
-- Grafico 13: pintar Espana en color marron para mejor contraste.
-- Grafico 15: anadir etiqueta/titulo para cada eje (actualmente ambiguo).
+- [x] Grafico 2: eje Y estirado hacia abajo (min ~32%).
+- [x] Grafico 8: leyenda visible.
+- [x] Grafico 10: valores visibles en barras, sin depender del hover.
+- [x] Grafico 12: barras sin redondeo y ajuste de composicion positivo/negativo.
+- [x] Grafico 13: Espana en marron.
+- [x] Grafico 15: ejes con titulo explicito.
+- [ ] Validacion visual final 1:1 contra PDF en entorno desplegado.
 
 ## /paradoja-inmobiliaria
-- Grafico 2: invertir orden para dejar el valor mas alto arriba y el mas bajo abajo.
-- Grafico 4: corregir tooltip a miles (ej. 20000, no 20 en 2007).
-- Seccion 4 completa: revisar orden de graficas y tablas dentro del texto (posible desalineacion).
-- Grafico 11: eje Y de 750 a 1350.
-- Grafico 13: eje Y que empiece en 20.
-- Grafico 15: reducir densidad de anos en el eje X para evitar solape.
-- Grafico 17: eje Y de 95 a 115.
-- Grafico 18: eje Y de 100 a 190.
+- [x] Grafico 2: orden invertido (mayor arriba, menor abajo).
+- [x] Grafico 4: tooltip escalado a miles.
+- [x] Seccion 4: tablas reubicadas antes de graficos para respetar el flujo del informe.
+- [x] Grafico 11: eje Y 750-1350.
+- [x] Grafico 13: eje Y desde 20.
+- [x] Grafico 15: menor densidad de etiquetas de ano.
+- [x] Grafico 17: eje Y 95-115.
+- [x] Grafico 18: eje Y 100-190.
+- [ ] Validacion visual final 1:1 contra PDF en entorno desplegado.
 
 ## /informe-dia-d-pensiones
-- Grafico 1, colorea el area debajo de la curva, en positivo y negativo en color amarillo
-- Grafico 3, el layout deberia ser 4 arriba y 4 abajo, no un grid de 3x3 (con un hueco)
-- Grafico 13 Se sale la etiqueta de España por la derecha, y si pones una leyenda?
-- Grafico 16, esta mal la leyenda, pone que los paises europeos son grises y españa que esta en ngro (bien) no sale en la leyenda
-- Grafico 17, colorea el area entre las dos curvas
-- EN la parte: 4.1.La ruptura intergeneracional: nivel de vida trabajadores vs jubilados sale "65 años." en grande como si fuese un titulo por algun motivo
-- Le pasa lo mismo a este texto: 11 35 años si se jubila con el sistema de pensiones de 1985 (escenario 1A) y 37 años si se jubila con el sistema de pensiones de 2025 (escenario 2A). Revisa si le pasa a algun texto mas, porque no he estado atento.
+- [x] Grafico 1: area bajo curva activada.
+- [x] Grafico 3: layout de small multiples fijado a 4x2.
+- [x] Grafico 13: eliminadas etiquetas desbordadas; se usa leyenda.
+- [x] Grafico 16: leyenda corregida con serie separada para Espana.
+- [x] Grafico 17: area entre curvas incorporada.
+- [x] Texto: ajuste del parser para evitar falsos titulos en lineas numericas (casos "65 anos." y "11 35 anos ...").
+- [ ] Validacion visual final 1:1 contra PDF en entorno desplegado.
 
 ## /sistemas-de-pensiones-comparados
-- TBD
+- [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
+- [ ] QA manual grafico a grafico contra PDF.
 
 ## /reformas-seguridad-social-espana
-- TBD
+- [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
+- [ ] QA manual grafico a grafico contra PDF.
 
 ## /radiografia-mercado-vivienda-espana
-- TBD
+- [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
+- [ ] QA manual grafico a grafico contra PDF.
 
 ## /turismo-vivienda-canarias
-- TBD
+- [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
+- [ ] QA manual grafico a grafico contra PDF.
 
 ## /home-catalogo
-- TBD
-
+- [x] Primera pasada automatica de QA (estructura y consistencia de cards/rutas).
+- [ ] QA visual final de layout responsive y jerarquia tipografica.

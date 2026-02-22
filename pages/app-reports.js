@@ -98,7 +98,7 @@
 
   function isHeadingLikeLine(line) {
     const headingPattern =
-      /^(?:(?:[1-9](?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?|bibliografia|bibliografía)$/i;
+      /^(?:(?:[1-9][0-9]*(?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?|bibliografia|bibliografía)$/i;
     return headingPattern.test(String(line || "").trim());
   }
 
@@ -216,7 +216,7 @@
     const blocks = [];
     let currentParagraph = [];
     const headingPattern =
-      /^(?:(?:[1-9](?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?)$/i;
+      /^(?:(?:[1-9][0-9]*(?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?)$/i;
     const bulletPattern = /^[•*-]\s*/;
 
     const flushParagraph = () => {
@@ -948,6 +948,19 @@
     const xLabels = (chart.x || []).map((label) =>
       chart.noWrapLabels ? String(label) : wrapCategoryLabel(label, wrapLength)
     );
+    const categoryCount = xLabels.length;
+    const maxCategoryLabelLength = xLabels.reduce((max, label) => Math.max(max, String(label || "").length), 0);
+    const computedXLabelInterval =
+      chart.xLabelInterval !== undefined
+        ? chart.xLabelInterval
+        : categoryCount > 16
+          ? Math.max(1, Math.ceil(categoryCount / 12) - 1)
+          : 0;
+    const computedXLabelRotate =
+      chart.xLabelRotate !== undefined ? chart.xLabelRotate : maxCategoryLabelLength > 14 && categoryCount > 6 ? 25 : 0;
+    const computedXLabelFontSize =
+      chart.xLabelFontSize || (categoryCount > 20 ? 8 : categoryCount > 14 ? 9 : 11);
+    const computedYLabelFontSize = chart.yLabelFontSize || (categoryCount > 18 ? 10 : 11);
     const isHorizontal = chart.orientation === "horizontal";
     const isXY = chart.coordinate === "xy";
     const defaultType = isXY ? "scatter" : chart.type === "line" ? "line" : "bar";
@@ -1184,9 +1197,9 @@
               data: xLabels,
               axisLabel: {
                 color: "#4f4f4f",
-                interval: chart.xLabelInterval === undefined ? 0 : chart.xLabelInterval,
-                rotate: chart.xLabelRotate || 0,
-                fontSize: chart.xLabelFontSize || 11,
+                interval: computedXLabelInterval,
+                rotate: computedXLabelRotate,
+                fontSize: computedXLabelFontSize,
                 hideOverlap: true,
                 lineHeight: 14
               },
@@ -1234,8 +1247,8 @@
               axisLabel: {
                 color: "#4f4f4f",
                 interval: 0,
-                fontSize: chart.yLabelFontSize || 11,
-                hideOverlap: true,
+                fontSize: computedYLabelFontSize,
+                hideOverlap: false,
                 lineHeight: 14
               },
               axisLine: {
