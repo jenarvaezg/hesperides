@@ -1,7 +1,6 @@
 (() => {
   const statusEl = document.getElementById("catalog-status");
   const metricsEl = document.getElementById("catalog-metrics");
-  const gridEl = document.getElementById("reports-grid");
   const centerOrder = [
     "paradoja-inmobiliaria-2026",
     "sistemas-pensiones-comparados-2025",
@@ -10,6 +9,46 @@
     "reformas-seguridad-social-2025",
     "radiografia-vivienda-espana-2025",
     "turismo-vivienda-canarias-2025"
+  ];
+
+  const REPORT_HIGHLIGHTS = {
+    "paradoja-inmobiliaria-2026": {
+      highlight: "El margen neto del promotor ha caido al -0,1%",
+      content: "18 graficos",
+    },
+    "sistemas-pensiones-comparados-2025": {
+      highlight: "Espana: 13,2% del PIB en pensiones, el mayor de la UE",
+      content: "32 graficos",
+    },
+    "insostenibilidad-seguridad-social-2025": {
+      highlight: "El Fondo de Reserva cayo un 89%: de 72.900M a 8.100M EUR",
+      content: "15 graficos",
+    },
+    "informe-dia-d-pensiones-2025": {
+      highlight: "La tasa de fertilidad (1,12) es la mitad del reemplazo",
+      content: "20 graficos",
+    },
+    "reformas-seguridad-social-2025": {
+      highlight: "5 grandes reformas desde 1985, ninguna freno el gasto",
+      content: "3 graficos",
+    },
+    "radiografia-vivienda-espana-2025": {
+      highlight: "8,3 anos de salario para ahorrar la entrada de un piso",
+      content: "30 graficos",
+    },
+    "turismo-vivienda-canarias-2025": {
+      highlight: "Deficit de 7.000 viviendas frente a 60.000 plazas vacacionales",
+      content: "16 graficos",
+    },
+  };
+
+  const CIFRAS_DATA = [
+    { cifra: "95,7%", texto: "Del suelo espanol no esta disponible para construir vivienda", reportId: "paradoja-inmobiliaria-2026" },
+    { cifra: "8,3 anos", texto: "De salario integro para ahorrar la entrada de un piso", reportId: "radiografia-vivienda-espana-2025" },
+    { cifra: "2,3:1", texto: "Cotizantes por cada pensionista, y la ratio sigue cayendo", reportId: "informe-dia-d-pensiones-2025" },
+    { cifra: "-89%", texto: "Caida del Fondo de Reserva de la Seguridad Social desde 2011", reportId: "insostenibilidad-seguridad-social-2025" },
+    { cifra: "13,2% PIB", texto: "Gasto en pensiones — el mayor esfuerzo publico de la UE", reportId: "sistemas-pensiones-comparados-2025" },
+    { cifra: "+35% vs +0,7%", texto: "Vivienda vacacional vs residencial en Canarias (2020–2023)", reportId: "turismo-vivienda-canarias-2025" },
   ];
 
   const formatDate = (rawDate) => {
@@ -100,36 +139,46 @@
     return "otros";
   };
 
-  const renderMetrics = (reports) => {
-    const dates = reports
-      .map((report) => report.publishedAt)
-      .filter(Boolean)
-      .map((date) => new Date(`${date}T00:00:00`))
-      .filter((date) => !Number.isNaN(date.getTime()))
-      .sort((a, b) => b - a);
-
-    const topicCounts = reports.reduce(
-      (acc, report) => {
-        const topic = classifyTopic(report);
-        if (topic === "pensiones") acc.pensiones += 1;
-        if (topic === "vivienda") acc.vivienda += 1;
-        if (topic === "otros") acc.otros += 1;
-        return acc;
-      },
-      { pensiones: 0, vivienda: 0, otros: 0 }
-    );
-
-    const latestDate = dates.length ? dates[0] : null;
-    const latestDateLabel = latestDate
-      ? latestDate.toLocaleDateString("es-ES", { day: "2-digit", month: "short", year: "numeric" })
-      : "fecha no disponible";
+  const renderMetrics = () => {
+    const kpis = [
+      { kpi: "1,12", label: "Hijos por mujer — la mitad del reemplazo generacional" },
+      { kpi: "66.206 M", label: "Deficit basico de la Seguridad Social (EUR)" },
+      { kpi: "+53%", label: "Precio vivienda vs +28% IPC (2013–2025)" },
+      { kpi: "423.000", label: "Deficit habitacional estimado en Espana" },
+    ];
 
     metricsEl.innerHTML = "";
-    metricsEl.appendChild(createMetric(String(reports.length), "Informes interactivos"));
-    metricsEl.appendChild(createMetric(String(topicCounts.pensiones), "Pensiones y Seguridad Social"));
-    metricsEl.appendChild(createMetric(String(topicCounts.vivienda), "Vivienda y turismo residencial"));
+    kpis.forEach(({ kpi, label }) => {
+      metricsEl.appendChild(createMetric(kpi, label));
+    });
+  };
 
-    return latestDateLabel;
+  const renderCifras = (reports) => {
+    const cifrasGridEl = document.getElementById("cifras-grid");
+    if (!cifrasGridEl) return;
+
+    const reportMap = new Map(reports.map((r) => [r.id, r]));
+
+    cifrasGridEl.innerHTML = "";
+    CIFRAS_DATA.forEach(({ cifra, texto, reportId }) => {
+      const report = reportMap.get(reportId);
+
+      const card = document.createElement("a");
+      card.className = "cifra-card";
+      card.href = report ? resolveInteractiveHref(report) : "#";
+
+      const cifraEl = document.createElement("span");
+      cifraEl.className = "cifra-value";
+      cifraEl.textContent = cifra;
+
+      const textoEl = document.createElement("span");
+      textoEl.className = "cifra-text";
+      textoEl.textContent = texto;
+
+      card.appendChild(cifraEl);
+      card.appendChild(textoEl);
+      cifrasGridEl.appendChild(card);
+    });
   };
 
   const buildCard = (report) => {
@@ -147,9 +196,23 @@
     subtitle.className = "report-subtitle";
     subtitle.textContent = report.subtitle || "";
 
-    const meta = document.createElement("p");
-    meta.className = "report-meta";
-    meta.textContent = `ID: ${report.id}`;
+    card.appendChild(date);
+    card.appendChild(title);
+    card.appendChild(subtitle);
+
+    const info = REPORT_HIGHLIGHTS[report.id];
+    if (info) {
+      const highlight = document.createElement("p");
+      highlight.className = "report-highlight";
+      highlight.textContent = info.highlight;
+
+      const badge = document.createElement("span");
+      badge.className = "report-badge";
+      badge.textContent = info.content;
+
+      card.appendChild(highlight);
+      card.appendChild(badge);
+    }
 
     const actions = document.createElement("div");
     actions.className = "report-actions";
@@ -171,20 +234,27 @@
       actions.appendChild(sourceLink);
     }
 
-    card.appendChild(date);
-    card.appendChild(title);
-    card.appendChild(subtitle);
-    card.appendChild(meta);
     card.appendChild(actions);
 
     return card;
   };
 
   const renderCards = (reports) => {
-    gridEl.innerHTML = "";
+    const viviendaGrid = document.getElementById("reports-grid-vivienda");
+    const pensionesGrid = document.getElementById("reports-grid-pensiones");
+
+    if (viviendaGrid) viviendaGrid.innerHTML = "";
+    if (pensionesGrid) pensionesGrid.innerHTML = "";
 
     reports.forEach((report) => {
-      gridEl.appendChild(buildCard(report));
+      const topic = classifyTopic(report);
+      const card = buildCard(report);
+
+      if (topic === "vivienda" && viviendaGrid) {
+        viviendaGrid.appendChild(card);
+      } else if (pensionesGrid) {
+        pensionesGrid.appendChild(card);
+      }
     });
   };
 
@@ -212,14 +282,29 @@
       const reports = Array.isArray(manifest.reports) ? manifest.reports.slice() : [];
 
       reports.sort(compareByCenterOrder);
-      const latestDateLabel = renderMetrics(reports);
+      renderMetrics();
+      renderCifras(reports);
       renderCards(reports);
+
+      const dates = reports
+        .map((r) => r.publishedAt)
+        .filter(Boolean)
+        .map((d) => new Date(`${d}T00:00:00`))
+        .filter((d) => !Number.isNaN(d.getTime()))
+        .sort((a, b) => b - a);
+
+      const latestDateLabel = dates.length
+        ? dates[0].toLocaleDateString("es-ES", { day: "2-digit", month: "short", year: "numeric" })
+        : "fecha no disponible";
 
       statusEl.textContent = `${reports.length} informes · ultima publicacion: ${latestDateLabel}`;
     } catch (error) {
       metricsEl.innerHTML = "";
-      gridEl.innerHTML =
-        '<article class="report-card"><h3>Error cargando el catalogo</h3><p class="report-subtitle">No se pudo leer <code>reports/manifest.json</code>. Revisa la ruta y vuelve a cargar.</p></article>';
+      const viviendaGrid = document.getElementById("reports-grid-vivienda");
+      if (viviendaGrid) {
+        viviendaGrid.innerHTML =
+          '<article class="report-card"><h3>Error cargando el catalogo</h3><p class="report-subtitle">No se pudo leer <code>reports/manifest.json</code>. Revisa la ruta y vuelve a cargar.</p></article>';
+      }
       statusEl.textContent = "Error";
       console.error(error);
     }

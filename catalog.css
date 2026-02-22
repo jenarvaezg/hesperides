@@ -30,6 +30,8 @@ body {
   background-size: 6px 6px;
 }
 
+/* ── Hero ── */
+
 .catalog-hero {
   position: relative;
   z-index: 1;
@@ -64,9 +66,9 @@ body {
 
 .catalog-metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
   gap: 0.75rem;
-  max-width: 760px;
+  max-width: 920px;
 }
 
 .metric-card {
@@ -103,12 +105,105 @@ body {
   border-bottom-color: rgba(47, 36, 8, 0.8);
 }
 
+/* ── Cifras que importan ── */
+
+.catalog-cifras {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+.catalog-cifras-inner {
+  background: linear-gradient(180deg, #fffaf0 0%, #fffdf8 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.catalog-cifras-inner h2 {
+  margin: 0 0 0.25rem;
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+}
+
+.catalog-cifras-intro {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cifras-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.cifra-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.cifra-card:hover {
+  box-shadow: 0 6px 18px rgba(57, 47, 20, 0.1);
+  border-color: var(--accent);
+}
+
+.cifra-value {
+  font-family: "Fraunces", serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent-deep);
+}
+
+.cifra-text {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+/* ── Narrative ── */
+
+.catalog-narrative {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+.catalog-narrative p {
+  max-width: 72ch;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.02rem;
+  text-align: center;
+}
+
+/* ── Main / Sections ── */
+
 .catalog-main {
   position: relative;
   z-index: 1;
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 1.25rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .catalog-section {
@@ -123,7 +218,7 @@ body {
   align-items: baseline;
   justify-content: space-between;
   gap: 0.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--line);
   padding-bottom: 0.65rem;
 }
@@ -134,11 +229,22 @@ body {
   font-size: 1.5rem;
 }
 
-#catalog-status {
+.section-intro {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.55;
+  max-width: 80ch;
+}
+
+.catalog-status {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
+  text-align: center;
 }
+
+/* ── Reports grid ── */
 
 .reports-grid {
   display: grid;
@@ -180,10 +286,26 @@ body {
   flex-grow: 1;
 }
 
-.report-meta {
-  font-size: 0.82rem;
-  color: #4a463f;
-  margin-bottom: 0.9rem;
+.report-highlight {
+  font-size: 0.88rem;
+  color: var(--accent-deep);
+  line-height: 1.4;
+  margin: 0 0 0.6rem;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--accent);
+}
+
+.report-badge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #4a432f;
+  background: linear-gradient(165deg, #fff5cd 0%, #ffe98a 100%);
+  border: 1px solid #e9cf58;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 0.75rem;
+  align-self: flex-start;
 }
 
 .report-actions {
@@ -223,6 +345,8 @@ body {
   border-color: #b8a16a;
 }
 
+/* ── Footer ── */
+
 .catalog-footer {
   position: relative;
   z-index: 1;
@@ -237,6 +361,8 @@ body {
   flex-wrap: wrap;
 }
 
+/* ── Responsive ── */
+
 @media (max-width: 1160px) {
   .reports-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -247,6 +373,10 @@ body {
   .reports-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .cifras-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 740px) {
@@ -255,7 +385,7 @@ body {
   }
 
   .catalog-metrics {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
     max-width: none;
   }
 
@@ -266,6 +396,16 @@ body {
 
 @media (max-width: 620px) {
   .reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .cifras-grid {
     grid-template-columns: 1fr;
   }
 }

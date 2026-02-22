@@ -42,14 +42,36 @@
       >
     </header>
 
+    <section class="catalog-cifras">
+      <div class="catalog-cifras-inner">
+        <h2>Cifras que importan</h2>
+        <p class="catalog-cifras-intro">Los datos clave que revelan la magnitud de los retos estructurales de Espana.</p>
+        <div class="cifras-grid" id="cifras-grid"></div>
+      </div>
+    </section>
+
+    <div class="catalog-narrative">
+      <p>Espana afronta dos crisis estructurales que se retroalimentan. Un sistema de pensiones disenado para una piramide demografica que ya no existe absorbe una proporcion creciente del gasto publico, mientras la regulacion del suelo y la construccion bloquea la respuesta de oferta que el mercado de vivienda necesita. Estos siete informes desgranan las cifras, comparan modelos internacionales y exploran las reformas posibles.</p>
+    </div>
+
     <main class="catalog-main">
-      <section class="catalog-section">
+      <section class="catalog-section" id="section-vivienda">
         <div class="catalog-head-row">
-          <h2>Informes disponibles</h2>
-          <p id="catalog-status">Cargando catalogo...</p>
+          <h2>Vivienda y mercado inmobiliario</h2>
         </div>
-        <div class="reports-grid" id="reports-grid" aria-live="polite"></div>
+        <p class="section-intro">Tres informes que analizan por que los precios de la vivienda suben mientras la oferta no responde: la paradoja regulatoria, la radiografia del mercado espanol y el impacto del turismo vacacional en Canarias.</p>
+        <div class="reports-grid" id="reports-grid-vivienda" aria-live="polite"></div>
       </section>
+
+      <section class="catalog-section" id="section-pensiones">
+        <div class="catalog-head-row">
+          <h2>Pensiones y Seguridad Social</h2>
+        </div>
+        <p class="section-intro">Cuatro informes sobre la sostenibilidad del sistema de pensiones: la comparacion con modelos internacionales, el impacto demografico del baby boom, el historial de reformas y el diagnostico fiscal.</p>
+        <div class="reports-grid" id="reports-grid-pensiones" aria-live="polite"></div>
+      </section>
+
+      <p id="catalog-status" class="catalog-status">Cargando catalogo...</p>
     </main>
 
     <footer class="catalog-footer">
