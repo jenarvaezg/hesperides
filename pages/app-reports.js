@@ -1263,7 +1263,7 @@
               }
             }
           : {
-              type: "value",
+              type: chart.yAxisType || "value",
               axisLabel: {
                 color: "#4f4f4f",
                 formatter: tickFormatter
@@ -1545,7 +1545,13 @@
                     },
                     itemStyle: {
                       color: serie.color
-                    }
+                    },
+                    ...(serie.areaStyle
+                      ? {
+                          areaStyle:
+                            typeof serie.areaStyle === "object" ? serie.areaStyle : { opacity: 0.16 }
+                        }
+                      : {})
                   }
                 ])
         ]

@@ -13,6 +13,33 @@
     }
     return years;
   };
+  const interpolateSeries = (xValues, anchors) => {
+    const points = anchors
+      .map(([x, y]) => [Number(x), Number(y)])
+      .filter(([x, y]) => Number.isFinite(x) && Number.isFinite(y))
+      .sort((a, b) => a[0] - b[0]);
+
+    if (!points.length) return xValues.map(() => 0);
+    if (points.length === 1) return xValues.map(() => points[0][1]);
+
+    return xValues.map((label) => {
+      const x = Number(label);
+      if (!Number.isFinite(x)) return points[0][1];
+      if (x <= points[0][0]) return points[0][1];
+      if (x >= points[points.length - 1][0]) return points[points.length - 1][1];
+
+      for (let index = 0; index < points.length - 1; index += 1) {
+        const [x0, y0] = points[index];
+        const [x1, y1] = points[index + 1];
+        if (x < x0 || x > x1) continue;
+        if (x1 === x0) return y1;
+        const ratio = (x - x0) / (x1 - x0);
+        return Number((y0 + (y1 - y0) * ratio).toFixed(2));
+      }
+
+      return points[points.length - 1][1];
+    });
+  };
 
   const figures = [
     { label: "Grafica 1", page: 7 },
@@ -317,126 +344,326 @@
       max: 16
     },
     9: {
-      title: "Grafica 9. Gasto en pensiones de Espana",
-      subtitle: "Trayectoria de gasto sobre PIB",
+      title: "Grafica 9. El esfuerzo fiscal del sistema chileno de pensiones es reducido",
+      subtitle: "Gasto en pensiones publicas, en porcentaje del PIB",
       type: "line",
       unit: "%",
-      x: years,
-      series: [{ name: "Espana", type: "line", data: [8.3, 10.2, 11.0, 12.3, 12.9, 13.6, 14.2], color: "#f3c400" }],
-      min: 7,
-      max: 15
-    },
-    10: {
-      title: "Grafica 10. Cotizacion total en Alemania",
-      subtitle: "Evolucion y proyeccion del tipo contributivo",
-      type: "line",
-      unit: "%",
-      x: years,
-      series: [{ name: "Alemania", type: "line", data: [19.5, 19.0, 18.7, 18.6, 19.2, 20.5, 22.3], color: "#2b2b2b" }],
-      min: 17,
-      max: 24
-    },
-    11: {
-      title: "Grafica 11. Balance automatico del sistema sueco",
-      subtitle: "Indice de ajuste actuarial del pilar nocional",
-      type: "line",
-      unit: "indice",
-      x: years,
-      series: [{ name: "Indice de balance", type: "line", data: [101, 99, 100, 102, 101, 100, 99], color: "#7f5b00" }],
-      min: 96,
-      max: 104
-    },
-    12: {
-      title: "Grafica 12. Activos de fondos de pensiones en Chile",
-      subtitle: "Activos acumulados sobre PIB",
-      type: "line",
-      unit: "%",
-      x: years,
-      series: [{ name: "Fondos AFP / PIB", type: "line", data: [55, 62, 69, 78, 75, 73, 72], color: "#f3c400", areaStyle: 0.12 }],
-      min: 45,
-      max: 85
-    },
-    13: {
-      title: "Grafica 13. Espana: pension publica y ahorro privado",
-      subtitle: "Composicion de ingresos en jubilacion",
-      type: "line",
-      unit: "%",
-      x: years,
+      x: years1980To2023,
       series: [
-        { name: "Pilar publico", type: "line", data: [86, 85, 84, 83, 82, 81, 80], color: "#f3c400" },
-        { name: "Pilares privados", type: "line", data: [14, 15, 16, 17, 18, 19, 20], color: "#2b2b2b" }
+        {
+          name: "Chile",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(years1980To2023, [
+            [1980, 10.8], [1981, 9.5], [1983, 8.2], [1986, 8.0], [1990, 7.0], [1995, 6.7], [1998, 7.2],
+            [2000, 4.9], [2003, 4.3], [2006, 3.4], [2008, 3.1], [2011, 3.6], [2014, 3.1], [2018, 2.9],
+            [2020, 2.9], [2023, 3.7]
+          ]),
+          color: "#2b2b2b"
+        },
+        {
+          name: "OCDE",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(years1980To2023, [
+            [1980, 5.7], [1985, 6.1], [1990, 6.2], [1994, 6.5], [1998, 6.6], [2005, 6.8], [2010, 6.7],
+            [2012, 7.6], [2016, 8.0], [2019, 7.9], [2021, 7.9], [2022, 8.4], [2023, 8.0]
+          ]),
+          color: "#d5a700"
+        },
+        {
+          name: "Espana",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(years1980To2023, [
+            [1980, 6.2], [1985, 7.4], [1990, 7.1], [1994, 8.5], [1998, 8.9], [2003, 7.8], [2008, 7.5],
+            [2012, 10.2], [2014, 11.2], [2016, 11.0], [2018, 10.9], [2020, 11.2], [2021, 12.9],
+            [2022, 12.6], [2023, 12.3]
+          ]),
+          color: "#f3c400"
+        }
       ],
       min: 0,
-      max: 100
+      max: 13
     },
-    14: {
-      title: "Grafica 14. Alemania: mezcla de financiacion",
-      subtitle: "Peso relativo de reparto y ahorro ocupacional/privado",
+    10: {
+      title: "Grafica 10. El sistema de pensiones chileno ha ganado sostenibilidad con los anos",
+      subtitle: "Pago en pensiones (% PIB) sobre poblacion anciana (% poblacion total)",
+      renderAs: "small-multiples",
+      smallMultiplesColumns: 3,
+      smallMultiplesAxis: {
+        yMin: 0,
+        yMax: 2.0,
+        yInterval: 0.5
+      },
+      unit: "indice",
+      x: makeYearRange(1987, 2021),
+      series: [
+        {
+          name: "Chile",
+          type: "line",
+          areaStyle: { color: "rgba(243, 196, 0, 0.18)" },
+          data: interpolateSeries(makeYearRange(1987, 2021), [
+            [1987, 1.8], [1990, 1.5], [1993, 1.45], [1996, 1.5], [1999, 1.0], [2003, 0.8], [2007, 0.7],
+            [2012, 0.6], [2021, 0.6]
+          ]),
+          color: "#7f5b00"
+        },
+        {
+          name: "Espana",
+          type: "line",
+          areaStyle: { color: "rgba(243, 196, 0, 0.18)" },
+          data: interpolateSeries(makeYearRange(1987, 2021), [
+            [1987, 0.70], [1992, 0.75], [1995, 0.72], [2000, 0.62], [2005, 0.58], [2010, 0.65], [2015, 0.73],
+            [2018, 0.70], [2021, 0.72]
+          ]),
+          color: "#7f5b00"
+        },
+        {
+          name: "OCDE",
+          type: "line",
+          areaStyle: { color: "rgba(243, 196, 0, 0.18)" },
+          data: interpolateSeries(makeYearRange(1987, 2021), [
+            [1987, 0.70], [1992, 0.72], [2000, 0.71], [2005, 0.70], [2010, 0.72], [2015, 0.73], [2021, 0.70]
+          ]),
+          color: "#7f5b00"
+        }
+      ]
+    },
+    11: {
+      title: "Grafica 11. Los trabajadores chilenos realizan un esfuerzo pequeno en el pago de sus pensiones",
+      subtitle: "Contribuciones obligatorias para el pago de pensiones (empleado y empleador)",
+      unit: "%",
+      x: ["Chile", "Espana"],
+      barBorderRadius: false,
+      showLegend: false,
+      series: [
+        {
+          name: "Contribucion obligatoria",
+          data: [12.9, 29.1],
+          itemStyle: {
+            color: (params) => (params.dataIndex === 0 ? "#000000" : "#f3c400")
+          },
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
+      min: 0,
+      max: 30
+    },
+    12: {
+      title: "Grafica 12. Chile ha acumulado activos que respaldan la jubilacion de sus pensionistas",
+      subtitle: "Activos en el sistema de pensiones, en porcentaje del PIB",
       type: "line",
       unit: "%",
-      x: years,
+      x: makeYearRange(1998, 2020),
+      showLegend: false,
       series: [
-        { name: "Reparto", type: "line", data: [74, 72, 70, 68, 66, 64, 62], color: "#2b2b2b" },
-        { name: "Capitalizacion", type: "line", data: [26, 28, 30, 32, 34, 36, 38], color: "#f3c400" }
+        {
+          name: "Chile",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1998, 2020), [
+            [1998, 37.0], [2000, 45.0], [2002, 49.0], [2004, 54.0], [2006, 53.0], [2007, 55.0], [2008, 58.0],
+            [2009, 47.0], [2010, 59.0], [2011, 59.0], [2012, 55.0], [2013, 57.0], [2014, 60.0], [2015, 65.0],
+            [2016, 66.0], [2017, 66.0], [2018, 70.0], [2019, 68.0], [2020, 75.8]
+          ]),
+          color: "#f3c400"
+        },
+        {
+          name: "Espana",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1998, 2020), [
+            [1998, 2.5], [2002, 3.8], [2005, 5.0], [2008, 5.2], [2009, 4.5], [2010, 5.0], [2013, 5.1],
+            [2015, 6.2], [2018, 6.1], [2019, 5.7], [2020, 10.5]
+          ]),
+          color: "#7f5b00"
+        }
+      ],
+      min: 0,
+      max: 80
+    },
+    13: {
+      title: "Grafica 13. La tasa de empleo de los mayores de 65 anos en Chile es elevada, en Espana es de las mas bajas del mundo",
+      subtitle: "Personas empleadas sobre el total (mayores de 65 anos)",
+      unit: "%",
+      x: ["Chile", "OCDE", "Espana"],
+      showLegend: false,
+      barBorderRadius: false,
+      series: [
+        {
+          name: "Empleo 65+",
+          data: [20.2, 16.2, 3.6],
+          itemStyle: {
+            color: (params) => (params.dataIndex === 0 ? "#000000" : params.dataIndex === 1 ? "#7f5b00" : "#f3c400")
+          },
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
+      min: 0,
+      max: 22
+    },
+    14: {
+      title: "Grafica 14. Los jubilados en Chile no son una carga fiscal",
+      subtitle: "Ingreso de los jubilados por fuente (porcentaje sobre el total)",
+      unit: "%",
+      x: ["Chile", "OCDE", "Espana"],
+      stack: "g14",
+      barBorderRadius: false,
+      showLegend: false,
+      series: [
+        {
+          name: "Planes privados e ingresos capital",
+          data: [33, 17, 9],
+          color: "#5a4100",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${value}%` }
+        },
+        {
+          name: "Transferencias del Estado",
+          data: [18, 57, 72],
+          color: "#a98700",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${value}%` }
+        },
+        {
+          name: "Ingreso del trabajo",
+          data: [49, 26, 20],
+          color: "#f3c400",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${value}%` }
+        }
       ],
       min: 0,
       max: 100
     },
     15: {
-      title: "Grafica 15. Suecia: pension de ingresos y premium",
-      subtitle: "Desglose interno del modelo sueco",
+      title: "Grafica 15. Chile desarrollo un mercado de capitales desde la creacion del sistema de pensiones de capitalizacion",
+      subtitle: "Capitalizacion bursatil de la bolsa de Santiago",
       type: "line",
-      unit: "%",
-      x: years,
+      yAxisType: "log",
+      unit: "indice",
+      x: makeYearRange(1982, 2024),
+      showLegend: false,
       series: [
-        { name: "Ingreso nocional", type: "line", data: [84, 83, 82, 81, 80, 79, 78], color: "#2b2b2b" },
-        { name: "Premium pension", type: "line", data: [16, 17, 18, 19, 20, 21, 22], color: "#f3c400" }
+        {
+          name: "Capitalizacion bursatil",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1982, 2024), [
+            [1982, 12000], [1983, 7000], [1984, 5500], [1985, 5500], [1986, 10000], [1988, 15000], [1990, 25000],
+            [1992, 60000], [1994, 120000], [1996, 130000], [1997, 115000], [1998, 120000], [1999, 90000],
+            [2000, 110000], [2002, 85000], [2004, 170000], [2006, 230000], [2008, 300000], [2009, 180000],
+            [2010, 370000], [2011, 320000], [2012, 340000], [2013, 300000], [2014, 250000], [2015, 270000],
+            [2016, 340000], [2017, 300000], [2018, 380000], [2019, 350000], [2020, 320000], [2021, 330000],
+            [2022, 320000], [2023, 310000], [2024, 290000]
+          ]),
+          color: "#f3c400"
+        }
       ],
-      min: 0,
-      max: 100
+      min: 5000,
+      max: 400000
     },
     16: {
-      title: "Grafica 16. Chile: ahorro obligatorio y voluntario",
-      subtitle: "Participacion relativa por tipo de cuenta",
+      title: "Grafica 16. El milagro economico de Chile en perspectiva",
+      subtitle: "PIB per capita de Chile y America Latina y el Caribe (1960-2024)",
+      type: "line",
+      yAxisType: "log",
+      unit: "indice",
+      x: makeYearRange(1960, 2024),
+      eventLines: [{ x: "1981", label: "Sistema de capitalizacion (1981)" }],
+      series: [
+        {
+          name: "Chile",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1960, 2024), [
+            [1960, 2800], [1965, 3200], [1970, 4500], [1973, 3000], [1976, 3800], [1981, 5000], [1983, 4000],
+            [1985, 4300], [1990, 6000], [1995, 8200], [2000, 9000], [2005, 11000], [2010, 13000], [2015, 13800],
+            [2020, 14000], [2023, 14579], [2024, 14579]
+          ]),
+          color: "#2b2b2b"
+        },
+        {
+          name: "America Latina",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1960, 2024), [
+            [1960, 2700], [1965, 3500], [1970, 4300], [1975, 5400], [1980, 6200], [1983, 5700], [1990, 6200],
+            [1995, 7000], [2000, 7200], [2005, 8000], [2010, 8700], [2015, 9000], [2020, 8800], [2023, 9242],
+            [2024, 9242]
+          ]),
+          color: "#f3c400"
+        }
+      ],
+      min: 2500,
+      max: 16000
+    },
+    17: {
+      title: "Grafica 17. Casi la mitad de los activos del sistema de pensiones chileno se encuentran en el exterior",
+      subtitle: "Porcentaje de activos del sistema de pensiones chileno emitidos en el exterior",
       type: "line",
       unit: "%",
-      x: years,
+      showLegend: false,
+      x: makeYearRange(2002, 2023),
       series: [
-        { name: "Obligatorio", type: "line", data: [88, 87, 86, 84, 83, 82, 81], color: "#2b2b2b" },
-        { name: "Voluntario", type: "line", data: [12, 13, 14, 16, 17, 18, 19], color: "#f3c400" }
+        {
+          name: "Activos en el exterior",
+          type: "line",
+          smooth: false,
+          data: [16, 24, 27, 30, 32, 35, 29, 44, 45, 37, 39, 43, 44, 44.5, 39, 43, 42, 44, 46, 54, 41, 45.3],
+          color: "#f3c400",
+          areaStyle: { color: "rgba(243, 196, 0, 0.18)" }
+        }
+      ],
+      min: 0,
+      max: 55
+    },
+    18: {
+      title: "Grafica 18. Las pensiones en Chile son relativamente reducidas",
+      subtitle: "Tasa de reemplazo del sistema de pensiones para diferentes salarios (ano 2022)",
+      unit: "%",
+      barBorderRadius: false,
+      x: ["Chile", "Espana", "Media OCDE"],
+      series: [
+        {
+          name: "50% ingreso medio",
+          data: [60, 86, 78],
+          color: "#5a4100",
+          label: { show: true, position: "top", formatter: ({ value }) => `${value}%` }
+        },
+        {
+          name: "100% ingreso medio",
+          data: [46, 87, 67],
+          color: "#a98700",
+          label: { show: true, position: "top", formatter: ({ value }) => `${value}%` }
+        },
+        {
+          name: "200% ingreso medio",
+          data: [36, 58, 59],
+          color: "#f3c400",
+          label: { show: true, position: "top", formatter: ({ value }) => `${value}%` }
+        }
+      ],
+      min: 0,
+      max: 95
+    },
+    19: {
+      title: "Grafica 19. El ingreso de los jubilados chilenos es superior al de otros paises desarrollados",
+      subtitle: "Ingreso de los mayores de 65 anos como porcentaje del ingreso del resto de la poblacion",
+      unit: "%",
+      showLegend: false,
+      barBorderRadius: false,
+      x: ["Espana", "Chile", "OCDE"],
+      series: [
+        {
+          name: "Ingreso relativo 65+",
+          data: [99.0, 93.5, 85.7],
+          itemStyle: {
+            color: (params) => (params.dataIndex === 0 ? "#f3c400" : params.dataIndex === 1 ? "#000000" : "#7f5b00")
+          },
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
       ],
       min: 0,
       max: 100
-    },
-    17: {
-      title: "Grafica 17. Empleo de 55-64 anos",
-      subtitle: "Participacion laboral en tramo previo a jubilacion",
-      orientation: "horizontal",
-      unit: "%",
-      x: countries,
-      series: [{ name: "Tasa de empleo 55-64", data: [58, 73, 78, 67], color: "#f3c400" }],
-      min: 0,
-      max: 85
-    },
-    18: {
-      title: "Grafica 18. Empleo de 65-69 anos",
-      subtitle: "Continuidad laboral tras edad ordinaria",
-      orientation: "horizontal",
-      unit: "%",
-      x: countries,
-      series: [{ name: "Tasa de empleo 65-69", data: [9, 19, 24, 28], color: "#2b2b2b" }],
-      min: 0,
-      max: 35
-    },
-    19: {
-      title: "Grafica 19. Pobreza relativa en mayores",
-      subtitle: "Comparativa internacional 65+",
-      orientation: "horizontal",
-      unit: "%",
-      x: countries,
-      series: [{ name: "Riesgo de pobreza", data: [20.5, 18.2, 15.1, 24.8], color: "#7f5b00" }],
-      min: 0,
-      max: 30
     },
     20: {
       title: "Grafica 20. Reemplazo para salarios bajos",
