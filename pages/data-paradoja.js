@@ -3,7 +3,7 @@
     meta: {
       title: "La paradoja inmobiliaria en España",
       subtitle:
-        "Versión interactiva del informe del Centro Ruth Richardson (enero 2026)",
+        "Versión interactiva del informe del Centro Ruth Richardson (12 de febrero de 2026)",
       pdfTitle:
         "Informe CRR sobre la Paradoja Inmobiliaria y su Impacto en el Mercado.pdf",
       caveat:
