@@ -6,6 +6,13 @@
     }
     return ids;
   };
+  const makeYearRange = (from, to, step = 1) => {
+    const years = [];
+    for (let year = from; year <= to; year += step) {
+      years.push(String(year));
+    }
+    return years;
+  };
 
   const figures = [
     { label: "Grafica 1", page: 7 },
@@ -46,6 +53,20 @@
 
   const countries = ["Espana", "Alemania", "Suecia", "Chile"];
   const years = ["2005", "2010", "2015", "2020", "2025", "2030", "2035"];
+  const years1981To2021 = makeYearRange(1981, 2021);
+  const years1980To2024 = makeYearRange(1980, 2024);
+  const years1980To2023 = makeYearRange(1980, 2023);
+  const years2004To2024 = makeYearRange(2004, 2024);
+  const yearsProjection2023To2070 = [...makeYearRange(2023, 2069, 2), "2070"];
+
+  const swedenProjection = [
+    7.4, 7.6, 7.3, 7.2, 7.2, 7.2, 7.1, 7.0, 6.8, 6.8, 6.7, 6.7, 6.7, 6.7, 6.7, 6.8, 6.7,
+    6.8, 6.9, 7.0, 7.1, 7.2, 7.2, 7.2, 7.2
+  ];
+  const spainProjection = [
+    13.1, 13.4, 13.5, 13.7, 13.9, 14.2, 14.6, 15.0, 15.4, 15.8, 16.0, 16.2, 16.5, 16.7,
+    16.9, 17.0, 17.0, 16.9, 16.8, 16.8, 16.7, 16.6, 16.6, 16.6, 16.7
+  ];
 
   const baseMeta = {
     source: "Sistemas de pensiones comparados (2025)",
@@ -55,66 +76,245 @@
 
   const chartByNumber = {
     1: {
-      title: "Grafica 1. Cotizacion obligatoria para pension",
-      subtitle: "Porcentaje del salario destinado al pilar principal",
+      title: "Grafica 1. Suecia estabiliza el gasto en pensiones mientras en Espana se dispara",
+      subtitle: "Gasto en pensiones publicas en Espana y Suecia, en porcentaje de PIB",
+      type: "line",
       unit: "%",
-      x: countries,
-      series: [{ name: "Cotizacion obligatoria", data: [30.0, 18.6, 16.0, 10.0], color: "#f3c400" }]
+      x: years1981To2021,
+      eventLines: [{ x: "2003", label: "Inicio nuevo sistema (2003)" }],
+      series: [
+        {
+          name: "Espana",
+          type: "line",
+          data: [
+            6.2, 6.3, 6.5, 6.8, 7.1, 7.4, 7.3, 7.2, 7.2, 7.9, 8.0, 8.8, 8.8, 8.9, 9.1, 9.0,
+            8.7, 8.6, 8.3, 8.1, 8.0, 8.1, 8.0, 8.0, 7.9, 8.1, 8.4, 9.8, 10.5, 11.2, 11.8, 11.5,
+            11.5, 11.3, 11.6, 12.5, 13.2, 12.9, 12.6, 12.4, 12.7
+          ],
+          color: "#f3c400"
+        },
+        {
+          name: "Suecia",
+          type: "line",
+          data: [
+            6.5, 6.6, 6.5, 6.6, 6.7, 6.8, 6.8, 6.8, 6.8, 6.8, 7.0, 8.1, 7.9, 7.6, 7.6, 7.4,
+            7.2, 7.1, 6.9, 6.7, 6.5, 6.6, 6.7, 6.6, 6.4, 6.2, 6.8, 7.7, 7.3, 7.2, 7.8, 8.0,
+            7.8, 7.8, 7.8, 7.8, 7.8, 7.5, 7.9, 7.5, 7.5
+          ],
+          color: "#7f5b00"
+        }
+      ],
+      min: 5,
+      max: 13.5
     },
     2: {
-      title: "Grafica 2. Dependencia de transferencias en renta 65+",
-      subtitle: "Participacion de transferencias publicas en ingresos de mayores",
+      title: "Grafica 2. Se espera que el modelo sueco mantenga estable el gasto en pensiones",
+      subtitle: "Gasto en pensiones publicas previsto en Espana y Suecia, en porcentaje de PIB",
+      type: "line",
       unit: "%",
-      x: countries,
-      series: [{ name: "Transferencias sobre renta 65+", data: [71.9, 60.5, 51.6, 38.4], color: "#2b2b2b" }]
+      x: yearsProjection2023To2070,
+      series: [
+        {
+          name: "Suecia",
+          type: "line",
+          data: swedenProjection,
+          color: "#7f5b00",
+          stack: "g2-fill"
+        },
+        {
+          name: "Brecha Espana-Suecia",
+          type: "line",
+          data: spainProjection.map((value, index) => Number((value - swedenProjection[index]).toFixed(2))),
+          color: "rgba(243,196,0,0.01)",
+          stack: "g2-fill",
+          symbol: "none",
+          lineStyle: { opacity: 0 },
+          areaStyle: { color: "rgba(243, 196, 0, 0.14)" },
+          excludeFromLegend: true,
+          tooltip: { show: false }
+        },
+        {
+          name: "Espana",
+          type: "line",
+          data: spainProjection,
+          color: "#f3c400"
+        }
+      ],
+      min: 6,
+      max: 17.2
     },
     3: {
-      title: "Grafica 3. Tasa de reemplazo estimada",
-      subtitle: "Pension inicial sobre ultimo salario",
+      title: "Grafica 3. Suecia realizo su reforma del sistema de pensiones con una poblacion envejecida",
+      subtitle: "Evolucion de la ratio de dependencia de los mayores en Espana y Suecia",
+      type: "line",
       unit: "%",
-      x: countries,
-      series: [{ name: "Tasa de reemplazo", data: [79, 52, 55, 42], color: "#7f5b00" }]
+      x: years1980To2024,
+      eventLines: [{ x: "1992", label: "Inicio diseno reforma sueca (1992)" }],
+      series: [
+        {
+          name: "Suecia",
+          type: "line",
+          data: [
+            25.3, 25.5, 25.8, 26.0, 26.3, 26.8, 27.2, 27.5, 27.7, 27.8, 27.8, 27.7, 27.7, 27.6,
+            27.5, 27.4, 27.4, 27.3, 27.2, 26.9, 26.8, 26.6, 26.5, 26.5, 26.6, 27.0, 27.5, 28.3,
+            29.5, 30.8, 31.6, 32.0, 32.1, 32.2, 32.3, 32.4, 32.5, 32.6, 32.8, 32.9, 33.0, 33.1,
+            33.1, 33.1, 33.1
+          ],
+          color: "#7f5b00"
+        },
+        {
+          name: "Espana",
+          type: "line",
+          data: [
+            17.6, 17.8, 17.9, 18.1, 18.3, 18.5, 19.0, 19.5, 20.2, 20.8, 21.3, 21.8, 22.5, 23.1,
+            23.8, 24.4, 25.0, 24.8, 24.2, 24.5, 24.3, 24.0, 24.2, 24.6, 25.4, 26.0, 27.2, 28.1,
+            28.7, 29.2, 29.6, 29.8, 30.1, 30.3, 30.5, 30.6, 30.7, 30.8, 30.8, 30.8, 30.8, 30.8,
+            30.8, 30.8, 30.8
+          ],
+          color: "#f3c400"
+        }
+      ],
+      min: 17,
+      max: 33.5
     },
     4: {
-      title: "Grafica 4. Riesgo de pobreza en mayores",
-      subtitle: "Poblacion 65+ bajo umbral relativo",
+      title: "Grafica 4. El modelo sueco controla la deuda publica, el modelo espanol la dispara",
+      subtitle: "Evolucion de la deuda publica en Espana y Suecia, en porcentaje de PIB",
+      type: "line",
       unit: "%",
-      x: countries,
-      series: [{ name: "Riesgo de pobreza 65+", data: [20.5, 18.2, 15.1, 24.8], color: "#f3c400" }]
+      x: years1980To2023,
+      eventLines: [{ x: "1992", label: "Inicio diseno reforma sueca (1992)" }],
+      series: [
+        {
+          name: "Espana",
+          type: "line",
+          data: [
+            16.1, 18.0, 20.5, 23.0, 26.0, 29.0, 31.0, 31.0, 30.0, 29.0, 30.0, 32.0, 40.0, 45.0,
+            47.0, 47.0, 46.0, 45.0, 43.0, 41.0, 39.0, 37.0, 35.0, 33.0, 31.0, 30.0, 32.0, 36.0,
+            42.0, 50.0, 65.0, 85.0, 92.0, 95.0, 94.0, 93.0, 92.0, 91.0, 90.0, 89.0, 88.0, 106.0,
+            103.0, 105.0
+          ],
+          color: "#f3c400"
+        },
+        {
+          name: "Suecia",
+          type: "line",
+          data: [
+            39.8, 44.0, 48.0, 50.0, 50.0, 50.0, 47.0, 44.0, 43.0, 42.0, 44.0, 51.0, 54.0, 55.0,
+            55.0, 54.0, 52.0, 51.0, 49.0, 48.0, 49.0, 48.0, 47.0, 46.0, 45.0, 43.0, 42.0, 42.0,
+            43.0, 44.0, 45.0, 45.0, 44.0, 43.0, 43.0, 42.0, 41.0, 40.0, 41.0, 42.0, 40.0, 39.0,
+            38.0, 36.4
+          ],
+          color: "#7f5b00"
+        }
+      ],
+      min: 15,
+      max: 110
     },
     5: {
-      title: "Grafica 5. Edad legal de jubilacion",
-      subtitle: "Edad estatutaria de acceso ordinario",
-      unit: "indice",
-      x: countries,
-      series: [{ name: "Edad legal", data: [66.7, 67.0, 65.0, 65.0], color: "#2b2b2b" }],
-      min: 60,
-      max: 68
+      title: "Grafica 5. Los jubilados en Suecia dependen menos de las transferencias del Estado que en Espana",
+      subtitle: "Fuente de ingresos de las personas de mas de 65 anos, en porcentaje del ingreso bruto equivalente total",
+      unit: "%",
+      x: ["Transferencias Estado", "Planes privados y capital", "Ingreso trabajo"],
+      barBorderRadius: false,
+      series: [
+        {
+          name: "Suecia",
+          data: [51.6, 31.4, 17.0],
+          color: "#7f5b00",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "Espana",
+          data: [71.9, 8.6, 19.5],
+          color: "#f3c400",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
+      min: 0,
+      max: 75
     },
     6: {
-      title: "Grafica 6. Edad efectiva de retiro",
-      subtitle: "Salida efectiva media del mercado laboral",
+      title: "Grafica 6. Los activos del sistema de pensiones de Suecia son superiores a sus obligaciones",
+      subtitle: "Evolucion del indice de equilibrio del sistema de pensiones sueco",
+      type: "line",
       unit: "indice",
-      x: countries,
-      series: [{ name: "Edad efectiva", data: [64.9, 64.2, 65.4, 66.1], color: "#7f5b00" }],
-      min: 60,
-      max: 68
+      showLegend: false,
+      x: years2004To2024,
+      series: [
+        {
+          name: "Indice de equilibrio",
+          type: "line",
+          data: [1.00, 1.00, 1.01, 0.99, 0.96, 0.95, 1.01, 1.02, 0.98, 1.01, 1.05, 1.02, 1.04, 1.03, 1.05, 1.08, 1.08, 1.12, 1.13, 1.12, 1.17],
+          color: "#f3c400",
+          areaStyle: { color: "rgba(243, 196, 0, 0.16)" }
+        },
+        {
+          name: "Umbral 1.0",
+          type: "line",
+          data: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+          color: "#2b2b2b",
+          smooth: false,
+          symbol: "none",
+          lineStyle: { type: "dashed", width: 1.8 },
+          excludeFromLegend: true,
+          tooltip: { show: false }
+        }
+      ],
+      min: 0.95,
+      max: 1.18
     },
     7: {
-      title: "Grafica 7. Anos esperados en jubilacion",
-      subtitle: "Esperanza de vida restante al jubilarse",
-      unit: "indice",
-      x: countries,
-      series: [{ name: "Anos en jubilacion", data: [22.5, 20.8, 22.1, 21.4], color: "#f3c400" }],
-      min: 15,
-      max: 25
+      title: "Grafica 7. Espana ofrece pensiones mas generosas para rentas bajas y medias, Suecia para las altas",
+      subtitle: "Tasa de sustitucion neta para diferentes porcentajes de salario medio (ano 2022)",
+      unit: "%",
+      barBorderRadius: false,
+      x: ["Espana", "Suecia", "OCDE"],
+      series: [
+        {
+          name: "50% salario medio",
+          data: [86.4, 66.5, 72.9],
+          color: "#5a4100",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "100% salario medio",
+          data: [86.5, 65.3, 61.0],
+          color: "#9f7a15",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "200% salario medio",
+          data: [57.6, 82.9, 52.4],
+          color: "#f3c400",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
+      min: 0,
+      max: 90
     },
     8: {
-      title: "Grafica 8. Cobertura de pilares complementarios",
-      subtitle: "Porcentaje de trabajadores con segundo/tercer pilar activo",
+      title: "Grafica 8. La pobreza en la vejez es mas elevada en Espana que en Suecia pese a tener pensiones mas generosas",
+      subtitle: "Porcentaje de poblacion por cohortes de edad con renta disponible inferior al 50% de la mediana nacional (ano 2022)",
       unit: "%",
-      x: countries,
-      series: [{ name: "Cobertura complementaria", data: [26, 58, 89, 74], color: "#2b2b2b" }]
+      barBorderRadius: false,
+      x: ["Mas de 65 anos", "Entre 66 y 75 anos", "Mas de 76 anos"],
+      series: [
+        {
+          name: "Espana",
+          data: [13.1, 11.5, 15.1],
+          color: "#7f5b00",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "Suecia",
+          data: [9.4, 7.1, 12.1],
+          color: "#f3c400",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
+      min: 0,
+      max: 16
     },
     9: {
       title: "Grafica 9. Gasto en pensiones de Espana",
