@@ -258,7 +258,7 @@
         { name: "Espana", type: "line", data: [27, 30, 31, 34, 37, 41, 46], color: "#f3c400" },
         { name: "Alemania", type: "line", data: [31, 33, 35, 37, 40, 43, 47], color: "#2b2b2b" },
         { name: "Suecia", type: "line", data: [30, 31, 32, 34, 36, 38, 41], color: "#7f5b00" },
-        { name: "Chile", type: "line", data: [12, 14, 17, 20, 24, 29, 35], color: "#6d6d6d" }
+        { name: "Chile", type: "line", data: [12, 14, 17, 20, 24, 29, 35], color: "#2b2b2b" }
       ],
       min: 10,
       max: 50
@@ -273,7 +273,7 @@
         { name: "Espana", type: "line", data: [1.34, 1.38, 1.33, 1.19, 1.24, 1.28, 1.30], color: "#f3c400" },
         { name: "Alemania", type: "line", data: [1.34, 1.39, 1.50, 1.53, 1.57, 1.60, 1.62], color: "#2b2b2b" },
         { name: "Suecia", type: "line", data: [1.77, 1.98, 1.85, 1.67, 1.75, 1.78, 1.80], color: "#7f5b00" },
-        { name: "Chile", type: "line", data: [1.96, 1.90, 1.78, 1.54, 1.48, 1.45, 1.43], color: "#6d6d6d" }
+        { name: "Chile", type: "line", data: [1.96, 1.90, 1.78, 1.54, 1.48, 1.45, 1.43], color: "#2b2b2b" }
       ],
       min: 1,
       max: 2.2
@@ -319,7 +319,7 @@
         { name: "Espana", type: "line", data: [12.9, 13.6, 14.2, 14.8, 15.1, 15.3, 15.4], color: "#f3c400" },
         { name: "Alemania", type: "line", data: [10.7, 11.2, 11.8, 12.5, 13.1, 13.7, 14.2], color: "#2b2b2b" },
         { name: "Suecia", type: "line", data: [7.5, 7.8, 8.1, 8.4, 8.8, 9.1, 9.4], color: "#7f5b00" },
-        { name: "Chile", type: "line", data: [4.2, 4.6, 5.0, 5.5, 6.1, 6.6, 7.0], color: "#6d6d6d" }
+        { name: "Chile", type: "line", data: [4.2, 4.6, 5.0, 5.5, 6.1, 6.6, 7.0], color: "#2b2b2b" }
       ],
       min: 3,
       max: 17
