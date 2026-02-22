@@ -21,11 +21,13 @@
 
 ## /radiografia-mercado-vivienda-espana
 - [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
-- [ ] QA manual grafico a grafico contra PDF.
+- [x] QA manual grafico a grafico (tipo/orientacion/xlen/series y titulos contrastados con mapa de figuras).
+- [ ] Validacion visual final 1:1 en navegador contra PDF.
 
 ## /turismo-vivienda-canarias
 - [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
-- [ ] QA manual grafico a grafico contra PDF.
+- [x] QA manual grafico a grafico (tipo/orientacion/xlen/series y titulos contrastados con mapa de figuras).
+- [ ] Validacion visual final 1:1 en navegador contra PDF.
 
 ## /home-catalogo
 - [x] Primera pasada automatica de QA (estructura y consistencia de cards/rutas).
