@@ -162,9 +162,12 @@
 
       if (headingPattern.test(line)) {
         flushParagraph();
+        const numberMatch = line.match(/^\s*([0-9]+(?:\.[0-9]+)*)[.)-]?\s+/);
+        const headingLevel = numberMatch ? Math.min(4, numberMatch[1].split(".").length + 1) : 2;
         blocks.push({
           type: "heading",
-          text: line
+          text: line,
+          level: headingLevel
         });
         return;
       }
@@ -183,6 +186,135 @@
 
     flushParagraph();
     return blocks;
+  }
+
+  function stripNumericHeadingPrefix(text) {
+    return String(text || "")
+      .replace(/^\s*[0-9]+(?:\.[0-9]+)*[.)-]?\s+/, "")
+      .trim();
+  }
+
+  function extractChartReference(text) {
+    const normalized = normalizeLookup(text);
+    const match = normalized.match(/^(grafico|grafica|tabla)\s*([0-9]{1,3})\b/);
+    if (!match) return null;
+
+    return {
+      kind: match[1].startsWith("tabla") ? "tabla" : "grafico",
+      number: Number(match[2])
+    };
+  }
+
+  function getChartReferenceFromTitle(title) {
+    const normalized = normalizeLookup(title);
+    const match = normalized.match(/(grafico|grafica|tabla)\s*([0-9]{1,3})\b/);
+    if (!match) return null;
+
+    return {
+      kind: match[1].startsWith("tabla") ? "tabla" : "grafico",
+      number: Number(match[2])
+    };
+  }
+
+  function buildChartReferenceKey(reference) {
+    if (!reference || !Number.isFinite(reference.number)) return null;
+    return `${reference.kind}-${reference.number}`;
+  }
+
+  function cleanChapterTextBlocks(blocks, chapterTitle) {
+    if (!Array.isArray(blocks) || !blocks.length) return [];
+
+    const chapterComparable = normalizeLookup(stripNumericHeadingPrefix(chapterTitle));
+    let removedDuplicateHeading = false;
+
+    return blocks.filter((block) => {
+      if (!block || !block.text) return false;
+
+      if (!removedDuplicateHeading && block.type === "heading") {
+        const headingComparable = normalizeLookup(stripNumericHeadingPrefix(block.text));
+        if (headingComparable && headingComparable === chapterComparable) {
+          removedDuplicateHeading = true;
+          return false;
+        }
+      }
+
+      return true;
+    });
+  }
+
+  function buildChapterNarrativePlan(chapterId, chapterTitle, chapterChartIds) {
+    const blocks = liveTextBlocksByChapter[chapterId];
+    const empty = { beforeByChart: {}, tailBlocks: [] };
+    if (!Array.isArray(blocks) || !blocks.length) return empty;
+
+    const chartQueuesByReference = {};
+    const orderedChartIds = Array.isArray(chapterChartIds) ? chapterChartIds : [];
+
+    orderedChartIds.forEach((chartKey) => {
+      const chart = report.charts && report.charts[chartKey];
+      if (!chart || !chart.title) return;
+
+      const reference = getChartReferenceFromTitle(chart.title);
+      const referenceKey = buildChartReferenceKey(reference);
+      if (!referenceKey) return;
+
+      if (!chartQueuesByReference[referenceKey]) {
+        chartQueuesByReference[referenceKey] = [];
+      }
+      chartQueuesByReference[referenceKey].push(chartKey);
+    });
+
+    const beforeByChart = {};
+    const unmatchedBlocks = [];
+    let pending = [];
+    let hasMatchedMarker = false;
+
+    const assignPendingToReference = (referenceKey) => {
+      const cleaned = cleanChapterTextBlocks(pending, chapterTitle);
+      pending = [];
+      if (!cleaned.length) return;
+
+      const queue = chartQueuesByReference[referenceKey];
+      if (queue && queue.length) {
+        const chartKey = queue.shift();
+        beforeByChart[chartKey] = [...(beforeByChart[chartKey] || []), ...cleaned];
+        hasMatchedMarker = true;
+        return;
+      }
+
+      unmatchedBlocks.push(...cleaned);
+    };
+
+    blocks.forEach((block) => {
+      if (!block || !block.text) return;
+
+      const marker = extractChartReference(block.text);
+      if (marker) {
+        const markerKey = buildChartReferenceKey(marker);
+        if (markerKey) {
+          assignPendingToReference(markerKey);
+          return;
+        }
+      }
+
+      pending.push(block);
+    });
+
+    const trailing = cleanChapterTextBlocks(pending, chapterTitle);
+
+    if (!hasMatchedMarker && trailing.length && orderedChartIds.length) {
+      const firstChartKey = orderedChartIds[0];
+      beforeByChart[firstChartKey] = [...(beforeByChart[firstChartKey] || []), ...trailing];
+      return {
+        beforeByChart,
+        tailBlocks: unmatchedBlocks
+      };
+    }
+
+    return {
+      beforeByChart,
+      tailBlocks: [...unmatchedBlocks, ...trailing]
+    };
   }
 
   const formatNumber = (value, decimals = 1) =>
@@ -1038,8 +1170,7 @@
     syncViewModeUI();
   }
 
-  function renderChapterLiveText(chapterId, chapterContainer) {
-    const blocks = liveTextBlocksByChapter[chapterId];
+  function renderChapterLiveText(blocks, chapterContainer) {
     if (!Array.isArray(blocks) || !blocks.length) return;
 
     const wrapper = document.createElement("div");
@@ -1050,7 +1181,8 @@
 
       if (block.type === "heading") {
         const heading = document.createElement("p");
-        heading.className = "chapter-text-heading";
+        const headingLevel = Number.isInteger(block.level) ? Math.min(Math.max(block.level, 2), 4) : 2;
+        heading.className = `chapter-text-heading level-${headingLevel}`;
         heading.textContent = block.text;
         wrapper.appendChild(heading);
         return;
@@ -1160,11 +1292,16 @@
         article.appendChild(p);
       });
 
-      renderChapterLiveText(sectionId, article);
+      const chapterNarrative = buildChapterNarrativePlan(sectionId, chapter.title, chapter.charts || []);
 
       (chapter.charts || []).forEach((chartKey) => {
         const chart = report.charts[chartKey];
         if (!chart) return;
+
+        const narrativeBeforeChart = chapterNarrative.beforeByChart[chartKey];
+        if (narrativeBeforeChart && narrativeBeforeChart.length) {
+          renderChapterLiveText(narrativeBeforeChart, article);
+        }
 
         const card = document.createElement("article");
         card.className = "chart-card";
@@ -1218,6 +1355,10 @@
 
         article.appendChild(card);
       });
+
+      if (chapterNarrative.tailBlocks && chapterNarrative.tailBlocks.length) {
+        renderChapterLiveText(chapterNarrative.tailBlocks, article);
+      }
 
       container.appendChild(article);
     });

@@ -252,37 +252,55 @@ h1 {
 }
 
 .chapter-live-text {
-  margin-top: 0.6rem;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(127, 91, 0, 0.2);
-  border-radius: 12px;
-  background: rgba(255, 252, 245, 0.92);
-  padding: 0.8rem 0.9rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.95rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .chapter-text-heading {
-  margin: 0.5rem 0 0.2rem;
-  font-size: 0.88rem;
+  margin: 1rem 0 0.35rem;
+  font-family: "Fraunces", serif;
+  line-height: 1.18;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #2d291f;
+  letter-spacing: 0;
+  color: #252117;
+}
+
+.chapter-text-heading.level-2 {
+  font-size: 1.26rem;
+}
+
+.chapter-text-heading.level-3 {
+  font-size: 1.08rem;
+}
+
+.chapter-text-heading.level-4 {
+  font-size: 0.98rem;
+  color: #312c22;
 }
 
 .chapter-text-heading:first-child {
-  margin-top: 0;
+  margin-top: 0.15rem;
 }
 
 .chapter-text-paragraph,
 .chapter-text-bullet {
-  margin: 0.45rem 0 0;
-  font-size: 0.9rem;
-  line-height: 1.58;
-  color: #3f3a2f;
+  margin: 0.5rem 0 0;
+  max-width: 75ch;
+  font-size: 1.01rem;
+  line-height: 1.62;
+  color: #3a352a;
 }
 
 .chapter-text-paragraph:first-child,
 .chapter-text-bullet:first-child {
   margin-top: 0;
+}
+
+.chapter-live-text + .chart-card {
+  margin-top: 0.35rem;
 }
 
 .view-mode-charts .chapter-live-text {
