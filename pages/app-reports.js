@@ -1489,6 +1489,7 @@
                   type: "bar",
                   data: serie.data,
                   barMaxWidth: 14,
+                  label: serie.label,
                   itemStyle: {
                     color: serie.color,
                     borderRadius: [4, 4, 0, 0]

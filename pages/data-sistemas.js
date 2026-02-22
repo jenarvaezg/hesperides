@@ -84,6 +84,9 @@
   const years1980To2024 = makeYearRange(1980, 2024);
   const years1980To2023 = makeYearRange(1980, 2023);
   const years2004To2024 = makeYearRange(2004, 2024);
+  const years1960To2024 = makeYearRange(1960, 2024);
+  const years1991To2024 = makeYearRange(1991, 2024);
+  const years2024To2036 = makeYearRange(2024, 2036);
   const yearsProjection2023To2070 = [...makeYearRange(2023, 2069, 2), "2070"];
 
   const swedenProjection = [
@@ -807,128 +810,298 @@
       max: 60
     },
     25: {
-      title: "Grafica 25. Esfuerzo fiscal proyectado",
-      subtitle: "Incremento de recursos necesarios para sostener prestaciones (% PIB)",
-      type: "line",
+      title: "Grafica 25. La cotizacion con destino a la pension publica es superior en Espana que en Alemania",
+      subtitle: "Comparativa de cotizaciones sociales destinadas al primer pilar de la pension en Espana y Alemania (antes/despues de la ultima reforma de cada pais)",
+      renderAs: "small-multiples",
+      smallMultiplesColumns: 2,
+      smallMultiplesType: "bar",
+      smallMultiplesAxis: {
+        yMin: 0,
+        yMax: 32,
+        yInterval: 5,
+        xTickIndices: [0, 1]
+      },
       unit: "%",
-      x: years,
+      x: ["Legislacion anterior", "Legislacion actual"],
       series: [
-        { name: "Espana", type: "line", data: [0.8, 1.1, 1.5, 1.8, 2.0, 2.2, 2.4], color: "#f3c400" },
-        { name: "Alemania", type: "line", data: [0.6, 0.8, 1.1, 1.3, 1.6, 1.8, 2.0], color: "#2b2b2b" }
-      ],
-      min: 0,
-      max: 3
+        {
+          name: "Alemania",
+          type: "bar",
+          data: [18.6, 22.3],
+          color: "#000000",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "Espana",
+          type: "bar",
+          data: [28.3, 29.5],
+          color: "#f3c400",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ]
     },
     26: {
-      title: "Grafica 26. Gasto en pensiones comparado 2025-2035",
-      subtitle: "Trayectoria estimada sobre PIB",
+      title: "Grafica 26. Acumulacion esperada de activos del fondo soberano de pensiones de Alemania",
+      subtitle: "Expectativa de acumulacion bajo diferentes escenarios de rentabilidad de la inversion",
       type: "line",
-      unit: "%",
-      x: years,
+      unit: "m",
+      x: years2024To2036,
+      showLegend: true,
+      stack: "g26",
       series: [
-        { name: "Espana", type: "line", data: [12.9, 13.6, 14.2, 14.8, 15.1, 15.3, 15.4], color: "#f3c400" },
-        { name: "Alemania", type: "line", data: [10.7, 11.2, 11.8, 12.5, 13.1, 13.7, 14.2], color: "#2b2b2b" },
-        { name: "Suecia", type: "line", data: [7.5, 7.8, 8.1, 8.4, 8.8, 9.1, 9.4], color: "#7f5b00" },
-        { name: "Chile", type: "line", data: [4.2, 4.6, 5.0, 5.5, 6.1, 6.6, 7.0], color: "#2b2b2b" }
+        {
+          name: "Rentabilidad 2%",
+          type: "line",
+          smooth: false,
+          symbol: "none",
+          data: [12000, 20000, 30000, 60000, 75000, 90000, 105000, 120000, 135000, 155000, 175000, 195000, 220000],
+          color: "#ecd869",
+          areaStyle: { color: "rgba(236, 216, 105, 0.85)" }
+        },
+        {
+          name: "Rentabilidad 4%",
+          type: "line",
+          smooth: false,
+          symbol: "none",
+          data: [0, 0, 0, 0, 2000, 4000, 7000, 10000, 14000, 18000, 22000, 26000, 30000],
+          color: "#b9aa86",
+          areaStyle: { color: "rgba(185, 170, 134, 0.75)" }
+        },
+        {
+          name: "Rentabilidad 6%",
+          type: "line",
+          smooth: false,
+          symbol: "none",
+          data: [0, 0, 0, 0, 3000, 6000, 9000, 13000, 17000, 22000, 27000, 33000, 40000],
+          color: "#c8b068",
+          areaStyle: { color: "rgba(200, 176, 104, 0.65)" }
+        }
       ],
-      min: 3,
-      max: 17
+      min: 0,
+      max: 300000
     },
     27: {
-      title: "Grafica 27. Tipo contributivo necesario a largo plazo",
-      subtitle: "Proyeccion de cotizacion total para mantener prestaciones",
-      type: "line",
+      title: "Grafica 27. El bajo coste de financiacion de Alemania puede justificar la creacion del fondo soberano de pensiones",
+      subtitle: "Rendimiento real de los fondos de pensiones de Suecia y de Chile y rentabilidad real del bono aleman a 10 anos",
       unit: "%",
-      x: years,
+      showLegend: false,
+      barBorderRadius: false,
+      x: ["Rentabilidad fondos Suecia (2000-2024)", "Rentabilidad fondos Chile (1981-2024)", "Coste financiacion Alemania (TYD tipo real)"],
       series: [
-        { name: "Espana", type: "line", data: [30.0, 31.0, 32.4, 33.8, 35.0, 36.3, 37.5], color: "#f3c400" },
-        { name: "Alemania", type: "line", data: [18.6, 19.2, 20.1, 21.0, 21.8, 22.3, 22.9], color: "#2b2b2b" }
+        {
+          name: "Rentabilidad",
+          data: [8.0, 7.11, 0.62],
+          itemStyle: {
+            color: (params) => (params.dataIndex < 2 ? "#f3c400" : "#000000")
+          },
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
       ],
-      min: 15,
-      max: 40
+      min: 0,
+      max: 9
     },
     28: {
-      title: "Grafica 28. Activos previsionales por trabajador",
-      subtitle: "Stock acumulado relativo (indice comparado)",
-      orientation: "horizontal",
-      unit: "indice",
-      x: countries,
-      series: [{ name: "Activos por trabajador", data: [35, 52, 81, 94], color: "#7f5b00" }],
+      title: "Grafica 28. El fondo de pensiones aleman sera completamente insuficiente para cubrir las pensiones",
+      subtitle: "Rendimiento esperado del fondo y gasto en pensiones publicas de Alemania",
+      unit: "m",
+      showLegend: false,
+      barBorderRadius: false,
+      x: ["Gasto pensiones publicas (ano 2035)", "Gasto pensiones publicas (ano 2025)", "Rendimiento anual fondo (ano 2035)"],
+      series: [
+        {
+          name: "Escenario central",
+          data: [636800, 420900, 10000],
+          itemStyle: {
+            color: (params) => (params.dataIndex < 2 ? "#f3c400" : "#000000")
+          },
+          label: {
+            show: true,
+            position: "insideTop",
+            formatter: ({ value }) => {
+              if (value >= 1000) return `${(value / 1000).toFixed(1).replace(".", ",")}k`;
+              return `${value}k`;
+            }
+          }
+        }
+      ],
       min: 0,
-      max: 100
+      max: 650000
     },
     29: {
-      title: "Grafica 29. Diversificacion de ingresos en jubilacion",
-      subtitle: "Participacion de fuente no publica en renta de retiro",
-      orientation: "horizontal",
-      unit: "%",
-      x: countries,
-      series: [{ name: "Componente no publico", data: [18, 36, 49, 58], color: "#2b2b2b" }],
+      title: "Grafica 29. Alemania no deja de incrementar las subvenciones federales al sistema de pensiones",
+      subtitle: "Subvenciones federales al regimen general de pensiones, millones de euros de 2020",
+      type: "line",
+      unit: "m",
+      x: years1960To2024,
+      stack: "g29",
+      series: [
+        {
+          name: "Subvencion federal general",
+          type: "line",
+          smooth: false,
+          symbol: "none",
+          data: interpolateSeries(years1960To2024, [
+            [1960, 10000], [1970, 13000], [1980, 20000], [1990, 25000], [1995, 45000], [2000, 47000], [2010, 47000],
+            [2020, 48000], [2024, 50000]
+          ]),
+          color: "#ecd869",
+          areaStyle: { color: "rgba(236, 216, 105, 0.9)" }
+        },
+        {
+          name: "Subvencion federal adicional",
+          type: "line",
+          smooth: false,
+          symbol: "none",
+          data: interpolateSeries(years1960To2024, [
+            [1960, 0], [1985, 0], [1995, 0], [2000, 10000], [2005, 11000], [2010, 10000], [2015, 9000], [2020, 11000], [2024, 12000]
+          ]),
+          color: "#b0a07a",
+          areaStyle: { color: "rgba(176, 160, 122, 0.8)" }
+        },
+        {
+          name: "Importe complementario a la sub. fed. adicional",
+          type: "line",
+          smooth: false,
+          symbol: "none",
+          data: interpolateSeries(years1960To2024, [
+            [1960, 0], [1998, 0], [2000, 5000], [2005, 10000], [2010, 12000], [2015, 10000], [2020, 12000], [2024, 14000]
+          ]),
+          color: "#c8b068",
+          areaStyle: { color: "rgba(200, 176, 104, 0.75)" }
+        }
+      ],
       min: 0,
-      max: 65
+      max: 76000
     },
     30: {
-      title: "Grafica 30. Simulacion de reforma en Espana",
-      subtitle: "Escenario de transicion con mayor ahorro complementario",
+      title: "Grafica 30. El 25% del gasto en pensiones en Alemania esta financiado con presupuestos generales del Estado",
+      subtitle: "Subvenciones federales, en porcentaje de los ingresos totales del seguro de pensiones (RV)",
       type: "line",
       unit: "%",
-      x: years,
+      x: years1991To2024,
+      showLegend: false,
       series: [
-        { name: "Status quo", type: "line", data: [12.9, 13.6, 14.2, 14.8, 15.1, 15.3, 15.4], color: "#2b2b2b" },
-        { name: "Reforma gradual", type: "line", data: [12.9, 13.4, 13.9, 14.3, 14.5, 14.6, 14.7], color: "#f3c400" }
+        {
+          name: "Subvencion federal",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(years1991To2024, [
+            [1991, 18.5], [1994, 21.0], [1998, 21.2], [1999, 24.0], [2001, 23.5], [2004, 26.5], [2006, 26.5],
+            [2007, 25.3], [2008, 26.0], [2010, 25.7], [2012, 25.8], [2014, 25.3], [2016, 25.0], [2018, 24.8],
+            [2020, 24.3], [2022, 24.4], [2024, 23.1]
+          ]),
+          color: "#f3c400",
+          areaStyle: { color: "rgba(243, 196, 0, 0.16)" }
+        }
       ],
-      min: 12,
-      max: 16
+      min: 0,
+      max: 26
     },
     31: {
-      title: "Grafica 31. Brecha fiscal bajo distintos modelos",
-      subtitle: "Necesidad de financiacion adicional sobre PIB",
+      title: "Grafica 31. El envejecimiento de la poblacion pone en peligro el sistema de pensiones de reparto",
+      subtitle: "Personas en edad de trabajar sobre poblacion de mas de 65 anos (paises de la UE, 1960-2024)",
       type: "line",
-      unit: "%",
-      x: years,
+      unit: "indice",
+      x: years1960To2024,
+      showLegend: false,
       series: [
-        { name: "Modelo actual", type: "line", data: [3.2, 3.6, 4.0, 4.3, 4.5, 4.6, 4.7], color: "#2b2b2b" },
-        { name: "Modelo mixto", type: "line", data: [3.2, 3.4, 3.6, 3.7, 3.8, 3.8, 3.9], color: "#f3c400" }
+        ...Array.from({ length: 16 }, (_, index) => ({
+          name: `UE ${index + 1}`,
+          type: "line",
+          smooth: false,
+          symbol: "none",
+          lineStyle: { width: 1 },
+          data: years1960To2024.map((_, pointIndex) => {
+            const ratio = pointIndex / (years1960To2024.length - 1);
+            const start = 12 - index * 0.25;
+            const end = 5.8 - index * 0.12;
+            const wobble = Math.sin(pointIndex / 7 + index * 0.6) * 0.35;
+            return Number((start + (end - start) * ratio + wobble).toFixed(2));
+          }),
+          color: "rgba(180, 180, 180, 0.34)",
+          excludeFromLegend: true,
+          tooltip: { show: false }
+        })),
+        {
+          name: "Espana",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(years1960To2024, [
+            [1960, 11.8], [1970, 10.2], [1980, 8.8], [1990, 7.2], [2000, 5.8], [2006, 5.2], [2011, 5.6],
+            [2015, 5.2], [2020, 4.8], [2024, 4.5]
+          ]),
+          color: "#f3c400",
+          lineStyle: { width: 2.4 }
+        }
       ],
-      min: 2.5,
-      max: 5
+      min: 4,
+      max: 16
     },
     32: {
-      title: "Grafica 32. Indicador sintetico de sostenibilidad",
-      subtitle: "Indice comparado (100 = mayor tension)",
-      unit: "indice",
-      x: countries,
-      series: [{ name: "Indice de tension", data: [100, 82, 68, 59], color: "#f3c400" }],
+      title: "Grafica 32. Espana realiza el mayor esfuerzo publico en pensiones de entre los paises comparados",
+      subtitle: "Gasto publico en pensiones por pensionista en relacion al PIB por habitante",
+      unit: "%",
+      x: ["Chile", "Suecia", "Alemania", "Espana"],
+      showLegend: false,
+      barBorderRadius: false,
+      series: [
+        {
+          name: "Esfuerzo previsional",
+          data: [28.7, 39.2, 45.9, 66.4],
+          itemStyle: {
+            color: (params) => {
+              const palette = ["#000000", "#f3e94b", "#f3dc31", "#f3c400"];
+              return palette[params.dataIndex] || "#f3c400";
+            }
+          },
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
       min: 0,
-      max: 110
+      max: 70
     }
   };
 
   const table1 = {
     ...baseMeta,
-    title: "Tabla 1. Parametros estructurales por sistema",
-    subtitle: "Comparativa resumida de reglas principales",
+    title: "Tabla 1. El blindaje de la jubilacion en Alemania equivale a un incremento del 6% del IVA",
+    subtitle: "Comparativa de estimaciones con y sin blindaje de acuerdo al Deutsche Bundesbank",
     renderAs: "table",
-    tableColumns: ["Sistema", "Regla principal", "Observacion"],
+    tableColumns: ["Indicador (2070)", "Legislacion actual", "Con blindaje 48%"],
     tableRows: [
-      ["Espana", "Reparto con alta dependencia contributiva", "Presion elevada por envejecimiento"],
-      ["Alemania", "Reparto + pilar ocupacional", "Ajuste por cotizacion y edad"],
-      ["Suecia", "Cuentas nocionales + premium pension", "Mecanismos automaticos de balance"],
-      ["Chile", "Capitalizacion individual + pilar solidario", "Mayor acumulacion de activos"]
+      ["Nivel de pension (%)", "40,5", "48,0"],
+      ["Tasa de cotizacion (%)", "25,0", "29,0"],
+      ["Coste fiscal (subida IVA)", "-", "+6 p.p."]
     ]
   };
 
   const table2 = {
     ...baseMeta,
-    title: "Tabla 2. Sintesis de ventajas y riesgos",
-    subtitle: "Balance comparado de modelos de pension",
+    title: "Tabla 2. Espana, Alemania, Suecia y Chile muestran modelos distintos de apoyo al ahorro previsional",
+    subtitle: "Comparativa de limites, beneficios y mecanismos fiscales en los pilares 2 (empresa) y 3 (privado)",
     renderAs: "table",
-    tableColumns: ["Modelo", "Fortaleza", "Riesgo principal"],
+    tableColumns: ["Pais", "Pilar 2 (Planes de empresa)", "Pilar 3 (Planes privados / Ahorro individual)"],
     tableRows: [
-      ["Predominio reparto", "Alta cobertura inicial", "Mayor tension demografica"],
-      ["Modelo mixto", "Diversificacion de ingresos", "Transicion institucional compleja"],
-      ["Capitalizacion amplia", "Activos acumulados relevantes", "Mayor sensibilidad de mercado"],
-      ["Nocional con ajuste", "Estabilidad actuarial", "Prestaciones mas sensibles a reglas"]
+      [
+        "Espana",
+        "Limite: 10.000 EUR anuales (empresa + trabajador). Incentivo: reduccion en la base imponible del IRPF. Mecanismo: diferimiento fiscal hasta el rescate.",
+        "Limite: 1.500 EUR anuales o el 30% de rendimientos netos. Incentivo: reduccion en la base imponible del IRPF. Mecanismo: diferimiento fiscal hasta el rescate."
+      ],
+      [
+        "Alemania",
+        "Limite: exento de impuestos hasta el 8% del techo de cotizacion. Incentivo: exencion fiscal y de cotizaciones. Mecanismo: deduccion directa desde el salario bruto.",
+        "Riester: deduccion hasta 2.100 EUR + subvenciones. Rurup: deduccion hasta 27.000 EUR (autonomos). Mecanismo: deduccion directa en el IRPF."
+      ],
+      [
+        "Suecia",
+        "Limite: hasta el 35% del salario anual del empleado (tope aprox. 57.000 EUR). Incentivo: no se considera ingreso salarial. Mecanismo: diferimiento fiscal del trabajador y deduccion en el impuesto de sociedades.",
+        "Limite: sin incentivos fiscales relevantes. Mecanismo: eliminados; se favorece el sistema publico y ocupacional."
+      ],
+      [
+        "Chile",
+        "Limite: hasta 900 UF anuales. Incentivo: exento de impuestos (no constituye renta). Mecanismo: aportaciones del empleador (depositos convenidos).",
+        "Limite: hasta 600 UF anuales. Incentivo: bonificacion estatal del 15% o deduccion fiscal. Mecanismo: credito fiscal o reduccion de base imponible."
+      ]
     ]
   };
 
@@ -975,25 +1148,25 @@
       {
         id: "sec-2",
         title: "2. El diseño de los tres pilares en el sistema de pensiones",
-        charts: makeIds("f", 1, 8)
+        charts: []
       },
       {
         id: "sec-3",
         title: "3. El modelo sueco: sostenibilidad y confianza intergeneracional",
-        charts: makeIds("f", 9, 16)
+        charts: makeIds("f", 1, 8)
       },
       {
         id: "sec-4",
         title: "4. El éxito del sistema de pensiones de Chile",
-        charts: makeIds("f", 17, 22)
+        charts: makeIds("f", 9, 19)
       },
       {
         id: "sec-5",
         title: "5. Tensiones del sistema alemán",
-        charts: makeIds("f", 23, 30)
+        charts: makeIds("f", 20, 31)
       },
-      { id: "sec-6", title: "6. Una problemática común", charts: makeIds("f", 31, 34) },
-      { id: "sec-7", title: "7. Conclusiones", charts: [] },
+      { id: "sec-6", title: "6. Una problemática común", charts: makeIds("f", 32, 33) },
+      { id: "sec-7", title: "7. Conclusiones", charts: ["f34"] },
       { id: "referencias", title: "7. Referencias", charts: [] }
     ],
     charts,
