@@ -24,14 +24,27 @@ El catalogo y las 7 rutas de informes estan operativas con arquitectura unificad
   - tooltip escalado (miles) y orden interno de la seccion 4.
 - QA aplicado en **El dia D de las pensiones**:
   - layout 4x2 en small multiples del grafico 3,
-  - leyendas/series corregidas en graficos 13 y 16,
+  - series completadas en grafico 3 (cohortes faltantes),
+  - leyenda/orden/alineacion corregidos en grafico 16 y tooltip robusto sin NaN,
   - area entre curvas en grafico 17,
   - parser de texto corregido para evitar falsos titulos numericos.
+- QA aplicado en **Sistemas de pensiones comparados**:
+  - reconstruccion grafico a grafico (1-32) y tablas alineadas con el PDF,
+  - ajustes de layout, ejes y jerarquia por capitulo.
+- QA aplicado en **Las Reformas de la Seguridad Social en Espana**:
+  - tabla principal reconstruida (Tabla 1),
+  - series largas reestimadas (Graficos 1-3),
+  - reorden de visuales dentro del capitulo 8 para respetar flujo del PDF.
+- QA aplicado en **Radiografia del mercado de la vivienda** y **Turismo y vivienda en Canarias**:
+  - pass manual de consistencia chart-by-chart (tipo, orientacion, xlen, series, titulos) contra mapas de figuras.
+- Renderer mejorado:
+  - formateador de tooltip robusto ante `null/undefined` (evita `NaN`),
+  - controles de posicion/estilo de leyenda y toolbox por grafico (`legendTop`, `legendLeft`, etc.).
 - Marcadores de `text.ranges` validados y corregidos para evitar cortes vacios de texto en informes.
 
 ## Pendiente prioritario
-1. QA visual manual 1:1 contra PDF en despliegue para cada reporte (el backlog ya separa hecho vs pendiente).
-2. Validar que no haya solapes en movil/desktop en los 7 informes tras esta ronda de ajustes globales.
+1. QA visual manual 1:1 en navegador (desktop + movil) para cerrar pendientes marcados en `docs/QA_BACKLOG_POR_REPORTE.md`.
+2. Validacion final de home/catalogo responsive y jerarquia tipografica.
 3. Revisar enlaces finales “de verdad” donde aun queden placeholders o rutas temporales.
 
 ## Pendiente de mejora visual
