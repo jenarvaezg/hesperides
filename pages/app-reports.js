@@ -640,12 +640,38 @@
     table.appendChild(thead);
 
     const tbody = document.createElement("tbody");
+    const topRowIndex = Number.isInteger(chart.tableTopRowIndex)
+      ? chart.tableTopRowIndex
+      : chart.tableHighlightFirstRow === false
+        ? -1
+        : 0;
+
     rows.forEach((row, index) => {
       const tr = document.createElement("tr");
-      if (index === 0) tr.classList.add("top-row");
-      row.forEach((cell) => {
+      if (index === topRowIndex) tr.classList.add("top-row");
+
+      if (chart.tableRowClasses && chart.tableRowClasses[index]) {
+        String(chart.tableRowClasses[index])
+          .split(/\s+/)
+          .filter(Boolean)
+          .forEach((className) => tr.classList.add(className));
+      }
+
+      row.forEach((cell, cellIndex) => {
         const td = document.createElement("td");
         td.textContent = cell;
+
+        const cellClassKeyA = `${index}:${cellIndex}`;
+        const cellClassKeyB = `${index},${cellIndex}`;
+        const cellClassName =
+          chart.tableCellClasses && (chart.tableCellClasses[cellClassKeyA] || chart.tableCellClasses[cellClassKeyB]);
+        if (cellClassName) {
+          String(cellClassName)
+            .split(/\s+/)
+            .filter(Boolean)
+            .forEach((className) => td.classList.add(className));
+        }
+
         tr.appendChild(td);
       });
       tbody.appendChild(tr);
@@ -919,18 +945,24 @@
   function buildChartOption(chart) {
     const xLabels = (chart.x || []).map((label) => wrapCategoryLabel(label));
     const isHorizontal = chart.orientation === "horizontal";
-    const defaultType = chart.type === "line" ? "line" : "bar";
+    const isXY = chart.coordinate === "xy";
+    const defaultType = isXY ? "scatter" : chart.type === "line" ? "line" : "bar";
     const tickFormatter = axisFormatter(chart.unit);
+    const xTickFormatter = axisFormatter(chart.xUnit || chart.unit);
+    const yTickFormatter = axisFormatter(chart.yUnit || chart.unit);
     const tooltipFormatter = valueFormatter(chart.unit);
+    const xTooltipFormatter = valueFormatter(chart.xUnit || chart.unit);
+    const yTooltipFormatter = valueFormatter(chart.yUnit || chart.unit);
     const anyLineSeries = (chart.series || []).some((serie) => (serie.type || defaultType) === "line");
     const colors = (chart.series || []).map((serie) => serie.color).filter(Boolean);
 
     const baseSeries = (chart.series || []).map((serie) => {
       const serieType = serie.type || defaultType;
       const isLine = serieType === "line";
+      const isScatter = serieType === "scatter";
       const highlightCategories = Array.isArray(chart.highlights) ? chart.highlights : [];
       const highlightedColor =
-        !isLine && highlightCategories.length
+        !isLine && !isScatter && highlightCategories.length
           ? (params) => {
               const category = (chart.x || [])[params.dataIndex];
               if (highlightCategories.includes(category)) {
@@ -949,8 +981,9 @@
         yAxisIndex: Number.isInteger(serie.yAxisIndex) ? serie.yAxisIndex : 0,
         barMaxWidth: serie.barMaxWidth || chart.barMaxWidth || 28,
         smooth: isLine ? (serie.smooth !== undefined ? Boolean(serie.smooth) : true) : false,
-        symbol: isLine ? serie.symbol || "circle" : serie.symbol || "none",
-        symbolSize: isLine ? (serie.symbolSize || 6) : serie.symbolSize || 0
+        symbol: isLine || isScatter ? serie.symbol || "circle" : serie.symbol || "none",
+        symbolSize: isLine || isScatter ? (serie.symbolSize || 6) : serie.symbolSize || 0,
+        label: serie.label
       };
 
       if (highlightedColor) {
@@ -965,7 +998,7 @@
         }
       }
 
-      if (!isLine) {
+      if (!isLine && !isScatter) {
         base.itemStyle = {
           ...(base.itemStyle || {}),
           borderRadius: isHorizontal ? [0, 6, 6, 0] : [6, 6, 0, 0]
@@ -1014,11 +1047,11 @@
         left: isHorizontal ? 130 : 56,
         right: 26,
         top: 28,
-        bottom: xLabels.length > 8 && !isHorizontal ? 92 : 58,
+        bottom: xLabels.length > 8 && !isHorizontal && !isXY ? 92 : 58,
         containLabel: true
       },
       tooltip: {
-        trigger: "axis",
+        trigger: isXY ? "item" : "axis",
         backgroundColor: "rgba(23, 23, 23, 0.92)",
         borderColor: "#f3c400",
         borderWidth: 1,
@@ -1026,9 +1059,23 @@
           color: "#f9f9f9"
         },
         axisPointer: {
-          type: anyLineSeries ? "cross" : "shadow"
+          type: isXY || anyLineSeries ? "cross" : "shadow"
         },
         formatter: (params) => {
+          if (isXY) {
+            const item = Array.isArray(params) ? params[0] : params;
+            const point = Array.isArray(item.value)
+              ? item.value
+              : Array.isArray(item.data && item.data.value)
+                ? item.data.value
+                : [item.value, null];
+            const label = item.data && item.data.name ? item.data.name : item.seriesName;
+            return [
+              `<strong>${escapeHtml(label || "")}</strong>`,
+              `${escapeHtml(chart.xLabel || "X")}: ${xTooltipFormatter(point[0])}`,
+              `${escapeHtml(chart.yLabel || "Y")}: ${yTooltipFormatter(point[1])}`
+            ].join("<br>");
+          }
           const items = Array.isArray(params) ? params : [params];
           const lines = [`<strong>${items[0].axisValueLabel}</strong>`];
           items.forEach((item) => {
@@ -1060,51 +1107,19 @@
           }
         }
       },
-      xAxis: isHorizontal
+      xAxis: isXY
         ? {
             type: "value",
+            min: chart.xMin,
+            max: chart.xMax,
             axisLabel: {
               color: "#4f4f4f",
-              formatter: tickFormatter
-            },
-            axisLine: {
-              lineStyle: {
-                color: "#8f8574"
-              }
+              formatter: xTickFormatter
             },
             splitLine: {
               lineStyle: {
                 color: "rgba(137, 128, 106, 0.25)"
               }
-            },
-            min: chart.min,
-            max: chart.max
-          }
-        : {
-            type: "category",
-            data: xLabels,
-            axisLabel: {
-              color: "#4f4f4f",
-              interval: 0,
-              fontSize: 11,
-              lineHeight: 14
-            },
-            axisLine: {
-              lineStyle: {
-                color: "#8f8574"
-              }
-            },
-            axisTick: { alignWithLabel: true }
-          },
-      yAxis: yAxisOption || (isHorizontal
-        ? {
-            type: "category",
-            data: xLabels,
-            axisLabel: {
-              color: "#4f4f4f",
-              interval: 0,
-              fontSize: 11,
-              lineHeight: 14
             },
             axisLine: {
               lineStyle: {
@@ -1112,11 +1127,50 @@
               }
             }
           }
-        : {
+        : isHorizontal
+          ? {
+              type: "value",
+              axisLabel: {
+                color: "#4f4f4f",
+                formatter: tickFormatter
+              },
+              axisLine: {
+                lineStyle: {
+                  color: "#8f8574"
+                }
+              },
+              splitLine: {
+                lineStyle: {
+                  color: "rgba(137, 128, 106, 0.25)"
+                }
+              },
+              min: chart.min,
+              max: chart.max
+            }
+          : {
+              type: "category",
+              data: xLabels,
+              axisLabel: {
+                color: "#4f4f4f",
+                interval: 0,
+                fontSize: 11,
+                lineHeight: 14
+              },
+              axisLine: {
+                lineStyle: {
+                  color: "#8f8574"
+                }
+              },
+              axisTick: { alignWithLabel: true }
+            },
+      yAxis: yAxisOption || (isXY
+        ? {
             type: "value",
+            min: chart.min,
+            max: chart.max,
             axisLabel: {
               color: "#4f4f4f",
-              formatter: tickFormatter
+              formatter: yTickFormatter
             },
             splitLine: {
               lineStyle: {
@@ -1127,16 +1181,49 @@
               lineStyle: {
                 color: "#8f8574"
               }
-            },
-            min: chart.min,
-            max: chart.max
-          }),
+            }
+          }
+        : isHorizontal
+          ? {
+              type: "category",
+              data: xLabels,
+              axisLabel: {
+                color: "#4f4f4f",
+                interval: 0,
+                fontSize: 11,
+                lineHeight: 14
+              },
+              axisLine: {
+                lineStyle: {
+                  color: "#8f8574"
+                }
+              }
+            }
+          : {
+              type: "value",
+              axisLabel: {
+                color: "#4f4f4f",
+                formatter: tickFormatter
+              },
+              splitLine: {
+                lineStyle: {
+                  color: "rgba(137, 128, 106, 0.25)"
+                }
+              },
+              axisLine: {
+                lineStyle: {
+                  color: "#8f8574"
+                }
+              },
+              min: chart.min,
+              max: chart.max
+            }),
       series: baseSeries
     };
 
     if (chart.dataZoom) {
       option.dataZoom = chart.dataZoom;
-    } else if ((chart.x || []).length > 10 && !isHorizontal) {
+    } else if ((chart.x || []).length > 10 && !isHorizontal && !isXY) {
       option.dataZoom = [{ type: "inside" }];
     }
 
@@ -1151,7 +1238,42 @@
       };
     }
 
-    if (!isHorizontal && Array.isArray(chart.eventLines) && chart.eventLines.length > 0 && baseSeries.length > 0) {
+    if (
+      isXY &&
+      baseSeries.length > 0 &&
+      ((Array.isArray(chart.eventLinesX) && chart.eventLinesX.length > 0) ||
+        (Array.isArray(chart.eventLinesY) && chart.eventLinesY.length > 0))
+    ) {
+      const xLines = (chart.eventLinesX || []).map((eventLine) => ({
+        name: eventLine.label,
+        xAxis: eventLine.x,
+        lineStyle: {
+          color: eventLine.color || "#d26d6d",
+          type: "dashed"
+        }
+      }));
+      const yLines = (chart.eventLinesY || []).map((eventLine) => ({
+        name: eventLine.label,
+        yAxis: eventLine.y,
+        lineStyle: {
+          color: eventLine.color || "#d26d6d",
+          type: "dashed"
+        }
+      }));
+
+      baseSeries[0].markLine = {
+        ...(baseSeries[0].markLine || {}),
+        symbol: "none",
+        label: {
+          formatter: (params) => params.name,
+          color: "#6e4f4f",
+          fontSize: 10,
+          backgroundColor: "rgba(255,255,255,0.78)",
+          padding: [2, 4]
+        },
+        data: [...xLines, ...yLines]
+      };
+    } else if (!isHorizontal && Array.isArray(chart.eventLines) && chart.eventLines.length > 0 && baseSeries.length > 0) {
       baseSeries[0].markLine = {
         ...(baseSeries[0].markLine || {}),
         symbol: "none",
@@ -1199,6 +1321,11 @@
     const labelMap = axisPreset.xLabelMap || {};
 
     (chart.series || []).forEach((serie) => {
+      const serieType = chart.smallMultiplesType || serie.type || "line";
+      const isBar = serieType === "bar";
+      const panelMin = typeof serie.min === "number" ? serie.min : yMin;
+      const panelMax = typeof serie.max === "number" ? serie.max : yMax;
+      const panelInterval = typeof serie.interval === "number" ? serie.interval : yInterval;
       const panel = document.createElement("div");
       panel.className = "mini-chart-canvas";
       container.appendChild(panel);
@@ -1237,7 +1364,7 @@
         },
         xAxis: {
           type: "category",
-          boundaryGap: false,
+          boundaryGap: isBar,
           data: chart.x,
           axisLabel: {
             color: "#4f4f4f",
@@ -1256,9 +1383,9 @@
         },
         yAxis: {
           type: "value",
-          min: yMin,
-          max: yMax,
-          interval: yInterval === null ? undefined : yInterval,
+          min: panelMin,
+          max: panelMax,
+          interval: panelInterval === null ? undefined : panelInterval,
           minInterval: getAxisUnitProfile(chart).integerOnly ? 1 : 0,
           axisLabel: {
             color: "#4f4f4f",
@@ -1273,21 +1400,32 @@
           }
         },
         series: [
-          {
-            name: serie.name,
-            type: "line",
-            data: serie.data,
-            smooth: 0.15,
-            symbol: "circle",
-            symbolSize: 5,
-            lineStyle: {
-              color: serie.color,
-              width: 2.2
-            },
-            itemStyle: {
-              color: serie.color
-            }
-          }
+          isBar
+            ? {
+                name: serie.name,
+                type: "bar",
+                data: serie.data,
+                barMaxWidth: 14,
+                itemStyle: {
+                  color: serie.color,
+                  borderRadius: [4, 4, 0, 0]
+                }
+              }
+            : {
+                name: serie.name,
+                type: "line",
+                data: serie.data,
+                smooth: 0.15,
+                symbol: "circle",
+                symbolSize: 5,
+                lineStyle: {
+                  color: serie.color,
+                  width: 2.2
+                },
+                itemStyle: {
+                  color: serie.color
+                }
+              }
         ]
       });
     });

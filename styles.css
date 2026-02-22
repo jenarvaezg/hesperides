@@ -489,6 +489,16 @@ h1 {
   background: rgba(243, 196, 0, 0.1);
 }
 
+.chart-inline-table td.cell-soft-highlight {
+  background: rgba(243, 196, 0, 0.28);
+  font-weight: 600;
+}
+
+.chart-inline-table td.cell-strong-highlight {
+  background: rgba(243, 196, 0, 0.7);
+  font-weight: 700;
+}
+
 .chart-meta {
   margin-top: 0.6rem;
   font-size: 0.78rem;

@@ -52,327 +52,538 @@
     ],
     charts: {
       i01: {
-        title: "Grafico 1. Ingresos, gastos y deficit publico (2024)",
-        subtitle: "Administraciones publicas de Espana (millones de euros)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+        title: "Grafico 1. Las cuentas publicas en Espana no cuadran",
+        subtitle: "Empleos, recursos y saldo de las AAPP, 2024",
+        source: "IGAE",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        unit: "M€",
-        x: ["Ingresos", "Gastos", "Deficit"],
-        series: [
-          {
-            name: "Millones de euros",
-            data: [672659, 722846, 50187],
-            color: "#f3c400"
-          }
-        ]
+        exactness: "exacta del grafico",
+        renderAs: "table",
+        tableHighlightFirstRow: false,
+        tableColumns: ["", "Millones de euros", "Porcentaje PIB"],
+        tableRows: [
+          ["Ingresos", "672 659", "42,3%"],
+          ["Gastos", "722 846", "45,4%"],
+          ["Capacidad/necesidad financiacion", "-50 187", "-3,2%"]
+        ],
+        tableCellClasses: {
+          "0:1": "cell-strong-highlight",
+          "1:1": "cell-strong-highlight"
+        }
       },
       i02: {
-        title: "Grafico 2. Deficit publico de Espana (% del PIB)",
-        subtitle: "Serie estimada de saldo presupuestario del conjunto de administraciones",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+        title: "Grafico 2. La irresponsabilidad fiscal espanola inicia en el ano 2008 y sigue viva en 2025",
+        subtitle: "Gasto e ingreso de las Administraciones Publicas espanolas (1995-2024)",
+        source: "IGAE",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         type: "line",
-        unit: "%",
-        x: ["2000", "2004", "2008", "2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
-        series: [
-          {
-            name: "Deficit / superavit",
-            type: "line",
-            data: [0.8, 0.2, -4.4, -9.9, -10.5, -6.0, -4.3, -2.5, -10.1, -4.8, -3.2],
-            color: "#7f5b00",
-            areaStyle: 0.12
-          }
+        unit: "% del PIB",
+        x: [
+          "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004",
+          "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
+          "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
         ],
-        min: -12,
-        max: 2
-      },
-      i03: {
-        title: "Tabla 1. Estructura funcional del gasto publico",
-        subtitle: "Distribucion aproximada del gasto por funciones (2023)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        renderAs: "table",
-        tableColumns: ["Funcion", "Peso estimado", "Comentario"],
-        tableRows: [
-          ["Proteccion social", "42%", "Incluye pensiones y transferencias sociales"],
-          ["Sanidad", "15%", "Segundo bloque de gasto funcional"],
-          ["Educacion", "12%", "Tercer componente de mayor volumen"],
-          ["Resto de funciones", "31%", "Defensa, servicios generales y otras politicas"]
-        ]
-      },
-      i04: {
-        title: "Grafico 3. Ingresos y gastos por nivel administrativo",
-        subtitle: "Centralizacion de ingresos y descentralizacion del gasto (%)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        unit: "%",
-        x: ["Adm. Central", "Seguridad Social", "CCAA", "Corporaciones locales"],
         series: [
           {
-            name: "Peso en ingresos",
-            data: [43.0, 29.8, 18.4, 8.8],
-            color: "#f3c400"
+            name: "Gasto publico",
+            type: "line",
+            data: [
+              43.6, 42.4, 41.0, 40.5, 39.4, 38.6, 38.0, 38.2, 37.9, 38.2,
+              38.0, 37.9, 38.8, 40.8, 45.6, 45.4, 45.5, 48.8, 45.7, 44.6,
+              43.2, 41.6, 40.5, 41.0, 41.5, 50.9, 49.1, 45.9, 45.0, 45.1
+            ],
+            color: "#f3c400",
+            areaStyle: 0.14,
+            symbolSize: 5
           },
           {
-            name: "Peso en gasto",
-            data: [22.6, 33.7, 32.6, 11.2],
-            color: "#2b2b2b"
+            name: "Ingreso publico",
+            type: "line",
+            data: [
+              36.8, 36.5, 37.1, 37.9, 38.2, 37.5, 37.5, 38.0, 37.5, 38.2,
+              39.2, 40.0, 40.6, 36.3, 34.5, 35.8, 35.7, 37.2, 38.2, 38.5,
+              37.9, 37.4, 37.5, 38.5, 38.5, 41.0, 42.3, 41.3, 41.4, 42.0
+            ],
+            color: "#6b4a00",
+            symbolSize: 5
           }
+        ],
+        eventLines: [
+          { x: "2008", label: "Ano 2008" }
+        ],
+        min: 35,
+        max: 51
+      },
+      i03: {
+        title: "Tabla 1. Espana destina 2 de cada 3 euros de gasto publico a gasto social, sanidad y educacion",
+        subtitle: "Clasificacion funcional del gasto, 2023",
+        source: "IGAE",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "exacta del informe",
+        renderAs: "table",
+        tableHighlightFirstRow: false,
+        tableColumns: ["Clasificacion gasto", "Millones de euros", "Porcentaje gasto total"],
+        tableRows: [
+          ["Vivienda", "7 643", "1,1%"],
+          ["Defensa", "13 987", "2,1%"],
+          ["Proteccion medio ambiente", "14 640", "2,2%"],
+          ["Ocio, cultura y religion", "18 729", "2,8%"],
+          ["Orden publico y seguridad", "27 443", "4,0%"],
+          ["Educacion", "63 040", "9,3%"],
+          ["Asuntos economicos", "74 958", "11,0%"],
+          ["Servicios pub. generales", "84 784", "12,5%"],
+          ["Salud", "98 624", "14,5%"],
+          ["Proteccion Social", "277 104", "40,7%"],
+          ["Total", "680 952", "100,0%"]
+        ],
+        tableCellClasses: {
+          "9:1": "cell-soft-highlight",
+          "10:1": "cell-strong-highlight"
+        }
+      },
+      i04: {
+        title: "Grafico 3. Espana: un Estado con gasto descentralizado e ingreso centralizado",
+        subtitle: "Ingresos y gastos netos de transferencias por niveles de administracion, en porcentaje del total",
+        source: "IGAE",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "reconstruida visualmente",
+        unit: "%",
+        x: ["Administracion Central", "Comunidades Autonomas", "Corporaciones Locales", "Seguridad Social"],
+        series: [
+          { name: "Ingreso (porcentaje sobre el total)", data: [43.0, 18.4, 8.8, 29.8], color: "#6b4a00" },
+          { name: "Gasto (porcentaje sobre el total)", data: [22.6, 32.6, 11.2, 33.7], color: "#f3c400" }
         ],
         min: 0,
         max: 50
       },
       i05: {
-        title: "Grafico 4. Recursos netos disponibles por administracion",
-        subtitle: "Estimacion relativa de capacidad de gasto libre (%)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+        title: "Grafico 4. La Seguridad Social gestiona 1 de cada 3 euros de dinero publico",
+        subtitle: "Ingresos no financieros por nivel de administracion netos de gasto en transferencias entre administraciones, como porcentaje del total",
+        source: "IGAE",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
+        renderAs: "small-multiples",
+        smallMultiplesType: "bar",
         unit: "%",
-        orientation: "horizontal",
-        x: ["Adm. Central", "Seguridad Social", "CCAA", "Corporaciones locales"],
-        series: [
-          {
-            name: "Recursos netos",
-            data: [24, 35, 32, 9],
-            color: "#7f5b00"
-          }
+        x: [
+          "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004",
+          "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
+          "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
         ],
-        min: 0,
-        max: 40
-      },
-      i06: {
-        title: "Grafico 5. Composicion financiera de la Seguridad Social (2024)",
-        subtitle: "Ingresos corrientes frente a gasto total del sistema (M€)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        unit: "M€",
-        x: ["Cotizaciones", "Transferencias del Estado", "Otros ingresos", "Gasto total"],
+        smallMultiplesAxis: {
+          yMin: 0,
+          yMax: 40,
+          yInterval: 10,
+          xTickIndices: [0, 29]
+        },
         series: [
           {
-            name: "Millones de euros",
-            data: [174250, 54005, 17600, 242253],
-            color: "#f3c400"
+            name: "Seguridad Social",
+            color: "#6b4a00",
+            data: [34, 33, 32, 32, 31, 30, 29, 29, 28, 28, 27, 27, 35, 34, 33, 33, 32, 31, 30, 30, 29, 29, 30, 31, 35, 34, 33, 32, 32, 32]
+          },
+          {
+            name: "Comunidades Autonomas",
+            color: "#f3c400",
+            data: [22, 23, 23, 24, 25, 26, 27, 29, 30, 31, 31, 32, 34, 36, 38, 32, 28, 31, 30, 31, 30, 31, 32, 33, 35, 36, 34, 30, 31, 32]
+          },
+          {
+            name: "Administracion Central",
+            color: "#f3c400",
+            data: [24, 25, 25, 24, 23, 22, 21, 21, 20, 21, 21, 22, 10, 12, 14, 15, 17, 16, 17, 17, 18, 18, 18, 17, 7, 16, 16, 16, 15, 15]
+          },
+          {
+            name: "Corporaciones Locales",
+            color: "#f3c400",
+            data: [10, 10, 10, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 12, 11, 11, 11, 11, 11, 11, 11, 10, 10, 10]
           }
         ]
       },
-      i07: {
-        title: "Grafico 6. Saldos basico y presupuestario (% PIB)",
-        subtitle: "Evolucion 2010-2024 del desequilibrio financiero de la Seguridad Social",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+      i06: {
+        title: "Grafico 5. La Administracion Central apenas tiene recursos de libre disposicion para incrementar el gasto",
+        subtitle: "Gasto en operaciones no financieras de la Administracion General del Estado en 2023",
+        source: "Garcia (2024) y Ministerio de Hacienda",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
-        type: "line",
-        unit: "%",
-        x: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
-        series: [
-          {
-            name: "Saldo basico",
-            type: "line",
-            data: [0.1, -0.2, -0.5, -0.7, -0.9, -1.1, -1.2, -1.1, -1.0, -1.1, -1.3, -1.2, -1.0, -0.9, -0.8],
-            color: "#2b2b2b"
-          },
-          {
-            name: "Saldo presupuestario",
-            type: "line",
-            data: [-0.8, -1.2, -1.8, -2.3, -2.8, -3.2, -3.5, -3.7, -3.9, -4.0, -4.5, -4.4, -4.3, -4.2, -4.2],
-            color: "#f3c400"
-          }
-        ],
-        min: -5,
-        max: 1
-      },
-      i08: {
-        title: "Grafico 7. Saldo basico en millones de euros",
-        subtitle: "Agujero acumulado de la Seguridad Social (serie estimada)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        type: "line",
         unit: "M€",
-        x: ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
-        series: [
-          {
-            name: "Saldo basico",
-            type: "line",
-            data: [-8000, -14000, -23000, -31000, -39000, -52000, -61000, -66206],
-            color: "#7f5b00",
-            areaStyle: 0.14
-          }
+        x: [
+          "Gasto no financiero",
+          "Intereses",
+          "Aportacion UE",
+          "Prestaciones SS",
+          "Transferencias otras administraciones",
+          "Resto politicas"
         ],
-        min: -70000,
-        max: 0
-      },
-      i09: {
-        title: "Grafico 8. Deficit contributivo en terminos relativos",
-        subtitle: "Magnitud del desequilibrio frente al PIB y al gasto contributivo (2024)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        unit: "%",
-        x: ["Deficit / PIB", "Deficit / gasto contributivo"],
         series: [
           {
-            name: "Porcentaje",
-            data: [3.8, 26.6],
-            color: "#f3c400"
+            name: "Millones de euros",
+            data: [
+              { value: 218202, itemStyle: { color: "#f3c400" } },
+              { value: 31275, itemStyle: { color: "#6b4a00" } },
+              { value: 18043, itemStyle: { color: "#6b4a00" } },
+              { value: 56589, itemStyle: { color: "#6b4a00" } },
+              { value: 61508, itemStyle: { color: "#6b4a00" } },
+              { value: 50787, itemStyle: { color: "#f3c400" } }
+            ]
           }
         ],
         min: 0,
-        max: 30
+        max: 230000
+      },
+      i07: {
+        title: "Grafico 6. Las cotizaciones sociales solo cubren 7 de cada 10 euros del gasto en pensiones",
+        subtitle: "Cuentas del Sistema de Seguridad Social en Espana en 2024",
+        source: "de la Fuente (2025)",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "reconstruida visualmente",
+        unit: "M€",
+        x: ["Cotizaciones y clases pasivas", "Otros ingresos", "Transferencias del Estado", "Total gasto"],
+        series: [
+          {
+            name: "Millones de euros",
+            data: [
+              { value: 174250, itemStyle: { color: "#f3c400" } },
+              { value: 1796, itemStyle: { color: "#f3c400" } },
+              { value: 54005, itemStyle: { color: "#f3c400" } },
+              { value: 242253, itemStyle: { color: "#6b4a00" } }
+            ]
+          }
+        ],
+        min: 0,
+        max: 250000
+      },
+      i08: {
+        title: "Grafico 7. La Seguridad Social acumula 15 anos de desequilibrio financiero estructural",
+        subtitle: "Evolucion del saldo presupuestario y basico de la Seguridad Social, en porcentaje del PIB",
+        source: "de la Fuente (2025)",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "reconstruida visualmente",
+        type: "line",
+        unit: "% del PIB",
+        x: [
+          "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
+          "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
+        ],
+        series: [
+          {
+            name: "Saldo presupuestario",
+            type: "line",
+            data: [0.6, 0.7, 0.7, 0.8, 0.3, -0.2, -0.6, -0.9, -1.2, -1.5, -1.7, -1.9, -1.8, -1.6, -1.5, -1.3, -1.0, -0.7, -0.9, -0.8],
+            color: "#f3c400",
+            symbolSize: 4
+          },
+          {
+            name: "Saldo basico",
+            type: "line",
+            data: [0.1, 0.3, 0.7, 0.7, 0.2, -0.5, -1.0, -1.7, -2.8, -3.0, -3.3, -3.5, -3.4, -3.4, -3.4, -5.0, -4.6, -4.0, -4.1, -4.2],
+            color: "#6b4a00",
+            symbolSize: 4
+          }
+        ],
+        zeroLine: true,
+        min: -5.5,
+        max: 1
+      },
+      i09: {
+        title: "Grafico 8. El saldo contributivo de la Seguridad Social presenta un deficit creciente",
+        subtitle: "Evolucion de los gastos e ingresos contributivos, en miles de millones de euros de 2021",
+        source: "de la Fuente (2025)",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "reconstruida visualmente",
+        type: "line",
+        unit: "miles de millones",
+        x: [
+          "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
+          "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
+        ],
+        series: [
+          {
+            name: "Gastos",
+            type: "line",
+            data: [106.0, 109.0, 113.0, 118.0, 123.0, 129.0, 133.0, 137.0, 143.0, 149.0, 153.0, 158.0, 162.0, 167.0, 176.0, 185.0, 188.0, 184.0, 191.0, 199.3],
+            color: "#6b4a00",
+            areaStyle: 0.16,
+            symbolSize: 4
+          },
+          {
+            name: "Ingresos",
+            type: "line",
+            data: [113.8, 114.0, 116.0, 121.0, 127.0, 127.0, 129.0, 127.0, 124.0, 119.0, 119.0, 119.0, 120.0, 122.0, 126.0, 133.0, 127.0, 136.0, 138.0, 146.4],
+            color: "#f3c400",
+            symbolSize: 4
+          }
+        ],
+        min: 100,
+        max: 205
       },
       i10: {
-        title: "Grafico 9. Saldo contributivo por comunidad autonoma (2023)",
-        subtitle: "Solo cuatro territorios muestran superavit en el esquema contributivo (M€)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+        title: "Grafico 9. Las cotizaciones unicamente cubren 3 de cada 4 euros de las prestaciones contributivas",
+        subtitle: "Evolucion del saldo contributivo de la Seguridad Social",
+        source: "de la Fuente (2025)",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "reconstruida visualmente",
+        renderAs: "small-multiples",
+        unit: "%",
+        x: [
+          "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
+          "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
+        ],
+        smallMultiplesAxis: {
+          xTickIndices: [0, 19]
+        },
+        series: [
+          {
+            name: "en % del PIB",
+            color: "#f3c400",
+            min: -6,
+            max: 2.5,
+            interval: 2.5,
+            data: [0.8, 0.9, 1.0, 0.4, -0.3, -1.1, -2.8, -3.5, -3.7, -3.7, -3.7, -3.6, -3.0, -2.3, -2.7, -5.3, -4.2, -4.2, -4.0, -3.8]
+          },
+          {
+            name: "en % de los gastos contributivos",
+            color: "#6b4a00",
+            min: -32,
+            max: 16,
+            interval: 16,
+            data: [5.0, 6.0, 7.0, 2.0, -5.0, -11.0, -18.0, -24.0, -26.0, -27.0, -27.0, -27.0, -27.0, -26.0, -21.0, -29.0, -31.0, -26.0, -27.0, -26.5]
+          }
+        ]
+      },
+      i11: {
+        title: "Grafico 10. La Seguridad Social solo es viable en cuatro CCAA",
+        subtitle: "Saldo del sistema contributivo por Comunidades Autonomas en 2023",
+        source: "Seguridad Social y Garcia (2023)",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         orientation: "horizontal",
         unit: "M€",
         x: [
-          "Andalucia",
-          "Pais Vasco",
-          "Galicia",
-          "Cataluna",
-          "Castilla y Leon",
-          "C. Valenciana",
-          "Aragon",
-          "Murcia",
-          "Canarias",
-          "Asturias",
           "Madrid",
           "Baleares",
           "Ceuta",
-          "Melilla"
+          "Melilla",
+          "La Rioja",
+          "Canarias",
+          "Murcia",
+          "Navarra",
+          "Castilla-La Mancha",
+          "Cantabria",
+          "Extremadura",
+          "Aragon",
+          "Asturias",
+          "Valencia",
+          "Castilla y Leon",
+          "Cataluna",
+          "Galicia",
+          "Pais Vasco",
+          "Andalucia"
         ],
         series: [
           {
             name: "Saldo contributivo",
-            data: [-5480, -4480, -4420, -4100, -3900, -2600, -1800, -1450, -1200, -980, 1350, 884, 120, 95],
-            color: "#2b2b2b"
+            data: [1353, 884, 13, 12, -228, -291, -358, -444, -799, -967, -1143, -1398, -2422, -3259, -3914, -4149, -4417, -4478, -5487],
+            color: "#f3c400"
           }
         ],
-        min: -6000,
+        min: -5800,
         max: 1600
       },
-      i11: {
-        title: "Grafico 10. Evolucion del Fondo de Reserva",
-        subtitle: "Stock de la hucha de pensiones (M€) 2000-2024",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+      i12: {
+        title: "Grafico 11. La hucha de las pensiones aparentemente crece",
+        subtitle: "Evolucion del Fondo de Reserva de la Seguridad Social",
+        source: "Seguridad Social",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
-        type: "line",
-        unit: "M€",
-        x: ["2000", "2003", "2006", "2009", "2011", "2013", "2015", "2017", "2019", "2021", "2023", "2024"],
+        unit: "miles de millones",
+        x: [
+          "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015",
+          "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
+        ],
         series: [
           {
             name: "Fondo de reserva",
-            type: "line",
-            data: [600, 12000, 35000, 58000, 66815, 54000, 32000, 8000, 2150, 5200, 8600, 9300],
-            color: "#f3c400",
-            areaStyle: 0.18
-          }
-        ],
-        min: 0,
-        max: 70000
-      },
-      i12: {
-        title: "Grafico 11. Retiros del Fondo de Reserva",
-        subtitle: "Extracciones anuales para cubrir tensiones de caja (M€)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        unit: "M€",
-        x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
-        series: [
-          {
-            name: "Retiros",
-            data: [7000, 11000, 15000, 12500, 19000, 9000, 3000, 0, 0, 0, 0, 0, 0],
-            color: "#7f5b00"
-          }
-        ],
-        min: 0,
-        max: 20000
-      },
-      i13: {
-        title: "Grafico 12. Rentabilidad comparada de fondos soberanos/publicos",
-        subtitle: "Comparacion anual media estimada (%)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        unit: "%",
-        x: ["Noruega", "Canada", "Suecia", "Dinamarca", "Espana"],
-        series: [
-          {
-            name: "Rentabilidad media",
-            data: [6.8, 6.1, 5.4, 4.9, 1.2],
+            data: [32.4, 41.1, 50.7, 61.9, 64.9, 70.3, 72.9, 68.7, 58.4, 45.3, 35.2, 16.2, 9.7, 5.3, 2.2, 2.2, 2.1, 5.0, 8.1],
             color: "#f3c400"
           }
         ],
         min: 0,
-        max: 8
+        max: 80
+      },
+      i13: {
+        title: "Grafico 12. La hucha de las pensiones es una trampa contable",
+        subtitle: "Evolucion de la deuda neta de la Seguridad Social",
+        source: "Banco de Espana y Seguridad Social",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "reconstruida visualmente",
+        unit: "miles de millones",
+        x: [
+          "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
+          "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
+        ],
+        series: [
+          {
+            name: "Prestamos del Estado",
+            data: [-20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -40, -60, -70, -120, -110, -108, -115],
+            color: "#9b7700"
+          },
+          {
+            name: "Fondo de Reserva",
+            data: [41, 46, 51, 59, 62, 64, 68, 70, 68, 59, 52, 46, 39, 28, 23, 21, 20, 20, 21, 22],
+            color: "#f3c400"
+          }
+        ],
+        zeroLine: true,
+        min: -130,
+        max: 80
       },
       i14: {
-        title: "Grafico 13. Tamano del fondo frente al gasto mensual",
-        subtitle: "Fondo de reserva actual frente a una mensualidad de pensiones (M€)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+        title: "Grafico 13. El Fondo de Reserva tiene una de las rentabilidades mas bajas entre los fondos soberanos",
+        subtitle: "Tasa de retorno real de los fondos de reserva publicos en los paises de la OCDE (2023)",
+        source: "OCDE",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
-        unit: "M€",
-        x: ["Fondo de reserva", "Gasto mensual pensiones"],
+        unit: "%",
+        x: [
+          "Japon",
+          "Canada",
+          "Corea",
+          "Grecia",
+          "Portugal",
+          "Luxemburgo",
+          "Nueva Zelanda",
+          "Lituania",
+          "Eslovenia",
+          "Promedio OCDE",
+          "Chequia",
+          "Mexico",
+          "Belgica",
+          "Finlandia",
+          "Reino Unido",
+          "Canada (QPP, RRQ/CPP)",
+          "Alemania",
+          "EEUU",
+          "Estonia",
+          "Italia",
+          "Francia",
+          "Polonia",
+          "Noruega",
+          "Espana",
+          "Suecia AP-fondos"
+        ],
         series: [
           {
-            name: "Millones de euros",
-            data: [9300, 13000],
-            color: "#2b2b2b"
+            name: "Rentabilidad real",
+            data: [19.5, 11.9, 10.3, 10.1, 7.6, 6.3, 6.1, 6.1, 5.8, 5.3, 5.0, 5.0, 4.9, 4.5, 4.0, 3.8, 3.5, 3.3, 3.2, 3.1, 2.8, 2.0, 1.4, -0.9, -1.3],
+            color: "#f3c400"
           }
         ],
-        min: 0,
-        max: 15000
+        min: -2,
+        max: 21
       },
       i15: {
-        title: "Grafico 14. Cobertura temporal del fondo",
-        subtitle: "Dias de deficit anual que podria cubrir el fondo actual",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
+        title: "Grafico 14. El patrimonio neto de la Seguridad Social esta en numeros rojos desde 2016",
+        subtitle: "Evolucion del patrimonio neto de la Seguridad Social (2005-2024)",
+        source: "Seguridad Social",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
-        unit: "dias",
-        x: ["Cobertura estimada"],
-        series: [
-          {
-            name: "Dias",
-            data: [52],
-            color: "#7f5b00"
-          }
+        unit: "miles de millones",
+        x: [
+          "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
+          "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
         ],
-        min: 0,
-        max: 70
-      },
-      i16: {
-        title: "Grafico 15. Patrimonio neto de la Seguridad Social",
-        subtitle: "Evolucion estimada del patrimonio neto (M€)",
-        source: "La (in)sostenibilidad de la Seguridad Social (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
-        exactness: "reconstruida visualmente",
-        type: "line",
-        unit: "M€",
-        x: ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"],
         series: [
           {
             name: "Patrimonio neto",
-            type: "line",
-            data: [-12000, -25000, -41000, -56000, -72000, -86000, -96000, -102000],
-            color: "#2b2b2b",
-            areaStyle: 0.14
+            data: [
+              { value: 12, itemStyle: { color: "#f3c400" } },
+              { value: 21, itemStyle: { color: "#f3c400" } },
+              { value: 32, itemStyle: { color: "#f3c400" } },
+              { value: 43, itemStyle: { color: "#f3c400" } },
+              { value: 46, itemStyle: { color: "#f3c400" } },
+              { value: 52, itemStyle: { color: "#f3c400" } },
+              { value: 54, itemStyle: { color: "#f3c400" } },
+              { value: 50, itemStyle: { color: "#f3c400" } },
+              { value: 40, itemStyle: { color: "#f3c400" } },
+              { value: 27, itemStyle: { color: "#f3c400" } },
+              { value: 17, itemStyle: { color: "#f3c400" } },
+              { value: -2, itemStyle: { color: "#6b4a00" } },
+              { value: -19, itemStyle: { color: "#6b4a00" } },
+              { value: -38, itemStyle: { color: "#6b4a00" } },
+              { value: -55, itemStyle: { color: "#6b4a00" } },
+              { value: -85, itemStyle: { color: "#6b4a00" } },
+              { value: -95, itemStyle: { color: "#6b4a00" } },
+              { value: -99, itemStyle: { color: "#6b4a00" } },
+              { value: -99, itemStyle: { color: "#6b4a00" } },
+              { value: -102, itemStyle: { color: "#6b4a00" } }
+            ]
           }
         ],
-        min: -110000,
-        max: 0
+        zeroLine: true,
+        min: -110,
+        max: 60
+      },
+      i16: {
+        title: "Grafico 15. Espana tiene el peor saldo fiscal de Europa y el mayor aumento previsto del gasto en pensiones",
+        subtitle: "Saldo fiscal entre 2013 y 2022 y cambio previsto en el gasto en pensiones entre 2022 y 2045",
+        source: "Eurostat y Comision Europea",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
+        exactness: "reconstruida visualmente",
+        coordinate: "xy",
+        xLabel: "Saldo fiscal promedio 2013-2022",
+        yLabel: "Cambio de gasto en pensiones 2022-2045",
+        xUnit: "% del PIB",
+        yUnit: "% del PIB",
+        xMin: -0.8,
+        xMax: 4.7,
+        min: -5.8,
+        max: 1.8,
+        series: [
+          {
+            name: "UE (sin Espana)",
+            type: "scatter",
+            color: "#f3c400",
+            symbolSize: 8,
+            data: [
+              { name: "Suecia", value: [-0.5, -0.1] },
+              { name: "Francia", value: [-0.5, -4.8] },
+              { name: "Grecia", value: [-0.5, -4.2] },
+              { name: "Estonia", value: [-0.2, -1.2] },
+              { name: "Alemania", value: [0.3, -2.2] },
+              { name: "Austria", value: [0.4, -2.6] },
+              { name: "Romania", value: [0.4, -0.2] },
+              { name: "Italia", value: [0.8, -4.3] },
+              { name: "Paises Bajos", value: [1.3, -1.4] },
+              { name: "Portugal", value: [1.4, -0.6] },
+              { name: "Belgica", value: [1.7, -1.6] },
+              { name: "Letonia", value: [1.9, -3.1] },
+              { name: "Dinamarca", value: [2.1, -3.9] },
+              { name: "Finlandia", value: [2.3, -3.6] },
+              { name: "Luxemburgo", value: [2.5, 1.0] },
+              { name: "Polonia", value: [2.6, -1.9] },
+              { name: "Chequia", value: [2.7, -2.5] },
+              { name: "Lituania", value: [3.0, -1.2] },
+              { name: "Eslovenia", value: [3.1, -3.0] }
+            ]
+          },
+          {
+            name: "Espana",
+            type: "scatter",
+            color: "#2b2b2b",
+            symbolSize: 11,
+            label: {
+              show: true,
+              formatter: "{b}",
+              position: "right",
+              color: "#2b2b2b",
+              fontSize: 11,
+              fontWeight: 700
+            },
+            data: [{ name: "Espana", value: [4.0, -4.5] }]
+          }
+        ],
+        eventLinesX: [{ x: 0.6, label: "promedio saldo", color: "#d67f7f" }],
+        eventLinesY: [{ y: -2.4, label: "promedio cambio gasto", color: "#d67f7f" }]
       }
     },
     text: {
