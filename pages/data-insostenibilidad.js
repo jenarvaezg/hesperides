@@ -800,11 +800,11 @@
         {
           chapterId: "sec-5",
           start: "5. La Seguridad Social es el elefante en la habitación de las",
-          end: "Conclusión: España necesita una reforma urgente en su sistema de pensiones"
+          end: "Conclusión: España necesita una reforma urgente en su sis"
         },
         {
           chapterId: "conclusion",
-          start: "Conclusión: España necesita una reforma urgente en su sistema de pensiones",
+          start: "Conclusión: España necesita una reforma urgente en su sis",
           end: "6. Agradecimiento"
         },
         {

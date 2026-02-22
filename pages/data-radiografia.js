@@ -462,11 +462,11 @@
         {
           chapterId: "sec-22",
           start: "2.2. El impulso demográfico hace crecer la demanda",
-          end: "2.3. El problema por el lado de la oferta: sin suelo y con costes crecientes"
+          end: "2.3. El problema por el lado de la oferta: sin suelo y con cos"
         },
         {
           chapterId: "sec-23",
-          start: "2.3. El problema por el lado de la oferta: sin suelo y con costes crecientes",
+          start: "2.3. El problema por el lado de la oferta: sin suelo y con cos",
           end: "2.4. Oferta y demanda influyen en el precio"
         },
         {
