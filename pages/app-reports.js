@@ -1213,7 +1213,8 @@
     const isPie = chart.type === "pie";
     const isHorizontal = chart.orientation === "horizontal";
     const isXYCategoryY = chart.coordinate === "xy-category-y";
-    const isXY = chart.coordinate === "xy" || isXYCategoryY;
+    const isXYOnly = chart.coordinate === "xy";
+    const isXY = isXYOnly || isXYCategoryY;
     const defaultType = isXY
       ? "scatter"
       : chart.type === "line"
@@ -1538,7 +1539,7 @@
           },
         },
       },
-      xAxis: isXY
+      xAxis: isXYOnly
         ? {
             type: "value",
             min: chart.xMin,
@@ -1634,7 +1635,7 @@
               },
       yAxis:
         yAxisOption ||
-        (isXY
+        (isXYOnly
           ? {
               type: "value",
               min: chart.min,

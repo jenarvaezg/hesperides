@@ -15,9 +15,7 @@
 - [ ] Validacion visual final en entorno desplegado.
 
 ## /reformas-seguridad-social-espana
-- [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
-- [x] QA manual grafico a grafico contra PDF (Tabla 1 + Graficos 1-3 revisados y reordenados en seccion 8).
-- [ ] Validacion visual final en entorno desplegado.
+- [x] Validacion visual final en entorno desplegado. Esta perfecto
 
 ## /radiografia-mercado-vivienda-espana
 - [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
