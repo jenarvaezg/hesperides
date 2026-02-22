@@ -582,7 +582,7 @@
           );
 
           const solvencia = h.clamp(((105 - tension) / 50) * 100, 0, 100);
-          const color = tension < 75 ? "#1f8f45" : tension < 90 ? "#d19800" : "#b23b1d";
+          const color = tension < 75 ? "var(--status-good)" : tension < 90 ? "var(--status-warn)" : "var(--status-bad)";
           const narrativa =
             tension < 75
               ? "La combinacion de palancas aproxima el resultado al escenario de reforma con menor tension actuarial."
@@ -679,7 +679,7 @@
           const diversificacion = h.clamp(state.peso_privado + (state.cobertura - 26) * 0.25, 8, 65);
           const colchon = reemplazoTotal - 60;
           const robustez = h.clamp(((30 - riesgoPobreza) / 22) * 100, 0, 100);
-          const color = riesgoPobreza < 16 ? "#1f8f45" : riesgoPobreza < 22 ? "#d19800" : "#b23b1d";
+          const color = riesgoPobreza < 16 ? "var(--status-good)" : riesgoPobreza < 22 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             riesgoPobreza < 16

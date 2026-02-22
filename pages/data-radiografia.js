@@ -521,7 +521,7 @@
           const margenPromotor = h.clamp(7 + (state.precio_m2 - 3200) / 220 - (state.tipo - 3.2) * 1.1, -2, 18);
           const iniciosTeoricos = h.clamp(2.7 + (margenPromotor - 7) * 0.12 - (esfuerzo - 39) * 0.03, 0.5, 6);
           const senal = h.clamp(((50 - esfuerzo) / 30) * 100, 0, 100);
-          const color = esfuerzo < 30 ? "#1f8f45" : esfuerzo < 40 ? "#d19800" : "#b23b1d";
+          const color = esfuerzo < 30 ? "var(--status-good)" : esfuerzo < 40 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             esfuerzo < 30
@@ -621,7 +621,7 @@
           );
           const impactoRelativo = h.clamp((reduccion / 671000) * 100, -20, 55);
           const senal = h.clamp(((55 - sobrecarga2035) / 35) * 100, 0, 100);
-          const color = sobrecarga2035 < 33 ? "#1f8f45" : sobrecarga2035 < 40 ? "#d19800" : "#b23b1d";
+          const color = sobrecarga2035 < 33 ? "var(--status-good)" : sobrecarga2035 < 40 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             sobrecarga2035 < 33

@@ -446,7 +446,7 @@
           const deficitGasto = (-saldo / gasto) * 100;
           const ajusteAnual = saldo < 0 ? -saldo / years : 0;
           const senal = h.clamp(50 + saldo / 2000, 0, 100);
-          const color = saldo >= 0 ? "#1f8f45" : saldo > -25000 ? "#d19800" : "#b23b1d";
+          const color = saldo >= 0 ? "var(--status-good)" : saldo > -25000 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             saldo >= 0
@@ -546,7 +546,7 @@
           const mesesCobertura = fondo / monthlyPensions;
           const diasCobertura = mesesCobertura * 30;
           const senal = h.clamp((mesesCobertura / 12) * 100, 0, 100);
-          const color = mesesCobertura >= 12 ? "#1f8f45" : mesesCobertura >= 6 ? "#d19800" : "#b23b1d";
+          const color = mesesCobertura >= 12 ? "var(--status-good)" : mesesCobertura >= 6 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             mesesCobertura >= 12

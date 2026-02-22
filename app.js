@@ -387,7 +387,7 @@
                   const category = chart.x[params.dataIndex];
                   if (chart.highlights.includes(category)) {
                     if (category === "IPC") return "#2b2b2b";
-                    return "#d5a500";
+                    return "#d6a900";
                   }
                   return serie.color;
                 }
@@ -465,7 +465,7 @@
             fontSize: 12,
             fontWeight: 700,
             fontFamily: "IBM Plex Sans",
-            color: "#2c2a24"
+            color: "#3f3a2f"
           }
         },
         grid: {
@@ -823,7 +823,7 @@
       const expectedStarts = Math.max(0.4, Math.min(20, 2.7 + netMargin * 0.55));
 
       const signal = Math.max(0, Math.min(100, ((netMargin + 10) / 25) * 100));
-      const signalColor = netMargin >= 4 ? "#1f8f45" : netMargin >= 0 ? "#d19800" : "#b23b1d";
+      const signalColor = netMargin >= 4 ? "var(--status-good)" : netMargin >= 0 ? "var(--status-warn)" : "var(--status-bad)";
       const diagnosis =
         netMargin >= 4
           ? "Incentivo positivo para iniciar obra nueva."
@@ -853,7 +853,7 @@
         <div class="thermometer" aria-label="Señal de incentivo de oferta">
           <div style="width:${formatNumber(signal, 0)}%; background:${signalColor};"></div>
         </div>
-        <p style="margin:0.55rem 0 0; font-size:0.84rem; color:#4c4639;">${diagnosis}</p>
+        <p class="play-narrative">${diagnosis}</p>
       `;
     }
 
@@ -899,7 +899,7 @@
       const baselineAnnualStarts = (populationMillions * 1_000_000 * baselineStartsPer1000) / 1000;
       const impactVsBaseline = (annualImpact / baselineAnnualStarts) * 100;
 
-      const color = deltaUnits >= 0 ? "#1f8f45" : "#b23b1d";
+      const color = deltaUnits >= 0 ? "var(--status-good)" : "var(--status-bad)";
       const narrative =
         deltaUnits >= 0
           ? "Reducción del bloqueo: aumenta la bolsa potencial de suelo ejecutable."
@@ -927,7 +927,7 @@
         <div class="thermometer" aria-label="Magnitud de desbloqueo">
           <div style="width:${Math.min(100, Math.abs(impactVsBaseline)).toFixed(0)}%; background:${color};"></div>
         </div>
-        <p style="margin:0.55rem 0 0; font-size:0.84rem; color:#4c4639;">${narrative}</p>
+        <p class="play-narrative">${narrative}</p>
       `;
     }
 

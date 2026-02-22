@@ -597,7 +597,7 @@
           const brecha2050 = h.clamp(-4.5 - (gasto2050 - 14.9) * 0.65, -7.2, -2.5);
           const presion = gasto2050 - 14.9;
           const senal = h.clamp(((ratioCotizantes - 1.3) / 1.1) * 100, 0, 100);
-          const color = ratioCotizantes > 1.95 ? "#1f8f45" : ratioCotizantes > 1.7 ? "#d19800" : "#b23b1d";
+          const color = ratioCotizantes > 1.95 ? "var(--status-good)" : ratioCotizantes > 1.7 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             ratioCotizantes > 1.95
@@ -689,7 +689,7 @@
           const gastoAjustado = h.clamp(14.9 - state.retraso_jubilacion * 0.25 - state.ajuste_revalorizacion * 0.4, 12.5, 15.2);
           const transferenciasEquivalentes = Math.max(0, (-brechaResidual * 1742263) / 100);
           const senal = h.clamp((impacto / brechaBase) * 100, 0, 100);
-          const color = brechaResidual >= -1.0 ? "#1f8f45" : brechaResidual >= -2.5 ? "#d19800" : "#b23b1d";
+          const color = brechaResidual >= -1.0 ? "var(--status-good)" : brechaResidual >= -2.5 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             brechaResidual >= -1.0

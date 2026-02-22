@@ -194,7 +194,7 @@
             0,
             100
           );
-          const color = indicador > 65 ? "#1f8f45" : indicador > 45 ? "#d19800" : "#b23b1d";
+          const color = indicador > 65 ? "var(--status-good)" : indicador > 45 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             indicador > 65
@@ -287,7 +287,7 @@
 
           const ajusteCotizacion = h.clamp((presionContributiva - 51) * 0.25 + (brecha - 50) * 0.02, 0, 6.5);
           const senal = h.clamp(((65 - presionContributiva) / 30) * 100, 0, 100);
-          const color = presionContributiva < 48 ? "#1f8f45" : presionContributiva < 55 ? "#d19800" : "#b23b1d";
+          const color = presionContributiva < 48 ? "var(--status-good)" : presionContributiva < 55 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             presionContributiva < 48

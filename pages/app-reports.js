@@ -496,12 +496,17 @@
           max: axis.max,
           position: axis.position || "left",
           axisLabel: {
-            color: "#5b5545",
+            color: "#4f4f4f",
             formatter: axisFormatter(axis.unit || chart.unit)
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#8f8574"
+            }
           },
           splitLine: {
             show: axis.position !== "right",
-            lineStyle: { color: "rgba(104, 90, 52, 0.15)" }
+            lineStyle: { color: "rgba(137, 128, 106, 0.25)" }
           }
         }))
       : null;
@@ -518,6 +523,12 @@
       },
       tooltip: {
         trigger: "axis",
+        backgroundColor: "rgba(23, 23, 23, 0.92)",
+        borderColor: "#f3c400",
+        borderWidth: 1,
+        textStyle: {
+          color: "#f9f9f9"
+        },
         axisPointer: {
           type: anyLineSeries ? "cross" : "shadow"
         },
@@ -533,7 +544,11 @@
       legend: {
         show: (chart.series || []).length > 1,
         top: 0,
-        left: "left"
+        left: "left",
+        textStyle: {
+          color: "#3f3a2f",
+          fontFamily: "IBM Plex Sans"
+        }
       },
       toolbox: {
         right: 0,
@@ -553,12 +568,17 @@
         ? {
             type: "value",
             axisLabel: {
-              color: "#5b5545",
+              color: "#4f4f4f",
               formatter: tickFormatter
+            },
+            axisLine: {
+              lineStyle: {
+                color: "#8f8574"
+              }
             },
             splitLine: {
               lineStyle: {
-                color: "rgba(104, 90, 52, 0.15)"
+                color: "rgba(137, 128, 106, 0.25)"
               }
             },
             min: chart.min,
@@ -568,10 +588,15 @@
             type: "category",
             data: xLabels,
             axisLabel: {
-              color: "#5b5545",
+              color: "#4f4f4f",
               interval: 0,
               fontSize: 11,
               lineHeight: 14
+            },
+            axisLine: {
+              lineStyle: {
+                color: "#8f8574"
+              }
             },
             axisTick: { alignWithLabel: true }
           },
@@ -580,21 +605,31 @@
             type: "category",
             data: xLabels,
             axisLabel: {
-              color: "#5b5545",
+              color: "#4f4f4f",
               interval: 0,
               fontSize: 11,
               lineHeight: 14
+            },
+            axisLine: {
+              lineStyle: {
+                color: "#8f8574"
+              }
             }
           }
         : {
             type: "value",
             axisLabel: {
-              color: "#5b5545",
+              color: "#4f4f4f",
               formatter: tickFormatter
             },
             splitLine: {
               lineStyle: {
-                color: "rgba(104, 90, 52, 0.15)"
+                color: "rgba(137, 128, 106, 0.25)"
+              }
+            },
+            axisLine: {
+              lineStyle: {
+                color: "#8f8574"
               }
             },
             min: chart.min,
@@ -877,8 +912,7 @@
         try {
           const payload = typeof definition.compute === "function" ? definition.compute(state, helpers) : null;
           if (!payload) {
-            resultBox.innerHTML =
-              '<p style="margin:0; font-size:0.84rem; color:#4c4639;">Ajusta los controles para ver resultados.</p>';
+            resultBox.innerHTML = '<p class="play-result-empty">Ajusta los controles para ver resultados.</p>';
             return;
           }
 
@@ -913,10 +947,10 @@
             : "";
 
           const narrativeMarkup = payload.narrative
-            ? `<p style="margin:0.55rem 0 0; font-size:0.84rem; color:#4c4639;">${payload.narrative}</p>`
+            ? `<p class="play-narrative">${payload.narrative}</p>`
             : "";
           const noteMarkup = payload.note
-            ? `<p style="margin:0.35rem 0 0; font-size:0.78rem; color:#5e584b;">${payload.note}</p>`
+            ? `<p class="play-note">${payload.note}</p>`
             : "";
 
           resultBox.innerHTML = `
@@ -927,7 +961,7 @@
           `;
         } catch (error) {
           resultBox.innerHTML =
-            '<p style="margin:0; font-size:0.84rem; color:#7a2017;">No se pudo calcular este simulador con los valores actuales.</p>';
+            '<p class="play-result-error">No se pudo calcular este simulador con los valores actuales.</p>';
           console.error("Playground computation error:", error);
         }
       };

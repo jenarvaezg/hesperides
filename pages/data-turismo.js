@@ -363,7 +363,7 @@
           const indiceOferta2030 = h.clamp(105 - state.restriccion_turistica * 0.03 - efectoOferta * 0.05, 95, 107);
 
           const senal = h.clamp(((32 - variacionAlquiler2030) / 24) * 100, 0, 100);
-          const color = variacionAlquiler2030 < 18 ? "#1f8f45" : variacionAlquiler2030 < 24 ? "#d19800" : "#b23b1d";
+          const color = variacionAlquiler2030 < 18 ? "var(--status-good)" : variacionAlquiler2030 < 24 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             variacionAlquiler2030 < 18
@@ -459,7 +459,7 @@
             100
           );
           const deficitLocal = h.clamp(7000 + (sobrecarga - 41) * 110 - (state.oferta_nueva - 2) * 350, 3000, 12000);
-          const color = riesgo < 40 ? "#1f8f45" : riesgo < 65 ? "#d19800" : "#b23b1d";
+          const color = riesgo < 40 ? "var(--status-good)" : riesgo < 65 ? "var(--status-warn)" : "var(--status-bad)";
 
           const narrativa =
             riesgo < 40
