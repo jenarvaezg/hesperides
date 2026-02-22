@@ -1,0 +1,765 @@
+La (in)sostenibilidad de la
+Seguridad Social
+Autores
+Santiago Calvo
+Daniel Fernández
+
+
+
+
+hesperides.edu.es
+                    Centro
+                    Ruth Richardson
+
+
+
+
+Resumen ejecutivo
+
+El sistema público de pensiones en España se acerca a su punto crítico de sostenibilidad
+financiera debido a su déficit estructural. De acuerdo con las proyecciones más recien-
+tes contenidas en el Ageing Report de 2024, el gasto en pensiones experimentará un
+considerable incremento, al pasar del 10,3 % del PIB estimado en el informe de 2021 al
+16,7 % en 2024, lo que supone un aumento de 6,4 puntos porcentuales en apenas tres
+años. Este repunte obedece, en gran medida, a los efectos adversos derivados de las
+reformas más recientes del sistema, que han deteriorado de forma sustancial su equili-
+brio financiero.
+
+El componente contributivo del sistema de pensiones presenta un marcado déficit
+estructural, ya que las cotizaciones sociales apenas financian tres de cada cuatro euros
+destinados al pago de prestaciones contributivas, lo que obliga al Estado a recurrir de
+forma recurrente a transferencias extraordinarias y a un mayor endeudamiento. En
+2024, esta insuficiencia se tradujo en un déficit equivalente al 3,8 % del PIB, reflejando
+la ampliación sostenida de la brecha entre los ingresos ordinarios y los gastos deriva-
+dos del envejecimiento poblacional.
+
+El análisis territorial de los saldos contributivos muestra que el déficit se extiende de
+manera generalizada a la práctica totalidad de las comunidades autónomas, con la
+excepción de Madrid, Baleares, Ceuta y Melilla, una disparidad que no pone en cuestión
+el principio de caja única, pero sí refuerza la constatación de la fragilidad estructural del
+sistema y la necesidad perentoria de reformas de calado.
+
+El Fondo de Reserva de la Seguridad Social, concebido originalmente como instrumento
+estabilizador, arrastra graves limitaciones desde su vaciamiento durante la crisis finan-
+ciera y, aunque ha sido parcialmente reconstruido mediante el Mecanismo de Equidad
+Intergeneracional (MEI) financiado con cotizaciones adicionales, esta recomposición no
+constituye un excedente efectivo, pues descansa en la generación paralela de deuda
+pública, convirtiéndose en una operación meramente contable sin aportaciones sustan-
+tivas a la sostenibilidad del sistema.
+
+
+
+
+                                                                                             2
+                   Centro
+                   Ruth Richardson
+
+
+
+El Fondo de Reserva de la Seguridad Social figura entre los menos rentables de la Unión
+Europea, dado que sus recursos están invertidos casi exclusivamente en deuda pública
+nacional que ofrece rendimientos apenas superiores a la inflación, y cuyo volumen ac-
+tual —en torno a 9.300 millones de euros a finales de 2024— resulta insuficiente incluso
+para financiar una mensualidad de pensiones contributivas, cubriendo únicamente 52
+días del déficit anual proyectado.
+
+En conclusión, la sostenibilidad del sistema público de pensiones constituye uno de los
+principales problemas estructurales de la economía y de las finanzas públicas en Espa-
+ña, lo que exige una reforma profunda y urgente que armonice de forma sostenible y
+realista la relación entre ingresos y gastos, ya que cualquier dilación en la adopción de
+medidas solo incrementará los costes económicos, fiscales y sociales que deberán asu-
+mir las generaciones futuras.
+
+
+
+
+                                                                                            3
+                  Centro
+                  Ruth Richardson
+
+
+
+
+1. Introducción: las cuentas públicas no cuadran en España
+
+Para comprender con mayor claridad la situación financiera por la que atraviesa ac-
+tualmente la Seguridad Social, resulta conveniente presentar previamente una visión
+general sobre el estado de las cuentas públicas del conjunto de las Administraciones
+Públicas en España.
+
+      1.1. El déficit español en cifras: 50,000 millones de euros
+
+Según los datos publicados por la Intervención General de la Administración del Esta-
+do (IGAE), en el año 2024 el conjunto de las administraciones públicas gastó 722.846
+millones de euros (45,4 por ciento del PIB), mientras que ingresó 672.659 millones de
+euros (42,3 por ciento del PIB). La diferencia entre ambas rúbricas se corresponde con
+el déficit público, que fue de 50.187 millones de euros (3,2 por ciento del PIB).
+
+                                       Gráfico 1
+
+
+
+
+                                                                                         4
+                  Centro
+                  Ruth Richardson
+
+
+
+
+      1.2. La irresponsabilidad fiscal española inicia en el año 2008
+
+El problema de la sostenibilidad de las cuentas públicas en España no es reciente, ya
+que la práctica de una política fiscal poco rigurosa parece haberse instalado de forma
+permanente en la Moncloa, con independencia del signo político del gobierno, primero
+como respuesta a la recesión económica y, posteriormente, consolidando un marco
+presupuestario estructuralmente deficitario.En 1980, la tasa de fertilidad española
+traspasó la barrera del reemplazo generacional (2,1 hijos por mujer) para no volver a
+superarla nunca.
+
+                                       Gráfico 2
+
+
+
+
+                                                                                     5
+                  Centro
+                  Ruth Richardson
+
+
+
+       1.3. Protección social, sanidad y educación acumulan la mayor parte del gasto
+
+Muy a menudo se escucha en la conversación pública que España despilfarra mucho
+dinero y que se gasta poco en lo realmente relevante: protección social, sanidad y
+educación. La Clasificación Funcional del Gasto permite observar cómo se distribuye el
+gasto público en función de los objetivos que persigue. En el momento en el que se es-
+criben estas páginas, están disponibles los datos del año 2023. En la siguiente tabla se
+puede comprobar que 2 de cada 3 euros del gasto público de nuestro país se destinan
+a protección social, sanidad y educación. Justamente, dentro de la protección social se
+encuentra el gasto en pensiones, cuestión que centra el presente análisis.
+
+                                        Tabla 1
+
+
+
+
+                                                                                           6
+                    Centro
+                    Ruth Richardson
+
+
+
+
+2. Introducción: las cuentas públicas no cuadran en España
+
+Antes de analizar la situación concreta de la Seguridad Social, conviene aclarar cómo
+se articulan los ingresos y gastos de las administraciones públicas en España. El gasto
+y el ingreso se dividen entre los distintos niveles de Administración, aunque de manera
+muy diferente entre ellos.
+
+      2.1. España es un país con centralización de ingresos y descentralización de
+gastos
+
+El siguiente gráfico resume la estructura territorial de los ingresos y gasto públicos:
+mientras que los ingresos están centralizados en un alto grado, los gastos están más
+repartidos entre las diferentes administraciones públicas.
+
+Los datos, una vez compensadas las transferencias entre administraciones para evitar
+la doble contabilización de partidas, se pueden resumir de la siguiente manera:
+
+       · La Administración Central recibe el 43 por ciento de los ingresos, pero “solo”
+gasta el 22,6 por ciento del total.
+
+       · La Seguridad Social recibe el 29,8 por ciento de los ingresos y gasta el 33,7 por ciento.
+
+       · Las comunidades autónomas son las más favorecidas por las transferencias:
+ingresan el 18,4 por ciento, pero gastan el 32,6 por ciento.
+
+       · Las corporaciones locales gastan el 11,2 de los empleos y reciben el 8,8 de
+los recursos.
+
+
+
+
+                                                                                                     7
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 3
+
+
+
+
+                              8
+                   Centro
+                   Ruth Richardson
+
+
+
+
+      2.2. La Seguridad Social maneja 1 de cada 3 euros de los recursos públicos en
+España
+
+Pero, para los propósitos de este análisis, resulta útil modificar la clasificación habitual
+de partidas utilizada en la Contabilidad Nacional (CN), para centrarnos específicamente
+en los ingresos netos disponibles y los gastos finales ordinarios de cada administración
+pública. Para ello, se trasladan las transferencias realizadas por cada administración ha-
+cia otras administraciones públicas, tanto corrientes como de capital, desde el apartado
+de empleos al de recursos, pero con signo negativo. Así, estas transferencias se restan
+de las recibidas de otras administraciones, dando lugar a una nueva partida denomina-
+da ingresos netos por transferencias entre administraciones públicas. Esta partida, que
+puede tomar valores positivos o negativos, se incorpora al lado de los recursos para
+reflejar los ingresos reales con los que cuenta cada administración para afrontar sus
+funciones propias, evitando así posibles distorsiones provocadas por el uso de cifras
+brutas que incluyen fondos finalmente transferidos a otras entidades.
+
+Como se muestra en el siguiente gráfico, la Seguridad Social tiene una gran importan-
+cia a la hora de explicar la gestión de los desembolsos estatales. Aproximadamente 1 de
+cada 3 euros que ingresa el conjunto de las administraciones públicas de forma “libre”
+es controlado por los Fondos de la Seguridad Social. En concreto, un 34,9 por ciento del
+total, porcentaje similar que el de las comunidades autónomas. Tal y como se observa,
+el peso de estos dos niveles se ha mantenido similar en las últimas dos décadas.
+
+
+
+
+                                                                                           9
+                      Centro
+                      Ruth Richardson
+
+
+
+
+                                               Gráfico 4
+
+
+
+
+1 Este es el mismo ejercicio que hace Ángel de la Fuente (2020) para demostrar la inexistencia de un
+desequilibrio vertical por parte de las Comunidades Autónomas.
+
+
+                                                                                                       10
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       2.3. El gasto ya está comprometido: la Administración Central apenas cuen-
+ta con recursos de libre disposición
+
+Una de las cuestiones más preocupantes en el ámbito presupuestario es que la Admi-
+nistración General del Estado dispone de un margen muy reducido de recursos de “libre
+disposición”, debido a que una parte sustancial de sus fondos debe destinarse a trans-
+ferencias hacia otros niveles de la administración, incluida la Seguridad Social, así como
+al pago de obligaciones ineludibles como los intereses de la deuda o la aportación a la
+Unión Europea.
+
+En 2024, el gasto no financiero de la Administración Central ascendió a 248.211 mi-
+llones de euros, de los cuales 30.008 millones corresponden al Plan de Recuperación,
+Transformación y Resiliencia (PRTR), lo que sitúa el gasto final en 218.202 millones. De
+esa cantidad, como se muestra en el siguiente gráfico, se detraen las transferencias a la
+Seguridad Social y a otras administraciones territoriales, la aportación a Clases Pasivas
+y otros compromisos, quedando un gasto de libre disposición de 50.787 millones. Para
+relativizar esta cifra, basta señalar que en abril el presidente, Pedro Sánchez, anunció
+una inversión en defensa por valor de 10.471 millones, equivalente al 20,6 % del mar-
+gen total con el que cuenta la Administración General del Estado para gastar.
+
+
+
+
+                                                                                        11
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 5
+
+
+
+
+                              12
+                   Centro
+                   Ruth Richardson
+
+
+
+
+3. La situación financiera de la Seguridad Social
+
+En las páginas siguientes se expone la situación financiera del Sistema de Seguridad
+Social, que incluye tanto a las entidades gestoras y servicios comunes como a las mu-
+tuas colaboradoras en casos de enfermedades profesionales y accidentes de trabajo,
+así como al régimen de clases pasivas. Este enfoque permite identificar con claridad el
+denominado “déficit básico”, que refleja la brecha real entre ingresos y gastos del siste-
+ma al excluir las aportaciones extraordinarias del Estado, y medir, al mismo tiempo, el
+llamado “déficit contributivo”, que indica en qué medida las prestaciones contributivas
+superan lo que sería sostenible bajo un modelo puro de seguro social basado en cotiza-
+ciones, lo que, en conjunto, resulta esencial para comprender la evolución de la carga
+fiscal indirecta que este sistema impone al presupuesto general del Estado y, en última
+instancia, a la economía en su conjunto .
+
+De esta manera, si se contabilizan las transferencias realizadas por el Estado para pagar
+las prestaciones no contributivas, las clases pasivas y otro tipo de prestaciones, se pue-
+de hablar de que la Seguridad Social obtuvo 54.005 millones de euros “extra” en 2024.
+Siguiendo a Fuente (2025), el gasto del Sistema de la Seguridad Social fue de 242.253
+millones de euros, mientras que los ingresos sin transferencias fueron de 176.047 millo-
+nes de euros. El saldo básico fue de -66.206 millones de euros.
+
+       3.1. El agujero de la Seguridad Social: las contribuciones no pueden financiar
+los gastos
+
+En el siguiente gráfico se muestra cómo se financia la Seguridad Social. Como se puede
+apreciar, una parte procede de transferencias del Estado (algo más de 54.000 millones
+de euros). Las cotizaciones, considerando también las que financian las clases pasi-
+vas, suman otros 174.250 millones de euros. Añadiendo otros ingresos, el saldo sigue
+siendo deficitario por importe de 12.200 millones de euros. Es decir, a pesar de que el
+Estado aporte casi 3 de cada 10 euros de los ingresos corrientes de la Seguridad Social,
+las cuentas siguen sin cuadrar.
+
+
+
+
+                                                                                         13
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 6
+
+
+
+
+                  Gráfico 6
+
+
+
+
+                              14
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       3.2. La Seguridad Social lleva 15 años sin cuadrar las cuentas
+
+Los saldos presupuestario y básico deficitarios no constituyen una anomalía propia
+del ejercicio 2024, sino que reflejan una tendencia persistente desde 2010 en el caso
+del saldo básico y desde 2011 en el del saldo presupuestario. Este desequilibrio se ha
+ampliado de forma progresiva hasta situarse en el 0,8 % y el 4,2 % del PIB, respectiva-
+mente, una diferencia que evidencia la creciente dependencia de la Seguridad Social
+respecto de las transferencias del Estado para cubrir su déficit.
+
+                                        Gráfico 7
+
+
+
+
+                                                                                          15
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       3.3. El déficit de la Seguridad Social se presenta en el sistema contributivo y
+en el no contributivo
+
+Llegados a este punto conviene destacar que se han tratado todas las prestaciones de
+la misma manera. Sin embargo, es fundamental distinguir entre un sistema contributi-
+vo y uno no contributivo dentro de las pensiones públicas. El sistema contributivo está
+basado en las cotizaciones sociales abonadas durante la vida laboral, mientras que
+el sistema no contributivo se financia mediante impuestos generales y proporciona
+protección a aquellos individuos que no han cotizado suficiente o carecen de recursos
+propios suficientes.
+
+Este análisis se centra específicamente en el saldo financiero del componente contri-
+butivo, ya que permite reflejar de manera más clara y precisa la verdadera salud eco-
+nómica del sistema. Así, se excluyen transferencias y préstamos del Estado, así como
+partidas extraordinarias como el Mecanismo de Equidad Intergeneracional (MEI), pro-
+porcionando una imagen más fiel del equilibrio entre ingresos y gastos directamente
+relacionados con las cotizaciones de trabajadores y empleadores. Evaluar de esta mane-
+ra el componente contributivo es crucial porque expone claramente el esfuerzo real que
+se realiza para sostener las pensiones y permite identificar con mayor transparencia los
+posibles desequilibrios.
+
+Los dos siguientes gráficos muestran claramente un deterioro progresivo en el saldo
+contributivo del sistema de Seguridad Social.
+
+En el gráfico 8 se muestra cómo han evolucionado los ingresos y gastos contributivos
+de la Seguridad Social desde 2006 hasta 2024, medidos en miles de millones de euros
+constantes de 2021. En los primeros años (2006-2010), los ingresos superaron ligera-
+mente a los gastos, generando un superávit temporal. A partir de entonces, los gastos
+comenzaron a crecer de manera mucho más acelerada, generando una brecha cada
+vez más pronunciada. En 2024, esta brecha se traduce en unos gastos contributivos de
+199.276 millones de euros frente a ingresos contributivos de apenas 146.424 millones
+de euros, reflejando claramente un déficit estructural que crece de forma continuada.
+
+
+
+
+                                                                                          16
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 8
+
+
+
+
+                              17
+                   Centro
+                   Ruth Richardson
+
+
+
+
+El gráfico 9 ofrece otra perspectiva sobre la magnitud de este desequilibrio, represen-
+tando el déficit contributivo en términos relativos, tanto respecto al PIB como al gasto
+contributivo total. Aquí se observa que en 2024 el saldo contributivo negativo alcanza
+el 3,8 por ciento del PIB. Esta situación se traduce en que el déficit alcanza el 26,6 por
+ciento del total del gasto contributivo.
+
+Estos datos implican que las cotizaciones solo son capaces de cubrir tres de cada cuatro
+euros de las prestaciones contributivas, confirmando así una notable dependencia del
+sistema respecto de otras fuentes de financiación externas como las transferencias del
+Estado o endeudamiento adicional. Dicho de otra manera, la Seguridad Social presenta una
+preocupante vulnerabilidad financiera en el actual sistema contributivo de pensiones.
+
+                                         Gráfico 9
+
+
+
+
+                                                                                             18
+                    Centro
+                    Ruth Richardson
+
+
+
+
+       3.4. La Seguridad Social solo tiene superávit en 4 comunidades autónomas
+
+En el siguiente gráfico, se muestra el saldo contributivo del sistema de la Seguridad
+Social por comunidades autónomas en 2023, calculado siguiendo la metodología propues-
+ta por García (2023). Se observa claramente que el sistema contributivo es deficitario en
+la gran mayoría de comunidades, siendo únicamente cuatro las que registran un saldo
+positivo: Madrid, Baleares, Ceuta y Melilla. Madrid destaca significativamente con un saldo
+positivo de más de 1.350 millones de euros, seguido de Baleares con casi 884 millones.
+
+En contraste, Andalucía presenta el déficit más acusado, superior a los 5.480 millones
+de euros, seguida por País Vasco y Galicia con cifras en rojo próximas a los 4.480 y 4.420
+millones, respectivamente. Cataluña y Castilla y León también registran déficits conside-
+rables, cercanos a los 4.100 y 3.900 millones de euros. Estos resultados subrayan la im-
+portante disparidad territorial en la sostenibilidad financiera del sistema contributivo español.
+
+                                           Gráfico 10
+
+
+
+
+                                                                                               19
+                  Centro
+                  Ruth Richardson
+
+
+
+
+4. La (inexistente) “hucha” de las pensiones y la complicada
+situación patrimonial de la Seguridad Social
+
+El Fondo de Reserva de la Seguridad Social, conocido popularmente como la “hucha de
+las pensiones”, se creó inicialmente en el año 2000 con la intención de acumular exce-
+dentes durante periodos de bonanza económica para afrontar futuros déficits derivados
+del envejecimiento demográfico. Sin embargo, este propósito original quedó rápida-
+mente obsoleto tras la crisis financiera de 2008 y la persistencia de déficits anuales
+desde el año 2010. El resultado fue el vaciamiento acelerado del fondo, utilizado
+sistemáticamente para cubrir los crecientes desequilibrios financieros del sistema
+de pensiones.
+
+                                      Gráfico 11
+
+
+
+
+                                                                                    20
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       4.1. El timo de la hucha de las pensiones
+
+En los últimos años se ha producido un aparente “relleno” del fondo mediante el llamado
+Mecanismo de Equidad Intergeneracional, consistente en una cotización adicional que
+deben pagar empresas y trabajadores entre 2023 y 2032. Aunque podría interpretarse
+que se están generando nuevamente excedentes para tiempos difíciles, la realidad es
+que se trata de un mero artificio contable. Este mecanismo no genera realmente un
+superávit genuino del sistema, sino que se está financiando mediante endeudamiento
+público adicional.
+
+El efecto de esta estrategia es engañoso, ya que crea simultáneamente un activo (patrimo-
+nio en el fondo) y un pasivo (deuda pública). En esencia, el Estado está emitiendo deuda
+pública para financiar estas aportaciones al Fondo de Reserva, lo que implica que no existe
+un ahorro neto real ni una mejora en la sostenibilidad del sistema. De hecho, la deuda neta
+del sistema de Seguridad Social es de 117.000 millones de euros, con tendencia al alza.
+
+El crecimiento reciente en el Fondo de Reserva de la Seguridad Social es un simple movi-
+miento contable destinado a dar una imagen más positiva de la situación financiera del
+sistema público de pensiones.
+
+
+
+
+                                                                                           21
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 12
+
+
+
+
+                               22
+                   Centro
+                   Ruth Richardson
+
+
+
+
+    4.2. La rentabilidad de la “hucha” de las pensiones es de las más bajas del
+mundo
+
+Un elemento adicional que refuerza la crítica al manejo del Fondo de Reserva de la
+Seguridad Social es la manera en la que se invierten sus recursos. A diferencia de otros
+países europeos, que diversifican ampliamente sus inversiones, España mantiene casi
+la totalidad del fondo invertido en deuda pública nacional. Esto implica una rentabilidad
+extremadamente baja, apenas suficiente para superar mínimamente la inflación,
+convirtiéndolo en uno de los fondos públicos con peor rendimiento a nivel europeo e
+internacional.
+
+                                       Gráfico 13
+
+
+
+
+                                                                                       23
+                  Centro
+                  Ruth Richardson
+
+
+Además, la dimensión actual del fondo es claramente insuficiente frente al volumen
+total del gasto en pensiones. Con un tamaño de aproximadamente 9.300 millones de
+euros a finales de 2024, ni siquiera alcanza para cubrir una mensualidad completa del
+gasto mensual en pensiones contributivas, que supera los 13.000 millones de euros.
+Esta cantidad representa apenas unos 52 días del déficit anual del sistema.
+
+Por todo esto, el Fondo de Reserva, tal como funciona actualmente, es una herramienta
+contable destinada a, principalmente, generar una percepción de solvencia y
+sostenibilidad que no se corresponde con la realidad financiera subyacente del sistema
+público de pensiones. La solución real a este intríngulis financiero no se encuentra
+en el maquillaje contable, sino en implementar reformas estructurales que equilibren
+realmente ingresos y gastos del sistema, considerando seriamente la realidad
+demográfica y económica de España.
+
+Ante las oscuras prácticas contables implementadas con el Fondo de Reserva, la
+realidad es que el patrimonio neto de la Seguridad Social es negativo y ya acumula un
+agujero que supera los 100.000 millones de euros.
+
+                                      Gráfico 14
+
+
+
+
+                                                                                        24
+                   Centro
+                   Ruth Richardson
+
+
+
+
+5. La Seguridad Social es el elefante en la habitación de las
+cuentas públicas españolas
+
+La sostenibilidad del sistema público de pensiones es, sin duda, el gran elefante en la
+habitación de la economía y las finanzas públicas en España. Las proyecciones realiza-
+das indican que nos enfrentamos a un déficit estructural creciente, que no es sostenible
+bajo el modelo actual, especialmente debido a la evolución demográfica (para ver infor-
+me sobre los problemas demográficos en España, pulsar aquí) y al diseño del sistema
+contributivo, que genera un desequilibrio creciente entre ingresos y gastos.
+
+Las cifras del Ageing Report 2024 confirman que las recientes reformas del sistema no
+solo no han solucionado el problema, sino que han agravado considerablemente su
+sostenibilidad. De hecho, el informe muestra cómo el gasto en pensiones, proyectado
+inicialmente en un 10,3 por ciento del PIB según el Ageing Report 2021 , ha sido revi-
+sado drásticamente al alza hasta situarse en un 16,7 por ciento del PIB en apenas tres
+años. Este significativo aumento de 6,4 puntos porcentuales del PIB subraya el impacto
+negativo de las reformas recientes.
+
+Según datos del Annual Report on Taxation , España registrará el mayor aumen-
+to del gasto en pensiones de toda Europa en las próximas dos décadas, partiendo
+además de una situación fiscal notablemente más delicada. Dicho de otro modo, el
+país combina una elevada previsión de gasto con un persistente historial de déficits
+públicos. Actualmente, uno de cada tres euros recaudados vía impuestos se destina al
+pago de las pensiones, pero al finalizar la década de 2040 esta partida absorberá más
+del 45 % de los ingresos tributarios.
+
+
+
+
+                                                                                      25
+Centro
+Ruth Richardson
+
+
+
+
+                    Gráfico 15
+
+
+
+
+                    Gráfico 20
+
+ España afronta hoy el momento crítico previsto du
+
+
+
+
+                                                     26
+                    Centro
+                    Ruth Richardson
+
+
+
+
+Conclusión: España necesita una reforma urgente en su sis-
+tema de pensiones
+
+La situación financiera actual muestra claramente que las cotizaciones sociales cubren
+únicamente tres de cada cuatro euros que se destinan a prestaciones contributivas,
+lo que obliga al Estado a transferir recursos extraordinarios y a endeudarse
+continuamente para mantener el equilibrio del sistema. Este déficit contributivo
+ascendió a más del 3,8 por ciento del PIB en 2024, evidenciando la fragilidad de la
+financiación actual.
+
+Además, el análisis territorial realizado siguiendo la metodología de García (2023) revela
+que solo cuatro comunidades autónomas presentan un saldo contributivo positivo. Esta
+situación refuerza la evidencia del déficit estructural generalizado del sistema en casi
+todas las regiones, subrayando la necesidad urgente de reformas que sean capaces de
+afrontar esta realidad fiscal, sin que ello implique romper el principio de la caja única.
+
+Asimismo, el Fondo de Reserva, inicialmente concebido como un mecanismo
+para afrontar épocas difíciles, ha demostrado ser una herramienta insuficiente y
+contablemente cuestionable. Tras su rápido vaciamiento durante la crisis financiera,
+su reciente “relleno” mediante el Mecanismo de Equidad Intergeneracional (MEI) no
+representa una mejora real, sino más bien una mera ilusión contable que incrementa
+simultáneamente el endeudamiento público.
+
+Además, es especialmente preocupante la rentabilidad del Fondo de Reserva español,
+que se sitúa como la más baja entre los países europeos debido a la inversión exclusiva
+en deuda pública nacional, con rendimientos apenas capaces de superar la inflación. Esta
+realidad limita aún más su utilidad efectiva para sostener el sistema en periodos de crisis.
+
+En términos prácticos, la cantidad acumulada en el Fondo de Reserva a finales de 2024
+es claramente insuficiente, ni siquiera alcanza para cubrir una mensualidad completa
+de las pensiones contributivas. El fondo apenas cubriría unos 52 días del déficit anual
+previsto, ilustrando su incapacidad para actuar como una verdadera reserva frente a las
+necesidades financieras del sistema.
+
+Frente a este panorama, es imprescindible que se aborde con realismo y urgencia el
+desafío de la sostenibilidad financiera de las pensiones. Las soluciones no pueden
+limitarse a artificios contables o transferencias puntuales, sino que deben incluir
+reformas estructurales orientadas a equilibrar de forma permanente los ingresos y
+gastos del sistema, considerando seriamente las previsiones demográficas y económicas.
+                                                                                               27
+                   Centro
+                   Ruth Richardson
+
+
+
+
+En definitiva, si España no afronta decididamente el problema estructural del sistema
+de pensiones, los riesgos financieros y económicos se amplificarán, poniendo en
+peligro no solo la sostenibilidad fiscal, sino también la equidad intergeneracional y la
+estabilidad social.
+
+Este análisis debería servir como llamada de atención para que tanto los responsables
+políticos como la sociedad en general reconozcan la magnitud del problema y actúen
+en consecuencia. Seguir ignorando el elefante en la habitación solo incrementará el
+coste futuro y dificultará aún más la adopción de soluciones sostenibles y justas.
+
+
+
+
+                                                                                           28
+                  Centro
+                  Ruth Richardson
+
+
+
+
+6. Agradecimiento
+
+Este informe ha contado con las aportaciones de Jon González. No obstante, cualquier
+error u omisión es responsabilidad exclusiva de los autores.
+
+
+
+
+                                                                                       29
+                   Centro
+                   Ruth Richardson
+
+
+
+
+Referencias
+
+De la Fuente, A. (2020). ¿Desequilibrio vertical e insuficiencia autonómica
+en el sistema de financiación regional? Una mirada a los datos y un
+enfoque alternativo. Fedea, Estudios sobre la Economía Española
+2020/27. Disponible en: https://documentos.fedea.net/pubs/eee/
+eee2020-27.pdf?_gl=1*6ir9fn*_ga*NzgxNDIzMDAzLjE3MzU0NTkzNjE.*_ga_
+K71EGLC8JC*czE3NDc0NTQ1MDMkbzI2JGcwJHQxNzQ3NDU0NTAzJGowJGwwJGgw
+
+De la Fuente, A. (2025). Las cuentas de la Seguridad Social Ampliada. Series 2005-2023,
+v1.2. Fedea, Apuntes 2025/06. Disponible en: https://documentos.fedea.net/pubs/
+ap/2025/ap2025-06.pdf
+
+Fernández-Villaverde, J. & de la Torre, F. (2025). La Factura del Cupo Catalán. La esfera
+de los libros.
+
+García, M. A. (2023). Componente contributivo del Sistema de Seguridad Social: saldo
+por CCAA y desglose de los factores de influencia del saldo de las pensiones. Ejercicio
+2021. Fedea, Apuntes 2023/22. Disponible en: https://documentos.fedea.net/pubs/
+ap/2023/ap2023-22.pdf
+
+García, M. A. (2024). Para qué sirve la Administración Central y por qué también
+ella necesita su autonomía. Fedea, Apuntes 2024/27. Disponible en: https://
+documentos.fedea.net/pubs/ap/2024/ap2024-27.pdf?utm_source=wordpress&utm_
+medium=portada&utm_campaign=estudio
+
+
+
+
+                                                                                            30
+hesperides.edu.es
+

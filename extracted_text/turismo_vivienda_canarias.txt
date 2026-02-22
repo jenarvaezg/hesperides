@@ -1,0 +1,1022 @@
+Turismo y vivienda
+en Canarias:
+¿Amigos o enemigos?
+Por qué restringir el alquiler vacacional
+no resolverá la crisis habitacional
+
+
+Autores
+Daniel Fernández Méndez
+Felipe Bosch Cardoso
+Iván Raja Parra
+Gonzalo Melián Marrero
+
+
+
+
+hesperides.edu.es
+                    Centro
+                    Ruth Richardson
+
+
+
+
+Resumen ejecutivo
+Este informe analiza la relación entre el turismo y el acceso a la vivienda en las Islas
+Canarias, cuestionando la pertinencia de la nueva Ley de Ordenación Sostenible del Uso
+Turístico de Viviendas (en adelante, Ley de vivienda vacacional). El proyecto parte de la
+premisa de que el turismo ejerce presión sobre la oferta de viviendas residenciales y,
+por ende, encarece los precios. Sin embargo, a lo largo del estudio identificamos que
+las causas principales del incremento del coste de la vivienda obedecen, sobre todo,
+a la limitada construcción de nuevos inmuebles y a barreras normativas que frenan la
+expansión del suelo urbanizable.
+
+1- Contexto y planteamiento del problema
+
+Según el gobierno canario, el alquiler vacacional ha impulsado el encarecimiento de la
+vivienda, lo que limita el acceso de los residentes locales. Por ello, la nueva Ley de vivien-
+da vacacional pretende reconducir parte de estos inmuebles al mercado residencial
+mediante restricciones a su uso turístico, y así moderar los precios.
+
+2- Limitaciones de la oferta de vivienda
+
+El informe desvela que la construcción de viviendas en Canarias ha sido insuficiente,
+con solo un 0,7% de incremento entre 2020 y 2023, para satisfacer la demanda de los
+nuevos hogares. Esto se agrava por las trabas burocráticas y las políticas de contención
+urbanística, que impiden que el mercado responda naturalmente a las necesidades ha-
+bitacionales, con un ritmo acorde con la demanda.
+
+3- Impacto real del alquiler turístico en los precios
+
+El análisis empírico muestra una correlación débil entre la expansión del alquiler vaca-
+cional y el incremento de los precios inmobiliarios en la mayoría de municipios canarios,
+pese al continuo crecimiento de este tipo de alojamiento. De hecho, la mayor concentra-
+ción de viviendas turísticas se observa en zonas específicas de baja densidad poblacio-
+nal y tradicional vocación turística.
+
+
+
+
+                                                                                             2
+                   Centro
+                   Ruth Richardson
+
+
+
+
+4- Seguridad jurídica y desplazamiento hacia el alquiler vacacional
+
+Las leyes de alquiler residencial, aunque protegen a los inquilinos, han creado un efecto
+colateral: muchos propietarios temen no poder recuperar sus pisos en caso de impagos,
+lo que les empuja al mercado turístico, donde tienen más control.
+
+5- Prosperidad, turismo y vivienda
+
+El turismo, pilar fundamental de la economía canaria, puede coexistir con el acceso a
+la vivienda si se facilita la construcción de suficientes inmuebles. La economía colabo-
+rativa ha transformado el sector, al permitir que pequeños propietarios participen de
+los beneficios turísticos tradicionalmente reservados a las grandes cadenas hoteleras e
+incluso compitan con ellas.
+
+Recomendación general
+
+La Ley de vivienda vacacional requiere una reevaluación, ya que difícilmente contendrá
+los precios mientras persista el problema fundamental: la escasez de viviendas causada
+por restricciones normativas y burocráticas.
+
+Para equilibrar oferta y demanda, la solución más efectiva pasa por agilizar la construc-
+ción, aumentar la disponibilidad de suelo apto para edificar e incrementar las densida-
+des de vivienda en los núcleos urbanos más poblados, en lugar de limitar la actividad
+turística.
+
+
+
+
+                                                                                            3
+                    Centro
+                    Ruth Richardson
+
+
+
+
+Primera parte
+
+Introducción
+La relación entre turismo y derecho a la vivienda en las Islas Canarias es una relación
+de amor-odio. Por un lado, existe una conciencia de que sin el turismo la economía de
+las Islas recibiría un golpe del que, posiblemente, nunca se recuperaría. Por otro lado, la
+expansión del turismo podría estar dificultando, cuando no directamente impidiendo, el
+acceso a la vivienda de la población local. Ante este dilema, el gobierno de Canarias ha
+tomado cartas en el asunto y se ha propuesto aprobar una ley que ordene y restrinja el
+alquiler vacacional en las áreas residenciales del archipiélago.
+
+El legislador, al redactar la Ley de Ordenación Sostenible del Uso Turístico de Viviendas
+(en adelante, Ley de vivienda vacacional), parte de ciertos supuestos sobre la situación
+actual del mercado de vivienda en Canarias y su relación con la actividad turística. Este
+estudio analizará si dichos supuestos, asumidos como ciertos por el legislador, se ajus-
+tan a la realidad.
+
+
+
+Segunda parte
+
+El espíritu de la Ley
+de vivienda vacacional
+La acción legislativa tiene como origen una molestia legítima que la población canaria
+reivindica en diferentes foros: la accesibilidad a la vivienda se ha deteriorado en los últi-
+mos años.
+
+Por otro lado, el legislador entiende, correctamente, que el turismo es una actividad eco-
+nómica que puede utilizar como input productivo los mismos “servicios de habitación”
+de las viviendas que habitualmente se utilizan como residencia de la población canaria.
+Es decir, se entiende que existen diferentes actividades que compiten por el mismo
+bien, y, como es habitual cuando existe concurrencia sobre una misma cosa, su precio
+sube, dejando fuera a algunos de los potenciales demandantes del bien.
+
+En la exposición de motivos, el legislador muestra cómo se ha expandido el alquiler va-
+cacional en Canarias en los últimos años, lo que podría haber reducido significativamen-
+te la oferta de vivienda disponible para uso residencial.
+                                                                                                4
+                   Centro
+                   Ruth Richardson
+
+
+
+
+El legislador, al vincular casi en exclusiva el crecimiento de precios como causa del turis-
+mo vacacional se propone, por tanto, regularlo, restringiéndolo en ocasiones de forma
+muy agresiva y sometiéndolo a férreos controles que tienen como fin redirigir la oferta
+de vivienda desde los usos turísticos hacia usos residenciales. Con esta redirección de la
+oferta se espera que el precio, tanto del alquiler como de la compraventa, se modere o
+incluso disminuya y, por tanto, la accesibilidad de los canarios a la vivienda mejore.
+
+Por tanto, el legislador atribuye, de forma prácticamente exclusiva, los problemas de
+acceso a la vivienda de los residentes a la competencia que el sector de la vivienda vaca-
+cional establece con ellos.
+
+
+
+Tercera parte
+
+Omisiones del Proyecto de Ley
+Si bien el legislador parte de un marco teórico sólido a la hora de presentar su propues-
+ta, este marco es insuficiente. En esta sección mostraremos las omisiones del marco
+teórico que manejan las autoridades canarias, omisiones que provocan, a nuestro juicio,
+una redacción muy deficiente de la Ley en trámite que podría provocar graves efectos
+económicos que analizaremos en la sección 5.
+
+3.1 El eslabón perdido: la oferta de vivienda
+
+En la correcta formulación del problema de la vivienda en Canarias que realiza el le-
+gislador echamos en falta un análisis más pormenorizado de la función de la oferta de
+vivienda.
+
+Si bien es completamente cierto que nuevas fuentes de demanda en el mercado de la
+vivienda, como pueden ser el turismo u otras actividades económicas y comerciales,
+impulsan al alza el precio de los inmuebles, no es menos cierto que todo mercado siem-
+pre tiene dos patas. Ante un crecimiento de la demanda que incremente los precios, lo
+normal es que la oferta reaccione incrementando la construcción de nueva vivienda.
+
+     3.1.1 Precios de la vivienda en Canarias vs España
+
+     Empecemos analizando si la señal de precios ha llegado a los oferentes de nueva
+     vivienda. En el gráfico 1 podemos ver cómo los precios de la vivienda en Canarias
+     han crecido muy por encima de la media nacional desde el año 2020.
+                                                                                           5
+            Centro
+            Ruth Richardson
+
+
+
+
+Gráfico 1
+
+
+
+
+                              6
+             Centro
+             Ruth Richardson
+
+
+
+
+Gráfico 2
+
+
+
+
+Estos datos corroboran que la ciudadanía tiene, efectivamente, una queja y peti-
+ción legítima a sus autoridades. Pero sigamos explorando el problema. Si existe
+una señal de precio, ¿por qué la oferta no reacciona con nueva vivienda disponible?
+
+3.1.2 Oferta de nueva vivienda en Canarias
+
+A pesar de la creciente demanda, la oferta de viviendas en Canarias apenas se ha
+incrementado en los últimos años. Con un raquítico 0,7% de aumento entre 2020 y
+2023 (un 0,23% anual), Canarias se encuentra entre las regiones con menor dina-
+mismo en la construcción de viviendas de toda España.
+
+
+                                                                                  7
+                            Centro
+                            Ruth Richardson
+
+
+
+
+         Gráfico 3
+
+
+
+
+         Cabe preguntarse cuál es la razón por la que, a pesar del crecimiento en los pre-
+         cios, la oferta de vivienda no reacciona incrementando a su vez la construcción. Es
+         posible que el legislador esté interpretando este asunto como un fallo de merca-
+         do. Si estuviéramos realmente ante un fallo de mercado1, tendría sentido que el
+         legislador tomase la iniciativa con leyes como esta u otras que pudieran comple-
+         mentar a la primera y ayudasen a solventar el problema.
+
+         Resulta paradójico que, mientras el legislador identifica un déficit de 7.000 vivien-
+         das anuales en el preámbulo de la Ley, sea el propio poder político quien obstacu-
+         lice la construcción de nuevas viviendas. Esta contradicción se refleja en sus pro-
+         pias palabras:
+
+1
+    Conceptualmente, empero, más bien cabría catalogar esta situación de “inelasticidad de la oferta”.
+
+
+                                                                                                         8
+                     Centro
+                     Ruth Richardson
+
+
+
+
+          La reposición del parque de viviendas con destino residencial permanen-
+          te exigiría la clasificación de más de 500 hectáreas de suelo urbanizable
+          con tal destino, acompañada de los oportunos procesos de cesión, equi-
+          distribución y urbanización, procesos todos ellos tradicionalmente com-
+          plicados y lentos, y, además, tal clasificación ex novo iría en contra de los
+          criterios de ordenación territorial establecidos en la legislación vigente
+          que promueven, entre otros, la contención de la extensión urbana2.
+
+    Es decir, el poder político reconoce que la lentitud burocrática en el proceso de
+    modificación de la clase de suelo es lo que está frenando la oferta de nueva vivien-
+    da. Por otro lado, pretende, explícitamente, evitar la extensión de las ciudades y
+    obvia la posibilidad del incremento del parque de viviendas por otras vías como la
+    densificación urbana.
+
+    En consecuencia, no estaríamos ante un fallo de mercado, sino frente a un proble-
+    ma generado por la regulación urbana y territorial, que dificulta el aumento del
+    stock de viviendas.
+
+    3.1.3 Disponibilidad de suelo apto para edificar (oferta de suelo)
+
+    Bien podría argumentarse que, a pesar de la poca disposición de la administración
+    para agilizar la concesión de permisos y licencias, lo cierto sea que no existe suelo
+    disponible para construir nuevas viviendas.
+
+    Este hecho se refleja en el Gráfico 4, que muestra la situación en Las Palmas de
+    Gran Canaria, el municipio más poblado del archipiélago, donde debido a restric-
+    ciones regulatorias, solo el 33% del suelo está consolidado y es apto para edificar
+    (suelo urbano consolidado + áreas de desarrollo consolidadas). Sin embargo, esto
+    no significa que este porcentaje esté disponible para nuevas construcciones, ya
+    que la mayor parte de este suelo ya está edificado.
+
+    La edificabilidad no puede incrementarse más allá de lo permitido por el planea-
+    miento urbano, lo que implica que no se puede construir más de lo que ya existe.
+    Dentro de este porcentaje, solo pueden edificarse parcelas que estén vacantes o
+    que puedan ser reedificadas o rehabilitadas (en caso de que los inmuebles estén
+    protegidos), siempre y cuando las construcciones existentes hayan quedado en
+    desuso.
+2
+     Proyecto de Ley de Ordenación Sostenible del Uso Turístico de Viviendas, página 6.
+
+
+                                                                                          9
+             Centro
+             Ruth Richardson
+
+
+
+
+Por otro lado, solo el 5,2% del suelo total corresponde a áreas pendientes de desa-
+rrollo, lo que significa que no se puede construir en ellas hasta que no se complete
+la urbanización previa. Además, el 61,8% del suelo está clasificado como no urba-
+nizable. Entre ambos, tenemos que el 67% del suelo del municipio no puede ser
+edificado en la actualidad.
+
+Gráfico 4
+
+
+
+
+                                                                                  10
+             Centro
+             Ruth Richardson
+
+
+
+
+3.1.4 La densidad urbana
+
+El problema de la oferta disponible de viviendas no es solo de la cantidad de suelo
+disponible para edificar sino también de la escasez artificial creada por la baja
+densidad urbana definida por el planeamiento urbano. Canarias es una región
+que, por su naturaleza insular, tiene un espacio limitado. Sin embargo, tanto la
+densidad poblacional como la densidad urbana no son elevadas en comparación
+con otras latitudes.
+
+Como se puede ver en el gráfico 5, Canarias está muy lejos de las regiones con
+mayor densidad poblacional de Europa.
+
+Gráfico 5
+
+
+
+
+                                                                                  11
+             Centro
+             Ruth Richardson
+
+
+
+
+Por otro lado, si analizamos nuevamente el municipio de Las Palmas de Gran
+Canaria, que es donde se encuentra el núcleo urbano con mayor población del
+archipiélago, nos damos cuenta de que la densidad urbana (medida en viviendas
+por hectárea) es, en su mayoría, baja. Como vemos en el gráfico 6, el 60,3% del
+área urbana tiene una densidad baja, el 14,6% una densidad media-baja y el 9,2%
+una densidad media. Tan solo el 16% del área urbana tiene una densidad alta. No
+obstante, lo que se clasifica como alta densidad sería considerado como densi-
+dad baja si lo comparamos con las áreas urbanas de las ciudades más densas del
+planeta.
+
+Por esta razón, el incremento de la oferta de vivienda no solo puede venir por
+el incremento de suelo urbanizable que, aunque la cantidad de suelo disponible
+es muy elevada, según el legislador iría en contra de los criterios de ordenación
+territorial establecidos en la legislación vigente. También podría incrementarse la
+oferta de vivienda por la vía del aumento de la densidad urbana, sin necesidad de
+incrementar ex novo el suelo urbanizable. Sin embargo, esta posibilidad también
+tropezaría de frente, una vez más, con las regulaciones del sistema creadas por los
+poderes públicos, dado que este incremento de densidades solo se podría reali-
+zar modificando el planeamiento urbano y los procesos de estas modificaciones
+demandan varios años.
+
+
+
+
+                                                                                  12
+            Centro
+            Ruth Richardson
+
+
+
+
+Gráfico 6
+
+
+
+
+                              13
+                   Centro
+                   Ruth Richardson
+
+
+
+
+3.2 La creación de hogares
+
+Ya hemos visto que la oferta de nueva vivienda en Canarias es muy escasa y, además,
+está restringida por las autoridades. Pero bien podría ocurrir que la restricción estuviese
+justificada dado un posible estancamiento de la población canaria.
+
+     3.2.1 Nuevos hogares y nueva vivienda
+
+     Resulta llamativo que en el Proyecto de Ley, al analizar el incremento de los pre-
+     cios de la vivienda, se ponga el foco en el turismo como causa principal, pero se
+     ignore el papel fundamental de la demanda residencial y su relación con la oferta.
+     El preámbulo del texto dedica apenas espacio a este factor crucial antes de abor-
+     dar el impacto del turismo en el desbalance entre oferta y demanda.
+
+     No se puede obviar que Canarias también se ha visto afectada por el aumento
+     de la población residente en España, debido principalmente a la inmigración. El
+     incremento de hogares en las Islas es similar al promedio nacional, a pesar de que
+     la construcción de nuevas viviendas en Canarias se encuentra muy por debajo de
+     la media del país.
+
+
+
+
+                                                                                         14
+            Centro
+            Ruth Richardson
+
+
+
+
+Gráfico 7
+
+
+
+
+                              15
+                          Centro
+                          Ruth Richardson
+
+
+
+
+       3.2.2 Viviendas construidas por hogar creado
+
+       Otra forma de ver el enorme desbalance existente en Canarias entre la creación de
+       hogares y la construcción de vivienda es mediante la tasa de viviendas construidas
+       por hogar creado. Si esta tasa es superior a uno, significa que se crean más vivien-
+       das que hogares y, si es menor, significa que hay un déficit habitacional, ya que se
+       crean menos viviendas que hogares3. Pues bien, en España todas las comunidades
+       autónomas menos una se encuentran en déficit habitacional, siendo Canarias la
+       comunidad con mayor déficit habitacional de España.
+
+       Gráfico 8
+
+
+
+
+3
+ Esto no significa que una tasa mayor a 1 implique que no exista un déficit habitacional, ya que algunas personas po-
+drían demandar dos viviendas para contar con una segunda residencia.
+
+                                                                                                                        16
+              Centro
+              Ruth Richardson
+
+
+
+
+A pesar de todo, alguien podría argumentar que la falta de construcción de vivien-
+da con relación a los hogares creados es un problema muy reciente que no estaba
+presente antes de 2020. Esta posibilidad puede ser cierta para otras comunidades
+autónomas, pero desde luego no lo es para Canarias. Canarias sufre un déficit cró-
+nico de vivienda desde hace décadas.
+
+Gráfico 9
+
+
+
+
+Por tanto, todo indica que el déficit habitacional de Canarias sería un problema in-
+cluso si el turismo no desviara una sola vivienda desde el uso residencial al turístico.
+
+
+
+
+                                                                                      17
+                   Centro
+                   Ruth Richardson
+
+
+
+
+3.3 El tercero en discordia: el turismo
+
+A pesar de la patente escasez de vivienda en Canarias con relación al incremento de la
+población que reside en el archipiélago, el legislador ha decidido poner el énfasis, casi
+en exclusiva, en el alojamiento turístico.
+
+     3.3.1 Vivienda turística en Canarias
+
+     El Proyecto de Ley parte de un supuesto correcto y es que el alojamiento turístico
+     compite con los usos residenciales de la vivienda, por lo que un incremento en el
+     número de alojamientos turísticos podría incrementar la demanda de vivienda y,
+     con ello, provocar una subida en su precio.
+
+     La alarma del legislador parece estar justificada cuando constatamos que la canti-
+     dad de vivienda en alquiler turístico ha crecido un 35% solo entre los años 2020 y
+     2024.
+
+     Gráfico 10
+
+
+
+
+                                                                                            18
+                          Centro
+                          Ruth Richardson
+
+
+
+
+       Además, el porcentaje de vivienda turística sobre el parque total de vivienda es
+       mayor en Canarias que en ninguna otra comunidad autónoma de España4.
+
+       Gráfico 11
+
+
+
+
+       Por tanto, el alquiler turístico podría ejercer una influencia en el precio de la vivien-
+       da en las Islas Canarias. En esta situación podría estar justificada la emisión de una
+       Ley de vivienda vacacional de Canarias, por tanto, se hace imperativo investigar de
+       forma empírica si este es el caso.
+
+
+
+
+4
+ A pesar de ello, es posible que gran parte de esta vivienda turística no haya cambiado de uso residencial a turística
+como sugiere el legislador, sino que originalmente estuviese situada en suelo urbano turístico.
+
+                                                                                                                         19
+             Centro
+             Ruth Richardson
+
+
+
+
+3.3.2 Vivienda turística y precio de la vivienda
+
+En consecuencia, para que la restricción de alquileres turísticos sea justificable
+debería partir de un supuesto que, además de ser plausible, fuese empíricamente
+verificable y es en este punto donde el legislador menos pruebas aporta.
+
+Ante el silencio del legislador en la exposición de motivos del Proyecto de Ley, no-
+sotros nos hacemos la siguiente pregunta: ¿hasta qué punto es relevante el alqui-
+ler turístico en la escalada de precios de la vivienda en Canarias?
+
+El gráfico 12 relaciona el crecimiento en la vivienda turística por municipio con el
+crecimiento del precio de la vivienda en ese mismo municipio. Ambos indicadores
+miden el cambio entre 2020 y 2024.
+
+Gráfico 12
+
+
+
+
+                                                                                   20
+             Centro
+             Ruth Richardson
+
+
+
+
+La relación entre un alto porcentaje de vivienda turística en un municipio y el incre-
+mento en el precio de la vivienda es, en el mejor de los casos, una relación muy
+débil. La práctica totalidad de municipios de Canarias muestran una incidencia
+nula del alojamiento turístico en el crecimiento en el precio de la vivienda.
+
+Si hacemos zoom en los diez municipios con mayor población del archipiélago,
+vemos cómo la relación entre crecimiento de la vivienda turística y el crecimiento
+en el precio de la vivienda también es prácticamente nula.
+
+Tabla 1
+
+
+
+
+                                                                                     21
+                            Centro
+                            Ruth Richardson
+
+
+
+
+          Por tanto, y con los datos en la mano, se hace muy difícil justificar una ley restricti-
+          va del alquiler vacacional en las Islas Canarias cuando la incidencia del turismo en
+          el precio de la vivienda es, en el mejor de los casos, testimonial.
+
+          3.3.3 Vivienda y turismo: ¿necesariamente competencia?
+
+          Ya hemos comentado que el legislador introduce un supuesto válido sobre la rela-
+          ción entre vivienda y turismo, aunque dicha relación sea irrelevante para la mayor
+          parte de municipios en Canarias. La competencia entre residencia y turismo por
+          el uso de la vivienda solo se materializa cuando la oferta de nuevas viviendas no
+          puede satisfacer las necesidades de ambos sectores.
+
+          El legislador, en el preámbulo, parece indicar que la relación entre turismo y resi-
+          dencia no solo es de competencia, sino que el turismo está canibalizando por com-
+          pleto los usos residenciales debido a su mayor valor añadido y a la incapacidad de
+          la oferta para cubrir ambas demandas. Esta sería la razón principal para justificar
+          la restricción del uso de viviendas turísticas.
+
+          Sin embargo, esta afirmación no se sustenta en datos concretos. El legislador se
+          limita a mencionar un déficit habitacional anual de 7.000 viviendas y la existencia
+          de 60.000 viviendas turísticas, sin explicar cómo llega a la conclusión de que el
+          turismo es el principal responsable de esta situación, y que se necesitarían veinte
+          años de construcción de vivienda para cubrir esta cifra5.
+
+          ¿Puede el sector de la construcción canario suplir el déficit de 7.000 viviendas
+          anual que existe según el legislador? La respuesta es un claro y rotundo “sí”, tal y
+          como podemos ver en el gráfico 13.
+
+
+
+
+5
+    Ver Ley de Ordenación Sostenible del Uso Turístico de Viviendas, página 7.
+
+
+                                                                                                 22
+             Centro
+             Ruth Richardson
+
+
+
+
+Gráfico 13
+
+
+
+
+Si la oferta de nueva vivienda puede atender tanto al sector residencial como al
+sector turístico, entonces no cabe hablar de expulsión del residencial por el turísti-
+co. Se hace necesario introducir el tercer elemento en la ecuación: el poder políti-
+co. Es que en lugar de una expulsión del sector de la construcción por el mercado,
+parece existir una restricción impuesta por las autoridades. Como se ha señalado
+anteriormente, este último busca evitar la expansión y densificación urbana, lo que
+limita el desarrollo del sector.
+
+3.3.4 Vivienda residencial y turismo: ¿sustitutos o complementarios?
+
+Uno de los supuestos que realiza el legislador es la expulsión del sector residencial
+por parte del creciente sector turístico. Ya hemos visto que esta expulsión solo
+
+
+                                                                                    23
+                          Centro
+                          Ruth Richardson
+
+
+
+
+       puede ocurrir allí donde no hay construcción suficiente. Pero podría suceder que,
+       en ausencia de construcción suficiente, limitar la demanda turística pudiese ser
+       una buena medida (al menos hasta que la construcción incremente las viviendas
+       entregadas).
+
+       Sin embargo, lo cierto es que los lugares donde viven mayoritariamente los cana-
+       rios y los lugares donde se instalan nuevas viviendas turísticas no son los mismos.
+       Por ejemplo, entre los diez municipios más poblados de las Islas, solo tres tienen
+       un porcentaje de vivienda turística sobre la vivienda total relevante (y solo dos de
+       ellos tienen un porcentaje superior al 10%)6.
+
+       Tabla 2
+
+
+
+
+6
+ Estos dos municipios, San Bartolomé de Tirajana y Adeje, cuentan con una gran cantidad de inmuebles clasificados des-
+de su concepción como de uso turístico, lo que implica que posiblemente es muy limitado el número de viviendas cuyo
+uso originario era residencial y ahora es turístico. Además, en estos municipios suele suceder el fenómeno inverso: el uso
+de inmuebles destinados al turismo como residencia habitual.
+
+                                                                                                                        24
+                           Centro
+                           Ruth Richardson
+
+
+
+
+         Por otro lado, los municipios con mayor porcentaje de vivienda turística suelen ser
+         municipios pequeños con clara vocación turística y escasa población.
+
+         Tabla 3
+
+
+
+
+         Es fundamental subrayar que los residentes canarios no suelen elegir estas zonas
+         turísticas como lugar de residencia habitual, pues en su gran mayoría priorizan
+         asentarse en urbes más grandes, con mayor disponibilidad de servicios.
+
+         Estos datos vienen corroborados por el Observatorio turístico de Canarias. En su
+         informe sobre la sostenibilidad del turismo en Canarias (2022) afirma que el 89,1%
+         de las pernoctaciones ocurren en el 1,7% del territorio7.
+
+
+
+7
+    Ver Hernández-Martín y otros (2022)
+
+
+                                                                                           25
+                   Centro
+                   Ruth Richardson
+
+
+
+
+     Por tanto, no parece que el alojamiento turístico y la vivienda residencial sean
+     sustitutos. De hecho, y ante el innegable ingreso que proporciona el turismo a la
+     economía canaria, más bien podría decirse que la relación entre sendos mercados
+     es complementaria. Muchos canarios pueden permitirse viviendas en las ciudades
+     no turísticas porque tienen ingresos que provienen del turismo. En este sentido,
+     la relación entre vivienda residencial y vivienda turística podría decirse que es casi
+     simbiótica.
+
+
+
+Cuarta parte
+
+Seguridad jurídica
+y fragmentación del mercado
+La falta de seguridad jurídica en el mercado del alquiler en Canarias ha transformado
+la manera en que los propietarios gestionan sus inmuebles. En lugar de apostar por el
+alquiler de larga duración, un número creciente de propietarios ha optado por el alqui-
+ler de corta estancia, vacacional y habitacional, evitando así los riesgos asociados a la
+creciente regulación y a las dificultades para recuperar sus viviendas en caso de impago.
+Esta tendencia no es casualidad: responde a modificaciones legislativas que han reforza-
+do la protección del inquilino, limitando la capacidad de los propietarios para garantizar
+el cumplimiento de los contratos y la recuperación de sus activos.
+
+Como cualquier otro agente en el mercado, los propietarios deben evaluar múltiples
+factores al decidir qué hacer con su propiedad. Entre ellos se encuentran los costes de
+mantenimiento, las obligaciones fiscales y administrativas, así como la necesidad de ob-
+tener una rentabilidad que justifique su inversión. En este contexto, la elección entre el
+alquiler de larga duración, el de corta estancia, por habitaciones y el vacacional depen-
+de, en gran medida, de los incentivos que ofrece el marco regulatorio. Durante años, el
+alquiler de larga estancia se consideró la opción más estable, al implicar menos riesgos
+de desperfectos, menor necesidad de supervisión y una relativa seguridad en la ocupa-
+ción a medio y largo plazo.
+
+Sin embargo, las reformas normativas implementadas en la última década han modi-
+ficado estos incentivos, reduciendo la seguridad de los arrendadores y generando una
+tendencia clara hacia el alquiler vacacional y habitacional en detrimento del de larga
+duración. Paradójicamente, las medidas impulsadas para mejorar el acceso a la vivienda
+
+
+                                                                                          26
+                   Centro
+                   Ruth Richardson
+
+
+
+
+han terminado incentivando su salida del mercado residencial, contribuyendo a agravar
+la situación que intentaban corregir.
+
+4.1 Evolución legislativa del alquiler
+
+La reforma de la Ley de Arrendamientos Urbanos (LAU) en 2013 (Ley 4/2013, de 4 de
+junio, de medidas de flexibilización y fomento del mercado del alquiler de viviendas)
+introdujo medidas que flexibilizaron el mercado del alquiler y proporcionaron mayores
+garantías a los propietarios. Se redujo la duración mínima obligatoria de los contratos a
+tres años, se habilitó el desahucio exprés y se priorizó el acuerdo entre las partes. Estas
+modificaciones incentivaron la oferta de vivienda en alquiler, al generar un entorno de
+mayor seguridad jurídica para los arrendadores.
+
+Sin embargo, la reforma de 2019 (Real Decreto-ley 7/2019, de 1 de marzo, de medidas
+urgentes en materia de vivienda y alquiler) revirtió gran parte de estos cambios, esta-
+bleciendo nuevas restricciones para los propietarios. La duración de los contratos se
+amplió de tres a cinco años (siete si el arrendador era una empresa), se limitó la can-
+tidad de garantías adicionales a dos meses de fianza, los gastos de gestión pasaron a
+ser responsabilidad del propietario en caso de que este fuera una persona jurídica y los
+procesos de desahucio se endurecieron, permitiendo retrasos de hasta cuatro meses en
+casos de vulnerabilidad.
+
+La Ley por el derecho a la vivienda de 2023 (Ley 12/2023, de 24 de mayo) endureció
+aún más las restricciones sobre el alquiler. Se estableció un control de precios en zonas
+tensionadas, limitando los aumentos al 3% anual y, a partir de 2025, vinculandose a un
+índice de referencia propio. Además, los gastos de gestión inmobiliaria y formalización
+del contrato corren a cargo del arrendador, independientemente de su naturaleza jurídi-
+ca. En estas zonas, los grandes tenedores deben justificar objetivamente la recuperación
+de la vivienda, ya sea para uso propio, familiar o venta, lo que reduce aún más la oferta
+de alquiler.
+
+Este marco normativo ha generado una creciente incertidumbre entre los propietarios,
+reduciendo los incentivos para mantener sus viviendas en el mercado del alquiler de
+larga duración. En consecuencia, una parte de los arrendadores ha optado por migrar al
+alquiler de corta estancia, vacacional y habitacional, donde la regulación es distinta y los
+riesgos percibidos son notablemente menores.
+
+
+
+
+                                                                                          27
+                   Centro
+                   Ruth Richardson
+
+
+
+
+4.2 Desahucios y cambio de estrategia
+
+La tendencia a la baja en los desahucios es uno de los reflejos más evidentes del cambio
+en la estrategia de los propietarios, así como de las consecuencias directas de la evolu-
+ción normativa.
+
+Gráfico 14
+
+
+
+
+Como muestra el gráfico 14, el número de desahucios se ha reducido de manera signi-
+ficativa en los últimos años, con una caída especialmente pronunciada a partir de 2019,
+coincidiendo con la reforma de la LAU y el refuerzo de la protección al inquilino. La com-
+paración entre 2019 y 2023 muestra una reducción cercana al 50%.
+
+Sin embargo, esta disminución no implica necesariamente una reducción en los impa-
+gos, sino que responde a un cambio en el comportamiento de los propietarios, quienes
+
+                                                                                        28
+                  Centro
+                  Ruth Richardson
+
+
+
+
+han optado por no arrendar sus inmuebles ante las crecientes dificultades para recu-
+perar la posesión en caso de conflicto. En este sentido, el marco regulatorio no solo
+ha restringido los desahucios, sino que ha actuado como un factor disuasorio para la
+permanencia de viviendas en el mercado de alquiler de larga duración, incentivando
+indirectamente su traslado hacia el alquiler vacacional.
+
+Gráfico 15
+
+
+
+
+Si bien el concepto de desahucio incluye tanto a inquilinos como a propietarios afec-
+tados por ejecuciones hipotecarias, la evolución de ambos procesos ha sido distinta.
+Desde 2019, las ejecuciones hipotecarias han mostrado una variación mínima, sin seguir
+la tendencia descendente observada en los desahucios. Esto sugiere que la reducción de
+los desahucios no responde a una mejora en la situación económica de los inquilinos,
+sino a un cambio en la estrategia de los propietarios ante un entorno regulatorio más
+
+                                                                                        29
+                    Centro
+                    Ruth Richardson
+
+
+
+
+restrictivo, que dificulta llevar a cabo dichos desahucios.
+
+La creciente inseguridad jurídica en el alquiler ha llevado a muchos propietarios a re-
+considerar la viabilidad del arrendamiento de larga duración. Ante las dificultades para
+recuperar su vivienda en caso de impago y las limitaciones impuestas a la gestión de
+sus inmuebles, una parte significativa de los arrendadores ha optado por no ofrecer sus
+propiedades en alquiler o por trasladarlas al mercado del alquiler vacacional y habitacio-
+nal, donde los riesgos percibidos son menores.
+
+
+
+5. Prosperidad, turismo y vivienda
+Dice el dicho popular que si tienes una gallina que pone huevos de oro no es una buena
+idea sacrificarla para hacer un caldo. Los países y regiones prósperas son lugares que
+atraen población de otras latitudes. Es cierto que la llegada de nueva población puede
+tensionar el mercado inmobiliario, pero si las autoridades limitan de forma arbitraria la
+construcción y el suelo disponible, cualquier actividad económica, sea el turismo u otra,
+provocará problemas de acceso a la vivienda. Canarias es un lugar próspero gracias,
+en gran medida, al turismo, pero se demoniza al turismo por generar presión sobre la
+vivienda residencial.
+
+La alternativa sería permitir que la industria de la construcción se expanda todo lo que
+la demanda de vivienda permita, con independencia de si es con un objeto residencial
+o con un objeto turístico. Una mayor construcción beneficiaría a todos los interesados,
+desde las propias industrias involucradas en la construcción como también sus clientes,
+gracias a precios más reducidos. Como hemos visto, este aumento de la construcción
+puede venir tanto por la cantidad de suelo vacante para ser clasificado como urbani-
+zable y ser transformado posteriormente o por un incremento de las densidades en el
+planeamiento en los núcleos urbanos más poblados y con mayor demanda.
+
+5.1 El turismo como quintaesencia del capitalismo popular
+
+Una tradicional queja con el sistema económico capitalista ha sido la tendencia a la
+concentración que en algunas ocasiones y en algunas industrias se impone debido a las
+economías de escala. Sin embargo, y gracias a la emergencia de la economía colaborati-
+va que han propiciado las nuevas tecnologías, la posibilidad de fragmentar la prestación
+de servicios es cada vez más una realidad. El mercado turístico es uno de los que más
+se ha visto beneficiado de estas dinámicas, permitiendo que pequeños propietarios
+
+
+                                                                                        30
+                            Centro
+                            Ruth Richardson
+
+
+
+
+puedan competir con grandes cadenas hoteleras a la hora de atraer clientes, una buena
+muestra de lo que entendemos como capitalismo popular. La concentración de capital
+no es, necesariamente, una ventaja en el sector turístico del siglo XXI.
+
+Canarias no ha sido, ni mucho menos, ajena a esta dinámica internacional y, actualmen-
+te el mercado no hotelero ya ofrece más camas que el tradicional mercado hotelero.
+
+Gráfico 16
+
+
+
+
+Actualmente, la mayor parte de propietarios de vivienda de alquiler vacacional son
+pequeños propietarios. Según datos del Colegio Oficial de Economistas de Las Palmas,
+el 89% de tenedores de vivienda turística son pequeños propietarios que tienen cuatro
+o menos viviendas, mientras que solo un 6% pertenece a grandes propietarios (Marrero,
+Alonso y Galindo, 2024)8.
+8
+    Ver el informe “Una aproximación económica a la realidad económica de la vivienda vacacional” (2024)
+
+
+                                                                                                           31
+                    Centro
+                    Ruth Richardson
+
+
+
+
+Esta atomización de la propiedad turística provoca que los beneficios del turismo no se
+expandan a la población únicamente por la vía laboral, sino también por la vía de los
+ingresos del capital.
+
+5.2 La Ley podría destruir el capitalismo popular
+
+El turismo es, en la Canarias del siglo XXI, un motor económico inclusivo. Los pequeños
+propietarios ya pueden competir, en igualdad de condiciones, e incluso a veces con
+ventaja, con las grandes cadenas hoteleras. El turista, gracias a la vivienda turística, gana
+en diversidad de opciones y oferta turística y los residentes ganan en forma de mayores
+ingresos, tanto los provenientes del trabajo como los que se quedan en manos de pe-
+queños propietarios. Los potenciales efectos adversos en forma de mayores precios por
+la vivienda podrían convertirse en ventajas toda vez que se estimulan industrias adya-
+centes como la construcción.
+
+Aun así, el legislador canario se ha propuesto destruir este bucle de creación de valor,
+atribuyendo al turismo un peso excesivo en la crisis de la vivienda y pasando por alto
+—o subestimando— la verdadera causa del encarecimiento: su propia inacción y, en
+ocasiones, la obstrucción directa a la construcción de nuevas viviendas. Esto se refleja
+en la dilación de los plazos para urbanizar suelos aptos, las trabas para edificar en sue-
+los consolidados, la negativa a clasificar nuevos terrenos urbanizables y las restricciones
+del planeamiento vigente, que impiden la densificación de los principales núcleos urba-
+nos del archipiélago.
+
+Por ello, este informe recomienda que se descarte esta Ley, ya que no solo resulta inútil
+para abordar la crisis de vivienda en Canarias, sino que también podría causar un grave
+perjuicio a la actividad económica del archipiélago.
+
+
+
+
+                                                                                           32
+                   Centro
+                   Ruth Richardson
+
+
+
+
+Conclusión
+1- La Ley de vivienda vacacional no resuelve el problema principal
+
+La normativa se basa en la premisa de que la vivienda vacacional es la causante directa
+del encarecimiento de la vivienda en Canarias. Sin embargo, este informe muestra que
+existe un déficit estructural de vivienda debido a la dificultad para aumentar la oferta,
+más que por la competencia entre alquiler residencial y turístico.
+
+2- Las restricciones a la construcción agravan la escasez de viviendas
+
+La escasez de vivienda en Canarias se debe a la combinación de políticas de contención
+del suelo, trabas burocráticas y un planeamiento urbano que impide la densificación.
+Estas restricciones dificultan la construcción de nuevas viviendas y generan un déficit
+habitacional crónico que no se soluciona limitando el alquiler turístico.
+
+3- El impacto del turismo en los precios de la vivienda es limitado
+
+Aunque haya áreas puntuales donde la vivienda turística pueda ejercer cierta presión
+alcista sobre los precios, en la mayoría de los municipios de Canarias la correlación es
+insignificante. El verdadero factor determinante es la incapacidad de aumentar la oferta
+de vivienda a un ritmo acorde con la demanda.
+
+4- La restricción del alquiler vacacional podría dañar la economía local
+
+El turismo es una fuente de prosperidad y empleo en Canarias, y la modalidad de alqui-
+ler vacacional ha permitido a pequeños propietarios beneficiarse directamente de este
+sector. Limitarla de forma agresiva pondría en riesgo un modelo de capitalismo popular
+que reparte los beneficios turísticos de forma más amplia.
+
+5- Necesidad de repensar la estrategia regulatoria
+
+En lugar de legislar de forma restrictiva el uso turístico de viviendas, proponemos redu-
+cir las barreras a la construcción y mejorar la seguridad jurídica en el alquiler residen-
+cial. Así, se lograría un equilibrio sostenible entre la demanda turística y la protección
+del derecho a la vivienda.
+
+                                                                                            33
+                   Centro
+                   Ruth Richardson
+
+
+
+
+El turismo y la vivienda pueden ser compatibles si existe voluntad política para impulsar
+la construcción de nuevos inmuebles y fortalecer la seguridad jurídica en los alquileres
+de larga duración. De lo contrario, se corre el riesgo de aprobar una Ley que, al cen-
+trarse casi exclusivamente en restringir el alquiler vacacional, no solo será ineficaz para
+abordar la escasez de vivienda asequible, sino que también pondrá en peligro la princi-
+pal fuente de ingresos de las Islas.
+
+
+
+
+                                                                                          34
+hesperides.edu.es
+

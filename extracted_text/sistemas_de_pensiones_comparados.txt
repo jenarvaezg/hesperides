@@ -1,0 +1,1562 @@
+Sistemas de pensiones
+comparados: ¿qué puede
+aprender España de Alemania,
+Suecia y Chile?
+
+
+Autores
+Daniel Fernández Méndez
+Santiago Calvo López
+Miguel González Calvo
+
+
+
+
+                          Noviembre de 2025
+
+
+
+
+hesperides.edu.es
+                   Centro
+                   Ruth Richardson
+
+
+
+
+1. Introducción
+
+En el Centro Ruth Richardson hemos analizado exhaustivamente el sistema de pensio-
+nes español en informes previos. En estas publicaciones hemos examinado:
+
+•   La evolución de las reformas del sistema de pensiones español y el continuo cambio
+    en las condiciones de acceso a la jubilación
+
+•   El impacto de la demografía en el sistema de pensiones español, y cómo la creciente
+    longevidad y el fin del bono demográfico han impactado sobre la sostenibilidad del
+    sistema
+
+•   La insostenibilidad financiera del modelo de pensiones actual si no se acometen
+    cambios estructurales profundos
+
+En este nuevo informe ampliamos el foco para contextualizar la situación española
+mediante una comparativa del sistema de pensiones español con tres países cuyos
+modelos de previsión social ofrecen valiosas lecciones: Alemania, Suecia y Chile. Esta
+selección de países permite contrastar diseños y resultados previsionales con implica-
+ciones directas para España.
+
+La elección de Alemania responde a las similitudes con el caso español. Su sistema tam-
+bién se basa predominantemente en el reparto y se enfrenta a presiones demográficas
+y financieras análogas. Estudiar el modelo alemán permite observar cómo la primera
+economía de Europa gestiona problemas de sostenibilidad que nos son comunes.
+
+Suecia, por su parte, representa un caso de éxito en la reforma de un sistema que,
+como el español, partía de un modelo de reparto. Los suecos crearon un novedoso sis-
+tema de cuentas nocionales que, sin abandonar el sistema de reparto, introduce meca-
+nismos automáticos de ajuste que garantizan su sostenibilidad a largo plazo.
+
+Finalmente se estudia el modelo de pensiones chileno. Chile fue pionero en la implan-
+tación de un sistema de capitalización individual pura, un paradigma completamente
+distinto al de reparto, que basa la pensión futura en el ahorro personal obligatorio
+acumulado a lo largo de la vida laboral, ahorro que, salvo casos excepcionales, no es
+accesible hasta la jubilación.
+
+
+
+
+                                                                                         2
+                    Centro
+                    Ruth Richardson
+
+
+
+Resumen ejecutivo
+
+El sistema de pensiones de España sufre un estrés financiero creciente que, paulati-
+namente, se traslada al ámbito político, lugar en el que el pacto intergeneracional de
+distribución del ingreso se está poniendo en tela de juicio. En este informe proponemos
+mirar a otras latitudes en busca de soluciones alternativas que hayan tomado otros
+países para garantizar la sostenibilidad y suficiencia de sus sistemas de previsión. En
+concreto, analizaremos los sistemas de pensiones de Alemania, Suecia y Chile.
+
+Alemania está inmersa en un proceso de reformas en su sistema de pensiones, proceso que está
+generando un fuerte debate social. Las reformas más notorias de Alemania han consistido en:
+
+•   Anclaje del nivel de las pensiones a la evolución del salario medio alemán
+
+•   Aumento de las cotizaciones sociales destinadas específicamente a la jubilación pública
+
+•   Creación de un fondo de inversión público cuyos rendimientos cubran parte del
+    coste de las pensiones
+
+•   Acumulación de activos desde edades tempranas para sostener el ingreso en la vejez
+
+Pese a los esfuerzos, se argumenta que las medidas recientes en Alemania solo am-
+pliarán el actual déficit del sistema. En consecuencia, estas medidas ponen en duda a
+Alemania como referente para España en términos de sostenibilidad del primer pilar.
+
+Suecia ejecutó una reforma integral en 1994 que mantuvo el reparto, pero introdujo
+elementos de capitalización virtual, logrando asegurar la sostenibilidad financiera. A
+grandes rasgos, las reformas fueron las siguientes:
+
+•   Sistema de cuentas nocionales: cada trabajador acumula un saldo virtual con todas
+    sus cotizaciones en una cuenta individual
+
+•   El saldo virtual (nocional) es lo que determina cuánto podrá cobrar en el futuro (jun-
+    to a la esperanza de vida)
+
+•   Implementación de un mecanismo automático que reevalúa automáticamente las
+    cuentas virtuales, ajustando los gastos del sistema a sus ingresos
+
+•   Incentivo al ahorro individual obligatorio mediante beneficios fiscales en los planes
+    de pensiones de empresa
+                                                                                               3
+                   Centro
+                   Ruth Richardson
+
+
+
+La reforma sueca se considera un caso exitoso en términos de sostenibilidad. Por ello,
+el modelo de cuentas nocionales es de obligada consideración para una eventual refor-
+ma del sistema español.
+
+Chile, por su parte, reformó su sistema de reparto en 1981, implementando un sistema
+de capitalización individual pura, donde los ingresos de jubilación provienen del ahorro
+acumulado. Los principales rasgos de esta reforma fueron los siguientes:
+
+•   Creación de un sistema de ahorro privado obligatorio en el que las cotizaciones
+    sociales se acumulan en cuentas individuales de los trabajadores
+
+•   Creación de agentes financieros especializados cuyo fin es invertir el ahorro de los
+    trabajadores
+
+•   Incentivos fiscales para aumentar el ahorro individual voluntario para la jubilación
+
+El modelo chileno presenta menor gasto público directo en pensiones y mayor acumu-
+lación de activos, con tasas de sustitución más bajas, según la evidencia presentada.
+Además, la redirección del ahorro de los trabajadores al sector productivo ha provoca-
+do endógenamente un crecimiento económico que no hubiera ocurrido en ausencia
+del sistema de pensiones de capitalización. Por tanto, el sistema chileno constituye un
+caso de estudio relevante que puede ofrecer lecciones útiles para la reforma del siste-
+ma de pensiones en España.
+
+Sobre los autores:
+
+Daniel Fernández Méndez
+
+Doctor en Economía por la Universidad Rey Juan Carlos. Director del Centro Ruth
+Richardson y subdirector del Centro Peter Huber de la Universidad de las Hespérides.
+
+Santiago Calvo López
+
+Doctor en Economía por la Universidad de Santiago de Compostela. Profesor de
+Economía Pública y Métodos Cuantitativos en la Universidad de las Hespérides.
+
+Miguel González Calvo
+
+Máster en Economía por la Universidad de las Hespérides e Ingeniero Aeroespacial
+por la Universidad Politécnica de Madrid. Profesor en la Universidad de las Hespérides,
+la Universidad Francisco Marroquín y la Universidad Alfonso X el Sabio.
+                                                                                           4
+                   Centro
+                   Ruth Richardson
+
+
+
+
+2. El diseño de los tres pilares en el sistema de pensiones
+
+Antes de abordar el análisis de los sistemas de pensiones sueco, chileno y alemán, re-
+sulta fundamental describir brevemente el esquema general de los sistemas de previ-
+sión social contemporáneos.
+
+La mayoría de las economías desarrolladas estructuran sus sistemas de pensiones en
+torno a un modelo de tres pilares. Este marco busca diversificar las fuentes de ingresos
+durante la jubilación y, de esta forma, garantizar la sostenibilidad y suficiencia de las
+prestaciones.
+
+•   Primer pilar: pensión y cotización obligatoria
+
+Este primer pilar está formado por el porcentaje del ingreso que el Estado obliga a los
+trabajadores a aportar con el objetivo de financiar el sistema de pensiones. Este pilar
+suele consistir en un sistema de reparto financiado por el Estado a través de las cotiza-
+ciones sociales.
+
+Dependiendo del diseño concreto, este primer pilar puede buscar proporcionar una
+cobertura básica (sistema alemán y sistema sueco) o una cobertura integral (sistema
+español) a los jubilados.
+
+Este primer pilar se complementa con pensiones de inserción o universales que buscan
+proporcionar un ingreso mínimo en la vejez a los miembros de la tercera edad que no
+han cotizado lo suficiente (sistema chileno). Estos gastos extra se suelen sufragar con
+los presupuestos generales del Estado.
+
+•   Segundo pilar: planes de pensiones de empresa
+
+Los planes de pensiones de empleo son aquellos promovidos por los empleadores
+como parte de su paquete retributivo a sus empleados.
+
+Este segundo pilar suele consistir en pensiones de capitalización en las que se acumu-
+lan activos que pueden hacer sostenible la pensión de jubilación de los más mayores.
+
+•   El tercer pilar consiste en el ahorro individual para la jubilación
+
+Este pilar engloba el ahorro individual y voluntario a través de productos financieros
+
+                                                                                            5
+                      Centro
+                      Ruth Richardson
+
+
+
+privados, como los planes de pensiones personales.
+
+El segundo y tercer pilar suelen contar con incentivos fiscales como vamos a analizar
+al final del informe. Esto implica que, en general, el diseño del sistema de pensiones
+incentiva que se complemente el ahorro obligatorio con una previsión individual para
+la vejez.
+
+
+
+
+1 Un sistema de reparto es aquel que redistribuye ingresos desde los trabajadores actuales hasta los
+pensionistas actuales.
+2 En los casos analizados la excepción será el sistema de pensiones chileno que, como se detalla más
+abajo, tiene un primer pilar de ahorro obligatorio que acumula activos en la cuenta individual de cada
+cotizante (sistema de capitalización).
+
+
+                                                                                                         6
+                    Centro
+                    Ruth Richardson
+
+
+
+
+3. El modelo sueco: sostenibilidad y confianza intergeneracional
+
+Tras una grave crisis a comienzos de los años noventa, Suecia transformó su sistema de
+pensiones en un modelo innovador que combina sostenibilidad financiera, transparen-
+cia y corresponsabilidad en el gasto.
+
+       3.1. Sostenibilidad gracias a la reforma de 1994
+
+Hoy, gracias a la reforma, el gasto en pensiones sueco se mantiene estable en torno al 10%
+del PIB, siendo el gasto en pensiones públicas de alrededor del 7,5% del PIB. Esta cifra es muy
+inferior a la de otros países europeos, la comparación con España es muy ilustrativa.
+
+                                           Gráfica 1
+
+
+
+
+                                                                                                  7
+                  Centro
+                  Ruth Richardson
+
+
+
+
+Las proyecciones de gasto apuntan a que el sistema de pensiones de Suecia seguirá
+siendo sostenible en el futuro. El gasto que proyecta la Comisión Europea hasta el año
+2070 se mantendrá estable en Suecia, mientras que en España los desembolsos aumen-
+tarán en 3,6 puntos de PIB.
+
+Es decir, Suecia, con la reforma implementada en los años noventa, supone un ejemplo
+de referencia de cómo mantener un sistema de pensiones robusto y, al mismo tiempo,
+financieramente sostenible.
+
+                                      Gráfica 2
+
+
+
+
+                                                                                       8
+                      Centro
+                      Ruth Richardson
+
+
+
+
+        3.2. De la crisis al consenso político
+
+El sistema sueco previo a la reforma implementada a lo largo de la década de los años noventa
+combinaba una pensión universal de cuantía fija con un suplemento ligado a ingresos.
+
+Era un modelo de prestación definida: el cálculo se basaba en los quince mejores años de
+salario y bastaban treinta años de cotización para lograr la pensión completa. Este diseño, muy
+generoso, funcionó mientras el crecimiento económico y demográfico fue sólido, pero se volvió
+insostenible en los años ochenta y noventa. El problema no era coyuntural, sino estructural:
+
+
+•   Desequilibrio actuarial: el sistema prometía más de lo que podía financiar, en un contex-
+    to de crecimiento salarial modesto y aumento rápido de la longevidad.
+
+•   Inequidades intergeneracionales: beneficiaba a trabajadores con carreras ascendentes
+    y perjudicaba a los de ingresos más estables.
+
+•   Vulnerabilidad económica: la crisis financiera de 1991–1993 hundió el PIB, disparó el
+    desempleo y tensó la deuda pública.
+
+
+
+
+3 Tanto este apartado como el siguiente están basados en la descripción y contexto social y político
+realizada por Boado-Penas, M. C. (2021). Reformas del sistema de pensiones: La Experiencia Sueca (Do-
+cumento de Trabajo - 2021/03). Fedea.
+
+
+
+                                                                                                        9
+                    Centro
+                    Ruth Richardson
+
+
+
+
+                                          Gráfica 3
+
+
+
+
+La urgencia fue tal que los partidos políticos se vieron forzados a llegar a un acuerdo histó-
+rico. En 1992 se presentaron los principios de un nuevo sistema, en 1994 el Parlamento los
+aprobó, y en 2003 comenzaron a pagarse las primeras pensiones bajo las nuevas reglas.
+
+El consenso político incluyó a socialdemócratas y centroderecha, lo que permitió dotar al
+nuevo modelo de legitimidad y estabilidad más allá de los ciclos electorales.
+
+
+
+
+                                                                                             10
+                    Centro
+                    Ruth Richardson
+
+
+
+
+                                          Gráfica 4
+
+
+
+
+       3.3. La arquitectura del sistema
+
+El modelo resultante se organiza en torno a tres pilares principales:
+
+•   Pilar 1: Sistema de reparto
+
+Es un régimen público, obligatorio y de reparto, financiado mediante una cotización del
+16% sobre los ingresos pensionables del trabajador y del empleador.
+
+Su característica más innovadora es que, aunque opera financieramente como un sistema
+de reparto (las cotizaciones actuales financian las pensiones actuales), su lógica de cálculo
+de prestaciones es la de un sistema de Cuentas Nocionales de Contribución Definida (NDC).
+Este mecanismo simula una cuenta de ahorro individual, creando un vínculo directo y trans-
+                                                                                           11
+                    Centro
+                    Ruth Richardson
+
+
+
+
+parente entre las contribuciones de toda la vida y la pensión final.
+
+•   Pilar 2: Pensiones Ocupacionales:
+
+El segundo pilar está compuesto por los planes de pensiones de empleo. Aunque formal-
+mente son privados, en la práctica son cuasi-obligatorios, ya que se negocian en los conve-
+nios colectivos entre los sindicatos y las organizaciones patronales. Su cobertura es excep-
+cionalmente alta, alcanzando a más del 90% de la fuerza laboral sueca, lo que los convierte
+en un componente esencial del ingreso de jubilación para la gran mayoría de los ciudada-
+nos. Las contribuciones suelen rondar el 4,5% del salario y son gestionadas por entidades
+financieras especializadas.
+
+•   Pilar 3: Sistema obligatorio de capitalización
+
+El tercer pilar es un régimen público, obligatorio y de capitalización individual. Se finan-
+cia con una cotización adicional del 2,5% sobre los ingresos por cotizaciones, que se
+deposita en una cuenta de inversión personal para cada trabajador.
+
+Este pilar introduce un elemento de elección y responsabilidad individual. Los partici-
+pantes pueden elegir invertir sus fondos en una amplia cartera de fondos de inversión
+privados autorizados. Para aquellos que no desean o no se sienten capaces de tomar
+una decisión de inversión activa, el sistema proporciona una opción por defecto de alta
+calidad: el fondo estatal AP7 Såfa. Su rentabilidad anual entre los años 2000 y 2024 es
+del 11,5%.
+
+•   Pensión de garantía:
+
+Para asegurar un nivel de vida mínimo en la vejez, el sistema se complementa con una
+pensión de garantía. Se trata de una prestación no contributiva destinada a personas con
+ingresos de pensión bajos o nulos derivados de su vida laboral.
+
+       3.4. Diversificar la fuente de ingresos de los jubilados
+
+En Suecia, las personas mayores de 65 años tienen una dependencia de las transferencias
+del Estado notablemente inferior a la española: 51,6% de sus ingresos provienen de las
+transferencias públicas en comparación con España donde esta cifra es del 71,9%.
+
+El modelo sueco, a diferencia del español, se apoya en una combinación de fuentes de
+ingresos adicionales: los sistemas de ahorro individual y los ingresos de capital suman el
+                                                                                             12
+                      Centro
+                      Ruth Richardson
+
+
+
+
+31,4% de los ingresos mientras el empleo aporta el 17% del ingreso restante.
+
+La diversificación de ingresos de los jubilados suecos reduce la dependencia exclusiva del
+Estado, refuerza la sostenibilidad del sistema y garantiza una mayor resiliencia frente a los
+cambios demográficos.
+
+                                              Gráfica 5
+
+
+
+
+4 Por comparar, según datos de la OCDE, la rentabilidad real de la hucha de las pensiones en España
+durante la última década arroja cifras negativas (-1,1%).
+
+                                                                                                      13
+                      Centro
+                      Ruth Richardson
+
+
+
+
+        3.5. Suecia asegura su futuro
+La innovación central son las cuentas nocionales. Se trata de una ficción contable que con-
+vierte un sistema de reparto en algo parecido a un sistema de contribución definida. Fun-
+ciona de la siguiente manera:
+
+•   Cada trabajador acumula en su cuenta virtual el 16% de su salario anual.
+
+•   Estas cuentas se actualizan con el crecimiento de los ingresos medios de la economía.
+
+•   Al jubilarse, el saldo acumulado se divide entre los años de esperanza de vida de su
+    cohorte.
+
+ El sistema incluye una serie de ajustes automáticos al saldo de las cuentas nocionales:
+por ejemplo, si aumenta la esperanza de vida, se ajusta el nivel de su pensión. Este me-
+canismo reparte de manera transparente el riesgo de la longevidad y elimina la necesi-
+dad de reformas paramétricas constantes.
+
+Las propias cuentas nocionales se ajustan con el tipo de interés nocional. Las cotizacio-
+nes acumuladas en las cuentas virtuales incrementan al mismo nivel al que incrementa
+la masa salarial per cápita. De esta forma se ajustan los ingresos del sistema por cotiza-
+ciones con los pagos vinculados a las cuentas nocionales.
+
+Asimismo, Suecia introdujo un freno para mantener el sistema en equilibrio. En este
+caso, cada año se publica un balance actuarial con activos (fondos y cotizaciones futu-
+ras) y pasivos (derechos acumulados). Si la ratio activos/pasivos cae por debajo de 1,
+el freno se activa y se recalculan las pensiones para restaurar el equilibrio. Para que el
+ajuste sea más gradual, se aplica el balance suavizado, que es la media móvil del valor
+real del índice de equilibrio. Tras la crisis de 2008, el freno se activó y las pensiones se
+redujeron temporalmente. Fue impopular, pero permitió recuperar la solvencia del sis-
+tema sin debates parlamentarios interminables.
+
+
+
+
+5 El concepto parece extraño, pero tiene sentido económico/financiero. Al calcular un salario por cabe-
+za (y no por trabajador), se ajusta mejor la revaluación de los pagos a los ingresos del sistema, ya que
+se pueden perder trabajadores (e ingresos al sistema) mientras incrementa el salario promedio (si se
+destruye empleo de baja calidad).
+
+
+                                                                                                       14
+                   Centro
+                   Ruth Richardson
+
+
+
+
+                                        Gráfica 6
+
+
+
+
+       3.6. El reparto de esfuerzo entre generaciones
+
+Con el sistema de cuentas nocionales, Suecia no se compromete a entregar pensiones
+altas, sino pensiones estables y sostenibles. Es decir, en Suecia se pagan las pensiones
+que, como país, se pueden permitir.
+
+La tasa de sustitución de Suecia (pensión/último salario) es inferior a la de España, pero
+no compromete el equilibrio financiero ni hace recaer todo el coste en las generaciones
+de los más jóvenes, como sucede en España.
+
+                                                                                           15
+                  Centro
+                  Ruth Richardson
+
+
+
+
+                                       Gráfica 7
+
+
+
+
+A pesar de que, en España, las pensiones públicas son relativamente más generosas
+que en Suecia en términos de tasa de sustitución, las tasas de pobreza entre los mayo-
+res en España son más elevadas. Esto indica que la generosidad del sistema español no
+se traduce en una protección más efectiva frente a la pobreza en la vejez, en parte por
+la menor diversificación de las fuentes de renta.
+
+
+
+
+                                                                                      16
+                  Centro
+                  Ruth Richardson
+
+
+
+
+                                      Gráfica 8
+
+
+
+
+      3.7. Un sistema transparente
+
+Cada año, la Agencia de Pensiones sueca envía a todos los trabajadores el conocido
+“Sobre naranja”, un informe personalizado que resume el saldo acumulado en sus
+cuentas individuales, las aportaciones realizadas, el rendimiento de las inversiones y
+una estimación de la pensión futura. Esta práctica no solo facilita que cada persona
+conozca de forma clara y sencilla el estado de su ahorro previsional, sino que con-
+vierte al ciudadano en un actor informado, capaz de tomar decisiones con base en
+datos transparentes y actualizados.
+                                                                                    17
+                   Centro
+                   Ruth Richardson
+
+
+
+
+El valor de este ejercicio va más allá de la información puntual: constituye una herra-
+mienta de confianza institucional. Al recibir un estado anual detallado, los trabajadores
+perciben que las reglas son estables y que su pensión depende de parámetros objeti-
+vos, no de decisiones políticas improvisadas. El sistema, además, transmite el mensaje
+de que la sostenibilidad se garantiza con reglas automáticas —como el índice de equili-
+brio y su versión suavizada— que ajustan las pensiones de forma previsible en función
+de la economía y la demografía.
+
+El contraste con España resulta evidente. En España, las reformas son continuas, a me-
+nudo reactivas, y los cambios en las reglas de cálculo tienden a ser poco comprensibles
+para el ciudadano medio. La consecuencia es una sensación de incertidumbre y descon-
+fianza hacia el futuro de las pensiones, desconfianza que dificulta la planificación a lar-
+go plazo. Suecia demuestra que la transparencia, cuando se convierte en norma, puede
+reforzar la legitimidad del sistema y reducir tensiones intergeneracionales.
+
+       3.8. Lecciones del sistema sueco
+
+El sistema sueco ofrece una enseñanza fundamental: la sostenibilidad no se logra con
+promesas crecientes de rentas futuras, sino con un diseño que ajusta de manera auto-
+mática las prestaciones a la realidad económica y demográfica.
+
+El sistema de cuentas nocionales ha permitido introducir un principio de responsabi-
+lidad intergeneracional muy claro: lo que se acumula depende de lo aportado y de la
+evolución de la economía, sin necesidad de realizar problemáticas reformas cada pocos
+años. Esta flexibilidad ha evitado el deterioro de la confianza y, sobre todo, ha blindado
+el sistema frente a shocks externos como el ocurrido con la crisis financiera de 2008.
+
+La lección para España es clara. Sin reglas automáticas que adapten prestaciones a
+la demografía y la economía, cualquier promesa de sostenibilidad está condenada a
+revisiones frecuentes y a conflictos políticos recurrentes. El consenso político es impres-
+cindible, pero no suficiente: hace falta introducir mecanismos que reduzcan la discrecio-
+nalidad y fortalezcan la previsibilidad del sistema. Suecia ha demostrado que es posible
+construir un modelo robusto y legítimo sin necesidad de reformas constantes.
+
+
+
+
+                                                                                         18
+                    Centro
+                    Ruth Richardson
+
+
+
+
+4. El éxito del sistema de pensiones de Chile
+
+A diferencia de Suecia, Chile optó por la capitalización individual obligatoria; su diseño
+reasigna riesgos y fuentes de ingreso en la vejez. Su reforma de 1981 significó una transfor-
+mación radical de su sistema de pensiones, reemplazando el esquema público de reparto
+por un sistema de capitalización individual administrado por entidades privadas.
+
+La reforma se llevó a cabo por las dificultades financieras que atravesaba el sistema de
+reparto, con déficits crecientes y pensiones modestas. Chile modificó de forma radical
+su régimen contributivo, introduciendo el ahorro individual y la acumulación de activos
+que harían frente a las jubilaciones de los trabajadores en el futuro. Desde 2008 el mo-
+delo ha sido ligeramente modificado, incorporándose nuevos componentes “solidarios”
+financiados por el Estado.
+
+       4.1. Gasto público y envejecimiento poblacional
+
+Chile soportó un fuerte gasto fiscal transitorio para instaurar su modelo de capitaliza-
+ción. Este gasto fue financiado mediante deuda y recursos generales del Estado. Con-
+forme la transición se iba completando, el gasto público en pensiones cayó en picado.
+
+
+
+
+                                                                                           19
+                    Centro
+                    Ruth Richardson
+
+
+
+
+                                          Gráfica 9
+
+
+
+
+El cambio de modelo fue muy costoso para Chile, ya que durante muchos años una
+generación de chilenos se vio obligada a pagar las pensiones de reparto de la anterior
+generación (por la vía fiscal y acumulando deuda) y a contribuir a sus propias pensiones
+individuales. A pesar de ello, el gasto en pensiones en relación a la población anciana es
+hoy menor en Chile que en otros países desarrollados.
+
+
+
+
+                                                                                             20
+                      Centro
+                      Ruth Richardson
+
+
+
+
+                                              Gráfica 10
+
+
+
+
+        4.2. Diseño y estructura del sistema
+
+El modelo de pensiones chileno se organiza en torno a tres pilares:
+
+•   Pilar 1 – Cotización obligatoria y cuentas individuales (AFP)
+
+Cada trabajador aporta un 10% de su salario a una cuenta personal manejada por una AFP,
+además de cubrir una comisión de administración y una prima de seguro de invalidez y
+sobrevivencia que, en conjunto, rondan el 2% adicional del sueldo.
+
+Las contribuciones chilenas se capitalizan en fondos de inversión gestionados por gestoras
+especializadas (AFP) que invierten en instrumentos financieros locales e internacionales. El
+rendimiento de estos fondos, junto con los aportes acumulados, determinará el saldo final
+disponible al jubilarse cada persona. No hay una tasa de reemplazo definida ni un beneficio
+garantizado por el Estado: la pensión resultante depende únicamente de lo ahorrado y la
+rentabilidad obtenida.
+
+6 Una reciente reforma del sistema chileno provocará que el porcentaje de los salarios que ingresan a
+las cuentas individuales crezca hasta el 14,5%.
+
+
+                                                                                                        21
+                    Centro
+                    Ruth Richardson
+
+
+
+
+                                         Gráfica 11
+
+
+
+
+•   Pilar 2 – Pensión solidaria y garantía de ingresos mínimos:
+
+El segundo gran componente del sistema chileno es el pilar solidario, instaurado en
+2008 y ampliado en 2022. La PGU (Pensión Garantizada Universal) es una prestación no
+contributiva financiada por los presupuestos generales del Estado y ajena a las AFP. Cubre
+aproximadamente al 90% de la población mayor de 65 años (se excluye al decil de mayores
+ingresos), independientemente de que hayan cotizado o no.
+
+La lógica de la PGU es similar a la “pensión de garantía” sueca o a las pensiones no
+contributivas en España.
+
+
+                                                                                         22
+                     Centro
+                     Ruth Richardson
+
+
+
+
+En Chile, el gasto solidario ha crecido en los últimos años: con la ampliación de la PGU, el
+Estado chileno destina en 2024-2025 alrededor de 2,4% del PIB para financiar este pilar
+solidario (apenas era el 1% en el año 2020).
+
+•   Pilar 3 – Ahorro previsional voluntario (APV) y pensiones ocupacionales:
+
+Completa el sistema chileno la posibilidad de cotizaciones voluntarias adicionales para
+mejorar la pensión. Existen mecanismos de APV individual, mediante los cuales los
+trabajadores pueden aportar montos extra a cuentas de pensión voluntaria (administradas
+por AFP u otras instituciones financieras) con incentivos fiscales.
+
+Algunas empresas ofrecen planes de pensiones ocupacionales voluntarios a sus
+empleados, normalmente complementarios al esquema obligatorio.
+
+En Chile existen unos 1,8 millones de personas con cuentas de ahorro en la modalidad voluntaria
+del sistema de pensiones mientras que los cotizantes obligatorios suman 6,3 millones.
+
+        4.3. Aporte al sistema y acumulación de activos
+
+Como es lógico, el modelo previsional chileno ha generado una acumulación de activos
+que ha ido creciendo paulatinamente. Estos son los activos que respaldan las pensiones de
+los jubilados chilenos. Más allá de los compromisos del Estado adquiridos con la pensión
+universal, el sistema chileno ha acumulado activos que generan capacidad de pago sin
+acumular pasivos que estresen el sistema.
+
+
+
+
+7 Ver informe ciedess aquí.
+8 Datos obtenidos en spensiones.cl. Solo se tienen en cuenta las personas con cuentas con saldo mayor
+a cero
+                                                                                                   23
+Centro
+Ruth Richardson
+
+
+
+                  Gráfica 12
+
+
+
+
+                               24
+                    Centro
+                    Ruth Richardson
+
+
+
+       4.4. Un sistema que incentiva el trabajo
+
+La prolongación de la expectativa de vida está causando crecientes problemas en los
+sistemas de pensiones, especialmente en aquellos cuyo diseño es de reparto. Para mitigar
+estos problemas se realizan constantemente cambios en los parámetros de los sistemas
+de pensiones de reparto (por ejemplo, retrasar la edad de jubilación, incentivar el trabajo
+después de la jubilación o disminuir la pensión efectiva que cobran los jubilados). El sistema
+de pensiones de Chile evita estas problemáticas introduciendo elementos que incentivan la
+responsabilidad individual en el esquema de jubilación.
+
+Al acumular sus propios activos, muchos trabajadores chilenos que están en condición
+de continuar trabajando deciden hacerlo. El contraste es mayúsculo con el modelo
+español que, al ser relativamente generoso y al depender de terceros para el pago de la
+pensión, genera un desincentivo al trabajo una vez que se llega a la edad estipulada para
+la jubilación. Una vez alcanzados los 65 años, un 20% de la población chilena continúa
+trabajando mientras que solo un 3,6% lo hace en España.
+
+
+
+
+                                                                                            25
+                    Centro
+                    Ruth Richardson
+
+
+                                         Gráfica 13
+
+
+
+
+Casi la mitad de los ingresos de los mayores de 65 años en Chile proviene del trabajo. Esto
+contrasta notablemente con la situación de otros países desarrollados.
+
+El sistema de pensiones chileno incentiva el trabajo de aquellos que todavía están en
+condiciones de llevarlo a cabo. Gracias a ello, la presión fiscal sobre los trabajadores
+actuales es menor, evitando los enormes problemas que genera la masiva redistribución de
+ingreso en los sistemas de pensiones de reparto.
+
+A pesar de que las transferencias del Estado son muy contenidas en Chile y, por tanto, la
+sostenibilidad de las cuentas públicas no está entredicho, los ingresos de los mayores de 65
+años en Chile son relativamente elevados (ver Gráfico 19 más abajo).
+
+
+
+                                                                                              26
+                  Centro
+                  Ruth Richardson
+
+
+
+                                      Gráfica 14
+
+
+
+
+      4.5. El mercado de capitales más profundo de Iberoamérica
+
+El fuerte volumen de ahorro derivado del sistema de pensiones de capitalización
+transformó el panorama financiero chileno, dando lugar a uno de los mercados de
+capitales más sólidos de la región. De hecho, Chile lidera Iberoamérica en profundidad
+bursátil, medida como la capitalización de sus empresas cotizadas en proporción al PIB
+(capitalización bursátil).
+
+
+
+
+                                                                                     27
+                      Centro
+                      Ruth Richardson
+
+
+En los primeros años tras la creación del sistema, el valor de las acciones cotizadas en Chile
+representaba apenas el 20% del PIB. En menos de dos décadas, la capitalización bursátil
+alcanzó un nivel equivalente al tamaño total de la economía chilena. En términos reales,
+el valor de las empresas cotizadas pasó de 11.600 millones de dólares en 1982 a 262.000
+millones en 2024, multiplicándose por 22.
+
+                                               Gráfica 15
+
+
+
+
+9 Con datos del Banco Mundial, la capitalización bursátil de Chile es del 80% del PIB mientras que el
+promedio de Iberoamérica y Caribe apenas llega al 30%
+10 Introducir referencia paper CATO
+
+
+                                                                                                        28
+                   Centro
+                   Ruth Richardson
+
+
+
+       4.6. Ahorro, mercado de capitales y crecimiento económico
+
+El ahorro de los trabajadores en conjunto con el mercado de capitales chileno pusieron a
+disposición de las empresas chilenas ingentes cantidades de recursos que pudieron ser
+utilizadas para acometer nuevos proyectos de inversión.
+
+Siguiendo las teorías de crecimiento estándar en macroeconomía podemos afirmar que la
+redirección del ahorro de la sociedad que generó el sistema de pensiones chileno incentivó
+el crecimiento económico observado en Chile desde el año 1982.
+
+                                        Gráfica 16
+
+
+
+
+                                                                                           29
+                      Centro
+                      Ruth Richardson
+
+
+        4.7. Inversión en el exterior: blindando pensiones
+
+Otro aspecto sobresaliente del sistema chileno que es digno de mención es su acumulación de activos
+externos para sostener el pago de las pensiones nacionales. Esta acumulación de activos externos se dio
+coincidiendo con la flexibilización de los criterios de inversión de las AFPs a inicios de los años 2000.
+
+La inversión en activos externos provoca que se desvincule, al menos parcialmente, el pago
+de las pensiones de la actividad económica interna. Este es un elemento extra que limita la
+transferencia de ingresos entre generaciones.
+
+Al acumular activos externos, el proceso de acumulación de capital comentado
+anteriormente tiene lugar en terceros países. En este sentido, se pierde parte del potencial
+de crecimiento económico que conlleva la redirección del ahorro a actividades productivas.
+Pero, por otra parte, se puede argumentar que la desvinculación entre el ingreso de la
+generación más joven y el ingreso de la generación anciana es mayor.
+
+                                               Gráfica 17
+
+
+
+
+                                                                                                        30
+                         Centro
+                         Ruth Richardson
+
+
+         4.8. El principal problema
+
+El sistema de pensiones de Chile ha sido objeto de críticas en varios de sus aspectos.
+Probablemente el más notable es la baja tasa de sustitución (pensión/último salario) que ofrece
+a sus pensionistas.
+
+         4.8.1. Pensiones reducidas
+
+Los pensionistas chilenos reciben una pensión notablemente inferior a la de los países de la OCDE.
+
+                                                    Gráfica 18
+
+
+
+
+10 Una liquidación de activos en el mercado nacional podría conllevar una caída en la capitalización promedio de la
+economía y una caída de la productividad del factor trabajo (y con ello de su remuneración).
+
+
+
+                                                                                                                      31
+                          Centro
+                          Ruth Richardson
+
+
+
+         4.8.2. ¿Por qué son tan reducidas las pensiones en Chile?
+
+La baja tasa de sustitución puede ser explicada principalmente por la baja cotización que se
+exige en Chile en comparación con otros países. Como ya vimos en el gráfico 11 más arriba, en
+Chile el ahorro obligatorio dedicado a pensiones ha sido el 10% del ingreso de los trabajadores
+mientras que en España casi es del 30% y en los países de la OCDE ronda el 20%.
+
+Adicionalmente, el crecimiento económico de Chile ha sido notable en las últimas décadas (ver
+gráfico 16), lo que implica que los aportes que realizaron los trabajadores en el pasado fueron
+pequeños en términos absolutos porque sus salarios también lo eran. El ingreso imponible
+promedio en Chile en el año 2002 era de apenas 443 dólares al mes mientras que en el año
+2025 esta cifra roza los 1400 dólares al mes. Estas cifras implican que un trabajador promedio
+apenas aportaba 45 dólares al mes a su fondo de pensiones en el año 2002. Incluso con
+rentabilidades muy elevadas de la inversión (como las que ha habido en Chile) es muy difícil que
+el jubilado promedio cobre una pensión similar al sueldo de los trabajadores chilenos actuales.
+
+         4.9. Baja tasa, buenos ingresos
+
+A pesar de que, efectivamente, el sistema chileno paga pensiones menores a las de otros países
+desarrollados, no es menos cierto que el ingreso de los jubilados chilenos es superior al de los
+países de la OCDE.
+
+
+
+
+11 Ver referencia aquí.                                                                       32
+                        Centro
+                        Ruth Richardson
+
+
+                                                   Gráfica 19
+
+
+
+
+12 Datos de la superintendencia de pensiones de Chile.
+13 Comparado con el nivel de ingreso de los trabajadores de cada país.
+
+                                                                         33
+                    Centro
+                    Ruth Richardson
+
+
+Existe una aparente contradicción en los datos de Chile: el buen desempeño en las cifras de
+ingreso de los mayores de 65 años se combina con una baja tasa de sustitución del sistema de
+pensiones. Esta contradicción solo es aparente, ya que la mayor tasa de empleo de los mayores
+de 65 años (gráfica 13) y un mayor porcentaje de ingresos de capital de este colectivo en Chile
+(gráfica 14) complementan los ingresos de la pensión, provocando un ingreso relativo más
+elevado de este grupo etario en comparación con otros países de la OCDE.
+
+       4.10. Lecciones del sistema chileno
+
+El sistema de pensiones chileno nos deja dos enseñanzas muy relevantes para aplicar al
+sistema español: la primera es que la acumulación de ahorro y activos productivos por parte
+de una generación provoca un ingreso autónomo para su jubilación libera recursos fiscales y
+desvincula el ingreso de los más jóvenes y el de los más mayores.
+
+La segunda gran enseñanza que se puede extraer del sistema chileno es que no actúa en el
+“vacío”, sino que tiene repercusiones sobre otras variables económicas y que un buen modelo
+previsional es una pieza clave del crecimiento económico, del bienestar y de la paz social.
+
+
+
+
+                                                                                              34
+                         Centro
+                         Ruth Richardson
+
+
+5. Tensiones del sistema alemán
+
+En la problemática del sistema de pensiones, Alemania es uno de los espejos más útiles en los
+que España puede mirarse de entre las grandes economías europeas. Alemania comparte
+con España la presencia de un fuerte primer pilar del modelo previsional público y de reparto,
+una demografía envejecida y una productividad que se ha estancado en los últimos años.
+
+Alemania se encuentra actualmente acometiendo una profunda reforma de su esquema de jubilación y
+su reforma está siendo objeto de amargas controversias políticas y división social en el país teutón.
+
+        5.1. Su arquitectura
+
+Los tres pilares del sistema de pensiones alemán se articulan de la siguiente manera
+
+•   Pilar 1 (reparto):
+
+El primer pilar del sistema alemán lo forma un seguro público de reparto obligatorio, con la edad
+legal de jubilación aumentando a 67 años de forma paulatina hasta el 2031, una cotización total del
+18,6% del salario de los trabajadores compartida entre empresa y trabajador y una penalización por
+jubilación anticipada con algunas excepciones.
+
+•   Pilar 2 (ocupacional):
+
+Este segundo pilar está formado por los planes de pensiones de empresa ofrecidos bajo un sistema
+de capitalización. Estos planes de empresa están regidos por convenios y acuerdos sectoriales.
+
+Los planes de empresa tienen una cobertura bastante extensa en Alemania: cubren a más del 50%
+de los trabajadores alemanes (en comparación con un 10% de cobertura en España).
+
+Existen diferentes modalidades (fondos de pensiones de empresa, seguros colectivos, compromisos directos,
+entre otros), y aunque no son obligatorios, están fuertemente incentivados fiscal y jurídicamente.
+
+•   Pilar 3 (ahorro privado):
+
+Este tercer pilar está formado por cuentas de ahorro individuales que cuentan con amplios
+incentivos fiscales bajo diferentes programas que se detallan más abajo.
+
+Alemania es el país más parecido de los analizados en este informe a España en lo que a fuente
+de ingresos de sus jubilados se refiere ya que la mayoría de jubilados recibe el grueso de su
+ingreso de transferencias públicas.
+
+                                                                                                        35
+Centro
+Ruth Richardson
+
+
+                  Gráfica 20
+
+
+
+
+                               36
+                     Centro
+                     Ruth Richardson
+
+
+       5.2. Aportaciones a planes privados
+
+Las aportaciones privadas tienen una especial importancia en el sistema alemán de pensiones,
+especialmente aquellas destinadas al tercer pilar (ahorro en cuentas individuales).
+
+En algunas modalidades (Rürup-Rente), estos planes están sujetos a una deducción fiscal por la
+totalidad de las aportaciones con unos límites establecidos y revisados periódicamente: en 2025 este
+límite se fijó en 29.344 euros para individuos solteros y hasta 58.688 euros para matrimonios.
+
+                                             Gráfica 21
+
+
+
+
+                                                                                                  37
+                    Centro
+                    Ruth Richardson
+
+
+
+       5.3. Estabilidad en el gasto
+
+Desde los años ochenta del siglo pasado, Alemania ha mostrado una fuerte estabilidad
+en cuanto al gasto realizado en el sistema de pensiones en relación al PIB. Con contadas
+excepciones, el gasto en pensiones se ha mantenido entre el 10 y el 11% del PIB.
+
+                                           Gráfica 22
+
+
+
+
+                                                                                           38
+                   Centro
+                   Ruth Richardson
+
+
+       5.4. La justificación para las reformas
+
+Sin embargo, pese a mantener un gasto relativamente estable como porcentaje del PIB,
+Alemania está realizando reformas estructurales en su sistema de pensiones.
+
+Una de las razones para acometer estas reformas son las reiteradas quejas por las bajas
+pensiones que perciben los jubilados alemanes. Y es que en Alemania se cobran pensiones
+relativamente reducidas comparadas con las existentes en otros países desarrollados.
+
+                                         Gráfica 23
+
+
+
+
+                                                                                          39
+                    Centro
+                    Ruth Richardson
+
+
+Además, existen reiteradas quejas por la caída relativa del poder adquisitivo de las pensiones
+públicas en Alemania. Estas quejas están fundamentadas en la existencia de un factor de
+sostenibilidad que adecua el gasto en pensiones a la esperanza de vida y la presencia de
+desequilibrios en las cuentas del sistema.
+
+                                           Gráfica 24
+
+
+
+
+                                                                                                 40
+                     Centro
+                     Ruth Richardson
+
+
+Esta caída relativa del pilar público de pensiones alemán, unido a la expectativa de que la caída
+no frene en el futuro, ha provocado múltiples quejas y que se haya iniciado un paquete de
+reformas que se detallan a continuación.
+
+       5.5. Blindaje del 48%
+
+El blindaje de la pensión es la pieza política y técnica que más condiciona el resto de
+instrumentos. Surge tras años en que el factor de sostenibilidad moderó la generosidad del primer
+pilar del sistema de pensiones alemán conforme aumentaba la relación pensionistas/cotizantes,
+provocando quejas porque la pensión del primer pilar tendía a descender respecto al salario medio.
+
+La última reforma (Rentenpaket II) fija legalmente que el nivel de pensión no caiga por debajo
+del 48% del salario medio equivalente. El problema es que garantizar la cifra del 48% implica más
+contribuciones o más financiación con los presupuestos del Estado (o ambas cosas) si el crecimiento
+económico y las cifras de empleo no compensan la mayor cantidad de pensionistas.
+
+Este blindaje, empero, no es gratuito ya que eleva las exigencias financieras futuras y
+demanda nuevas fuentes de financiación en el presente.
+
+                                              Tabla 1
+
+
+
+
+                                                                                                 41
+                         Centro
+                         Ruth Richardson
+
+
+         5.6. Crecen las contribuciones sociales
+
+El blindaje exige elevar cotizaciones y/o transferencias presupuestarias. Actualmente, los
+trabajadores alemanes deben destinar un 18,6% de su salario al pago de pensiones, pero
+este porcentaje deberá crecer hasta el 22,3% para paliar el desequilibrio entre gastos e
+ingresos del sistema.
+
+Aunque Alemania ha aprobado recientemente un aumento en las cotizaciones, el porcentaje de los
+ingresos de los trabajadores destinado a financiar las pensiones sigue siendo considerablemente
+mayor en España.
+
+                                                      Gráfica 25
+
+
+
+
+14 De acuerdo al informe publicado por el Deutsche Bundesbank “Pension insurance scheme: long-term scenarios
+and reform options”, las simulaciones realizadas en 2022 resultan en que si no se produjera dicho blindaje el nivel de
+pensión (Rentenniveau) caería hasta un 40.5% del salario promedio. Según estas simulaciones, la tasa de cotización
+en 2070 sería de en torno al 25 por ciento sin blindaje y del 29% con el blindaje del 48%. Sin embargo, la figura más
+preocupante se corresponde con que el gasto público adicional comparado con 2025 sería equivalente a una subida
+del impuesto sobre el valor añadido del 6%.                                                                           42
+                    Centro
+                    Ruth Richardson
+
+
+       5.7. Creando un fondo soberano
+
+A pesar de la subida en las cotizaciones sociales, las estimaciones actuariales en Alemania
+pronostican que el coste de soportar el blindaje de la pensión desborda lo que se
+recaudaría en cotizaciones (ver tabla 1)
+
+Aquí es donde entra el Generationenkapital: un fondo público de inversión que, gracias
+a la inversión en mercados de capitales, se espera que pueda aportar anualmente el
+rendimiento de sus inversiones al sistema de pensiones de reparto para equilibrar ingresos
+y gastos del sistema y evitar futuros incrementos de las cotizaciones de los trabajadores.
+
+El plan arranca con 12.500 millones de euros financiados con deuda presupuestaria. Se
+espera que este fondo crezca anualmente con aportes y reinversiones, y aspira a alcanzar
+entre 200.000 millones y 300.000 millones en el año 2035. A partir de 2036 se prevén
+distribuciones anuales del orden de 10.000 millones de euros a la seguridad social alemana.
+La idea es transformar parte de la carga intergeneracional en retornos financieros.
+
+
+
+
+                                                                                              43
+Centro
+Ruth Richardson
+
+
+                  Gráfica 26
+
+
+
+
+                               44
+                   Centro
+                   Ruth Richardson
+
+La creación del fondo tiene todo el sentido del mundo en términos financieros. Alemania
+se financia en los mercados de capitales a un tipo de interés reducido, 2,7% para el bono a
+10 años. La experiencia de otros fondos de pensiones de capitalización como los de Chile y
+los de Suecia muestran que se puede conseguir rendimientos reales promedios cercanos al
+7% anual. En términos nominales esto implica que se podrían conseguir retornos mayores
+al 9% mientras la financiación se consigue a menos del 3%. En términos financieros la
+constitución de este fondo tiene sentido.
+
+                                        Gráfica 27
+
+
+
+
+                                                                                         45
+                   Centro
+                   Ruth Richardson
+
+
+La creación de este fondo supone un cambio de paradigma desde un sistema puro
+de reparto hacia un sistema que pretende aprovechar las ventajas de la inversión
+en mercados financieros. Los flujos que se irán destinando a este fondo especial
+se invertirán en mercados de capital globales con el fin de aprovecharse de las
+oportunidades de rédito que presentan los mismos.
+
+La principal crítica económica a la creación de este fondo proviene de su escala. Y es
+que sus rendimientos serán muy pequeños (10.000 millones/año) para los gastos que
+se prevén en el sistema (800.000 millones/año), por lo que serían más un parche que
+una auténtica solución.
+
+                                       Gráfica 28
+
+
+
+
+                                                                                         46
+                   Centro
+                   Ruth Richardson
+
+
+       5.8. El factor de sostenibilidad
+
+Entender el factor de sostenibilidad alemán es clave para contextualizar las quejas que
+desembocan en el blindaje del 48%. Ese factor, introducido en las grandes reformas de
+los años 2000, reduce la indexación de pensiones cuando el ratio pensionistas/cotizantes
+empeora: esto es, en esencia, un amortiguador automático.
+
+La pérdida de generosidad del primer pilar frente a los salarios genera malestar social. De
+ahí que el blindaje del 48% neutralice en la práctica parte de ese amortiguador automático,
+trasladando la carga de su coste a los trabajadores actuales mediante el incremento en las
+cotizaciones sociales.
+
+       5.9. Subsidio, gasto y riesgos
+
+Aunque Alemania suele percibirse como una economía “disciplinada”, el primer pilar recibe
+un subsidio federal significativo que ha aumentado y previsiblemente seguirá aumentando
+en escenarios de envejecimiento.
+
+Institutos económicos (por ejemplo, ifo Institute for Economic Research) han advertido de
+la necesidad de incrementar cargas en los presupuestos por el blindaje del 48%.
+
+
+
+
+                                                                                            47
+Centro
+Ruth Richardson
+
+
+                  Gráfica 29
+
+
+
+
+                               48
+Centro
+Ruth Richardson
+
+
+                  Gráfica 30
+
+
+
+
+                               49
+                      Centro
+                      Ruth Richardson
+
+
+        5.10. Desde la cuna hasta la tumba
+
+Dados los problemas relacionados con el sistema de reparto y las potenciales amenazas
+a la financiación del sistema de pensiones de diversa naturaleza (como los factores
+demográficos estudiados aquí), se han discutido otras soluciones. Entre ellas destaca
+la llamada pensión de inicio temprano que consiste en la extensión del componente de
+capitalización a la infancia.
+
+Aunque este sistema todavía no está implementado a nivel legislativo, se ha discutido
+ampliamente en el parlamento alemán y se menciona en el paquete de pensiones del año
+2025, por lo que los detalles específicos no están todavía disponibles. A grandes rasgos,
+la propuesta consiste en que los padres o representantes legales abran un depósito a los
+niños y adolescentes entre los 6 y los 18 años que asisten a una institución educativa.
+
+Se prevé una aportación estatal fija de carácter mensual con un importe de 10 euros al mes
+por niño o adolescente. Por tanto, se habla de una inversión estatal de en torno a 1.440
+euros que se invertirán en diferentes mercados de capital, destinada a que se perciba tras
+la edad de jubilación.
+
+
+        5.11. Lecciones del sistema alemán
+
+Las recientes reformas del sistema de pensiones alemán ponen de relieve la complicada
+tensión intergeneracional creada por un sistema de reparto bajo una situación de invierno
+demográfico.
+
+Los mecanismos automáticos que limitan el crecimiento en el nivel de pensiones cuando
+los ingresos contributivos derivados de los salarios no son suficientes pueden ser revertidas
+por el malestar social que provoca en los jubilados actuales. Al ser una proporción creciente
+de la población, estos jubilados tienen un peso electoral desproporcionado que puede
+provocar la caída en cualquier reforma.
+
+
+
+
+15 https://www.bmas.de/DE/Soziales/Rente-und-Altersvorsorge/Rentenpaket-2025/rentenpaket-2025.html
+
+
+                                                                                                     50
+                      Centro
+                      Ruth Richardson
+
+
+
+6. Una problemática común
+
+La crisis del sistema de pensiones no es un hecho aislado. Los países analizados en este informe, así
+como otros muchos, comparten muchas de las problemáticas presentes en España.
+
+El cambio demográfico que implicó la generación del Baby Boom, añadido a una caída
+global de la natalidad, ha puesto en serios aprietos a los sistemas de pensiones a lo
+largo y ancho del globo.
+
+La proporción de población en edad de trabajar ha caído en toda Europa de forma
+constante en las últimas décadas, en este ámbito España no es una rara avis.
+
+                                             Gráfica 31
+
+
+
+
+                                                                                                    51
+                      Centro
+                      Ruth Richardson
+
+
+        6.1. España, a la cabeza del esfuerzo previsional
+
+Una manera de observar la sostenibilidad del sistema de pensiones es analizar la relación entre el
+gasto en pensiones sobre el PIB y el peso de los pensionistas en el total de la población. Esta ratio
+muestra cuánto recibe, en promedio, cada jubilado en comparación con el PIB per cápita, ofreciendo
+una medida sencilla y clara de la presión intergeneracional.
+
+España lidera este indicador de manera destacada, alcanzando un valor de 66,4, lo que indica que la
+pensión pública media equivale al 66,4% del PIB por habitante.
+
+Estos datos ponen de manifiesto que el esfuerzo público que la sociedad española realiza para
+financiar a sus pensionistas es el más elevado del grupo, lo que subraya la intensidad del desafío de
+sostenibilidad que afronta su sistema.
+
+                                             Gráfica 32
+
+
+
+
+                                                                                                    52
+                     Centro
+                     Ruth Richardson
+
+
+       6.2. Incentivos fiscales al ahorro
+
+Para fomentar el ahorro a largo plazo, especialmente en los pilares 2 y 3, los Estados suelen
+implementar incentivos fiscales. Estos beneficios buscan reducir la carga tributaria presente
+del ahorrador a cambio de que éste destine una parte de sus ingresos a asegurar su futuro
+financiero. El mecanismo más común es la deducción de las aportaciones de la base imponible
+del impuesto sobre la renta, lo que genera un ahorro fiscal inmediato y difiere el pago de
+impuestos al momento del rescate, generalmente en la jubilación, cuando el tipo impositivo
+suele ser menor.
+
+La comparación entre los modelos de distintos países revela la existencia de filosofías diversas:
+
+•   España: El principal incentivo fiscal es la reducción de las aportaciones en la base imponible
+    del IRPF. Para los planes de empresa (Pilar 2), el límite conjunto de aportación (empresa y
+    trabajador) es de 10.000 € anuales. En el caso de los planes de pensiones privados (Pilar
+    3), el beneficio fiscal se ha reducido a un máximo de 1.500 € anuales o el 30% de los
+    rendimientos netos del trabajo y actividades económicas. En ambos casos, el mecanismo
+    difiere el pago de impuestos hasta el momento del rescate.
+
+•   Alemania: Se fomenta el ahorro para la jubilación mediante la exención directa de
+    impuestos y cotizaciones. En el Pilar 2, las aportaciones realizadas desde el salario bruto
+    están exentas de impuestos hasta un 8% del techo de contribución a la seguridad social
+    (aproximadamente unos 7.200 €) y exentas de cotizaciones sociales hasta un 4% (alrededor
+    de 3.600 €). Para el Pilar 3, ofrece un sistema dual: la pensión “Riester”, incentivada con
+    subvenciones estatales y deducciones hasta 2.100 €, y la pensión “Rürup”, orientada a
+    autónomos con límites deducibles muy elevados (hasta más de 27.000 €).
+
+•   Suecia: El sistema sueco ha centrado sus incentivos fiscales casi exclusivamente en
+    los planes de empresa (Pilar 2). Para el empleado, el principal beneficio es que las
+    contribuciones que realiza el empleador no se consideran un ingreso salarial en ese
+    momento, por lo que no se pagan impuestos sobre esa cantidad, difiriendo la carga fiscal a
+    la jubilación. Para la empresa, estas aportaciones son un gasto deducible en su impuesto de
+    sociedades. Por regla general, la compañía puede deducir los costes de pensiones de hasta
+    el 35% del salario anual del empleado, con un límite adicional de 10 “price base amounts”
+    (un indicador oficial que se actualiza anualmente). Por el contrario, Suecia se distingue
+    por haber eliminado prácticamente todos los incentivos fiscales directos para el ahorro
+    en planes de pensiones privados (Pilar 3), apostando por fortalecer el sistema público y el
+    ocupacional en lugar del individual.
+
+
+
+
+                                                                                                 53
+                    Centro
+                    Ruth Richardson
+
+
+•   Chile: Presenta un sistema de incentivos flexible y potente, especialmente en el ahorro
+    voluntario. En el Pilar 3, las aportaciones del empleador conocidas como “Depósitos
+    Convenidos” (hasta 900 UF anuales, que equivale a unos 32.000 euros) no constituyen
+    renta para el trabajador, por lo que están exentas de impuestos. En el Pilar 3, a través
+    del Ahorro Previsional Voluntario (APV), el ciudadano puede elegir entre dos regímenes:
+    recibir una bonificación directa del Estado del 15% de lo ahorrado (con un tope de
+    380 euros) o deducir sus aportaciones de la base imponible para reducir el pago de
+    impuestos (hasta 600 UF anuales, que equivalen a alrededor de 21.200 euros).
+
+
+
+
+                                                                                           54
+Centro
+Ruth Richardson
+
+
+                  Tabla 2
+
+
+
+
+                            55
+                    Centro
+                    Ruth Richardson
+
+
+
+7. Conclusiones
+
+Las experiencias comparadas de Alemania, Suecia y Chile muestran tres caminos, con
+resultados muy distintos, para afrontar el envejecimiento poblacional y la sostenibilidad de
+las pensiones:
+
+•   Suecia acreditó que un sistema de reparto puede ser estable si convierte las promesas
+    en reglas: cuentas nocionales, equilibrio actuarial automático y una comunicación
+    transparente (el “Sobre naranja”) que alinea expectativas e introduce incentivos para
+    la paz intergeneracional. La consecuencia es un gasto público estabilizado y menor
+    dependencia exclusiva del pilar público gracias al peso del empleo y del capital en la
+    renta de los más mayores.
+
+•   Chile probó el efecto de la capitalización compuesta. La acumulación de activos en el
+    sistema de pensiones reduce la carga fiscal, desvincula el gasto en pensiones del ciclo
+    demográfico, impulsa el mercado de capitales y eleva la participación laboral de los
+    mayores. Su talón de Aquiles, las tasas de sustitución modestas, obedece, sobre todo,
+    a una tasa de contribución relativamente baja y a trayectorias salariales históricamente
+    reducidas; aun así, los ingresos totales de los más mayores son altos por la combinación
+    de trabajo y rentas del capital y por la existencia de un pilar solidario (PGU) que
+    garantiza una pensión mínima.
+
+•   Alemania ilustra la tensión política de los sistemas de reparto maduros: blindar
+    niveles mínimos de pensión (48% del salario medio) en presencia de un marcado
+    envejecimiento obliga a subir cotizaciones y a recurrir al presupuesto público. La
+    creación de un fondo soberano de pensiones puede ser una buena idea pero la escala
+    limitada solo ofrece un alivio marginal frente al gigantesco gasto del sistema público
+    de pensiones. La amplia cobertura de planes ocupacionales y los incentivos fiscales
+    muestran una vía para diversificar fuentes de ingreso, pero no sustituyen a reglas
+    automáticas que contengan la deriva del primer pilar.
+
+
+
+
+                                                                                             56
+                   Centro
+                   Ruth Richardson
+
+
+       7.1 Lecciones para España
+
+Necesidad de reglas: sin reglas que ajusten prestaciones a demografía e ingresos, la
+sostenibilidad queda a merced del ciclo político. El modelo sueco de cuentas nocionales
+ofrece la arquitectura más robusta para preservar solvencia y credibilidad.
+
+1. Necesidad de diversificar fuentes de ingresos de la tercera edad: elevar la cobertura
+   y el peso efectivo de los planes de empresa (cuasi-obligatorios en Suecia) y facilitar
+   el ahorro individual reduce la dependencia del pilar público y mejora la estabilidad
+   del ingreso en la vejez.
+
+2. Capitalización con propósito: incorporar un componente financiado con activos —ya
+   sea mediante planes ocupacionales potentes o fondos colectivos bien gobernados
+   y de escala suficiente, como los AP suecos— puede aliviar la presión futura; pero,
+   como muestra Alemania, su tamaño debe ser proporcional al reto.
+
+3. Incentivos al trabajo sénior: reglas que no penalicen seguir trabajando tras la edad
+   legal, y que conecten pensión con las aportaciones efectivas, elevan ingresos totales
+   y rebajan la carga sobre cotizantes activos.
+
+4. Transparencia radical: información anual personalizada y estable (a la sueca) reduce
+   incertidumbre, ancla expectativas y fortalece el pacto intergeneracional.
+
+El análisis comparativo muestra que, si España desea mantener pensiones suficientes
+sin intensificar la carga sobre los trabajadores activos, debe avanzar hacia un sistema
+con reglas automáticas, pilares complementarios sólidos y acumulación efectiva de
+activos. Alemania advierte sobre los límites de las soluciones discrecionales; Suecia
+demuestra cómo diseñar un reparto sostenible; y Chile enseña que la capitalización
+puede alinear incentivos, generar ahorro y elevar los ingresos en la vejez.
+
+
+
+
+                                                                                          57
+                   Centro
+                   Ruth Richardson
+
+
+
+
+7. Referencias
+
+Boado-Peñas, M. del C. (2021). Reformas del sistema de pensiones: La experiencia sueca
+(Documento de trabajo 2021/03). Fundación de Estudios de Economía Aplicada (FEDEA).
+https://documentos.fedea.net/pubs/dt/2021/dt2021-03.pdf
+
+Calvo, Santiago (2025). Las reformas de la Seguridad Social en España: un desequilibrio
+permanente
+
+Calvo, Santiago; Fernández, Daniel (2025). La (in)sostenibilidad de la Seguridad Social
+
+Datenreihen der Rentenstatistik aus den letzten zwei Jahrzehnten https://www.
+bundestag.de/resource/blob/921604/WD-6-082-22-pdf.pdf
+
+Deutsche Bundesbank. Monthly report June 2022. “Pension insurance scheme:long-
+term scenarios and reform options”
+
+Fernández, Daniel; Calvo, Santiago (2025). El día D de las pensiones ha llegado: se jubila
+la generación del baby boom.
+
+OECD Pensions at a Glance (2023): How Does Chile Compare?
+
+OECD Pensions at a Glance 2023: How does Germany Compare? https://www.oecd.
+org/content/dam/oecd/en/publications/reports/2024/10/pensions-at-a-glance-2023-
+country-notes_2e11a061/germany_b25dff82/5c33989b-en.pdf
+
+Regeringen. (2025). Redovisning av AP-fondernas verksamhet t.o.m. 2024
+(Skr. 2024/25:130). Finansdepartementet. https://www.regeringen.se/
+contentassets/4db3887e283c49f4bfd0901ef6b9815d/redovisning-av-ap-fondernas-
+verksamhet-t.o.m.-2024-skr-202425130.pdf
+
+Tepper, Jürgen. 2003. “Die drei Säulen der Altersvorsorge. Konzepte auf dem Prüfstand”.
+Weisbaden, Gabler.
+
+
+
+
+                                                                                          58
+hesperides.edu.es
+

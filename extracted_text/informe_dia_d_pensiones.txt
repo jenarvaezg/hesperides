@@ -1,0 +1,979 @@
+El día D de las
+pensiones ha llegado
+Se jubila la generación del
+baby boom
+Autores
+Daniel Fernández
+Santiago Calvo
+
+
+
+
+hesperides.edu.es
+                       Centro
+                       Ruth Richardson
+
+
+
+
+Introducción
+
+Durante las últimas décadas, decenas de informes han advertido sobre la
+insostenibilidad del sistema de pensiones español si no se implementan reformas
+estructurales profundas.
+
+Ese futuro ya ha llegado. Aunque la generación del baby boom solo ha comenzado su
+proceso de jubilación masiva, las cuentas de la Seguridad Social española ya resultan
+insostenibles. Los trabajadores cargan con una de las cuñas fiscales más elevadas de
+Europa, mientras los jubilados enfrentan reformas que reducen sistemáticamente sus
+derechos adquiridos.
+
+El principal riesgo de un sistema de pensiones de reparto como el español radica en el
+factor demográfico1. Este informe analiza los aspectos demográficos que subyacen a la
+insostenibilidad del sistema de pensiones español. Un próximo informe examinará la
+(in)sostenibilidad de las cuentas de la Seguridad Social.2
+
+
+
+
+1 En un futuro informe analizaremos los tipos de sistemas de pensiones. De forma resumida podemos de-
+finir un sistema de pensiones de reparto como aquel en el que los ingresos de los pensionistas actuales es
+pagado con las contribuciones de los trabajadores actuales.
+
+2 En un informe anterior de esta serie analizamos las sucesivas reformas del sistema de pensiones español
+desde 1985. El informe se puede encontrar pinchando aquí.
+                  Centro
+                  Ruth Richardson
+
+
+
+
+Resumen ejecutivo
+
+Examinaremos la evolución demográfica de España desde la segunda mitad del siglo
+XX hasta la actualidad para evaluar la viabilidad del sistema de pensiones de reparto.
+El análisis aborda los conceptos de transición demográfica y bono demográfico,
+explorando sus causas, su impacto en la actividad económica y sus consecuencias para
+el sistema de pensiones de reparto.
+
+España experimentó un “verano demográfico” a partir de 1985, cuando la generación
+del baby boom alcanzó la edad adulta. Sin embargo, desde 2015 el país entró en
+un “invierno demográfico” coincidiendo con el inicio de la jubilación masiva de esta
+generación.
+
+Consideramos que España vivió una expansión económica artificial desde 1985,
+impulsada casi exclusivamente por factores demográficos. Durante este período, la
+economía española creció mientras la productividad laboral se estancaba. La principal
+explicación de esa bonanza es el aumento de la proporción de personas en edad
+laboral.
+
+España, pues, ha desaprovechado la oportunidad que ofrecieron los años de bono
+demográfico para implementar reformas estructurales en el sistema de pensiones.
+Ahora, con la jubilación progresiva de la generación del baby boom, el problema se
+agrava constantemente. La reforma será tanto más dolorosa cuanto más tarde se lleve
+a cabo.
+
+A pesar de tener todavía pocos pensionistas en comparación con el resto de Europa,
+España figura entre los países europeos que más gastan en pensiones. El nivel
+actual de las pensiones ya es insostenible, pero cuando se complete la jubilación
+de la generación del baby boom, la presión sobre las cuentas públicas se volverá
+insoportable.
+
+
+
+
+                                                                                         3
+                   Centro
+                   Ruth Richardson
+
+
+
+1. Los problemas demográficos de España: un país sin
+jovenes
+
+       1.1. la transición demográfica
+
+La situación demográfica actual en España no puede entenderse sin tener en cuenta
+el papel decisivo que ha desempeñado la generación del baby boom. Este grupo
+demográfico, que toma su nombre del notable aumento de la natalidad registrado
+en el país entre mediados de los años 50 y mediados de los 70, es todo un hito en la
+evolución poblacional.
+
+Una característica de suma importancia para estudiar los efectos de la generación del
+baby boom fue que esta no replicó el comportamiento de la generación anterior en lo
+que a natalidad se refiere. Tras el pico de fertilidad, se produjo un brusco descenso de
+la natalidad a partir de los años 70, lo que supuso un cambio estructural en la pirámide
+poblacional.
+
+Estas dos características (el auge de nacimientos en las décadas de 1950 y 1960,
+seguido de una caída sostenida de la fecundidad) han dado lugar a una transición
+demográfica particular, con unas características que resumimos en la tabla 1.
+
+                                         Tabla 1
+
+
+
+
+                                                                                           4
+                  Centro
+                  Ruth Richardson
+
+
+
+
+       1.2. La caída de la natalidad después de 1975
+
+Una de las causas de la transición demográfica iniciada en España con la generación
+del baby boom es la caída en la natalidad. El desplome en el número de nacimientos
+fue muy marcado en España desde el año 1975.
+
+En 1980, la tasa de fertilidad española traspasó la barrera del reemplazo generacional
+(2,1 hijos por mujer) para no volver a superarla nunca.
+
+                                       Gráfico 1
+
+
+
+
+                                                                                         5
+                      Centro
+                      Ruth Richardson
+
+
+
+
+        1.3. La emigración española se frena en los años ochenta y se da la vuelta
+        en los noventa
+
+Coincidiendo con la llegada a la madurez de la generación del baby boom, se dio otro
+fenómeno demográfico de calado en España: la remigración o vuelta de españoles que
+habían emigrado anteriormente.
+
+                                                Gráfico 2
+
+
+
+
+La emigración española empieza a descender ya sin remisión desde 1980,
+deteniéndose completamente e incluso invirtiéndose a partir de 19901.
+
+1 Más adelante, a partir de los años 2000, aparece el fenómeno contrario, la inmigración, hecho que ha
+paliado parcialmente la caída en el número de efectivos de las nuevas generaciones.
+                                                                                                         6
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       1.4 La generación del baby boom es la más numerosa de la historia de
+       España
+
+Este freno de la emigración de españoles en los años 80, unido a la alta natalidad
+desde los 50 y la baja natalidad desde el final de los 70, provocó que la generación del
+baby boom fuera la más numerosa de la historia de España. Esto se puede observar
+con precisión en la cantidad de personas que conforman cada generación en España.
+
+En el siguiente gráfico segmentamos la población española en función de su fecha
+de nacimiento en generaciones de 10 años y perseguimos su cantidad de efectivos
+a lo largo de su ciclo vital. De esta manera podemos ver cómo las generaciones
+nacidas entre los años 1955 y 1975 son las más numerosas de la historia de España.
+No solo nacieron más niños que en las generaciones anteriores, sino que, además,
+incrementaron sus números gracias al retorno de españoles que antes habían
+emigrado al extranjero.
+
+
+
+
+                                                                                           7
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 3
+
+
+
+
+                              8
+                  Centro
+                  Ruth Richardson
+
+
+
+
+La generación de nacidos entre el año 1975 y 1985 solo consigue igualar en efectivos
+a las generaciones anteriores cuando sus integrantes alcanzaron los 25 años por
+el incremento de la inmigración desde los años 2000. El crecimiento en la cantidad
+de efectivos de una generación implica inmigración mientras que su caída implica
+emigración o fallecimientos.
+
+      1.5 España se convierte en un país sin jóvenes en edad de trabajar
+
+Las características demográficas de la generación del baby boom han provocado que
+la proporción de personas en edad de trabajar sobre personas de la tercera edad se
+dispare. Este hecho ocurre paulatinamente conforme la generación del baby boom
+envejece y las nuevas cohortes menos numerosas de las generaciones siguientes llegan
+a la edad laboral.
+
+En la actualidad, apenas hay 3,25 personas en edad de trabajar por cada anciano
+mientras que en el año 1975 había 6 personas en edad de trabajar por cada anciano.
+
+                                       Gráfico 4
+
+
+
+
+                                                                                       9
+                       Centro
+                       Ruth Richardson
+
+
+
+
+El gráfico anterior esconde que la implementación de un sistema de pensiones
+obligatorio y universal en el año 1967 2provocó un recorte muy significativo de la
+edad de jubilación efectiva. Una persona promedio se jubilaba a los 72 años en 1960,
+mientras que una década más tarde esta edad se redujo a los 66 años.3
+
+                                                  Tabla 2
+
+
+
+
+        1.6 El crecimiento de la esperanza de vida a los 65 años
+
+La proporción creciente de la tercera edad sobre la población en edad de trabajar
+no solo creció por la escasa natalidad de las pasadas décadas, sino también por la
+prolongación de la esperanza de vida de los ancianos. Una persona que cumplía 65
+años en 1975 tenía una esperanza de vida extra de 15 años, es decir, podía esperar vivir
+hasta los 80 años. En 2023, la esperanza de vida de una persona de 65 años llegó a casi
+los 22 años, es decir, hasta los 87 años.
+
+
+
+
+2 El sistema al que sustituye la Seguridad Social se denomina SOVI (Seguro Obligatorio de Vejez e Invalidez)
+y cubría a menos de la mitad de la fuerza laboral activa mientras que la Seguridad Social logró cubrir en
+sus primeros años a más del 80% de la fuerza laboral. Además, el nivel de prestaciones era superior en la
+Seguridad Social que en el SOVI.
+
+3 El desarrollismo franquista de los años 60 y la enorme mejora en las condiciones económicas también
+contribuyó a la jubilación temprana. Aunque la cuantía exacta atribuible a cada factor es un asunto que
+se escapa de la dimensión y objetivo de este estudio, podemos anticipar que la diferencia en la edad de
+entrada a la actividad es mucho menor que en la edad de salida y, por tanto, la Seguridad Social sí tuvo un
+impacto relevante en la jubilación anticipada de los españoles
+                                                                                                               10
+                   Centro
+                   Ruth Richardson
+
+
+
+
+                                       Gráfico 5
+
+
+
+
+El incremento de la esperanza de vida de los ancianos ha provocado un crecimiento
+muy elevado de su cantidad y, con ello, de la tasa de la proporción de ancianos sobre
+personas en edad de trabajar.
+
+      1.7 El invierno demográfico español no es algo nuevo
+
+El invierno demográfico español es conocido desde hace 45 años y, por tanto, durante
+todo este período se ha tenido la oportunidad de reformar el sistema de pensiones.
+A pesar de ello, y de las múltiples advertencias vertidas desde hace décadas, el poder
+político evitó realizar ninguna reforma importante al sistema de pensiones español.
+
+
+
+
+                                                                                         11
+                     Centro
+                     Ruth Richardson
+
+
+
+
+El envejecimiento de la población española tiene un impacto muy negativo en la
+sostenibilidad de un sistema de pensiones de reparto. Como veremos en futuros
+informes, el principal peligro de un sistema de pensiones de reparto es el demográfico.
+
+2. Economía, pensiones y demografía: España hace aguas
+desde hace cuarenta años
+
+La transición demográfica es un reto que deben afrontar los países que han tenido en
+el pasado un baby boom. Este reto tiene ramificaciones económicas mayúsculas, como
+vamos a ver en esta sección.
+
+La caída de la natalidad es un fenómeno que afecta, en mayor o menor medida,
+a casi todos los países del mundo. Esta tendencia anticipa que la mayoría de las
+naciones deberán enfrentarse, tarde o temprano, a los retos derivados de la transición
+demográfica.
+
+En este contexto internacional, España se perfila como uno de los países que tendrá
+que abordar este problema con mayor urgencia. Sin embargo, a diferencia de otros
+países europeos, el baby boom español se produjo con cierto retraso: comenzó
+aproximadamente una década más tarde que en el resto del continente.
+
+        2.1 La transición demográfica del baby boom en España y el periodo del 		
+        bono demográfico
+
+Los economistas utilizan el concepto de tasa de dependencia para evaluar cómo
+afectan los cambios demográficos al funcionamiento de la economía. Esta tasa mide
+la proporción de personas que no están en edad de trabajar, tanto menores como
+mayores, en relación con la población activa, es decir, aquella en edad de producir y
+contribuir al sistema económico.4
+
+En el caso de España, el nacimiento de la generación del baby boom, mucho más
+numerosa que la anterior, provocó en sus primeros años de vida un fuerte aumento
+de la tasa de dependencia. Al haber una gran cantidad de niños y relativamente pocos
+adultos en edad de trabajar, el peso de la población económicamente inactiva se
+disparó en el inicio de esta transición demográfica.
+
+
+
+
+4 La forma más común de medir la tasa de dependencia es población menos de 15 años y población mayor
+de 65 años sobre población total.
+                                                                                                   12
+                       Centro
+                       Ruth Richardson
+
+
+
+
+Este patrón, sin embargo, se invirtió décadas más tarde, cuando los baby boomers
+alcanzaron la edad laboral y la natalidad comenzó a descender. Fue entonces cuando
+se generó el llamado bono demográfico: un periodo caracterizado por una baja tasa
+de dependencia y una elevada proporción de población activa, que representa una
+ventana de oportunidad para el crecimiento económico y la sostenibilidad de las
+cuentas públicas.
+
+La última fase de la transición demográfica aparece cuando la generación del baby
+boom llega a la tercera edad. En este momento la tasa de dependencia vuelve a
+dispararse porque las siguientes generaciones son poco numerosas y, por tanto, la
+proporción de población en edad de trabajar y generar actividad económica es muy
+pequeña.5
+
+Podemos considerar completa la transición demográfica cuando la generación
+numerosa fallece. En España, la transición demográfica del baby boom acabará
+aproximadamente sobre el año 2050. Las estimaciones demográficas indican que la
+tasa de dependencia crecerá de forma acelerada en los países desarrollados hasta en
+los siguientes años y que la presión no se aliviará hasta aproximadamente el año 2050.
+
+Estas tres fases de la transición demográfica se pueden ver con claridad en la tasa
+de dependencia española de los últimos 50 años. En el gráfico 6 hemos señalado el
+periodo del bono demográfico.
+
+
+
+
+5 Consiguientemente, el PIB per cápita se estanca a no ser que la productividad se dispare, cosa que no ha
+ocurrido en España tal y como podemos ver en el gráfico 7.
+
+                                                                                                             13
+                  Centro
+                  Ruth Richardson
+
+
+
+
+                                       Gráfico 6
+
+
+
+
+      2.2.El crecimiento del ingreso per cápita en España en los años del bono
+      demográfico
+
+Una alta tasa de dependencia debería reflejarse en un freno en el PIB per cápita. Esto
+se explica porque existe una menor proporción de personas que pueden trabajar y
+generar actividad económica en un país. Tenga en cuenta el lector que, si medimos el
+PIB por persona y existen pocas personas que pueden trabajar, es lógico que el PIB por
+persona muestre una tendencia al crecimiento. En claro contraste, y por análoga razón,
+una baja tasa de dependencia tiende a generar una aceleración en el PIB per cápita.
+
+En España podemos ver que en los años centrales de la generación del baby boom, es
+decir, en los años del bono demográfico en los que el país disfrutó temporalmente de
+una baja tasa de dependencia, estuvieron marcados por un alto crecimiento en el PIB
+per cápita (hasta el año 2008).
+                                                                                       14
+                  Centro
+                  Ruth Richardson
+
+
+
+
+                                       Gráfico 7
+
+
+
+
+A pesar del alto crecimiento en el PIB per cápita, la economía española no funcionaba
+todo lo bien que parecía durante los años del bono demográfico. La baja tasa de
+dependencia hacía parecer boyante a una economía renqueante.
+
+El alto crecimiento en el PIB per cápita en los años del bono demográfico no estaba
+provocado por una fortaleza inherente de la economía española ni del modelo
+económico implementado en el último cuarto del siglo XX. Incluso se podría
+argumentar lo contrario, el bono demográfico encubrió durante muchos años los
+defectos y límites del modelo económico de la democracia española.
+
+
+
+                                                                                        15
+                  Centro
+                  Ruth Richardson
+
+
+
+
+                                       Gráfico 8
+
+
+
+
+La productividad laboral, que había crecido en España casi ininterrumpidamente desde
+los años 50, mostró un crecimiento muy débil a partir del año 1985 con una clara
+tendencia al estancamiento en las décadas siguientes. Esta sigue siendo la situación en
+la España actual. Por lo tanto, hemos vivido un estancamiento en la capacidad de los
+trabajadores de incrementar su producción en los últimos 40 años.
+
+El modelo económico español hace aguas desde hace al menos cuatro décadas, pero
+los aspectos demográficos de la sociedad española estuvieron encubriendo durante
+todo este tiempo el pobre desempeño de la economía española.
+
+
+
+                                                                                      16
+                      Centro
+                      Ruth Richardson
+
+
+
+
+        2.4. El bono demográfico: una oportunidad perdida para reformar el sistema
+        de pensiones
+
+La elección y diseño de un sistema de pensiones debe tener en cuenta las
+eventualidades demográficas aquí descritas para evitar situaciones político-económicas
+difíciles de manejar. Los años del bono demográfico en España fueron los años en los
+que la mayoría de la generación del baby boom estuvo en edad de trabajar.
+
+La baja tasa de dependencia española en los años del bono demográfico era un
+fenómeno temporal que se dio como resultado de una transición demográfica.
+Por tanto, eran años que se podían haber aprovechado para realizar reformas que
+aseguraran que el envejecimiento de la población no tuviera consecuencias sociales
+negativas.
+
+El poder político desaprovechó el bono demográfico del que disfrutó España entre los
+años 1985 y 2015 para promover cambios de fondo en el sistema de pensiones español
+(para ver informe con las reformas realizadas en estos años pulsa aquí).
+
+Durante estos años se pudieron pagar pensiones generosas con un esfuerzo
+relativamente pequeño. Las pensiones pagadas estos años pudieron superar, en
+algunos casos, el propio salario que el jubilado cobraba anteriormente. Es decir, un
+trabajador podía incluso ver su ingreso incrementar una vez se jubilaba.6
+
+3. El desajuste en el sistema de pensiones ocurre antes de
+tiempo
+
+A pesar de la creciente tasa de dependencia de la tercera edad, la mayor parte de
+la generación del baby boom no ha llegado todavía a la edad de jubilación. En los
+siguientes veinte años esta generación llegará escalonadamente a la edad de jubilación.
+Es decir, la pendiente demográfica apenas ha empezado a inclinarse. El principal reto
+demográfico y económico que tiene que afrontar España está todavía por delante.
+
+        3.1.España tiene pocos pensionistas en comparación con Europa
+
+España tiene actualmente una cantidad de pensionistas relativamente baja comparada
+con la existente en otros países europeos. Esto resulta cierto tanto para las pensiones
+de vejez y supervivencia como para las pensiones de invalidez tal y como podemos ver
+en el gráfico 9.
+6 Ver García-Gómez y otros (2018)
+
+                                                                                       17
+                       Centro
+                       Ruth Richardson
+
+
+
+
+                                                Gráfico 9
+
+
+
+
+        3.2.Las cuentas de la Seguridad Social no cuadran
+
+Los datos del gráfico 9 implican que el sistema de pensiones de reparto español no
+debería estar bajo una presión demasiado elevada, al menos no todavía. A pesar de
+ello, el sistema de pensiones entró en déficit en el año 2010, déficit que se hace más
+grande cada año y que presiona cada vez con más fuerza los presupuestos públicos.7
+
+
+
+7 Para un análisis más detallado publicaremos en un futuro informe del Centro de Investigación Ruth Ri-
+chardson un estudio sobre la sostenibilidad financiera del sistema de pensiones español.
+                                                                                                          18
+                 Centro
+                 Ruth Richardson
+
+
+
+
+                                    Gráfico 10
+
+
+
+
+      3.3. Gasto en pensiones disparado
+
+A pesar de que comparativamente España cuenta con pocos pensionistas, el gasto
+en pensiones como porcentaje de PIB es uno de los más elevados en Europa y se
+encuentra por encima del promedio europeo.
+
+
+
+
+                                                                                 19
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 11
+
+
+
+
+                               20
+                  Centro
+                  Ruth Richardson
+
+
+
+
+      3.4.Las pensiones españolas: de las más generosas de Europa
+
+La solución al aparente conundrum de la escasa cantidad de pensionistas y el elevado
+gasto del sistema de pensiones la encontramos en la elevada cuantía que cobran los
+pensionistas en España.
+
+En el gráfico 12 podemos observar la tasa de reemplazo en España y otros países
+europeos. La tasa de reemplazo es un indicador que relaciona la cuantía de la pensión
+con la del último salario cobrado. Una tasa de reemplazo del 100% significa que el
+pensionista tiene el mismo ingreso como pensionista que como trabajador.
+
+
+
+
+                                                                                        21
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 12
+
+
+
+
+                               22
+                  Centro
+                  Ruth Richardson
+
+
+
+
+      3.5. El gran damnificado: el trabajador español y su cuña fiscal
+
+Como ya hemos visto, en un sistema de pensiones de reparto como el español, los
+gastos del sistema provienen de la aportación de los trabajadores españoles. Los
+trabajadores españoles soportan una cuña fiscal muy elevada en comparación con
+Europa y con otros países desarrollados pertenecientes a la OCDE.
+
+                                     Gráfico 13
+
+
+
+
+                                                                                   23
+                  Centro
+                  Ruth Richardson
+
+
+
+
+La generosidad del sistema de pensiones español no solo provoca una cuña fiscal muy
+elevada, sino también una creciente. Esto contrasta de sobremanera con la cuña fiscal
+de la Unión Europea y de la OCDE que han tendido a disminuir en el tiempo.
+
+      3.6.El disfuncional mercado de trabajo en España y su vínculo con el sistema
+      de pensiones
+
+Una de las explicaciones de la aparición de problemas de forma temprana en el sistema
+de pensiones en España es la presencia de un mercado de trabajo disfuncional. El
+ratio de trabajadores por pensionista en España ha caído desde los años 70, al igual
+que la proporción de personas en edad de trabajar, tal y como vimos en el gráfico 4.
+Sin embargo, lo realmente interesante es ver que el ratio de trabajadores efectivos es
+sustancialmente menor que el de personas en edad de trabajar.
+
+España cuenta actualmente con 2,3 trabajadores por pensionista a pesar de que
+existen 3,3 personas en edad laboral por pensionista. La cantidad de trabajadores por
+pensionista se ha movido en las últimas décadas más por los vaivenes del inestable
+mercado de trabajo español que por factores demográficos.
+
+                                      Gráfico 14
+
+
+
+
+                                                                                        24
+                  Centro
+                  Ruth Richardson
+
+
+
+
+La diferencia entre personas en edad de trabajar y trabajadores efectivos viene
+determinada por la tasa de actividad y la tasa de desempleo. Es decir, entre las
+personas en edad de trabajar, el número de ellas que realmente termina trabajando
+depende de que quieran hacerlo (tasa de actividad) y de que puedan hacerlo (tasa de
+desempleo).
+
+La tasa de desempleo en España creció de sobremanera en los años 80 para no volver a
+recuperar su nivel anterior nunca. Esto implica que el mal funcionamiento del mercado
+de trabajo ha agravado el problema del sistema de pensiones al limitar el número de
+aquellos que aportan al sistema de pensiones.
+
+                                      Gráfico 15
+
+
+
+
+                                                                                      25
+                  Centro
+                  Ruth Richardson
+
+
+
+
+Si comparamos a España con el resto de países europeos en lo que a eficacia del
+mercado de trabajo se refiere, vemos que nuestro país no sale muy bien parado. La tasa
+de empleo en España (que mide el porcentaje de trabajadores sobre la población en
+edad de trabajar) es de las más bajas de Europa.
+
+                                      Gráfico 16
+
+
+
+
+Por tanto, la alta tasa de desempleo en España ha provocado que los ingresos del
+sistema de Seguridad Social sean una fracción de los que demográficamente podrían
+haberse realizado. Es decir, a los problemas demográficos que sufre el sistema de
+pensiones españoles se le une un mercado laboral disfuncional.
+                                                                                    26
+                       Centro
+                       Ruth Richardson
+
+
+
+
+Esto ha provocado que el sistema de pensiones entrara en déficit incluso en los
+momentos en los que se disfrutaba del bono demográfico y hubiese que hacer
+reformas y recortes al sistema antes del envejecimiento poblacional (ver informe).
+
+4. La amarga guerra intergeneracional en España
+
+El sistema de pensiones español tiene las ventajas e inconvenientes de un sistema de
+reparto. El envejecimiento acelerado de la generación del baby boom pone en jaque la
+sostenibilidad del sistema8, y la presión creciente sobre los recursos está alimentando
+una incipiente guerra intergeneracional, en la que, de forma cada vez más visible,
+jóvenes y mayores compiten por prevalecer en el Estado del bienestar. La ruptura
+intergeneracional: redistribución entre trabajadores y jubilados
+
+En un sistema de pensiones de reparto como el que existe en España se fomentan
+las relaciones de redistribución entre generaciones. Debido a que las relaciones que
+priman entre generaciones en ese sistema son de redistribución, cualquier diferencial
+en el nivel de vida entre generaciones es visto con recelo por los miembros de la otra
+generación. El desequilibrio entre el bienestar de un grupo y el de otro se torna en una
+batalla política por incrementar o disminuir la cuantía de ingreso redistribuido.
+
+En España, esta guerra está siendo ganada, al menos aparentemente, por el colectivo
+de los jubilados. Ya hemos visto que sus pensiones son muy elevadas (gráfico 12)
+mientras que la extracción de ingreso a los trabajadores es también muy elevada
+(gráfico 13). Esto se pone de relieve en la senda de ingresos de uno y otro colectivo.
+Entre 2008 y 2023 el salario real de los españoles cayó un 2,3% mientras que la pensión
+promedio incrementó un 28,3%.
+
+
+
+
+8 En un futuro informe analizaremos con más profundidad las cuentas de la Seguridad Social española. En
+otro informe analizaremos los principales tipos de sistemas de pensiones y sus ventajas e inconvenientes y
+posibles vías de forma del sistema de pensiones español.
+
+                                                                                                         27
+                       Centro
+                       Ruth Richardson
+
+
+
+
+                                                Gráfico 17
+
+
+
+
+Una vez que se tienen en cuenta todos los pagos hacia y desde las Administraciones
+Públicas (y el valor de los servicios recibidos en especie), el ingreso per cápita de los
+jubilados de 65 a 85 años es el mayor de cualquier grupo etario.9
+
+
+
+
+9 Estos datos no incluyen rentas imputadas de la propiedad inmobiliaria. El diferencial sería todavía mayor
+si se hubieran incluido.
+
+                                                                                                              28
+                   Centro
+                   Ruth Richardson
+
+
+
+
+                                       Gráfico 18
+
+
+
+
+Es de destacar que, antes de la redistribución del Estado el ingreso de los jubilados no
+es cero. Eso indica la presencia de unos ingresos, derivados en su mayoría de rentas de
+la propiedad, que complementan la pensión de jubilación.
+
+       4.1.La ruptura intergeneracional: nivel de vida trabajadores vs jubilados
+
+Como es lógico, la enorme redistribución desde trabajadores a jubilados y los crecientes
+diferenciales de ingresos están provocando una diferencia en los niveles de vida que
+pueden disfrutar diferentes capas sociales.
+
+En la totalidad de indicadores de privación material que recoge el INE en su Encuesta
+de Condiciones de Vida, el grupo que menos sufre privaciones es el de los mayores de
+65 años.
+
+
+
+
+                                                                                        29
+                  Centro
+                  Ruth Richardson
+
+
+
+
+                                       Tabla 3
+
+
+
+
+      4.2.Los jubilados también pierden la guerra
+
+A pesar de que pueda parecer que la guerra intergeneracional está siendo ganada por
+los jubilados, se puede argumentar que este grupo etario es también una víctima del
+sistema de pensiones de reparto. Y es que en las guerras habitualmente pierden los dos
+bandos y parece que esta guerra figurada no es una excepción.
+
+Como señalamos en nuestro anterior informe, el sistema de pensiones español
+ha sufrido recurrentes recortes desde el año 1985. Estos recortes han provocado
+sistemáticamente una rebaja en los derechos a percibir ingresos de los pensionistas.
+Los pensionistas empezaron su vida laboral acumulando unos derechos que han sido
+unilateralmente modificados por el poder político.
+
+                                                                                       30
+                       Centro
+                       Ruth Richardson
+
+
+
+
+Para mostrar el recorte de derechos hemos realizado unas simulaciones. En las
+simulaciones suponemos que una persona que se jubila en el año 2025 lo puede hacer
+con los parámetros del sistema de pensiones existente en el año 1985 (antes de la
+primera gran reforma de la Seguridad Social). Después, comparamos las pensiones a
+las que tienen derecho con el sistema actual y con el sistema de 1985.
+
+        4.2.1.Supuestos de la simulación
+
+Vamos a introducir una serie de supuestos y de escenarios en cada uno de los
+supuestos para ilustrar cómo los jubilados también han perdido constantemente
+derechos:
+
+Supuesto 1: un trabajador se jubila en el año 2025.
+
+        Escenario 1A: El trabajador se jubila con los derechos que le otorga el esquema
+        normativo vigente en el año 2025
+
+        Escenario 1B: El trabajador se jubila con los derechos que le otorga el esquema
+        normativo vigente en el año 1985.
+
+Supuesto 2: el trabajador que se jubila en el año 2025 inicia su vida laboral con un
+salario igual al 75% del salario promedio del año 2025.
+
+        Escenario 2A: El salario del trabajador creció un 1% por encima de la inflación
+        cada año.
+
+        Escenario 2B: El salario del trabajador creció un 2% por encima de la inflación
+        cada año.
+
+        Escenario 2C: El salario del trabajador creció un 3% por encima de la inflación
+        cada año.
+
+Supuesto 3: el trabajador se jubila con 65 años si lo hace con la legislación del año 1985
+y con 67 años si lo hace con la legislación vigente en el año 202510.
+
+
+
+
+10 En realidad, en el año 2025 la jubilación ordinaria ocurre a los 66 años y 8 meses, pero los resultados
+apenas cambian y, además, la edad de 67 años para la jubilación ordinaria se alcanzará en el año 2027.
+                                                                                                             31
+                        Centro
+                        Ruth Richardson
+
+
+
+
+        Escenario 3A: el trabajador ha tenido una vida laboral relativamente corta, de 25
+        años consecutivos antes de jubilarse.
+
+        Escenario 3B: El trabajador ha tenido una vida laboral de 30 años consecutivos
+        antes de jubilarse.
+
+        Escenario 3C: El trabajador ha tenido una vida laboral de 35/37 años consecuti
+        vos antes de jubilarse.11
+
+        4.2.2 Resultado 1 de la simulación: tasa de reemplazo decreciente
+
+La tasa de reemplazo muestra claramente cómo en el sistema de pensiones de 1985, y
+bajo todos los supuestos, la pensión era muy superior que bajo el sistema de pensiones
+prevalente en el año 2025.
+
+
+
+
+11 35 años si se jubila con el sistema de pensiones de 1985 (escenario 1A) y 37 años si se jubila con el siste-
+ma de pensiones de 2025 (escenario 2A)
+
+                                                                                                              32
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 19
+
+
+
+
+                               33
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       4.2.3.Resultado 2 de la simulación: tasa de reemplazo decreciente
+
+En este apartado imaginamos que las cotizaciones a la Seguridad Social son una
+inversión y que los pagos de la pensión son la desinversión. En este sentido, podemos
+calcular los flujos entrantes (en función de los supuestos por tipo de trabajador) y los
+flujos salientes (esperanza de las pensiones recibidas teniendo en cuenta la esperanza
+de vida a los 65 y 67 años). Una vez que tenemos los flujos entrantes y salientes de la
+inversión, calculamos su TIR (Tasa Interna de Retorno), que es un indicador sencillo y
+estándar para calcular rentabilidades de diferentes tipos de inversiones.
+
+Una vez más, con este indicador de rentabilidad en la mano, podemos ver como la
+“inversión” en la Seguridad Social española ha visto disminuir sus retornos entre 1985 y
+2025.
+
+
+
+
+                                                                                           34
+Centro
+Ruth Richardson
+
+
+
+
+                    Gráfico 20
+
+ España afronta hoy el momento crítico previsto du
+
+
+
+
+                                                     35
+                  Centro
+                  Ruth Richardson
+
+
+
+
+5 Conclusión
+
+España afronta hoy el momento crítico previsto durante décadas: la jubilación
+escalonada de la generación del baby boom está tensionando un sistema de jubilación
+de reparto que descansa sobre una estructura demográfica insostenible.
+
+El diagnóstico central es que el sistema de pensiones español es muy sensible
+a factores demográficos. En apenas medio siglo, la relación entre personas en
+edad laboral y mayores de 65 años ha caído desde 6 a poco más de 3,25, y seguirá
+descendiendo en los próximos años hasta que termine la transición demográfica del
+baby boom.
+
+Como esta generación todavía no se ha jubilado completamente, España cuenta con
+relativamente pocos pensionistas. No obstante, España ya gasta más en pensiones
+que la media europea y acumula un creciente déficit desde el año 2010; la explicación
+reside en unas prestaciones muy generosas y en una financiación basada en una cuña
+fiscal muy elevada que estrangula a los trabajadores. Ese desequilibrio del sistema
+de pensiones se ve agravado porque solo 2,3 cotizantes efectivos sostienen a cada
+pensionista debido a un mercado laboral con paro estructural elevado y una baja tasa
+de actividad.
+
+España desaprovechó su bono demográfico(1985-2015): durante esos años el
+abundante contingente de trabajadores permitió pagar pensiones crecientes sin
+reformar su diseño. Los ajustes que se deben realizar ahora serán más costosos cuanto
+más se tarden en llevar a cabo. La presión sobre variables sociales ya se manifiesta en
+una “brecha generacional” de renta y oportunidades que aviva tensiones sociales entre
+cotizantes y jubilados: la guerra generacional ha llegado a España.
+
+
+
+
+                                                                                        36
+                  Centro
+                  Ruth Richardson
+
+
+
+
+6 Agradecimiento
+
+Este informe ha contado con las aportaciones de Jon González. No obstante, cualquier
+error u omisión es responsabilidad exclusiva de los autores.
+
+
+
+
+                                                                                       37
+hesperides.edu.es
+

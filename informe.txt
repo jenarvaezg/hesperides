@@ -1,0 +1,853 @@
+La paradoja inmobiliaria:
+Por qué el aumento del precio
+de la vivienda no genera más
+construcción
+
+
+Autores
+Daniel Fernández Méndez
+Santiago Calvo López
+Gonzalo Melián Marrero
+
+
+
+
+                          Enero de 2026
+
+
+
+
+hesperides.edu.es
+                   Centro
+                   Ruth Richardson
+
+
+
+Resumen ejecutivo
+
+Desde 2020, el precio de la vivienda se ha disparado más de un 40%, un crecimiento que,
+lejos de traducirse en un impulso a la construcción de obra nueva, ha convivido con un per-
+sistente estancamiento de la actividad edificadora en niveles históricamente bajos.
+
+En este informe se analizan las causas por las que la construcción de nueva vivienda
+no se está incrementando de forma sustantiva como respuesta al crecimiento de los
+precios de la vivienda.
+
+La consecuencia inmediata es la ausencia de incentivos para invertir en la construc-
+ción de nueva vivienda. La rentabilidad neta (rentabilidad del activo menos el coste de
+financiación) de la construcción es negativa. La construcción de edificios es una de las
+actividades con menor rentabilidad de toda España, realidad que choca con la crisis de
+precios que atraviesa el mercado inmobiliario español.
+
+Los constructores de vivienda, en promedio, no consiguen beneficios. Esto implica que
+no incrementará la construcción, por lo que la presión sobre el precio no frenará en el
+futuro cercano.
+
+Gran parte de estos problemas son problemas regulatorios y de estructura de mercado
+que podrían ser atajados, cuando no directamente eliminados, con una regulación más
+inteligente, cosa que, en muchos casos, implica una desregulación en materia de urba-
+nismo y ordenación del territorio.
+
+Sobre los autores:
+
+Daniel Fernández Méndez
+
+Doctor en Economía por la Universidad Rey Juan Carlos. Director del Centro Ruth Ri-
+chardson y subdirector del Centro Peter Huber de la Universidad de las Hespérides.
+
+Santiago Calvo López
+
+Doctor en Economía por la Universidad de Santiago de Compostela. Profesor de
+Economía Pública y Métodos Cuantitativos en la Universidad de las Hespérides.
+
+Gonzalo Melián Marrero
+
+Doctor en Economía y doctor en Arquitectura con una trayectoria especializada en el
+análisis económico del urbanismo. Vicerrector de la Universidad de las Hespérides.
+                                                                                           2
+                      Centro
+                      Ruth Richardson
+
+
+
+
+1. Introducción
+
+La vivienda no constituye un bien económico excepcional, ya que su precio, al igual que el
+de cualquier otro bien, está determinado por la interacción entre la oferta y la demanda. En
+general, el precio de los bienes viene condicionado por su escasez relativa, entendida como
+la cantidad disponible de un bien en relación con una demanda dada. Desde esta perspec-
+tiva, los aumentos abruptos de precios en los bienes duraderos suelen ser consecuencia de
+desbalances entre nueva oferta y nueva demanda.
+
+Los mercados que muestran una escasa elasticidad de la oferta (sensibilidad de la produc-
+ción al precio) son aquellos que más propensión tienen a sufrir variaciones drásticas en sus
+precios, ya que la producción no puede ajustarse con la rapidez suficiente para absorber los
+cambios de demanda 1.
+
+La vivienda tiene una particularidad que no comparte con todos los bienes económicos, ya que
+la elasticidad de su oferta es muy reducida en el corto plazo. La oferta de vivienda es poco sensi-
+ble a corto plazo al cambio en los precios por razones obvias, entre las que destaca el hecho de
+que la construcción de nuevas viviendas exige un periodo prolongado de tiempo. Por tanto, un
+cambio en su precio no puede traducirse en un crecimiento súbito de nueva vivienda 2.
+
+Sin embargo, las variaciones de precios deberían activar con rapidez la movilización de
+factores productivos destinados a la construcción de nueva vivienda. Es decir, la sensibilidad
+de la oferta al precio puede ser baja, pero esto ocurre por el tiempo necesario para comple-
+tar los procesos constructivos, y no a una falta de reacción por parte de los agentes econó-
+micos ante los incentivos que generan los cambios de precios.
+
+En este informe exploramos cómo, a pesar de lo que nos dice la teoría económica, los agen-
+tes económicos en España no están reaccionando a los cambios de precio de la vivienda
+movilizando nuevos factores productivos. Como consecuencia, en el medio plazo no se pro-
+ducirá un incremento sustancial de la oferta de vivienda nueva. Esta situación impide que la
+escasez relativa de vivienda pueda corregirse a través de la oferta, a pesar de que esta sea
+la única vía para aliviar de manera sostenible la presión existente en el mercado.
+
+Asimismo, el informe examina las causas que dificultan que el encarecimiento de la
+vivienda se traduzca en una expansión de la oferta, tal y como cabría
+
+
+1 La baja elasticidad de la demanda tendría un efecto análogo al aquí explicado: un cambio en la oferta no
+sería contrabalanceado por una demanda sensible al cambio de precio, por lo que el cambio de precio sería
+muy acusado.
+2 Aunque sí podría salir al mercado oferta de vivienda ya construida con anterioridad o transformación de
+usos de otras construcciones como las oficinas si la regulación permitiera que se hiciera de forma rápida.
+                                                                                                         3
+                  Centro
+                  Ruth Richardson
+
+
+
+esperar desde el marco teórico económico. Veremos que la escasez de suelo urbaniza-
+ble, la imposibilidad del incremento del número de viviendas en el suelo urbano, la in-
+eficaz regulación, la escasez de mano de obra y el precio de los materiales de construc-
+ción explican gran parte de los problemas detrás de la aparente inacción de la oferta
+ante cambios en el precio.
+Para comenzar, analizamos la preocupación, ampliamente justificada, de los españoles
+con respecto al funcionamiento del mercado de la vivienda.
+
+
+
+
+                                                                                           4
+                   Centro
+                   Ruth Richardson
+
+
+
+
+1. La principal preocupación
+
+La crisis habitacional que se inició en España desde el año 2020 es ya el principal pro-
+blema percibido de los españoles, casi duplicando el segundo problema, que es la
+inmigración.
+
+                                        Gráfico 1
+
+
+
+
+                                                                                           5
+                   Centro
+                   Ruth Richardson
+
+
+
+2. El precio de la vivienda se dispara
+
+La preocupación de los españoles con el mercado de vivienda tiene todo el sentido del
+mundo. Y es que, tanto el precio de la venta como el del alquiler se han disparado.
+
+       2.1 Precio de venta de vivienda
+
+Desde diciembre del año 2020, los precios de la vivienda se han disparado por encima de un
+40%, cifra que supera ampliamente a la inflación general que ha crecido algo más de un 20%.
+
+En algunas comunidades autónomas el crecimiento en el precio de la vivienda llega a la
+cifra de 50% desde el año 2020 hasta el año 2025.
+
+                                          Gráfico 2
+
+
+
+
+                                                                                              6
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       2.2 Precio de alquiler de vivienda
+
+El precio del alquiler ha sufrido una evolución muy similar, creciendo por encima del
+30% desde el año 2020. Esto es cierto tanto para el promedio del país como para las
+provincias más pobladas.
+
+                                        Gráfico 3
+
+
+
+
+                                                                                        7
+                    Centro
+                    Ruth Richardson
+
+
+
+
+3. Precio, rentabilidad y oferta de vivienda
+
+Habitualmente los economistas caracterizan al sistema de precios como un sistema de
+información. Si el precio de un bien sube por encima del resto de precios (crecimiento
+de precios relativos), esto es una señal que indica a los empresarios que la escasez rela-
+tiva de ese bien ha incrementado y deberían incrementar su producción.
+
+       3.1 La construcción de vivienda apenas crece
+
+El problema es que, a pesar de que el precio relativo de la vivienda ha crecido en los últimos
+años, la “señal del precio” no parece haber llegado a los empresarios. La construcción de
+nueva vivienda, a pesar del ligero repunte reciente, sigue estancada en niveles muy bajos.
+
+                                          Gráfico 4
+
+
+
+
+                                                                                             8
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       3.2- La inversión en el sector de la construcción está estancada
+
+Adicionalmente, se observa un notable estancamiento en la formación bruta de capital
+fijo vinculada al sector, situándose muy lejos de las cotas alcanzadas en el pasado. Los
+datos del Observatorio de la Vivienda y Suelo reflejan que la participación de la cons-
+trucción en el conjunto inversor ha descendido desde el 20% que llegó a representar en
+la época de la burbuja inmobiliaria hasta valores actuales cercanos al 10%.
+
+Esta contracción es especialmente visible en la inversión en vivienda, que se sitúa en el
+5,6% del PIB, menos de la mitad del máximo histórico del 12,4% registrado en 2006.
+
+                                        Gráfico 5
+
+
+
+
+                                                                                            9
+                     Centro
+                     Ruth Richardson
+
+
+
+
+       3.3 La clave: la rentabilidad de la construcción es negativa
+
+Un conocedor de la ciencia económica podría replicar que la señal de precio relevante para
+incrementar la producción es la rentabilidad, no el precio del bien producido. Desde la
+perspectiva microeconómica, el incentivo a incrementar la producción viene dado por la cuantía
+de los beneficios obtenidos. Una buena forma de analizar el beneficio de una actividad es con
+la ratio de rentabilidad del activo. En este sentido, una vez deducido el coste de financiación, la
+rentabilidad de la construcción en España es actualmente negativa, tras muchos años en los
+que las rentabilidades medias ya habían sido muy reducidas o claramente desfavorables 3.
+
+                                            Gráfico 6
+
+
+
+
+                                                                                                 10
+                      Centro
+                      Ruth Richardson
+
+
+
+        3.4 La construcción es uno de los sectores con menor rentabilidad en España
+
+La construcción tiene una de las rentabilidades más bajas de todas las actividades
+económicas en España. De las 78 actividades económicas que recoge el Banco de España
+(divisiones CNAE), la construcción es menos rentable que 68 de ellas, colocándose en un
+muy modesto percentil 13 de rentabilidad neta.
+
+                                               Gráfico 7
+
+
+
+
+3 En economía, el aumento de la producción no responde al precio del bien en sí, sino a la rentabilidad
+esperada de la actividad. El precio actúa sólo como una señal indirecta: si el incremento de ingresos no
+compensa el aumento de costes y el coste de financiación, el incentivo a invertir desaparece. Una forma
+habitual de medir este incentivo es la rentabilidad del activo neta (descontando el coste financiero). En
+la construcción española, esta rentabilidad lleva años en negativo, lo que explica por qué la oferta no
+reacciona pese al fuerte aumento de los precios de la vivienda.
+
+                                                                                                       11
+                    Centro
+                    Ruth Richardson
+
+
+
+
+Es necesario tener en cuenta que la construcción requiere una alta inversión inicial
+de recursos (sector intensivo en capital) y que se enfrenta a una alta incertidumbre y
+volatilidad en el precio final, en los costes y, lo que casi es más importante, en el tiempo de
+ejecución. La incertidumbre en el tiempo que puede llevar la construcción influye de forma
+crucial en el coste de financiación que afrontan las empresas del sector.
+
+Con estos datos de rentabilidad no es de extrañar que la construcción de vivienda apenas
+se haya incrementado en los últimos años. Esto implica que la escasez relativa de vivienda
+no va a ser solucionada en el medio plazo.
+
+La pregunta clave para analizar la incapacidad del sector de la construcción de incrementar
+la cantidad de vivienda es: ¿por qué el crecimiento en los precios no ha incrementado la
+rentabilidad de las empresas constructoras?
+
+
+
+
+                                                                                              12
+                    Centro
+                    Ruth Richardson
+
+
+
+
+4. La escasez artificial del suelo y edificabilidad disponible
+
+       4.1 El problema regulatorio del suelo disponible
+
+La dificultad estructural para construir en España tiene su origen en un sistema
+de planeamiento urbano y territorial altamente intervenido, heredado del periodo
+franquista, que lejos de flexibilizarse tras la Constitución de 1978 ha experimentado
+un proceso continuo de intensificación regulatoria. Este modelo se caracteriza
+por la práctica nacionalización de los derechos de desarrollo del suelo y por la
+monopolización, por parte de la Administración pública, de la asignación de usos,
+intensidades edificatorias y aprovechamientos urbanísticos. Como consecuencia, el
+mercado queda incapacitado para ajustar la oferta de suelo, de usos y de edificabilidad
+a las preferencias efectivas de la demanda. Cualquier incremento de suelo urbanizable,
+modificación de usos o aumento de edificabilidad requiere una alteración del
+planeamiento urbanístico municipal que, en numerosos casos, resulta jurídicamente
+inviable debido a las restricciones impuestas por la legislación urbanística, los
+instrumentos de ordenación territorial, la normativa medioambiental o la legislación de
+protección del patrimonio. En aquellos supuestos en los que tales modificaciones son
+legalmente posibles, los plazos de tramitación suelen oscilar entre cinco años en los
+escenarios más optimistas y una media cercana a los diez años.
+
+Este escenario se ve significativamente agravado a partir de la aprobación de la Ley de
+Suelo de 2007. Dicha norma, presentada formalmente bajo la justificación de garantizar
+las condiciones básicas de igualdad en el ejercicio de los derechos constitucionales
+vinculados al suelo y de corregir los supuestos efectos económicos, distributivos y
+especulativos del modelo urbanístico heredado, tuvo en realidad como resultado el
+reforzamiento estructural del carácter intervencionista del sistema urbanístico español,
+mediante una profunda reconfiguración del estatuto jurídico de la propiedad y, de
+manera particularmente relevante, del sistema de valoraciones.
+
+En términos sustantivos, la Ley desvinculó jurídicamente el derecho de propiedad del
+derecho a desarrollar el suelo, sustituyó la clasificación urbanística tradicional por una
+dicotomía rural/urbanizado exclusivamente a efectos valorativos y estableció un régimen
+de tasaciones administrativas deliberadamente desligado de los precios de mercado,
+especialmente en el ámbito del suelo en proceso de transformación. Como consecuencia,
+se produjo una reducción drástica del valor legal del suelo urbanizable, un debilitamiento
+de las garantías hipotecarias, una contracción del crédito dirigido al sector y un incremento
+sustancial de la discrecionalidad administrativa, trasladando aún más poder desde los
+propietarios hacia la planificación y la gestión pública del desarrollo urbano.
+                                                                                            13
+                  Centro
+                  Ruth Richardson
+
+
+
+
+Todo ello fue legitimado mediante una nueva narrativa constitucional apoyada en
+la función social de la propiedad, la sostenibilidad y la lucha contra la especulación.
+El resultado efectivo de este marco normativo fue un aumento de la inseguridad
+jurídica, una intensificación de la intervención pública en la formación de precios y
+un agravamiento de las restricciones a la oferta de suelo, con efectos claramente
+contractivos sobre la actividad urbanizadora y el conjunto del mercado inmobiliario.
+
+      4.2 Edificabilidad por tipo de uso de suelo
+
+El candidato más inmediato para el desarrollo de nueva vivienda es el suelo urbano
+consolidado, conocido como solar, dado que se trata de terreno finalista listo para
+edificar y que únicamente requiere la obtención de la licencia de obras. No obstante,
+puesto que los solares constituyen un recurso escaso y finito en las zonas de mayor
+demanda, el verdadero instrumento estratégico para aliviar la crisis de oferta en el
+medio y largo plazo reside en el aumento de la edificabilidad del suelo urbano y del
+suelo urbanizable, incluido el suelo urbano no consolidado. Tanto una opción como
+la otra están sujetas a largos procesos de planeamiento, gestión y urbanización
+para transformarse en suelo finalista apto para acoger nuevas promociones
+residenciales.
+
+
+
+
+                                                                                      14
+Centro
+Ruth Richardson
+
+
+
+
+                  Tabla 1
+
+
+
+
+                            15
+                   Centro
+                   Ruth Richardson
+
+
+
+
+       4.3 Un problema regulatorio
+
+Esta rigidez administrativa ha generado una escasez artificial de vivienda, tanto en
+suelos ya urbanizados —al impedirse procesos de densificación en aquellas áreas con
+mayores tensiones de precios— como en suelos formalmente clasificados para su
+futura urbanización, cuyo desarrollo efectivo y posterior edificación quedan igualmente
+constreñidos. Aunque, desde una perspectiva meramente formal, las ciudades
+disponen de amplias bolsas de suelo, en la práctica, la proporción de terrenos que
+resulta realmente apta para iniciar proyectos de manera inmediata es muy reducida,
+lo que obliga a someter este factor productivo esencial a complejos y prolongados
+procesos de transformación jurídica antes de que pueda responder de forma efectiva a
+las señales de la demanda.
+
+La radiografía del suelo en España muestra una situación tan clara como poco flexible,
+ya que el 95,7% del territorio nacional se clasifica como suelo no urbanizable, al estar
+protegido o destinado a usos agrícolas y, por tanto, excluido de la construcción de
+vivienda. En consecuencia, solo se puede construir vivienda residencial en el 2,1% del
+territorio, una proporción de la que, además, una parte significativa ya se encuentra
+ocupada, y en el medio plazo, en un horizonte no inferior a cinco años, apenas podría
+incorporarse un 1,3% adicional. Estos datos ponen de manifiesto que la escasez de
+suelo es artificial, responde fundamentalmente a decisiones normativas y no a una
+limitación física real del territorio.
+
+
+
+
+                                                                                           16
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 8
+
+
+
+
+                              17
+                    Centro
+                    Ruth Richardson
+
+
+
+
+       4.4 El efecto de la burocracia
+
+La carga burocrática ha dilatado los plazos de edificación de manera notable. La
+tramitación de desarrollos urbanísticos no solo exige una justificación detallada ante
+múltiples administraciones (local y autonómica), sino que debe sortear una maraña de
+informes sectoriales —desde medioambiente hasta infraestructuras— que actúan a
+menudo como cuellos de botella críticos.
+
+El resultado es que el desarrollo completo de un proyecto, desde la planificación inicial
+hasta la entrega, puede extenderse entre 10 y 12 años. Desglosando este periodo, y
+haciéndolo de forma optimista, la redacción y aprobación de un plan general municipal
+puede consumir 5 o 6 años, a los que se suman otros 2 años para planes parciales y 1,5
+años para obras de urbanización, antes siquiera de poder solicitar la licencia de obra para
+iniciar la construcción. Por lo que, a los 2 años que suele tardar la finalización de una
+edificación desde que se solicitó la licencia de edificación, hay que sumar una década de
+gestión previa. En la práctica, esto implica que cualquier medida adoptada hoy por un
+ayuntamiento para aumentar la oferta de suelo no tendrá un impacto real en el mercado
+hasta dentro de doce años.
+
+                                           Tabla 2
+
+
+
+
+                                                                                              18
+Centro
+Ruth Richardson
+
+
+
+
+                  19
+                    Centro
+                    Ruth Richardson
+
+
+
+
+       4.5 Urbanismo obsoleto
+
+Esta lentitud administrativa convive con una profunda inseguridad jurídica y una
+obsolescencia de los instrumentos de planificación. Según datos del Sistema de
+información urbana para el año 2025, el 69% de los distintos instrumentos de planeamiento
+urbanístico vigentes analizados por el Sistema de Información Urbana son anteriores a
+2008, y muchos datan incluso de antes de 1992 (el 23,1% del total).
+
+Esto implica que estamos intentando gestionar las necesidades habitacionales y los
+estándares de sostenibilidad del siglo XXI con mapas y normativas diseñados en una
+realidad económica y social ya inexistente. La falta de actualización de estos planes dificulta
+la adaptación a los nuevos requerimientos demográficos y convierte cualquier modificación
+en un proceso de alto riesgo legal para los inversores.
+
+                                           Gráfico 9
+
+
+
+
+                                                                                             20
+                    Centro
+                    Ruth Richardson
+
+
+
+
+       4.6 La brecha entre lo planificado y la realidad
+
+Como consecuencia de la obsoleta ordenación urbanística se produce una paradoja en la
+oferta de vivienda. Por un lado, existen viviendas previstas en los planes, que constituyen
+el volumen total de edificabilidad residencial potencial que el planeamiento asigna a los
+suelos en fase de desarrollo. En España, este stock teórico alcanza la cifra de 9,5 millones de
+viviendas. Pero se trata de un dato engañoso, el 72,9% de ellas (6,9 millones de viviendas)
+se encuentran pendientes de ejecución.
+
+Esta enorme brecha entre lo planificado y la realidad urbanística se explica porque la
+inmensa mayoría de la oferta de vivienda potencial se encuentra en suelos que no tienen la
+condición de finalistas (solares). Este suelo permanece bloqueado a la espera de completar
+largos procesos de gestión administrativa y obras de urbanización antes de que pueda
+iniciarse la construcción.
+
+Un ejemplo paradigmático es el desarrollo de Madrid Campamento: pese a contar
+desde hace casi dos décadas con planes que contemplan más de 10.000 viviendas, ha
+permanecido paralizado durante años por trámites urbanísticos, convenios administrativos
+y demoras burocráticas, hasta el punto de que, veinte años después de los primeros
+anuncios, no se ha construido una sola vivienda. Este caso ilustra con claridad cómo el
+planeamiento, sin suelo finalista efectivo, no genera oferta real.
+
+
+
+
+                                                                                             21
+Centro
+Ruth Richardson
+
+
+
+
+                  Gráfico 10
+
+
+
+
+                               22
+                    Centro
+                    Ruth Richardson
+
+
+
+
+5. Regulación del producto “vivienda”
+
+Hemos visto cómo la regulación urbanística restringe artificialmente la disponibilidad de
+suelo edificable. Pero incluso cuando existe suelo disponible, un segundo gran obstáculo
+comprime la rentabilidad del sector, la regulación técnica de la propia vivienda como
+producto. En las últimas dos décadas, España ha acumulado sucesivas capas regulatorias
+que han elevado de forma sustancial los estándares técnicos y energéticos de la obra
+nueva, encareciendo significativamente el coste de producción sin que, en muchos casos,
+el mercado haya sido capaz de trasladar íntegramente ese sobrecoste al precio final.
+
+       5.1 El precio a pagar por la regulación
+
+Los costes de edificación en España han experimentado un crecimiento exponencial en
+las últimas dos décadas. Mientras que en 2005 el coste de ejecución material se situaba
+en torno a los 635€/m2, en la actualidad esta cifra se ha incrementado significativamente
+hasta alcanzar los 1323€/m2.
+
+Con el fin de determinar si este incremento responde únicamente a la pérdida de poder
+adquisitivo de la moneda, se ha procedido a deflactar la serie histórica de precios desde el
+año 2000. Este análisis permite aislar el efecto de la inflación general y centrar el estudio en
+el aumento de costes específico del sector.
+
+Como se observa en el siguiente gráfico, los repuntes más agudos en los costes de
+construcción guardan una correlación directa con dos hitos regulatorios de gran impacto:
+la entrada en vigor del Código Técnico de la Edificación (CTE) en 2006 y la implementación
+de estándares de eficiencia energética altamente exigentes en 2020.
+
+
+
+
+                                                                                              23
+Centro
+Ruth Richardson
+
+
+                  Gráfico 11
+
+
+
+
+                               24
+                    Centro
+                    Ruth Richardson
+
+
+
+Aunque el Gráfico 11 identifica claramente dos grandes saltos en el coste real de
+construcción asociados al CTE y a la revisión de estándares energéticos, es cierto que hubo
+al menos dos reformas intermedias relevantes: el Real Decreto 1371/2007, que endureció
+los requisitos de aislamiento acústico (aplicable desde 2009), y la trasposición parcial de la
+Directiva 2010/31/UE de eficiencia energética (2014).
+
+Sin embargo, ninguna de estas dos reformas generó un impacto significativo en los costes
+observados. La razón principal es que ambas se solaparon con periodos de recesión
+económica y de muy baja demanda de vivienda (crisis 2008-2014), lo que impidió que
+los nuevos requisitos se reflejaran plenamente en los precios de mercado. Además, los
+estándares introducidos fueron menos ambiciosos que los de 2020 y permitieron mayor
+flexibilidad en su aplicación.
+
+       5.2 El precio de la eficiencia energética
+
+La regulación energética más reciente ha sido, con diferencia, la que ha generado el
+mayor sobrecoste. La revisión del CTE en 2019 (Real Decreto 732/2019), con aplicación
+obligatoria desde 2020, impuso estándares cercanos al “edificio de consumo casi nulo”
+(NZEB), exigiendo niveles de aislamiento térmico, instalaciones de alta eficiencia y, en
+muchos casos, integración de energías renovables. El resultado ha sido una mejora notable
+en la eficiencia energética de la obra nueva: como muestra el Gráfico 12, tanto el consumo
+energético primario como las emisiones de CO₂ asociadas a las promociones residenciales
+han caído de forma acusada desde 2018.
+
+
+
+
+                                                                                             25
+                   Centro
+                   Ruth Richardson
+
+
+                                       Gráfico 12
+
+
+
+
+Sin embargo, esta mejora ha venido acompañada de un encarecimiento estructural del
+producto. En la práctica, la regulación energética ha convertido la vivienda nueva en
+un producto de “calidad premium” cuyos estándares constructivos se acercan a los de
+la vivienda de lujo de hace quince años. El problema es que el mercado no demanda
+exclusivamente vivienda de lujo: la mayor parte de la nueva demanda (jóvenes y clase
+media) requiere vivienda asequible.
+
+Al imponer estándares de alta eficiencia energética de forma universal y obligatoria,
+la regulación ha reducido drásticamente la oferta de vivienda nueva en el segmento
+de precio medio-bajo, desplazando toda la producción hacia un nicho de mayor coste
+y menor volumen. Este fenómeno afecta también a la vivienda protegida, ya que al
+imponer estándares energéticos elevados con precios máximos regulados, la normativa
+comprime los márgenes hasta hacer inviables muchas promociones, reduciendo la oferta
+precisamente donde más se necesita.
+
+
+
+
+                                                                                        26
+                    Centro
+                    Ruth Richardson
+
+
+
+El resultado final es claro: la combinación de mayores costes regulatorios y la dificultad para
+trasladarlos completamente al precio de venta (por la elasticidad-precio de la demanda en
+muchos mercados) comprime aún más los márgenes de los promotores y constructores.
+Como ya vimos en los Gráficos 4 y 6, esto explica en gran medida por qué, a pesar del
+fuerte incremento de los precios de la vivienda existente, la construcción de obra nueva
+sigue estancada y la rentabilidad neta del sector permanece en terreno negativo.
+
+
+
+
+                                                                                             27
+                    Centro
+                    Ruth Richardson
+
+
+
+6. Dinámicas internas
+
+Las dinámicas internas del sector de la construcción también lastran el posible crecimiento
+de la rentabilidad de construir.
+
+6.1 El estancamiento en la productividad
+
+La productividad del sector de la construcción es uno de los graves problemas que arrastra
+el sector desde hace décadas, y se ha ido agravando con la entrada en vigor de nueva
+normativa que añade más capas de complejidad regulatoria y costes de cumplimiento.
+
+El único repunte visible de la productividad en el sector de la construcción coincidió con el
+estallido de la burbuja inmobiliaria, un efecto puramente de composición derivado de la
+salida de las empresas menos eficientes. Una vez pasado ese ajuste, el deterioro continúa,
+evidenciando que los problemas de fondo no se han corregido y que el sector carga con
+debilidades estructurales que impiden mejorar su desempeño.
+
+
+
+
+                                                                                                28
+Centro
+Ruth Richardson
+
+
+
+                  Gráfico 13
+
+
+
+
+                               29
+                   Centro
+                   Ruth Richardson
+
+
+       6.2 Una estructura de microempresas
+
+La falta de productividad del sector también se alimenta de su estructura empresarial:
+la proporción de compañías grandes, que suelen ser las más capaces de invertir en
+tecnología, formación y organización eficiente, es muy inferior a la media nacional.
+
+El empleo de la construcción se concentra de forma abrumadora en microempresas
+y firmas muy pequeñas, lo que limita economías de escala, dificulta la adopción de
+procesos avanzados y reduce la capacidad para retener talento cualificado. Este patrón de
+atomización no es nuevo, pero con el tiempo se ha convertido en un lastre estructural que
+impide al sector converger con los niveles de productividad del resto de la economía.
+
+                                         Gráfico 14
+
+
+
+
+                                                                                            30
+                     Centro
+                     Ruth Richardson
+
+
+       6.3 La mano de obra cualificada
+
+La escasez de mano de obra en la construcción es otro de los elementos que se ha convertido
+en un freno para la actividad, reflejando un déficit que afecta a todos los segmentos del sector.
+
+                                           Gráfico 15
+
+
+
+
+                                                                                                31
+                   Centro
+                   Ruth Richardson
+
+
+
+Las encuestas empresariales reflejan una preocupación creciente con respecto a la
+escasez de mano de obra. Este fenómeno responde a una confluencia de factores
+sociodemográficos y formativos. En primer lugar, destaca el envejecimiento de la población
+activa, cuya edad media supera los 45 años, comprometiendo el relevo generacional. A ello
+se suma la muy baja presencia de mujeres, la elevada proporción de ocupados con bajo
+nivel formativo y una oferta insuficiente de formación profesional ligada a edificación y
+obra civil. El incremento sostenido de vacantes desde 2016 ratifica que la oferta de trabajo
+cualificado es incapaz de absorber el dinamismo de la demanda sectorial.
+
+                                         Gráfico 16
+
+
+
+
+                                                                                          32
+                   Centro
+                   Ruth Richardson
+
+
+Asimismo, la evolución del coste laboral en la construcción refleja una tensión creciente
+entre regulación y capacidad de atracción de mano de obra. En los últimos años, el
+aumento del salario mínimo interprofesional y las subidas pactadas en los convenios
+colectivos han elevado el coste nominal del empleo, pero este incremento no se ha
+traducido en una mejora equivalente de los salarios reales percibidos por los trabajadores.
+
+Una parte sustancial del ajuste se ha canalizado a través de mayores cotizaciones
+obligatorias y otros costes asociados al empleo, de modo que las empresas afrontan un
+mayor coste laboral total sin poder ofrecer remuneraciones reales más atractivas. Esta
+dinámica dificulta la captación y retención de trabajadores en un sector ya afectado por
+envejecimiento, baja productividad y escasez de mano de obra cualificada, reforzando el
+cuello de botella laboral que limita la capacidad de respuesta de la construcción.
+
+                                         Gráfico 17
+
+
+
+
+                                                                                           33
+                    Centro
+                    Ruth Richardson
+
+
+       6.4 Se dispara el precio de los materiales
+
+El encarecimiento de los insumos productivos se ha convertido en otro obstáculo
+significativo para la rentabilidad y la capacidad productiva del sector. Materiales clave —
+como los bituminosos, esenciales para firmes, impermeabilizaciones y numerosas obras de
+infraestructura— se han incrementado más de un 45% desde 2021, tensionando los márgenes
+de las empresas y encareciendo cualquier proyecto. Algo similar ocurre con el cemento, el
+aluminio y la madera, que también acumulan subidas de dos dígitos y trasladan presión tanto a
+los costes finales de la construcción como a la planificación de nuevas promociones.
+
+El aumento sostenido de los precios reduce la viabilidad económica de muchas actuaciones y
+actúa como un freno adicional en un sector ya condicionado por la escasez de mano de obra y
+la débil productividad.
+
+                                         Gráfico 18
+
+
+
+
+                                                                                              34
+                     Centro
+                     Ruth Richardson
+
+
+
+7. Conclusiones
+
+El análisis desarrollado a lo largo de este informe permite extraer una conclusión clara: la crisis
+de acceso a la vivienda en España no es el resultado de un fallo coyuntural del mercado, sino de
+un bloqueo político estructural de la oferta. A pesar de que el precio de la vivienda ha crecido
+más de un 40% desde 2020 —muy por encima de la inflación general—, la construcción de
+nueva vivienda apenas ha incrementado. Esta desconexión entre precios y oferta contradice las
+predicciones básicas de la teoría económica y apunta a la existencia de diversas regulaciones
+que impiden que la señal de precios se traduzca en mayor producción.
+
+La crisis de vivienda en España no puede resolverse sin actuar contra los factores políticos que
+bloquean la oferta. Mientras la promoción de vivienda siga siendo una actividad de baja o nula
+rentabilidad, las subidas de precios no se traducirán en más oferta, sino en mayor exclusión
+residencial. Corregir esta situación exige una revisión profunda del marco regulatorio del suelo
+y de la edificación, una simplificación administrativa y una reflexión realista sobre los costes que
+se imponen al producto “vivienda”. En ausencia de estas reformas, el déficit de oferta adquirirá
+un carácter crónico, perpetuando la presión alcista sobre los precios y comprometiendo el
+acceso a la vivienda a largo plazo.
+
+En resumen, la construcción de vivienda no se incrementa en España porque la rentabilidad
+de los constructores es, en promedio, negativa. Y esta rentabilidad negativa se explica por
+la muy restrictiva regulación urbanística y por la creciente regulación en los estándares de
+construcción.
+
+
+
+
+                                                                                                  35
+hesperides.edu.es
+

@@ -1,0 +1,908 @@
+Las Reformas de la
+Seguridad Social en
+España: un desequilibrio
+permanente
+
+Autor
+Santiago Calvo
+
+
+
+
+hesperides.edu.es
+                         Centro
+                         Ruth Richardson
+
+
+
+
+Resumen ejecutivo
+Una bomba de relojería amenaza el sistema de pensiones español. Basado en un modelo
+de reparto donde los activos de hoy sustentan a los jubilados, parece desmoronarse bajo
+el peso del dramático envejecimiento de la población, la baja natalidad y el efecto de las
+crisis económicas. Su crítica insostenibilidad financiera ha llevado a que, desde mediados
+de los 80, diversas reformas buscasen adaptar el sistema a una realidad tozuda, con una
+proporción cada vez menor de cotizantes por pensionista, pero no han logrado desacti-
+var la cuenta atrás.
+
+La primera gran reforma, realizada en 1985, endureció significativamente los requisitos
+de acceso a la jubilación, aumentando los años mínimos de cotización y ampliando el
+período considerado para calcular la pensión. Estas medidas buscaban reducir el gasto
+inmediato, aunque generaron un fuerte rechazo social, manifestado en protestas y huel-
+gas. Posteriormente, el acuerdo político del Pacto de Toledo de 1997 supuso un consen-
+so histórico, separando fuentes de financiación y creando un Fondo de Reserva para ga-
+rantizar las pensiones futuras, además de asegurar que las prestaciones se actualizaran
+conforme a la inflación prevista.
+
+La crisis económica iniciada en 2008 puso en evidencia la fragilidad del sistema. Las re-
+formas de 2011 y 2013 supusieron ajustes profundos: se elevó gradualmente la edad de
+jubilación a los 67 años y se ampliaron los años considerados para calcular las pensiones.
+También se implementaron mecanismos automáticos, como el Índice de Revalorización
+de Pensiones (IRP) y el Factor de Sostenibilidad, diseñados para limitar el crecimiento del
+gasto futuro, aunque estos cambios despertaron importantes críticas por implicar reduc-
+ciones efectivas de las pensiones.
+
+En los últimos años, con las reformas de 2021 y 2023, el enfoque político ha cambiado
+sustancialmente. El gobierno decidió revertir recortes anteriores, derogando el Factor de
+Sostenibilidad e indexando nuevamente las pensiones al IPC real. Para financiar estos in-
+crementos sin afectar la cuantía de las pensiones, se han aumentado considerablemente
+las cotizaciones sociales, especialmente para las rentas más altas, mediante instrumen-
+tos como el Mecanismo de Equidad Intergeneracional (MEI) y la nueva “cotización de
+solidaridad”, que grava incluso los ingresos superiores al máximo permitido para cotizar.
+A pesar del endurecimiento progresivo de los requisitos de acceso —desde 1985, el pe-
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                2
+                  Centro
+                  Ruth Richardson
+
+
+
+
+riodo de cotización necesario para obtener la pensión completa ha pasado de 10 a 37
+años—, el gasto público en pensiones no ha dejado de crecer, situándose ya por encima
+del 12 % del PIB. Las últimas reformas trasladan el esfuerzo financiero principalmente a
+los trabajadores en activo, pero persisten serias dudas sobre su capacidad para sostener
+el sistema ante el desafío demográfico que afrontará España en las próximas décadas.
+
+
+
+
+                                                                                       3
+                         Centro
+                         Ruth Richardson
+
+
+
+
+1. Introducción
+
+El sistema público de pensiones en España opera bajo un modelo de reparto, en el que
+las cotizaciones de los trabajadores en activo financian directamente las prestaciones de
+los pensionistas. A lo largo de las últimas décadas, ha sido objeto de múltiples reformas,
+impulsadas por crecientes presiones demográficas, desequilibrios económicos y riesgos
+para su sostenibilidad financiera. El envejecimiento de la población, junto con episodios
+de elevada tasa de desempleo durante sucesivas crisis económicas, ha tensionado de
+forma recurrente la relación entre cotizantes y beneficiarios, comprometiendo la estabi-
+lidad del sistema.
+
+Como consecuencia, desde los años 80 los gobiernos han implementado reformas pa-
+ramétricas para ajustar requisitos y prestaciones, tratando de asegurar la sostenibilidad
+del sistema sin renunciar a la suficiencia de las pensiones. Estas reformas han combina-
+do cambios en los parámetros clave (edad de jubilación, periodos de cotización, fórmula
+de cálculo, revalorización, etc.) con medidas de índole financiera (fondo de reserva o
+transferencias estatales) y con esfuerzos normativos para lograr una supuesta equidad
+intergeneracional y distributiva.
+
+En este primer informe de una serie de trabajos que se publicarán desde el Centro Ruth
+Richardson, se revisan las principales reformas del sistema de jubilación en España, cen-
+trando el análisis en los hitos de 1985, 1997, 2022, 2007, 2011/2013 y 2021/2023. De cada
+reforma se explican sus principales características, las motivaciones que la impulsaron y
+su impacto esperado o real sobre la sostenibilidad del sistema. Asimismo, se analizarán
+de forma crítica sus consecuencias.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente               4
+                         Centro
+                         Ruth Richardson
+
+
+
+
+2. Reforma de 1985: Endurecimiento
+inicial de requisitos
+
+La primera gran reforma de las pensiones se materializó con la Ley 26/1985, de medidas
+Urgentes de Reforma de la Seguridad Social, aprobada en junio de 1985. Esta reforma,
+impulsada por el gobierno del PSOE de aquel entonces, respondía a la delicada situación
+que ya atravesaba la Seguridad Social a mediados de los 80. El sistema venía arrastrando
+notables desequilibrios: aumento continuo de pensionistas, economía en dificultades y
+necesidad de racionalizar el gasto.
+
+La ley de 1985 introdujo restricciones significativas en el acceso y cálculo de las pensio-
+nes de jubilación, con el objetivo de ahorrar costes y frenar el crecimiento del gasto. Los
+principales cambios fueron los siguientes:
+
+ • Periodo mínimo de cotización o carencia: se aumentó de 10 a 15 años el mínimo de
+   años cotizados exigidos para tener derecho a una pensión contributiva de jubilación.
+   Esto dejó fuera del acceso a la pensión a quienes no alcanzaran esos 15 años cotiza-
+   dos, endureciendo notablemente el requisito.
+ • Base reguladora y años de cálculo: la base de cálculo de la pensión (base regula-
+   dora) se amplió a los últimos ocho años cotizados (96 meses) antes de la jubilación,
+   mientras que hasta esa reforma solo se consideraban los últimos dos años de sala-
+   rios. Al promediar sobre un periodo más largo, en donde se incluyen salarios inferio-
+   res a los del tramo final de la carrera, la pensión resultante se reducía en promedio.
+   Esto suponía un recorte efectivo de la cuantía de las nuevas pensiones.
+ • Otros requisitos: se introdujo la exigencia de que al menos dos de los años cotizados
+   estuvieran dentro de los ocho inmediatamente anteriores a la jubilación. La razón
+   era que así se evitaba que alguien que hubiera cotizado hace mucho tiempo y luego
+   dejase de trabajar se jubilara con derecho pleno sin cotizar en sus últimos años de
+   vida laboral.
+
+La reforma de las pensiones de 1985 endureció el acceso a la jubilación y redujo su cuan-
+tía media, al ampliar el periodo de cómputo de la pensión a más años de salario, habi-
+tualmente más bajos. La medida tuvo un impacto inmediato y generó una fuerte con-
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                5
+                         Centro
+                         Ruth Richardson
+
+
+
+
+troversia social y política. Los sindicatos denunciaron un recorte de derechos laborales,
+y Comisiones Obreras (CC.OO.) convocó una huelga general el 20 de junio de ese año en
+protesta por lo que consideraba un ataque a la jubilación y una solución injusta al déficit
+de la Seguridad Social. Aunque la Unión General de Trabajadores (UGT), tradicionalmen-
+te cercana al PSOE, no respaldó oficialmente la huelga, sí expresó su descontento, en un
+contexto de creciente malestar social. Pese a las protestas, el Gobierno aprobó la ley, jus-
+tificándola como un paso necesario para corregir desequilibrios financieros y asegurar la
+sostenibilidad del sistema público de pensiones a corto plazo.
+
+La reforma de 1985 fue la primera de las intervenciones de calado que se producirían
+para cuadrar las cuentas del sistema, pero pese a ello la presión siguió en aumento, lo
+que evidenciaba que serían necesarias nuevas reformas y sentaría las bases para enten-
+der que se debía adaptar a las circunstancias económicas.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                 6
+                         Centro
+                         Ruth Richardson
+
+
+
+
+3. Reforma de 1997: El Pacto de Toledo
+y la consolidación del sistema
+
+A mediados de los años 90, persistía la preocupación por la viabilidad de las pensiones.
+El continuo aumento del gasto y la reducción de cotizantes por pensionista llevaron al
+Congreso de los Diputados a aprobar, en 1994, la creación de una comisión para estu-
+diar los problemas estructurales del sistema y proponer reformas integrales. De allí sur-
+gió el conocido Informe del Pacto de Toledo (1995), que contenía 15 recomendaciones
+para asegurar la sostenibilidad y mejorar la gestión de la Seguridad Social. Este acuerdo
+parlamentario, alcanzado con amplio consenso de las fuerzas políticas, supuso un hito:
+por primera vez se fijaron directrices de reforma separando el debate de pensiones del
+vaivén partidista, buscando soluciones de Estado a largo plazo. Entre las recomendacio-
+nes del Pacto de Toledo destacaban la separación de las fuentes de financiación (que las
+pensiones contributivas se financiaran con cotizaciones y las partidas asistenciales con
+impuestos), la creación de reservas en épocas favorables, el reforzamiento de la contri-
+butividad y diversas mejoras de gestión y equidad.
+
+El Gobierno cambió de signo en 1996 con el Partido Popular, pero se mantuvo el espíritu
+de consenso. En octubre de 1996 el Gobierno y los principales sindicatos (CCOO y UGT),
+junto con asociaciones empresariales, firmaron el Acuerdo sobre Consolidación y Racio-
+nalización del Sistema de Seguridad Social. que plasmaba las recomendaciones del Pacto
+de Toledo. Este acuerdo se tradujo jurídicamente en la Ley 24/1997, de Consolidación y
+Racionalización de la Seguridad Social, aprobada en julio de 1997. Dicha ley implementó
+varias reformas paramétricas importantes:
+
+ • Ampliación del periodo de cálculo: se extendieron los años tomados para calcular la
+   pensión (base reguladora) de 8 a 15 años. Supuso otro descenso potencial en la cuan-
+   tía de las pensiones futuras, al basarse en un promedio más dilatado en el tiempo. La
+   ampliación sería gradual hasta completarse en 2001.
+ • Revalorización según inflación prevista: estableció que las pensiones se revaloriza-
+   rían anualmente conforme al IPC previsto (inflación esperada) y posteriormente se
+   ajustarían en caso de desviación con la inflación real. En otras palabras, se garanti-
+   zaba el mantenimiento del poder adquisitivo de las pensiones vinculándolas oficial-
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              7
+                         Centro
+                         Ruth Richardson
+
+
+
+
+   mente al coste de la vida. Hasta entonces, la indexación con la inflación no estaba
+   normativamente consolidada (aunque en la práctica el gobierno solía actualizar las
+   pensiones, ahora quedaba recogido en la ley con un mecanismo explícito).
+ • Creación del Fondo de Reserva: se dispuso la creación de un fondo de reserva de
+   la Seguridad Social para acumular excedentes en épocas de superávit, destinados al
+   pago futuro de pensiones. Este “colchón” pretendía ahorrar en las vacas gordas para
+   gastar en las flacas, aumentando la resiliencia financiera del sistema. Gracias al ciclo
+   económico favorable de finales de los 90 y principios de los 2000, el fondo de reserva
+   efectivamente fue creciendo en los años posteriores.
+ • Separación de fuentes y financiación estatal: siguiendo el Pacto de Toledo, la ley
+   avanzó en la separación entre prestaciones contributivas y no contributivas. Gastos
+   impropios del sistema (como sanidad, servicios sociales o complementos a mínimos)
+   comenzaron a financiarse con cargo a los Presupuestos Generales del Estado, alivian-
+   do las cuentas de la Seguridad Social. Aunque este proceso se completaría en años
+   sucesivos (por ejemplo, en 1999-2001 la sanidad pasó completamente a financiarse
+   vía impuestos y fue transferida a las comunidades autónomas), 1997 marcó el inicio
+   formal de esta separación.
+ • Eliminación progresiva de topes de cotización bajos: la ley también contempló la
+   gradual eliminación de topes de cotización por debajo del máximo. Esto se refiere
+   a que algunos regímenes especiales tenían bases máximas de cotización inferiores
+   al tope general; el acuerdo fue unificarlos para que todos cotizaran hasta el mismo
+   límite máximo, aumentando ingresos y equidad horizontal.
+ • Jubilación anticipada y parcial: si bien la ley de 1997 no profundizó en esto (lo harían
+   acuerdos posteriores), en esta época se empezaron a sentar bases para una mayor
+   flexibilidad en la edad de jubilación, permitiendo salidas anticipadas con coeficientes
+   reductores o modalidades de jubilación parcial con contrato de relevo.
+
+Sin embargo, esta reforma no aseguraba la sostenibilidad a largo plazo. La bonanza de
+los 2000 ocultaba fragilidades: las pensiones seguían subiendo por la entrada de co-
+hortes con mejores historiales de cotización y revalorizaciones, y el factor demográfico
+apuntaba a un fuerte incremento de pensionistas. La equidad intergeneracional seguía
+siendo un tema central: se consideraba justo que cada generación financiase sus pro-
+pias pensiones acumulando excedentes, pero quedaba por ver si esos ahorros serían
+suficientes.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                8
+                         Centro
+                         Ruth Richardson
+
+
+
+
+4. Reforma de 2001/2002: Incentivos
+para prolongar la vida laboral y
+jubilación flexible
+
+Durante los primeros años 2000, la economía española siguió creando empleo a buen
+ritmo, pero persistía la necesidad de reformar el sistema de pensiones para garantizar
+su sostenibilidad ante el inminente retiro de la generación del baby boom. Siguiendo las
+revisiones del Pacto de Toledo, en abril de 2001 el Gobierno (entonces del PP) alcanzó
+un nuevo acuerdo con interlocutores sociales denominado Acuerdo para la Mejora y De-
+sarrollo del Sistema de Protección Social. Este pacto se materializó legislativamente en
+la Ley 35/2002, de 12 de julio, que introdujo varias modificaciones orientadas a dotar de
+mayor flexibilidad el tránsito a la jubilación e incentivar la prolongación de la vida laboral.
+No se trató de una reforma tan estructural como las de 1985 o 1997, sino más bien de
+ajustes paramétricos puntuales y nuevas opciones para los trabajadores próximos a la
+jubilación. Las medidas más destacadas de la reforma de 2002 fueron:
+
+ • Fomento de la jubilación demorada: se introdujeron incentivos para retrasar la ju-
+   bilación más allá de los 65 años. En concreto, quienes voluntariamente continuaran
+   trabajando pasados los 65 podían obtener un incremento en su pensión por cada año
+   adicional de trabajo; por ejemplo, se establecieron porcentajes de aumento acumu-
+   lativo en la pensión por cada año cotizado después de la edad ordinaria. Esta política
+   buscaba aprovechar que la esperanza de vida estaba en aumento y muchos trabaja-
+   dores podían y querían seguir activos, a la vez que contribuía a la sostenibilidad al
+   acortar el periodo como pensionista y aumentar las cotizaciones totales.
+ • Jubilación anticipada a los 61 años: se permitió, con carácter general, la jubilación
+   anticipada a partir de los 61 años para ciertos casos, cuando hasta entonces la edad
+   mínima efectiva en muchos supuestos era 60 o 61 solo en regímenes especiales. En la
+   ley 35/2002 se reguló que los trabajadores afiliados después del 1 de enero de 1967
+   (es decir, la generación que no había cotizado bajo el antiguo régimen franquista)
+   podían jubilarse anticipadamente desde los 61 años siempre que reunieran deter-
+   minados requisitos. Esos requisitos incluían tener un mínimo de años cotizados (por
+   ejemplo, 30 años) y normalmente estar en situación de desempleo involuntario o me-
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                    9
+                         Centro
+                         Ruth Richardson
+
+
+
+
+    diante coeficientes reductores en caso de retiro voluntario. En esencia, se generalizó
+    la posibilidad de jubilarse antes de la edad legal con penalizaciones, integrando a los
+    distintos colectivos bajo reglas comunes.
+
+Es decir, esta reforma no tuvo un enfoque basado en recortes del sistema gracias a la
+buena dinámica de la economía. La motivación principal era aumentar la participación
+laboral de los trabajadores de más edad y flexibilizar la transición del empleo a la jubi-
+lación. La economía en expansión enmascaró cualquier efecto adverso: el número de
+cotizantes creció tanto que los gastos fueron asumibles.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente               10
+                         Centro
+                         Ruth Richardson
+
+
+
+
+5. Reforma de 2007: Nuevos ajustes
+paramétricos en vísperas de la crisis
+
+En 2006, una vez más gobierno, sindicatos y empresarios negociaron cambios en mate-
+ria de Seguridad Social siguiendo las recomendaciones actualizadas del Pacto de Toledo
+(revisado en 2003). Fruto de ese diálogo fue el Acuerdo sobre Medidas en materia de
+Seguridad Social de julio de 2006, que posteriormente dio lugar a la Ley 40/2007, de 4 de
+diciembre. Esta ley introdujo ajustes técnicos adicionales con el fin de seguir fortalecien-
+do la contributividad y contener algunos factores de gasto, a la vez que corregir ciertas
+prácticas que se habían detectado. Las principales modificaciones incluyeron:
+
+ • Cómputo de cotizaciones más completo: se modificó la forma de contabilizar los
+   años cotizados para el cálculo de la pensión, pasando a computar los días efectiva-
+   mente cotizados en lugar de considerar también las pagas extraordinarias como pe-
+   ríodos cotizados completos. En la práctica, antes de esta ley, por cada año trabajado
+   con pagas extra se contaban 14 meses (12 ordinarios + 2 extras) a efectos de cotiza-
+   ción, mientras que tras la reforma se pasó a contabilizar 12 meses reales por año.
+   Esto aumenta el número de años efectivos de cotización necesarios para alcanzar el
+   100 por cien de la pensión, puesto que antes un trabajador en 35 años de servicio
+   podía acumular 37,3 “mensualidades cotizadas” con extras, y ahora serían 35 exactos.
+   Así se elevó el periodo efectivo considerado sin subir formalmente los años, contribu-
+   yendo a una ligera reducción del importe de la pensión inicial.
+ • Jubilación parcial más restrictiva: se elevó la edad mínima de la jubilación parcial
+   de 60 a 61 años, endureciendo además sus condiciones. La ley exigió que para aco-
+   gerse a jubilación parcial el trabajador tuviera al menos 6 años de antigüedad en la
+   empresa y acreditara 30 años cotizados. Asimismo, se redujo la posibilidad de reducir
+   la jornada excesivamente: la intención era evitar abusos por los cuales trabajadores
+   con 60 años prácticamente dejaban de trabajar cobrando casi una pensión completa.
+   Con esta reforma, la jubilación parcial (que permitía compatibilizar empleo a tiempo
+   parcial y pensión) quedó condicionada a más años cotizados y un año más de edad,
+   lo que recortó el número de beneficiarios y ahorró costes al sistema.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                11
+                         Centro
+                         Ruth Richardson
+
+
+
+
+La reforma de 2007 del sistema de pensiones español buscó corregir vacíos y mejorar la
+sostenibilidad y equidad contributiva, aumentando la edad de jubilación parcial y ajus-
+tando el cálculo de cotizaciones. Aunque redujo el abuso de la jubilación parcial, su im-
+pacto fue limitado por la crisis económica de 2008. De hecho, si algo se puede destacar
+de esta reforma es que era insuficiente para enfrentar los desafíos futuros, por lo que fue
+seguida por medidas más drásticas en 2011.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente               12
+                         Centro
+                         Ruth Richardson
+
+
+
+
+6. Reformas de 2011 y 2013:
+Respuesta a la crisis y mecanismos de
+sostenibilidad
+
+La década de 2010 supuso un punto de inflexión para el sistema de pensiones en España.
+La crisis financiera (2008-2013) disparó el déficit de la Seguridad Social, fruto del desplo-
+me del empleo y del aumento del gasto pensionista —impulsado por las jubilaciones
+anticipadas de muchos trabajadores mayores de 60 años durante la recesión—. En este
+escenario, y bajo la presión de la Unión Europea y los mercados —que demandaban re-
+formas estructurales para asegurar la sostenibilidad del sistema—, el país implementó
+dos reformas de calado: la primera en 2011, bajo el gobierno del PSOE, y la segunda en
+2013, con el PP al frente. Ambas representaron un giro paradigmático al establecer, por
+primera vez, el incremento progresivo de la edad de jubilación y mecanismos automáti-
+cos de ajuste vinculados a la evolución demográfica.
+
+Por un lado, en enero de 2011, tras un difícil acuerdo social, el Gobierno de José Luis
+Rodríguez Zapatero aprobó una importante reforma (Ley 27/2011, de 1 de agosto) que
+implicaba modificar parámetros básicos que habían permanecido inalterados durante
+décadas. Las claves de la reforma de 2011 fueron:
+
+ • Cómputo de cotizaciones más completo: Edad legal de jubilación: de 65 a 67 años.
+   Se incrementó la edad ordinaria de jubilación de 65 a 67 años, de forma gradual a lo
+   largo de un periodo transitorio de 15 años, desde 2013 hasta 2027. Esto significa que
+   la edad de retiro se va elevando algunos meses cada año; por ejemplo, quienes se
+   jubilaron en 2013 lo hicieron con 65 años y 1 mes, y así sucesivamente hasta alcan-
+   zar 67 completos en 2027. No obstante, se mantuvo la posibilidad de jubilarse a los
+   65 años con el 100 por cien de la pensión si se acreditaba una carrera de cotización
+   muy larga (inicialmente 38,5 años, fijado al final del periodo transitorio) Es decir, se
+   introdujo una cláusula que permite a quienes han cotizado 38 años y medio o más re-
+   tirarse aún a 65 sin penalización, reconociendo que esas personas ya han contribuido
+   suficientemente.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                 13
+                         Centro
+                         Ruth Richardson
+
+
+
+
+ • Ampliación del periodo de cálculo de 15 a 25 años. El período de cotización consi-
+   derado para calcular la base reguladora de la pensión se amplió gradualmente de los
+   15 años anteriores a la jubilación hasta los 25 años. Esta extensión se implementó a
+   lo largo de varios años. Con ello, la pensión inicial de jubilación se calcula sobre una
+   base reguladora que promedia los salarios (o bases de cotización) de prácticamente
+   la mitad de la vida laboral, en lugar de solo el último cuarto de la misma. Esta medida
+   reduce la tasa de sustitución, especialmente para quienes tenían sus mejores salarios
+   al final de la carrera, y acerca la pensión a lo cotizado a lo largo de la vida.
+ • Aumento de años cotizados para pensión completa: paralelamente al aumento de
+   la edad, se incrementó el número de años de cotización requeridos para percibir el
+   100 por cien de la pensión. Se pasó de 35 años (vigentes hasta entonces para el 100
+   por cien a los 65) a 37 años para obtener el 100 por cien a los 67 al final del periodo
+   transitorio. En combinación con lo anterior, si alguien sigue queriendo jubilarse a los
+   65, necesitará 38,5 años para no tener recorte, y si se jubila a 67 le bastarán 37 años
+   para el 100 por cien. En caso de no llegar a esos años, se aplican coeficientes reduc-
+   tores por cada trimestre faltante.
+ • Jubilación anticipada ordinaria y forzosa: se reordenó la jubilación anticipada, es-
+   tableciendo dos vías: la anticipada involuntaria (por despido no imputable al traba-
+   jador) con posibilidad de retiro hasta 4 años antes de la edad legal (es decir, 61 años
+   cuando la edad esté en 65, y 63 cuando esté en 67), y la anticipada voluntaria hasta 2
+   años antes (63 años cuando la edad sea 65, y 65 cuando sea 67). En ambos casos se
+   endurecieron los requisitos: mínimo 33 años cotizados para anticipada involuntaria
+   y más de 35 para la voluntaria, y se aplicaron coeficientes reductores más severos
+   por cada trimestre o año de adelanto (entre el 1,625 por ciento y 1,875 por ciento
+   por trimestre según los años cotizados). Esto asegura que quien se jubile antes sufra
+   un descuento permanente significativo en su pensión, desincentivando la práctica o
+   compensando el mayor tiempo como pensionista.
+ • Incentivos a la prolongación de la vida laboral: se reforzaron los incentivos para
+   quienes trabajen más allá de la edad legal. La ley permitió aumentar la pensión por
+   encima del 100 por cien de la base reguladora, añadiendo entre un 2 por ciento y un
+   4 por ciento adicional por cada año cotizado después de la edad de jubilación (el por-
+   centaje mayor para quienes acrediten más de 40 años cotizados, por ejemplo). Esto
+   mejora lo ya introducido en 2002, para animar a retrasar el retiro.
+
+La reforma de 2011 fue impulsada bajo la presión de la crisis de deuda y como parte de
+un programa más amplio de ajustes económicos. El Ejecutivo de Zapatero negoció con
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente               14
+                         Centro
+                         Ruth Richardson
+
+
+
+
+los agentes sociales y con la oposición para sacar adelante un cambio que, aunque im-
+popular, se veía inevitable: España se alinearía con la tendencia europea de retrasar la
+edad de jubilación a 67 años, dado el aumento de longevidad. Era evidente que con una
+esperanza de vida que rondaría los 85 años en pocas décadas, no era viable sostener
+jubilaciones de más de 20 años habiendo cotizado solo 35. Además, la ratio cotizante/
+pensionista se proyectaba a la baja aceleradamente. Por tanto, el objetivo central de
+las reformas fue garantizar la sostenibilidad financiera mediante dos mecanismos: re-
+ducir el periodo promedio como pensionista (al retrasarse la jubilación, disminuyen los
+años de percepción) y aumentar el aporte vitalicio de cada trabajador (al prolongarse la
+vida laboral con más años cotizados y un cálculo más amplio de la base reguladora, lo
+que reduce proporcionalmente la cuantía de la pensión). También había motivaciones de
+equidad intergeneracional: se buscaba que las generaciones del baby boom asumieran
+trabajar un poco más y cobrar algo menos que sus predecesores, para aliviar la carga a
+las siguientes generaciones.
+
+Empero, con el cambio de gobierno en 2012 y en plena crisis económica, se decidió
+profundizar en las reformas. El nuevo ejecutivo consideró que, además de la edad y años
+cotizados (ya legislados en 2011), era necesario actuar sobre el crecimiento anual del
+gasto en pensiones, que seguía disparado por la inercia demográfica. Para ello, en 2013
+impulsó una reforma unilateral (esta vez sin consenso con la oposición ni pleno acuerdo
+social) que introdujo mecanismos automáticos para ajustar las pensiones a la situación
+financiera del sistema. Nació así la Ley 23/2013, de 23 de diciembre, que implantó dos
+elementos novedosos: el Índice de Revalorización de las Pensiones (IRP) y el Factor de
+Sostenibilidad (adelantando y redefiniendo el previsto para 2027). Las medidas principales
+de esta reforma fueron:
+
+ • Índice de Revalorización de las Pensiones (IRP): se reemplazó la fórmula de actuali-
+   zación anual basada en el IPC por un nuevo índice propio, calculado en función de la
+   salud financiera del sistema. Este IRP consideraba ingresos por cotizaciones, gastos
+   en pensiones, número de pensiones y variaciones esperadas, y arrojaba un porcen-
+   taje de incremento anual de las pensiones. Es importante destacar que la ley estable-
+   ció que el IRP tendría un suelo mínimo del 0,25 por ciento anual y un techo máximo
+   equivalente al IPC + 0,5 por ciento. En la práctica, dado que el sistema estaba en
+   déficit, el IRP resultante quedó en el mínimo del 0,25 por ciento por varios años. Esto
+   significó, de facto, una desindexación de las pensiones respecto a la inflación: duran-
+   te 2014-2017, por ejemplo, las pensiones subieron el porcentaje del umbral mínimo
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              15
+                         Centro
+                         Ruth Richardson
+
+
+
+
+   cada año. El objetivo de esta medida era contener el crecimiento del gasto en el corto
+   y medio plazo, evitando que las pensiones crecieran al ritmo de precios si la econo-
+   mía/cotizaciones no lo permitían. Sin embargo, en este periodo la inflación llegó a
+   registrar variaciones negativas, por lo que los pensionistas lograron aumentar su
+   poder adquisitivo. A pesar de esta circunstancia, fue una decisión controvertida, pues
+   rompía el compromiso histórico de mantener el poder de compra de las pensiones,
+   trasladando el ajuste a los pensionistas actuales en favor de aliviar a los cotizantes (o
+   al presupuesto).
+ • Factor de Sostenibilidad (FS): La ley 23/2013 introdujo un factor de sostenibilidad
+   aplicable a la pensión inicial de jubilación a partir de 2019. El FS ajustaría la cuantía
+   inicial de la pensión para los nuevos jubilados en función de la esperanza de vida a
+   los 67 años en el momento de su retiro. En términos simples, si la esperanza de vida
+   aumentaba, las nuevas pensiones serían ligeramente más bajas para compensar que
+   se cobrarán por más tiempo. Se estimaba que, aproximadamente, por cada año adi-
+   cional de esperanza de vida, el recorte sería entorno al 4 por ciento en la pensión
+   inicial, repartido progresivamente. Este factor actuaría automáticamente cada cinco
+   años, recalculándose según las tablas de mortalidad. Su implementación se pospuso
+   a 2019 (final de legislatura) para no afectar inmediatamente, pero quedó legislado. La
+   motivación era clarísima: garantizar la equidad intergeneracional, haciendo que cada
+   cohorte de jubilados asuma el coste de vivir más años con una pensión algo menor,
+   en vez de trasladar ese coste a las generaciones siguientes vía impuestos o deuda.
+
+No debe olvidarse el contexto de esta reforma: En 2012-2013 España estuvo al borde
+del rescate financiero e implementó recortes en muchos ámbitos. En pensiones, el go-
+bierno del PP optó por actuar principalmente en el lado del gasto (reduciendo la tasa de
+crecimiento de las pensiones) mediante fórmulas automáticas para dar confianza a los
+mercados de que el sistema sería sostenible sin importar la situación política. Sin embar-
+go, el malestar social por esta reforma y el cambio de gobierno propiciaron que el IRP se
+dejase de aplicar desde 2018 y el FS nunca ha llegado a entrar en vigor. La población no
+estaba preparada para aceptar una reforma del sistema que supusiese aceptar recortes
+en las pensiones. El cambio político que se produjo en 2018 propició que estas medidas
+se revirtieran.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                16
+                         Centro
+                         Ruth Richardson
+
+
+
+
+7. Reformas de 2021 y 2023: Nuevo
+enfoque para la sostenibilidad y la
+equidad intergeneracional
+
+Tras las elecciones de 2019 y con un nuevo gobierno de coalición (PSOE-Unidas Pode-
+mos) desde 2020, España abordó una última ronda de reformas estructurales en pen-
+siones en 2021 y 2023. Estas reformas, influenciadas por un renovado Pacto de Toledo
+(2020) y condicionadas en parte por los compromisos adquiridos en el marco del Plan de
+Recuperación financiado por la UE, tuvieron un enfoque distinto al de 2013. En lugar de
+centrar el ajuste en la reducción de prestaciones, se optó por revertir los recortes a las
+pensiones (restablecer la indexación con el IPC, eliminar el factor de sostenibilidad) y a la
+vez aumentar los ingresos del sistema mediante mayores cotizaciones y aportes estata-
+les, introduciendo un nuevo mecanismo de equidad intergeneracional. Las reformas de
+2021 y 2023 son complementarias y se implementaron escalonadamente como “primer
+bloque” y “segundo bloque” de cambios.
+
+La Ley 21/2021, de 28 de diciembre, denominada de garantía del poder adquisitivo de las
+pensiones y de otra serie de medidas, supuso la primera parte de la reforma. Sus puntos
+principales fueron:
+
+ • Revalorización de pensiones según IPC real: se derogó formalmente el Índice de
+   Revalorización (IRP) de 2013 y se estableció un nuevo mecanismo de revalorización
+   anual conforme al IPC medio del año anterior. En concreto, al inicio de cada año las
+   pensiones se incrementan según la inflación media interanual del año previo (y si un
+   año hubiera inflación negativa, las pensiones se congelan, sin bajar). Con esto se ga-
+   rantiza el mantenimiento del poder adquisitivo de todas las pensiones, recuperando
+   el consenso social en torno a no perder capacidad de compra. Se terminó así con las
+   subidas fijas del 0,25 por ciento, volviendo a indexar con la inflación, lo que benefi-
+   ciaba inmediatamente a los pensionistas (en 2022, por ejemplo, subieron un 2,5 por
+   ciento y en 2023 un 8,5 por ciento). Esta medida respondía directamente a las protes-
+   tas sociales y al Pacto de Toledo de 2020, que recomendó reinstaurar la indexación.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                 17
+                         Centro
+                         Ruth Richardson
+
+
+
+
+ • Eliminación del factor de sostenibilidad de 2013: la ley suprimió el factor de soste-
+   nibilidad que iba a entrar en vigor (tras haber sido aplazado a 2023 por el gobierno
+   anterior). En su lugar, introdujo el llamado Mecanismo de Equidad Intergeneracional
+   (MEI) ¿En qué consiste el MEI? Es básicamente un recargo en las cotizaciones sociales
+   destinado a reforzar las arcas de la Seguridad Social de cara al futuro. Desde 2023, se
+   aplica una cotización adicional de 0,6 puntos porcentuales sobre la base de cotización
+   (0,5 a cargo de la empresa y 0,1 a cargo del trabajador). Este porcentaje aumenta
+   gradualmente hasta alcanzar 1,2 puntos en 2029 (1 punto empresa + 0,2 trabajador),
+   y se mantendrá así hasta 2050, salvo revisión. Los ingresos generados por el MEI van
+   íntegramente al Fondo de Reserva con la finalidad de nutrirlo de nuevo y disponer
+   de recursos cuando el pico de jubilaciones lo requiera. En paralelo, se relajaron las
+   condiciones de uso del Fondo de Reserva: se eliminó la limitación que existía de que
+   solo se podía usar si había déficit y con tope del 3 por ciento del gasto por año, para
+   permitir disponer de él con más flexibilidad llegado el momento.
+ • Otras medidas: la ley 21/2021 también contempló ajustes en la jubilación anticipada.
+   Se modificaron los coeficientes reductores de la jubilación anticipada, haciéndolos
+   más proporcionales y mensuales (antes eran trimestrales) para desincentivar retiros
+   adelantados, especialmente en las pensiones más altas. Ahora, por ejemplo, alguien
+   que se jubile dos años antes verá reducida su pensión entre un 13 por ciento y un 21
+   por ciento según sus años cotizados, aplicando el recorte de forma mensual, lo cual
+   penaliza ligeramente más que antes en algunos casos. A la vez, se estableció que
+   dichos coeficientes se apliquen sobre la pensión resultante sin superar la pensión
+   máxima tras reducción, evitando que quienes tengan derecho a la pensión máxima
+   escapen de la penalización (antes muchos topados no sentían la reducción porque su
+   pensión ya estaba en el tope máximo). Esto tiene un matiz de equidad: que también
+   las pensiones altas sufran recortes proporcionados si se jubilan anticipadamente. Por
+   otro lado, se mejoraron los incentivos de jubilación demorada, permitiendo elegir
+   entre un aumento porcentual de la pensión por año trabajado extra o bien cobrar un
+   pago único acumulado por retrasar la jubilación.
+ • Financiación con impuestos de gastos impropios: siguiendo las recomendaciones,
+   el Estado asumió gradualmente gastos de naturaleza no contributiva que aún car-
+   gaban a la Seguridad Social (por ejemplo, complementos a mínimos, prestaciones
+   por hijo a cargo, etc.). En 2021 se cifró en varios miles de millones la transferencia
+   del Estado para cubrir estos conceptos, con la idea de que para 2023 la Seguridad
+   Social quede solo con gastos estrictamente contributivos. No obstante, esto supone
+   un traslado contable del déficit al Estado sin ahorro neto.
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              18
+                         Centro
+                         Ruth Richardson
+
+
+
+
+Se puede decir que, con este primer bloque, se priorizó la protección de los pensionistas
+presentes y futuros (asegurando que su pensión no baje ni pierda con la inflación), ha-
+ciendo que el mayor esfuerzo lo asuman los cotizantes vía contribuciones y la sociedad
+en general vía impuestos al cubrir más gastos. De hecho, aunque el nombre de Mecanis-
+mo de Equidad Intergeneracional invite a pensar otra cosa, no deja de ser un impuesto
+que recae de manera exclusiva sobre los trabajadores actuales. Es decir, no se trata de
+ningún tipo de mecanismo y, ni mucho menos, reparte el coste de manera equitativa
+entre generaciones.
+
+En marzo de 2023, el Gobierno culminó la reforma con un segundo paquete de medidas,
+aprobado vía real decreto-ley 2/2023. Este incorporó cambios principalmente en la es-
+tructura de cotizaciones y cálculo de las pensiones, orientados a fortalecer aún más los
+ingresos y mejorar la equidad del sistema. Entre lo más relevante de la reforma de 2023
+destacan:
+
+ • Incremento de las bases máximas de cotización: se decidió subir la base máxima de
+   cotización (el tope salarial hasta el cual se paga a la Seguridad Social) de forma pau-
+   latina pero sostenida. Concretamente, la base máxima crecerá cada año conforme al
+   IPC más un aumento adicional de 1,2 puntos porcentuales anuales entre 2024 y 2050.
+   Esto significa que las rentas más altas deberán cotizar por una mayor porción de su
+   salario a lo largo de los años. Como contrapartida, también se prevé incrementar
+   gradualmente las pensiones máximas, aunque de manera más limitada: las nuevas
+   pensiones máximas causadas entre 2025 y 2050 añadirán un extra del 0,115 por cien-
+   to anual (aparte del IPC), y luego de 2050 hasta 2065 se aplicarían subidas adicionales
+   escalonadas hasta un 20 por ciento acumulado. Esto quiere decir que las cotizaciones
+   máximas subirán más rápidamente que las pensiones máximas, generando un apor-
+   te neto al sistema (más ingresos de las rentas altas sin que se traduzca íntegramente
+   en beneficios futuros iguales). En cifras, para 2045 se proyecta que la base máxima
+   habrá aumentado alrededor de un 30 por ciento real adicional, reduciendo el número
+   de cotizantes “topados” cuya aportación estaba limitada.
+ • Cotización de solidaridad por encima de la base máxima: además de elevar el techo,
+   se instauró una cuota de solidaridad sobre los salarios que excedan la base máxima.
+   Es decir, aquellos ingresos de trabajadores por encima del tope también pagarán una
+   cotización, aunque a un tipo reducido. Esta cotización extra se introducirá en 2025
+   con un 0,92 por ciento sobre el tramo salarial hasta un 10 por ciento por encima del
+   tope, un 1 por ciento sobre el tramo entre el 10 por ciento y el 50 por ciento por en-
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              19
+                         Centro
+                         Ruth Richardson
+
+
+
+
+     cima, y un 1,17 por ciento sobre lo que exceda más del 50 por ciento del tope. Esos
+     porcentajes aumentarán anualmente +0,25 puntos hasta 2045, quedando en 5,5 por
+     ciento, 6 por ciento y 7 por ciento, respectivamente. En la práctica, por ejemplo, un
+     sueldo muy alto pagará un 7 por ciento sobre la parte que esté muy por encima del
+     tope, además de la cotización hasta el tope. Esta medida implica por primera vez que
+     todos los ingresos laborales contribuyan algo a la Seguridad Social, incluso los que
+     superan el límite máximo que antes quedaban libres de cotización. Su carácter es
+     fuertemente redistributivo, pues esos salarios extra cotizados no generan derecho
+     adicional a pensión (son pura “solidaridad” con el sistema).
+
+  • Cambio en el periodo de cálculo de la pensión. Se aprobó una de las reformas más
+    discutidas: la ampliación opcional del periodo de cómputo de la pensión a 29 años,
+    pudiendo descartar los dos peores años. En detalle, a partir de 2026 y hasta 2044
+    habrá un sistema dual: el pensionista podrá escoger entre calcular su pensión con
+    los últimos 25 años cotizados (el sistema actual) o con los últimos 29 años cotizados
+    excluyendo los 24 meses peores (quedando efectivamente 27 años computados). La
+    Seguridad Social aplicará automáticamente la opción que resulte más favorable para
+    cada nuevo jubilado. Este periodo de cálculo irá subiendo: desde 2027 se añadirá 1
+    mes extra cada año al cómputo ampliado, hasta que en 2044 definitivamente se usen
+    29 años menos 2 para todos. Los meses no cotizados dentro de ese periodo se inte-
+    grarán con bases mínimas (hasta 48 meses) o al 50 por ciento de la base mínima si
+    exceden 48, para no perjudicar en exceso a quien tenga lagunas largas. En resumen,
+    se amplía la mirada sobre la carrera laboral, pero dando la flexibilidad de no contar
+    los peores años, que a menudo corresponden a desempleo o salarios muy bajos. Esta
+    fue una solución de compromiso para suavizar el efecto negativo que tendría simple-
+    mente pasar de 25 a 29 años.
+
+La segunda fase tuvo una motivación central: incrementar los ingresos para cubrir el au-
+mento de gasto previsto por las mejores pensiones y la jubilación de los baby boomers.
+Tras asegurar en 2021 la revalorización por IPC, era necesario cuadrar las cuentas de
+forma creíble. La Comisión Europea había pedido a España medidas adicionales para-
+metrizadas. El Gobierno optó por la vía de hacer pagar más a los trabajadores actuales y
+con mayor renta (subida de bases máximas y cuota de solidaridad) y por alargar un poco
+más el periodo de cálculo, que puede moderar el gasto futuro. Se buscó así reforzar la
+sostenibilidad sin recortar pensiones, sino pidiendo un esfuerzo mayor a empresas y tra-
+bajadores, y asumiendo que el Estado complementará lo necesario.
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              20
+                         Centro
+                         Ruth Richardson
+
+
+
+
+En términos de equidad intergeneracional, con esta reforma completa de 2021-2023, se
+define un reparto de cargas: la generación baby boom logra jubilarse sin recortes directos
+por esperanza de vida ni pérdidas de IPC, pero contribuirá más durante sus últimos años
+de trabajo (MEI, más cotizaciones si está en tramos altos) y no percibirá íntegramente el
+fruto de esas cotizaciones extra (pues las pensiones máximas no subirán al mismo ritmo).
+
+Las generaciones más jóvenes heredan un sistema con un gasto creciente y saneado solo
+en la teoría (como veremos más adelante, la realidad es bien distinta), con un Fondo de
+Reserva que supone un artificio contable, y con cotizaciones sociales más elevadas. Resta
+ver si este equilibrio se mantendrá o requerirá ajustes adicionales. La ley prevé un meca-
+nismo de revisión que, si en el futuro el gasto en pensiones sobrepasa lo previsto, acti-
+varía automáticamente medidas adicionales: bien un aumento de cotizaciones, bien una
+reducción del gasto en pensiones en porcentaje del PIB, o una combinación de ambos.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              21
+                         Centro
+                         Ruth Richardson
+
+
+
+
+8. Algunos datos para concluir
+
+En la siguiente tabla se aprecia cómo, a grandes rasgos, las reformas de 1985, 1997, 2011
+y 2013 tendieron a endurecer condiciones (más edad, más años computados o cotizados,
+menor indexación), mientras que las de 2021/23 revirtieron parcialmente las reducciones
+de prestaciones (volviendo al IPC) pero contrapesándolas con mayores cotizaciones. A lo
+largo del periodo, la edad efectiva de jubilación ha subido, los requisitos de cotización se
+han casi cuadruplicado (de 10 a 37 años para pensión completa), y el periodo de cálculo
+se expandió de 2 a 25 (y próximamente 27) años. No obstante, el sistema español man-
+tiene pensiones comparativamente altas en el contexto internacional. Esto se sustenta
+en dos factores: la mayor duración de las carreras contributivas en las cohortes más jó-
+venes y los mecanismos de complemento a las prestaciones mínimas. En términos gene-
+rales, el gasto pensionista español supera el 13% del PIB, lo cual es alto en comparación
+con otros países de la UE.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                22
+                         Centro
+                         Ruth Richardson
+
+
+
+
+                                                      Tabla 1
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente   23
+                         Centro
+                         Ruth Richardson
+
+
+
+
+En términos de sostenibilidad, cada reforma ha supuesto una contribución notable: la de
+1985 frenó un crecimiento insostenible en ese momento; la de 1997 consolidó la confian-
+za en el sistema (aunque el verdadero respiro vino por la bonanza económica posterior);
+la de 2011 recortó significativamente el gasto proyectado futuro al retrasar jubilaciones;
+la de 2013 recortó el gasto efectivo en la década de 2010; finalmente, las de 2021/23 pre-
+tenden asegurar la sostenibilidad mediante más ingresos sin recortar el gasto, confiando
+en la mejora del empleo.
+
+Pero, a pesar del cambio en las condiciones para acceder al cobro de una pensión de jubi-
+lación, tal y como se muestra en el siguiente gráfico, el gasto en pensiones no ha parado
+de crecer. En 1977, el desembolso de la factura de las pensiones en España no llegaba a
+alcanzar ni tan siquiera el 1 por ciento del PIB. En la actualidad, este porcentaje se sitúa
+en el 12,6 por ciento.
+
+
+                                                     Gráfico 1
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente                24
+                         Centro
+                         Ruth Richardson
+
+
+
+
+En cuanto a la equidad intergeneracional, es ilustrativo ver cómo han variado las condi-
+ciones entre generaciones: alguien que se jubilaba antes de 1985 podía cobrar el 100 por
+cien con 10 años cotizados; hoy se requieren 37. Antes bastaban dos años finales de buen
+sueldo para una pensión alta; hoy cuenta prácticamente toda la vida laboral. Esto signi-
+fica que las generaciones posteriores han tenido que cotizar mucho más para obtener
+proporcionalmente lo mismo. Sin embargo, también esas generaciones han vivido más
+años y se espera que sigan haciéndolo, recibiendo su pensión por más tiempo (lo que en
+parte compensa el “esfuerzo”).
+
+Lo que se pone de manifiesto es que desde 1985 las condiciones de jubilación se han de-
+teriorado continuamente como reflejo del deterioro financiero, y que las causas estruc-
+turales son el aumento del número de pensionistas relativo a trabajadores y la subida
+constante de la pensión media real, tal y como se refleja en los dos siguientes gráficos.
+Es decir, cada cohorte de jubilados ha cobrado pensiones más altas que la anterior (en
+términos reales), mientras cada cohorte de trabajadores no ha visto crecer sus salarios al
+mismo ritmo, generando una presión redistributiva.
+
+                                                     Gráfico 2
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              25
+                         Centro
+                         Ruth Richardson
+
+
+
+
+                                                     Gráfico 3
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente   26
+                         Centro
+                         Ruth Richardson
+
+
+
+
+Bibliografía
+Banco de España (s.f). La reforma del sistema de pensiones en España.
+Disponible en: https://www.bde.es/f/webbde/GAP/prensa/ficheros/es/mfo150409_
+notaservicioestudios.pdf#:~:text=incremento%20del%20número%20de%20
+pensiones,aprobación%20por%20el%20Pleno%20del
+
+Bandrés, E. (2019). Las cuentas de la Seguridad Social. Papeles de Economía Española,
+161, pp. 3-16.
+
+Bellés-Obrero, C., Flores, M., García-Gómez, P., Jiménez-Martín, S. & Vall-Castelló, J.
+(2024). Social Security Reforms and Inequality among Older Workers in Spain. Fedea,
+Estudios sobre la Economía Española 2024/33. Disponible en: https://documentos.fedea.
+net/pubs/eee/2024/eee2024-33.pdf
+
+García, M. A. (2024). Evolución reciente y situación financiera actual del sistema
+público de pensiones. Fedea. Estudios sobre la Economía Española 2024/21. Disponible
+en: https://documentos.fedea.net/pubs/eee/2024/eee2024-21.pdf#:~:text=El%20
+gasto%20en%20pensiones%20públicas,cuantía%20inicial%20en%20casi%20una
+
+Zubiri, I. (2016). Las pensiones en España: Situación y alternativas de reforma. Papeles
+de Economía Española, 147, pp. 167-187.
+
+Mense, A.; Michelsen, C & Kholodilin, C. (2023). Rent Control, Market Segmentation,
+and Misallocation: Causal Evidence from a Large-Scale Policy Intervention. Journal of
+Urban Economics, 134, 103513. https://doi.org/10.1016/j.jue.2022.103513
+
+Monràs, J. Montalvo, J.G. (2023). The Effect of Second Generation Rent Controls: New
+Evidence from Catalonia. Barcelona School of Economics Working Paper, 112297.
+
+Moon, C-G. & Stotsky, J. G. (1993). The Effect of Rent Control on Housing Quality
+Change: A Longitudinal Analysis. Journal of political Economy, 101(6), pp. 115-1148.
+
+
+
+
+Las Reformas de la Seguridad Social en España: un desequilibrio permanente              27
+hesperides.edu.es
+
