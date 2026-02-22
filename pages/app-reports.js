@@ -1120,6 +1120,14 @@
             type: "value",
             min: chart.xMin,
             max: chart.xMax,
+            name: chart.xAxisName || chart.xLabel || undefined,
+            nameLocation: "middle",
+            nameGap: chart.xAxisNameGap || 34,
+            nameTextStyle: {
+              color: "#4f4f4f",
+              fontSize: 11,
+              fontWeight: 600
+            },
             axisLabel: {
               color: "#4f4f4f",
               formatter: xTickFormatter
@@ -1178,6 +1186,15 @@
             type: "value",
             min: chart.min,
             max: chart.max,
+            name: chart.yAxisName || chart.yLabel || undefined,
+            nameLocation: "middle",
+            nameGap: chart.yAxisNameGap || 52,
+            nameRotate: 90,
+            nameTextStyle: {
+              color: "#4f4f4f",
+              fontSize: 11,
+              fontWeight: 600
+            },
             axisLabel: {
               color: "#4f4f4f",
               formatter: yTickFormatter
