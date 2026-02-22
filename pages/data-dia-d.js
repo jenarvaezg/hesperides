@@ -9,120 +9,240 @@
 
   const charts = {
     f01: {
-      title: "Tabla 1. Cohortes del baby boom por tramo de edad",
-      subtitle: "Distribucion aproximada de la generacion nacida entre 1958 y 1977",
-      source: "El dia D de las pensiones ha llegado (2025)",
+      title: "Tabla 1. Impacto de una generacion muy numerosa en la tasa de dependencia de un pais",
+      subtitle: "Fases vitales de la nueva generacion y su transicion demografica",
+      source: "El dia D de las pensiones ha llegado (2025) · Elaboracion propia",
       sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
-      exactness: "reconstruida visualmente",
+      exactness: "exacta del informe",
       renderAs: "table",
-      tableColumns: ["Tramo", "Nacidos estimados", "Edad en 2025"],
+      tableHighlightFirstRow: false,
+      tableColumns: ["Fases vitales nueva generacion", "Fases transicion demografica"],
       tableRows: [
-        ["1958-1962", "3,1 M", "63-67"],
-        ["1963-1967", "3,5 M", "58-62"],
-        ["1968-1972", "3,2 M", "53-57"],
-        ["1973-1977", "2,9 M", "48-52"]
+        ["Nacimiento", "Inicio transicion demografica"],
+        ["< 15 anos", "Alta dependencia por poblacion joven"],
+        ["Entre 15 y 64 anos", "Baja dependencia (bono demografico)"],
+        ["> 65 anos", "Alta dependencia poblacion anciana"],
+        ["Fallecimiento", "Transicion demografica completa"]
       ]
     },
     f02: {
-      title: "Grafico 1. Tasa de fecundidad en Espana",
-      subtitle: "Hijos por mujer (serie de largo plazo)",
+      title: "Grafico 1. La natalidad espanola no alcanza el umbral de reemplazo generacional desde 1980",
+      subtitle: "Tasa de fertilidad vs. tasa de reemplazo en Espana (1975-2023)",
       source: "El dia D de las pensiones ha llegado (2025)",
       sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
       exactness: "reconstruida visualmente",
       type: "line",
-      unit: "indice",
-      x: ["1975", "1985", "1995", "2005", "2015", "2020", "2024"],
+      unit: "hijos por mujer",
+      x: ["1975", "1978", "1980", "1983", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2023"],
       series: [
         {
-          name: "Hijos por mujer",
+          name: "Tasa de fertilidad",
           type: "line",
-          data: [2.8, 1.6, 1.2, 1.35, 1.33, 1.19, 1.12],
+          data: [2.77, 2.5, 2.1, 1.8, 1.6, 1.35, 1.19, 1.18, 1.27, 1.45, 1.32, 1.24, 1.12],
           color: "#f3c400",
-          areaStyle: 0.14
+          symbolSize: 5
+        },
+        {
+          name: "Tasa reemplazo",
+          type: "line",
+          data: [2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1],
+          color: "#7f5b00",
+          lineStyle: {
+            type: "dashed",
+            width: 1.8
+          },
+          symbol: "none"
         }
       ],
-      min: 0.8,
+      min: 0,
       max: 3
     },
     f03: {
-      title: "Grafico 2. Esperanza de vida al nacer",
-      subtitle: "Anios de vida esperados (hombres y mujeres)",
+      title: "Grafico 2. La emigracion de espanoles se frena en los anos 80s y se invierte en los anos 90s",
+      subtitle: "Saldo neto emigracion de espanoles (salidas menos retornos)",
       source: "El dia D de las pensiones ha llegado (2025)",
       sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
       exactness: "reconstruida visualmente",
-      type: "line",
-      unit: "indice",
-      x: ["1990", "2000", "2010", "2020", "2024"],
+      unit: "miles",
+      x: [
+        "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974",
+        "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984",
+        "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994",
+        "1995", "1996", "1997", "1998", "1999", "2000"
+      ],
       series: [
         {
-          name: "Hombres",
-          type: "line",
-          data: [73.3, 75.9, 79.1, 80.8, 81.3],
-          color: "#2b2b2b"
-        },
-        {
-          name: "Mujeres",
-          type: "line",
-          data: [80.5, 82.7, 84.8, 86.2, 86.6],
-          color: "#f3c400"
+          name: "Saldo neto",
+          data: [
+            { value: -60, itemStyle: { color: "#f3c400" } },
+            { value: -30, itemStyle: { color: "#f3c400" } },
+            { value: -30, itemStyle: { color: "#f3c400" } },
+            { value: -70, itemStyle: { color: "#f3c400" } },
+            { value: -115, itemStyle: { color: "#f3c400" } },
+            { value: -135, itemStyle: { color: "#f3c400" } },
+            { value: -118, itemStyle: { color: "#f3c400" } },
+            { value: -130, itemStyle: { color: "#f3c400" } },
+            { value: -86, itemStyle: { color: "#f3c400" } },
+            { value: -66, itemStyle: { color: "#f3c400" } },
+            { value: -9, itemStyle: { color: "#f3c400" } },
+            { value: -42, itemStyle: { color: "#f3c400" } },
+            { value: -35, itemStyle: { color: "#f3c400" } },
+            { value: -57, itemStyle: { color: "#f3c400" } },
+            { value: -85, itemStyle: { color: "#f3c400" } },
+            { value: -92, itemStyle: { color: "#f3c400" } },
+            { value: -95, itemStyle: { color: "#f3c400" } },
+            { value: -95, itemStyle: { color: "#f3c400" } },
+            { value: -88, itemStyle: { color: "#f3c400" } },
+            { value: -78, itemStyle: { color: "#f3c400" } },
+            { value: -68, itemStyle: { color: "#f3c400" } },
+            { value: -61, itemStyle: { color: "#f3c400" } },
+            { value: -53, itemStyle: { color: "#f3c400" } },
+            { value: -41, itemStyle: { color: "#f3c400" } },
+            { value: -30, itemStyle: { color: "#f3c400" } },
+            { value: -11, itemStyle: { color: "#f3c400" } },
+            { value: -10, itemStyle: { color: "#f3c400" } },
+            { value: 11, itemStyle: { color: "#6b4a00" } },
+            { value: 20, itemStyle: { color: "#6b4a00" } },
+            { value: 19, itemStyle: { color: "#6b4a00" } },
+            { value: 18, itemStyle: { color: "#6b4a00" } },
+            { value: 20, itemStyle: { color: "#6b4a00" } },
+            { value: 22, itemStyle: { color: "#6b4a00" } },
+            { value: 27, itemStyle: { color: "#6b4a00" } },
+            { value: 32, itemStyle: { color: "#6b4a00" } },
+            { value: 35, itemStyle: { color: "#6b4a00" } }
+          ],
+          barMaxWidth: 12
         }
       ],
-      min: 70,
-      max: 88
+      zeroLine: true,
+      min: -150,
+      max: 50
     },
     f04: {
-      title: "Grafico 3. Tasa de dependencia de mayores",
-      subtitle: "Mayores de 65 por cada 100 personas en edad de trabajar",
+      title: "Grafico 3. Las nuevas generaciones de espanoles son mucho menos numerosas que las anteriores",
+      subtitle: "Personas (millones) por generacion a lo largo de su ciclo vital",
       source: "El dia D de las pensiones ha llegado (2025)",
       sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
       exactness: "reconstruida visualmente",
-      type: "line",
-      unit: "%",
-      x: ["2000", "2005", "2010", "2015", "2020", "2025", "2030"],
+      renderAs: "small-multiples",
+      smallMultiplesType: "bar",
+      unit: "millones",
+      x: ["Nacidos", "5-14 anos", "15-24 anos", "25-34 anos", "35-44 anos", "45-54 anos", "55-64 anos", "65-74 anos", "75+ anos"],
+      smallMultiplesAxis: {
+        yMin: 0,
+        yMax: 8,
+        yInterval: 1,
+        xTickIndices: [0, 8]
+      },
       series: [
         {
-          name: "Dependencia 65+",
-          type: "line",
-          data: [24, 25, 27, 29, 31, 34, 37],
-          color: "#7f5b00",
-          areaStyle: 0.12
+          name: "Nacidos 1936-1945",
+          color: "#f3c400",
+          data: [5.6, 5.0, 4.7, 4.3, 4.1, null, null, null, null]
+        },
+        {
+          name: "Nacidos 1946-1955",
+          color: "#f3c400",
+          data: [5.8, 5.3, 4.9, 5.1, null, null, null, null, null]
+        },
+        {
+          name: "Nacidos 1956-1965",
+          color: "#f3c400",
+          data: [6.5, 6.2, 6.3, 6.8, 6.4, null, null, null, null]
+        },
+        {
+          name: "Nacidos 1966-1975",
+          color: "#f3c400",
+          data: [6.7, 6.6, 6.4, 7.3, null, null, null, null, null]
+        },
+        {
+          name: "Nacidos 1976-1985",
+          color: "#2b2b2b",
+          data: [5.6, 5.6, 7.3, null, null, null, null, null, null]
+        },
+        {
+          name: "Nacidos 1986-1995",
+          color: "#2b2b2b",
+          data: [4.0, 4.7, 5.0, 5.3, null, null, null, null, null]
+        },
+        {
+          name: "Nacidos 1996-2005",
+          color: "#2b2b2b",
+          data: [4.1, 4.4, 4.8, null, null, null, null, null, null]
+        },
+        {
+          name: "Nacidos 2006-2015",
+          color: "#2b2b2b",
+          data: [4.8, 4.8, null, null, null, null, null, null, null]
         }
       ],
-      min: 20,
-      max: 40
+      min: 0,
+      max: 8
     },
     f05: {
-      title: "Grafico 4. Peso de la poblacion mayor de 65",
-      subtitle: "Participacion sobre poblacion total",
+      title: "Grafico 4. El gran reto demografico espanol: 3,25 personas en edad laboral por cada anciano",
+      subtitle: "Ratio de personas entre 15 y 64 anos sobre personas mayores de 65 anos en Espana (1962-2024)",
       source: "El dia D de las pensiones ha llegado (2025)",
       sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
       exactness: "reconstruida visualmente",
-      unit: "%",
-      x: ["2000", "2005", "2010", "2015", "2020", "2024"],
+      unit: "ratio",
+      x: [
+        "1962", "1965", "1968", "1971", "1974", "1977", "1980", "1983", "1986", "1989", "1992",
+        "1995", "1998", "2001", "2004", "2007", "2010", "2013", "2016", "2019", "2022", "2024"
+      ],
       series: [
         {
-          name: "65+ sobre total",
-          data: [16.9, 17.1, 17.3, 18.2, 19.6, 20.4],
+          name: "Ratio 15-64 / 65+",
+          data: [
+            { value: 7.69, itemStyle: { color: "#f3c400" } },
+            7.2,
+            6.8,
+            6.5,
+            6.3,
+            6.1,
+            { value: 5.68, itemStyle: { color: "#e0b100" } },
+            5.6,
+            5.5,
+            5.4,
+            { value: 4.95, itemStyle: { color: "#e0b100" } },
+            4.8,
+            4.6,
+            { value: 4.15, itemStyle: { color: "#e0b100" } },
+            4.07,
+            3.9,
+            3.7,
+            3.5,
+            { value: 3.39, itemStyle: { color: "#e0b100" } },
+            { value: 3.25, itemStyle: { color: "#e0b100" } },
+            3.28,
+            3.25
+          ],
           color: "#f3c400"
         }
       ],
-      min: 14,
-      max: 22
+      min: 0,
+      max: 8
     },
     f06: {
-      title: "Tabla 2. Parametros estructurales del sistema",
-      subtitle: "Variables clave para sostenibilidad actuarial",
+      title: "Tabla 2. La Seguridad Social nacio en el ano 1967 y provoco que las personas se jubilaran antes",
+      subtitle: "Edad de entrada y salida de la vida activa en 1960 y 1970 en Espana (anos)",
       source: "El dia D de las pensiones ha llegado (2025)",
       sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe_dia_D_pensiones.pdf",
-      exactness: "reconstruida visualmente",
+      exactness: "exacta del informe",
       renderAs: "table",
-      tableColumns: ["Parametro", "Valor 2025", "Tendencia"],
+      tableHighlightFirstRow: false,
+      tableColumns: ["", "1960", "1970"],
       tableRows: [
-        ["Edad legal de jubilacion", "66a 8m", "Al alza"],
-        ["Periodo de computo", "25 anos", "Al alza"],
-        ["Pension media", "1.450 EUR/mes", "Al alza"],
-        ["Cotizantes por pensionista", "2,1", "A la baja"]
-      ]
+        ["Edad entrada vida activa", "16,7", "18,0"],
+        ["Edad salida vida activa", "72,6", "66,4"],
+        ["Duracion vida activa", "55,9", "48,4"]
+      ],
+      tableCellClasses: {
+        "1:1": "cell-strong-highlight",
+        "1:2": "cell-strong-highlight",
+        "2:1": "cell-soft-highlight",
+        "2:2": "cell-soft-highlight"
+      }
     },
     f07: {
       title: "Grafico 5. Gasto en pensiones contributivas",

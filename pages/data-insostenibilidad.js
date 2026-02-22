@@ -78,12 +78,44 @@
         exactness: "reconstruida visualmente",
         type: "line",
         unit: "% del PIB",
+        showLegend: false,
+        xLabelInterval: (index) => index % 5 === 0 || index === 29,
         x: [
           "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004",
           "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
           "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
         ],
         series: [
+          {
+            name: "base-entre-lineas",
+            type: "line",
+            data: [
+              36.8, 36.5, 37.1, 37.9, 38.2, 37.5, 37.5, 38.0, 37.5, 38.2,
+              38.0, 37.9, 38.8, 36.3, 34.5, 35.8, 35.7, 37.2, 38.2, 38.5,
+              37.9, 37.4, 37.5, 38.5, 38.5, 41.0, 42.3, 41.3, 41.4, 42.0
+            ],
+            stack: "brecha-fiscal",
+            color: "rgba(0,0,0,0)",
+            symbol: "none",
+            lineStyle: { opacity: 0 },
+            areaStyle: { opacity: 0 },
+            tooltip: { show: false }
+          },
+          {
+            name: "brecha-fiscal",
+            type: "line",
+            data: [
+              6.8, 5.9, 3.9, 2.6, 1.2, 1.1, 0.5, 0.2, 0.4, 0.0,
+              0.0, 0.0, 0.0, 4.5, 11.1, 9.6, 9.8, 11.6, 7.5, 6.1,
+              5.3, 4.2, 3.0, 2.5, 3.0, 9.9, 6.8, 4.6, 3.6, 3.1
+            ],
+            stack: "brecha-fiscal",
+            color: "rgba(0,0,0,0)",
+            symbol: "none",
+            lineStyle: { opacity: 0 },
+            areaStyle: { color: "rgba(243, 196, 0, 0.18)" },
+            tooltip: { show: false }
+          },
           {
             name: "Gasto publico",
             type: "line",
@@ -93,7 +125,6 @@
               43.2, 41.6, 40.5, 41.0, 41.5, 50.9, 49.1, 45.9, 45.0, 45.1
             ],
             color: "#f3c400",
-            areaStyle: 0.14,
             symbolSize: 5
           },
           {
@@ -164,6 +195,7 @@
         exactness: "reconstruida visualmente",
         renderAs: "small-multiples",
         smallMultiplesType: "bar",
+        smallMultiplesColumns: 2,
         unit: "%",
         x: [
           "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004",
@@ -206,6 +238,9 @@
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         unit: "M€",
+        showLegend: false,
+        xLabelRotate: 90,
+        xLabelFontSize: 10,
         x: [
           "Gasto no financiero",
           "Intereses",
@@ -216,15 +251,40 @@
         ],
         series: [
           {
+            name: "offset-waterfall",
+            stack: "waterfall-g5",
+            data: [
+              0,
+              186927,
+              168884,
+              112295,
+              50787,
+              0
+            ],
+            barMaxWidth: 48,
+            itemStyle: { color: "rgba(0,0,0,0)" },
+            tooltip: { show: false }
+          },
+          {
             name: "Millones de euros",
+            stack: "waterfall-g5",
+            barMaxWidth: 48,
             data: [
               { value: 218202, itemStyle: { color: "#f3c400" } },
-              { value: 31275, itemStyle: { color: "#6b4a00" } },
-              { value: 18043, itemStyle: { color: "#6b4a00" } },
-              { value: 56589, itemStyle: { color: "#6b4a00" } },
-              { value: 61508, itemStyle: { color: "#6b4a00" } },
+              { value: 31275, itemStyle: { color: "#6b4a00" }, label: { color: "#ffffff" } },
+              { value: 18043, itemStyle: { color: "#6b4a00" }, label: { color: "#ffffff" } },
+              { value: 56589, itemStyle: { color: "#6b4a00" }, label: { color: "#ffffff" } },
+              { value: 61508, itemStyle: { color: "#6b4a00" }, label: { color: "#ffffff" } },
               { value: 50787, itemStyle: { color: "#f3c400" } }
-            ]
+            ],
+            label: {
+              show: true,
+              position: "inside",
+              formatter: (params) => Number(params.value).toLocaleString("es-ES"),
+              color: "#2b2b2b",
+              fontSize: 10,
+              fontWeight: 700
+            }
           }
         ],
         min: 0,
@@ -237,16 +297,35 @@
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         unit: "M€",
+        showLegend: false,
         x: ["Cotizaciones y clases pasivas", "Otros ingresos", "Transferencias del Estado", "Total gasto"],
         series: [
           {
+            name: "offset-waterfall",
+            stack: "waterfall-g6",
+            barMaxWidth: 62,
+            data: [0, 174250, 176046, 0],
+            itemStyle: { color: "rgba(0,0,0,0)" },
+            tooltip: { show: false }
+          },
+          {
             name: "Millones de euros",
+            stack: "waterfall-g6",
+            barMaxWidth: 62,
             data: [
               { value: 174250, itemStyle: { color: "#f3c400" } },
               { value: 1796, itemStyle: { color: "#f3c400" } },
               { value: 54005, itemStyle: { color: "#f3c400" } },
-              { value: 242253, itemStyle: { color: "#6b4a00" } }
-            ]
+              { value: 242253, itemStyle: { color: "#6b4a00" }, label: { color: "#ffffff" } }
+            ],
+            label: {
+              show: true,
+              position: "inside",
+              formatter: (params) => Number(params.value).toLocaleString("es-ES"),
+              color: "#2b2b2b",
+              fontSize: 10,
+              fontWeight: 700
+            }
           }
         ],
         min: 0,
@@ -292,17 +371,39 @@
         exactness: "reconstruida visualmente",
         type: "line",
         unit: "miles de millones",
+        showLegend: false,
         x: [
           "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
           "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
         ],
         series: [
           {
+            name: "base-diferencia",
+            type: "line",
+            stack: "brecha-contributiva",
+            data: [106.0, 109.0, 113.0, 118.0, 123.0, 127.0, 129.0, 127.0, 124.0, 119.0, 119.0, 119.0, 120.0, 122.0, 126.0, 133.0, 127.0, 136.0, 138.0, 146.4],
+            color: "rgba(0,0,0,0)",
+            symbol: "none",
+            lineStyle: { opacity: 0 },
+            areaStyle: { opacity: 0 },
+            tooltip: { show: false }
+          },
+          {
+            name: "Diferencia gastos-ingresos",
+            type: "line",
+            stack: "brecha-contributiva",
+            data: [7.8, 5.0, 3.0, 3.0, 4.0, 2.0, 4.0, 10.0, 19.0, 30.0, 34.0, 39.0, 42.0, 45.0, 50.0, 52.0, 61.0, 48.0, 53.0, 52.9],
+            color: "rgba(0,0,0,0)",
+            symbol: "none",
+            lineStyle: { opacity: 0 },
+            areaStyle: { color: "rgba(243, 196, 0, 0.18)" },
+            tooltip: { show: false }
+          },
+          {
             name: "Gastos",
             type: "line",
             data: [106.0, 109.0, 113.0, 118.0, 123.0, 129.0, 133.0, 137.0, 143.0, 149.0, 153.0, 158.0, 162.0, 167.0, 176.0, 185.0, 188.0, 184.0, 191.0, 199.3],
             color: "#6b4a00",
-            areaStyle: 0.16,
             symbolSize: 4
           },
           {
@@ -324,6 +425,7 @@
         exactness: "reconstruida visualmente",
         renderAs: "small-multiples",
         unit: "%",
+        smallMultiplesColumns: 2,
         x: [
           "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
           "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
@@ -335,6 +437,9 @@
           {
             name: "en % del PIB",
             color: "#f3c400",
+            splitAreaByZero: true,
+            positiveAreaColor: "rgba(166, 166, 166, 0.30)",
+            negativeAreaColor: "rgba(243, 196, 0, 0.24)",
             min: -6,
             max: 2.5,
             interval: 2.5,
@@ -343,6 +448,9 @@
           {
             name: "en % de los gastos contributivos",
             color: "#6b4a00",
+            splitAreaByZero: true,
+            positiveAreaColor: "rgba(166, 166, 166, 0.30)",
+            negativeAreaColor: "rgba(243, 196, 0, 0.24)",
             min: -32,
             max: 16,
             interval: 16,
@@ -357,6 +465,11 @@
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         orientation: "horizontal",
+        yAxisInverse: true,
+        noWrapLabels: true,
+        height: 640,
+        gridLeft: 145,
+        yLabelFontSize: 12,
         unit: "M€",
         x: [
           "Madrid",
@@ -383,7 +496,8 @@
           {
             name: "Saldo contributivo",
             data: [1353, 884, 13, 12, -228, -291, -358, -444, -799, -967, -1143, -1398, -2422, -3259, -3914, -4149, -4417, -4478, -5487],
-            color: "#f3c400"
+            color: "#f3c400",
+            barMaxWidth: 20
           }
         ],
         min: -5800,
@@ -417,6 +531,7 @@
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         unit: "miles de millones",
+        xLabelInterval: 1,
         x: [
           "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
           "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
@@ -424,11 +539,19 @@
         series: [
           {
             name: "Prestamos del Estado",
-            data: [-20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -40, -60, -70, -120, -110, -108, -115],
+            stack: "deuda-negativa",
+            data: [-20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20],
+            color: "#6b4a00"
+          },
+          {
+            name: "Deuda acumulada",
+            stack: "deuda-negativa",
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20, -40, -50, -100, -90, -88, -95],
             color: "#9b7700"
           },
           {
             name: "Fondo de Reserva",
+            stack: "activos-positivos",
             data: [41, 46, 51, 59, 62, 64, 68, 70, 68, 59, 52, 46, 39, 28, 23, 21, 20, 20, 21, 22],
             color: "#f3c400"
           }
@@ -444,6 +567,11 @@
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         unit: "%",
+        noWrapLabels: true,
+        xLabelRotate: 90,
+        xLabelFontSize: 8,
+        height: 560,
+        gridBottom: 210,
         x: [
           "Japon",
           "Canada",

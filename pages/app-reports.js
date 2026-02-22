@@ -943,7 +943,11 @@
   }
 
   function buildChartOption(chart) {
-    const xLabels = (chart.x || []).map((label) => wrapCategoryLabel(label));
+    const wrapLength =
+      Number.isFinite(chart.labelWrapLength) && chart.labelWrapLength > 0 ? chart.labelWrapLength : 14;
+    const xLabels = (chart.x || []).map((label) =>
+      chart.noWrapLabels ? String(label) : wrapCategoryLabel(label, wrapLength)
+    );
     const isHorizontal = chart.orientation === "horizontal";
     const isXY = chart.coordinate === "xy";
     const defaultType = isXY ? "scatter" : chart.type === "line" ? "line" : "bar";
@@ -983,7 +987,10 @@
         smooth: isLine ? (serie.smooth !== undefined ? Boolean(serie.smooth) : true) : false,
         symbol: isLine || isScatter ? serie.symbol || "circle" : serie.symbol || "none",
         symbolSize: isLine || isScatter ? (serie.symbolSize || 6) : serie.symbolSize || 0,
-        label: serie.label
+        label: serie.label,
+        lineStyle: serie.lineStyle,
+        itemStyle: serie.itemStyle,
+        tooltip: serie.tooltip
       };
 
       if (highlightedColor) {
@@ -993,6 +1000,7 @@
         };
         if (isLine) {
           base.lineStyle = {
+            ...(base.lineStyle || {}),
             color: serie.color
           };
         }
@@ -1044,10 +1052,10 @@
       animationDuration: 400,
       color: colors.length ? colors : undefined,
       grid: {
-        left: isHorizontal ? 130 : 56,
-        right: 26,
-        top: 28,
-        bottom: xLabels.length > 8 && !isHorizontal && !isXY ? 92 : 58,
+        left: chart.gridLeft ?? (isHorizontal ? 130 : 56),
+        right: chart.gridRight ?? 26,
+        top: chart.gridTop ?? 28,
+        bottom: chart.gridBottom ?? (xLabels.length > 8 && !isHorizontal && !isXY ? 92 : 58),
         containLabel: true
       },
       tooltip: {
@@ -1085,7 +1093,7 @@
         }
       },
       legend: {
-        show: (chart.series || []).length > 1,
+        show: typeof chart.showLegend === "boolean" ? chart.showLegend : (chart.series || []).length > 1,
         top: 0,
         left: "left",
         textStyle: {
@@ -1152,8 +1160,10 @@
               data: xLabels,
               axisLabel: {
                 color: "#4f4f4f",
-                interval: 0,
-                fontSize: 11,
+                interval: chart.xLabelInterval === undefined ? 0 : chart.xLabelInterval,
+                rotate: chart.xLabelRotate || 0,
+                fontSize: chart.xLabelFontSize || 11,
+                hideOverlap: true,
                 lineHeight: 14
               },
               axisLine: {
@@ -1187,10 +1197,12 @@
           ? {
               type: "category",
               data: xLabels,
+              inverse: Boolean(chart.yAxisInverse),
               axisLabel: {
                 color: "#4f4f4f",
                 interval: 0,
-                fontSize: 11,
+                fontSize: chart.yLabelFontSize || 11,
+                hideOverlap: true,
                 lineHeight: 14
               },
               axisLine: {
@@ -1225,6 +1237,21 @@
       option.dataZoom = chart.dataZoom;
     } else if ((chart.x || []).length > 10 && !isHorizontal && !isXY) {
       option.dataZoom = [{ type: "inside" }];
+    }
+
+    if (Array.isArray(chart.markAreas) && chart.markAreas.length > 0 && baseSeries.length > 0) {
+      baseSeries[0].markArea = {
+        silent: true,
+        itemStyle: {
+          color: "rgba(243, 196, 0, 0.14)"
+        },
+        data: chart.markAreas.map((area) => {
+          if (isXY) {
+            return [{ xAxis: area.from }, { xAxis: area.to }];
+          }
+          return [{ xAxis: area.from }, { xAxis: area.to }];
+        })
+      };
     }
 
     if (chart.zeroLine && baseSeries.length > 0) {
@@ -1273,7 +1300,7 @@
         },
         data: [...xLines, ...yLines]
       };
-    } else if (!isHorizontal && Array.isArray(chart.eventLines) && chart.eventLines.length > 0 && baseSeries.length > 0) {
+    } else if (Array.isArray(chart.eventLines) && chart.eventLines.length > 0 && baseSeries.length > 0) {
       baseSeries[0].markLine = {
         ...(baseSeries[0].markLine || {}),
         symbol: "none",
@@ -1301,6 +1328,9 @@
   function renderSmallMultiplesChart(chart, host) {
     const container = document.createElement("div");
     container.className = "chart-canvas chart-canvas--multiples";
+    if (Number.isInteger(chart.smallMultiplesColumns) && chart.smallMultiplesColumns > 0) {
+      container.style.gridTemplateColumns = `repeat(${chart.smallMultiplesColumns}, minmax(0, 1fr))`;
+    }
     host.appendChild(container);
 
     const allValues = (chart.series || []).flatMap((serie) => serie.data || []);
@@ -1370,6 +1400,7 @@
             color: "#4f4f4f",
             fontSize: 10,
             interval: 0,
+            hideOverlap: true,
             formatter: (value, index) => {
               if (!tickIndices.has(index)) return "";
               return labelMap[value] || value;
@@ -1400,32 +1431,72 @@
           }
         },
         series: [
-          isBar
-            ? {
-                name: serie.name,
-                type: "bar",
-                data: serie.data,
-                barMaxWidth: 14,
-                itemStyle: {
-                  color: serie.color,
-                  borderRadius: [4, 4, 0, 0]
+          ...(isBar
+            ? [
+                {
+                  name: serie.name,
+                  type: "bar",
+                  data: serie.data,
+                  barMaxWidth: 14,
+                  itemStyle: {
+                    color: serie.color,
+                    borderRadius: [4, 4, 0, 0]
+                  }
                 }
-              }
-            : {
-                name: serie.name,
-                type: "line",
-                data: serie.data,
-                smooth: 0.15,
-                symbol: "circle",
-                symbolSize: 5,
-                lineStyle: {
-                  color: serie.color,
-                  width: 2.2
-                },
-                itemStyle: {
-                  color: serie.color
-                }
-              }
+              ]
+            : serie.splitAreaByZero
+              ? [
+                  {
+                    type: "line",
+                    data: (serie.data || []).map((value) => (value > 0 ? value : null)),
+                    smooth: 0.15,
+                    symbol: "none",
+                    lineStyle: { opacity: 0 },
+                    areaStyle: { color: serie.positiveAreaColor || "rgba(170,170,170,0.32)" },
+                    stack: `split-${serie.name}`
+                  },
+                  {
+                    type: "line",
+                    data: (serie.data || []).map((value) => (value < 0 ? value : null)),
+                    smooth: 0.15,
+                    symbol: "none",
+                    lineStyle: { opacity: 0 },
+                    areaStyle: { color: serie.negativeAreaColor || "rgba(243,196,0,0.25)" },
+                    stack: `split-${serie.name}`
+                  },
+                  {
+                    name: serie.name,
+                    type: "line",
+                    data: serie.data,
+                    smooth: 0.15,
+                    symbol: "circle",
+                    symbolSize: 5,
+                    lineStyle: {
+                      color: serie.color,
+                      width: 2.2
+                    },
+                    itemStyle: {
+                      color: serie.color
+                    }
+                  }
+                ]
+              : [
+                  {
+                    name: serie.name,
+                    type: "line",
+                    data: serie.data,
+                    smooth: 0.15,
+                    symbol: "circle",
+                    symbolSize: 5,
+                    lineStyle: {
+                      color: serie.color,
+                      width: 2.2
+                    },
+                    itemStyle: {
+                      color: serie.color
+                    }
+                  }
+                ])
         ]
       });
     });
@@ -1439,6 +1510,9 @@
 
     const canvas = document.createElement("div");
     canvas.className = "chart-canvas";
+    if (Number.isFinite(chart.height) && chart.height > 120) {
+      canvas.style.height = `${chart.height}px`;
+    }
     host.appendChild(canvas);
 
     const instance = echarts.init(canvas, null, { renderer: "canvas" });
