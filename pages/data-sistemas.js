@@ -269,6 +269,8 @@
       subtitle: "Evolucion del indice de equilibrio del sistema de pensiones sueco",
       type: "line",
       unit: "indice",
+      yAxisDecimals: 2,
+      tooltipDecimals: 2,
       showLegend: false,
       x: years2004To2024,
       series: [
@@ -400,6 +402,8 @@
         yInterval: 0.5
       },
       unit: "indice",
+      yAxisDecimals: 1,
+      tooltipDecimals: 2,
       x: makeYearRange(1987, 2021),
       series: [
         {
@@ -995,7 +999,7 @@
         }
       ],
       min: 0,
-      max: 26
+      max: 30
     },
     31: {
       title: "Grafica 31. El envejecimiento de la poblacion pone en peligro el sistema de pensiones de reparto",

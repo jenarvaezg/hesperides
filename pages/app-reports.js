@@ -553,15 +553,21 @@
     return lines;
   }
 
-  function axisFormatter(unit) {
+  function axisFormatter(unit, decimalsOverride) {
+    const hasOverride = Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
     const normalized = String(unit || "").toLowerCase();
     if (normalized.includes("%")) {
-      return (value) => `${formatNumber(value, 0)}%`;
+      const decimals = hasOverride ? decimalsOverride : 0;
+      return (value) => `${formatNumber(value, decimals)}%`;
     }
     if (normalized.includes("m") || normalized.includes("viviendas") || normalized.includes("euros")) {
+      if (hasOverride) {
+        return (value) => formatNumber(value, decimalsOverride);
+      }
       return (value) => formatInt(value);
     }
-    return (value) => formatNumber(value, 0);
+    const decimals = hasOverride ? decimalsOverride : 0;
+    return (value) => formatNumber(value, decimals);
   }
 
   function getAxisUnitProfile(chart) {
@@ -586,17 +592,18 @@
     return { suffix: "", decimals: 0, integerOnly: false };
   }
 
-  function formatAxisTick(value, chart) {
+  function formatAxisTick(value, chart, decimalsOverride) {
     if (value === undefined || value === null || Number.isNaN(value)) return "-";
     const normalized = Math.abs(value) < 1e-9 ? 0 : value;
     const profile = getAxisUnitProfile(chart);
-    const text = profile.integerOnly
-      ? formatNumber(normalized, 0)
-      : formatNumber(normalized, profile.decimals);
+    const hasOverride = Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
+    const resolvedDecimals = hasOverride ? decimalsOverride : profile.decimals;
+    const text = profile.integerOnly && !hasOverride ? formatNumber(normalized, 0) : formatNumber(normalized, resolvedDecimals);
     return `${text}${profile.suffix}`;
   }
 
-  function valueFormatter(unit) {
+  function valueFormatter(unit, decimalsOverride) {
+    const hasOverride = Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
     const normalized = String(unit || "").toLowerCase();
     const toSafeNumber = (value) => {
       if (value === null || value === undefined || value === "") return null;
@@ -605,32 +612,37 @@
     };
 
     if (normalized.includes("%")) {
+      const decimals = hasOverride ? decimalsOverride : 1;
       return (value) => {
         const num = toSafeNumber(value);
-        return num === null ? "-" : `${formatNumber(num, 1)}%`;
+        return num === null ? "-" : `${formatNumber(num, decimals)}%`;
       };
     }
     if (normalized.includes("euros")) {
       return (value) => {
         const num = toSafeNumber(value);
-        return num === null ? "-" : `${formatInt(num)} EUR`;
+        if (num === null) return "-";
+        return hasOverride ? `${formatNumber(num, decimalsOverride)} EUR` : `${formatInt(num)} EUR`;
       };
     }
     if (normalized.includes("m")) {
       return (value) => {
         const num = toSafeNumber(value);
-        return num === null ? "-" : `${formatInt(num)} M`;
+        if (num === null) return "-";
+        return hasOverride ? `${formatNumber(num, decimalsOverride)} M` : `${formatInt(num)} M`;
       };
     }
     if (normalized.includes("viviendas")) {
       return (value) => {
         const num = toSafeNumber(value);
-        return num === null ? "-" : `${formatInt(num)} viviendas`;
+        if (num === null) return "-";
+        return hasOverride ? `${formatNumber(num, decimalsOverride)} viviendas` : `${formatInt(num)} viviendas`;
       };
     }
+    const decimals = hasOverride ? decimalsOverride : 1;
     return (value) => {
       const num = toSafeNumber(value);
-      return num === null ? "-" : formatNumber(num, 1);
+      return num === null ? "-" : formatNumber(num, decimals);
     };
   }
 
@@ -985,13 +997,13 @@
     const isHorizontal = chart.orientation === "horizontal";
     const isXY = chart.coordinate === "xy";
     const defaultType = isXY ? "scatter" : chart.type === "line" ? "line" : "bar";
-    const tickFormatter = axisFormatter(chart.unit);
-    const xTickFormatter = axisFormatter(chart.xUnit || chart.unit);
-    const yTickFormatter = axisFormatter(chart.yUnit || chart.unit);
-    const tooltipFormatter = valueFormatter(chart.tooltipUnit || chart.unit);
+    const tickFormatter = axisFormatter(chart.unit, chart.axisDecimals);
+    const xTickFormatter = axisFormatter(chart.xUnit || chart.unit, chart.xAxisDecimals ?? chart.axisDecimals);
+    const yTickFormatter = axisFormatter(chart.yUnit || chart.unit, chart.yAxisDecimals ?? chart.axisDecimals);
+    const tooltipFormatter = valueFormatter(chart.tooltipUnit || chart.unit, chart.tooltipDecimals);
     const tooltipMultiplier = Number.isFinite(chart.tooltipMultiplier) ? Number(chart.tooltipMultiplier) : 1;
-    const xTooltipFormatter = valueFormatter(chart.xUnit || chart.unit);
-    const yTooltipFormatter = valueFormatter(chart.yUnit || chart.unit);
+    const xTooltipFormatter = valueFormatter(chart.xUnit || chart.unit, chart.xTooltipDecimals ?? chart.tooltipDecimals);
+    const yTooltipFormatter = valueFormatter(chart.yUnit || chart.unit, chart.yTooltipDecimals ?? chart.tooltipDecimals);
     const anyLineSeries = (chart.series || []).some((serie) => (serie.type || defaultType) === "line");
     const colors = (chart.series || []).map((serie) => serie.color).filter(Boolean);
     const legendData = (chart.series || [])
@@ -1448,7 +1460,7 @@
           textStyle: {
             color: "#f9f9f9"
           },
-          valueFormatter: (value) => formatAxisTick(value, chart)
+          valueFormatter: (value) => formatAxisTick(value, chart, chart.yAxisDecimals ?? chart.axisDecimals)
         },
         title: {
           text: serie.name,
@@ -1497,7 +1509,7 @@
             color: "#4f4f4f",
             fontSize: 10,
             hideOverlap: true,
-            formatter: (value) => formatAxisTick(value, chart)
+            formatter: (value) => formatAxisTick(value, chart, chart.yAxisDecimals ?? chart.axisDecimals)
           },
           splitLine: {
             lineStyle: {
