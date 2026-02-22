@@ -1,4 +1,42 @@
 (() => {
+  const makeYearRange = (from, to) => {
+    const years = [];
+    for (let year = from; year <= to; year += 1) {
+      years.push(String(year));
+    }
+    return years;
+  };
+
+  const interpolateSeries = (xValues, anchors) => {
+    const points = anchors
+      .map(([x, y]) => [Number(x), Number(y)])
+      .filter(([x, y]) => Number.isFinite(x) && Number.isFinite(y))
+      .sort((a, b) => a[0] - b[0]);
+
+    if (!points.length) return xValues.map(() => 0);
+    if (points.length === 1) return xValues.map(() => points[0][1]);
+
+    return xValues.map((label) => {
+      const x = Number(label);
+      if (!Number.isFinite(x)) return points[0][1];
+      if (x <= points[0][0]) return points[0][1];
+      if (x >= points[points.length - 1][0]) return points[points.length - 1][1];
+
+      for (let index = 0; index < points.length - 1; index += 1) {
+        const [x0, y0] = points[index];
+        const [x1, y1] = points[index + 1];
+        if (x < x0 || x > x1) continue;
+        if (x0 === x1) return y1;
+        const ratio = (x - x0) / (x1 - x0);
+        return Number((y0 + (y1 - y0) * ratio).toFixed(2));
+      }
+
+      return points[points.length - 1][1];
+    });
+  };
+
+  const years1977To2024 = makeYearRange(1977, 2024);
+
   window.REPORT_DATA = {
     meta: {
       title: "Las Reformas de la Seguridad Social en Espana",
@@ -18,7 +56,7 @@
     chapters: [
       { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
       { id: "sec-1", title: "1. Introducción", charts: [] },
-      { id: "sec-2", title: "2. Reforma de 1985: Endurecimiento", charts: ["r01"] },
+      { id: "sec-2", title: "2. Reforma de 1985: Endurecimiento", charts: [] },
       { id: "sec-3", title: "3. Reforma de 1997: El Pacto de Toledo", charts: [] },
       { id: "sec-4", title: "4. Reforma de 2001/2002: Incentivos", charts: [] },
       { id: "sec-5", title: "5. Reforma de 2007: Nuevos ajustes", charts: [] },
@@ -28,93 +66,113 @@
         title: "7. Reformas de 2021 y 2023: Nuevo enfoque para la sostenibilidad y la equidad intergeneracional",
         charts: []
       },
-      { id: "sec-8", title: "8. Algunos datos para concluir", charts: ["r02", "r03", "r04"] },
+      { id: "sec-8", title: "8. Algunos datos para concluir", charts: ["r01", "r02", "r03", "r04"] },
       { id: "bibliografia", title: "Bibliografía", charts: [] }
     ],
     charts: {
       r01: {
-        title: "Tabla 1. Principales reformas del sistema de pensiones",
-        subtitle: "Resumen cronologico de medidas y efecto esperado sobre sostenibilidad",
+        title: "Tabla 1. Las reformas del sistema de pensiones",
+        subtitle: "Principales cambios normativos en parametros de acceso, calculo y revalorizacion",
         source: "Las Reformas de la Seguridad Social en Espana (2025)",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe%20Pensiones_h_Junio2025.pdf",
         exactness: "reconstruida visualmente",
         renderAs: "table",
-        tableColumns: ["Reforma", "Medidas principales", "Efecto esperado"],
+        tableColumns: ["Reforma (ano)", "Edad legal jubilacion", "Anos calculo pension", "Anos cotizados - 100%", "Revalorizacion anual", "Novedad"],
         tableRows: [
-          ["1985", "Endurecimiento de acceso y ampliacion de anos exigidos", "Moderacion inicial del crecimiento"],
-          ["1997", "Pacto de Toledo y separacion de fuentes", "Mayor disciplina contable"],
-          ["2011", "Retraso progresivo de jubilacion y mayor periodo de calculo", "Reduccion del gasto futuro"],
-          ["2013", "Indice de revalorizacion y factor de sostenibilidad", "Contencion del gasto efectivo"],
-          ["2021-2023", "Mecanismo de Equidad e incremento de ingresos contributivos", "Sostenibilidad apoyada en ingresos"]
+          ["Pre-1985", "65 anos", "2 anos", "35 anos (100%)", "Discrecional", "Sanidad financiada con cotizaciones"],
+          ["Ley 26/1985", "65 anos", "8 anos", "35 anos", "IPC (no formal)", "Carencia ampliada"],
+          ["Ley 24/1997", "65 anos", "15 anos", "35 anos", "IPC + ajuste", "Fondo de Reserva"],
+          ["Ley 35/2002", "65 anos (flexible >65)", "15 anos", "35 anos", "IPC", "Mayor incentivo a retiro >65"],
+          ["Ley 40/2007", "65 anos", "15 anos (dias efectivos)", "35 anos (efectivos)", "IPC", "Reforma parcial de acceso y retiro"],
+          ["Ley 27/2011", "65-67 (2027)", "15-25 anos (2022)", "35-37 anos (2027)", "IPC", "Retraso gradual de jubilacion"],
+          ["Ley 23/2013", "65-67", "25 anos", "37 anos", "IRP 0,25%-IPC+0,5", "Factor de sostenibilidad"],
+          ["Ley 21/2021", "65-67", "25 anos", "37 anos", "IPC", "Elimina IRP y factor 2013"],
+          ["RDL 2/2023", "65-67", "25 anos o 27/29 opc.", "37 anos", "IPC", "Cuota de solidaridad y bases maximas"]
         ]
       },
       r02: {
-        title: "Grafico 1. Gasto en pensiones sobre PIB (1977-2024)",
-        subtitle: "Evolucion estimada del desembolso agregado de pensiones en Espana",
+        title: "Grafico 1. El gasto en pensiones no ha parado de crecer",
+        subtitle: "Evolucion del gasto en pensiones, en porcentaje del PIB",
         source: "Las Reformas de la Seguridad Social en Espana (2025)",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe%20Pensiones_h_Junio2025.pdf",
         exactness: "reconstruida visualmente",
         type: "line",
         unit: "%",
-        x: ["1977", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2024"],
+        x: years1977To2024,
         series: [
           {
             name: "Gasto en pensiones / PIB",
             type: "line",
-            data: [0.9, 1.8, 4.0, 7.0, 8.2, 8.4, 8.0, 10.8, 11.8, 12.1, 12.6],
-            color: "#f3c400",
-            areaStyle: 0.16
+            smooth: false,
+            data: interpolateSeries(years1977To2024, [
+              [1977, 0.53], [1980, 0.9], [1985, 1.8], [1990, 2.8], [1995, 4.8], [2000, 5.4], [2005, 6.1],
+              [2008, 6.8], [2010, 8.2], [2012, 9.1], [2014, 10.1], [2018, 10.0], [2020, 10.2], [2021, 11.0],
+              [2022, 12.1], [2023, 11.9], [2024, 12.6]
+            ]),
+            color: "#f3c400"
           }
         ],
         min: 0,
-        max: 14
+        max: 13
       },
       r03: {
-        title: "Grafico 2. Pensionistas por cada 100 cotizantes",
-        subtitle: "Presion demografica y contributiva del sistema (serie estimada)",
+        title: "Grafico 2. La presion crece: menos trabajadores por cada pensionista",
+        subtitle: "Evolucion de la ratio ocupados por pension",
         source: "Las Reformas de la Seguridad Social en Espana (2025)",
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe%20Pensiones_h_Junio2025.pdf",
         exactness: "reconstruida visualmente",
         type: "line",
         unit: "indice",
-        x: ["1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2024"],
+        x: years1977To2024,
         series: [
           {
-            name: "Pensionistas/100 cotizantes",
+            name: "Ocupados/pension jubilacion",
             type: "line",
-            data: [33, 35, 37, 39, 41, 43, 45, 47, 49, 51],
-            color: "#7f5b00",
-            areaStyle: 0.1
-          }
-        ],
-        min: 30,
-        max: 55
-      },
-      r04: {
-        title: "Grafico 3. Pension media real frente a salario medio real",
-        subtitle: "Indice base 2000 = 100 (estimacion visual de la divergencia)",
-        source: "Las Reformas de la Seguridad Social en Espana (2025)",
-        sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe%20Pensiones_h_Junio2025.pdf",
-        exactness: "reconstruida visualmente",
-        type: "line",
-        unit: "indice",
-        x: ["2000", "2005", "2010", "2015", "2020", "2024"],
-        series: [
-          {
-            name: "Pension media real",
-            type: "line",
-            data: [100, 112, 128, 144, 158, 163],
+            smooth: false,
+            data: interpolateSeries(years1977To2024, [
+              [1977, 6.57], [1980, 6.0], [1983, 5.3], [1986, 4.8], [1990, 5.0], [1995, 4.2], [1996, 3.4],
+              [2000, 3.8], [2005, 4.3], [2008, 4.0], [2010, 3.5], [2013, 3.2], [2018, 3.3], [2020, 3.4], [2024, 3.3]
+            ]),
             color: "#f3c400"
           },
           {
-            name: "Salario medio real",
+            name: "Ocupados/pension",
             type: "line",
-            data: [100, 104, 108, 110, 112, 113],
-            color: "#2b2b2b"
+            smooth: false,
+            data: interpolateSeries(years1977To2024, [
+              [1977, 3.49], [1980, 3.0], [1983, 2.5], [1986, 2.2], [1990, 2.3], [1995, 2.0], [2000, 2.2],
+              [2005, 2.5], [2008, 2.3], [2010, 2.0], [2015, 2.1], [2018, 2.0], [2020, 2.1], [2024, 2.0]
+            ]),
+            color: "#7f5b00"
           }
         ],
-        min: 95,
-        max: 170
+        min: 0,
+        max: 7
+      },
+      r04: {
+        title: "Grafico 3. El coste de las pensiones se ha disparado",
+        subtitle: "Evolucion de la pension media",
+        source: "Las Reformas de la Seguridad Social en Espana (2025)",
+        sourceUrl: "https://hesperides.edu.es/documentos_pdf/Informe%20Pensiones_h_Junio2025.pdf",
+        exactness: "reconstruida visualmente",
+        type: "line",
+        unit: "euros",
+        showLegend: false,
+        x: years1977To2024,
+        series: [
+          {
+            name: "Pension media jubilacion",
+            type: "line",
+            smooth: false,
+            data: interpolateSeries(years1977To2024, [
+              [1977, 53.1], [1980, 90], [1985, 180], [1990, 280], [1995, 470], [2000, 560], [2005, 730],
+              [2010, 980], [2015, 1130], [2018, 1210], [2020, 1300], [2021, 1450.92], [2022, 1430], [2024, 1450]
+            ]),
+            color: "#f3c400"
+          }
+        ],
+        min: 0,
+        max: 1500
       }
     },
     text: {

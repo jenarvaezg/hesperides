@@ -141,42 +141,42 @@
         {
           name: "Nacidos 1936-1945",
           color: "#f3c400",
-          data: [5.6, 5.0, 4.7, 4.3, 4.1, null, null, null, null]
+          data: [5.6, 5.0, 4.7, 4.3, 4.1, 3.9, 3.6, 3.2, 2.9]
         },
         {
           name: "Nacidos 1946-1955",
           color: "#f3c400",
-          data: [5.8, 5.3, 4.9, 5.1, null, null, null, null, null]
+          data: [5.8, 5.3, 4.9, 5.1, 5.0, 4.8, 4.5, 4.2, 4.0]
         },
         {
           name: "Nacidos 1956-1965",
           color: "#f3c400",
-          data: [6.5, 6.2, 6.3, 6.8, 6.4, null, null, null, null]
+          data: [6.5, 6.2, 6.3, 6.8, 6.4, 6.0, 5.6, null, null]
         },
         {
           name: "Nacidos 1966-1975",
           color: "#f3c400",
-          data: [6.7, 6.6, 6.4, 7.3, null, null, null, null, null]
+          data: [6.7, 6.6, 6.4, 7.3, 6.9, 6.2, null, null, null]
         },
         {
           name: "Nacidos 1976-1985",
           color: "#2b2b2b",
-          data: [5.6, 5.6, 7.3, null, null, null, null, null, null]
+          data: [5.6, 5.6, 7.3, 6.8, 6.2, null, null, null, null]
         },
         {
           name: "Nacidos 1986-1995",
           color: "#2b2b2b",
-          data: [4.0, 4.7, 5.0, 5.3, null, null, null, null, null]
+          data: [4.0, 4.7, 5.0, 5.3, 5.1, null, null, null, null]
         },
         {
           name: "Nacidos 1996-2005",
           color: "#2b2b2b",
-          data: [4.1, 4.4, 4.8, null, null, null, null, null, null]
+          data: [4.1, 4.4, 4.8, 4.7, null, null, null, null, null]
         },
         {
           name: "Nacidos 2006-2015",
           color: "#2b2b2b",
-          data: [4.8, 4.8, null, null, null, null, null, null, null]
+          data: [4.8, 4.8, 4.7, null, null, null, null, null, null]
         }
       ],
       min: 0,
@@ -762,6 +762,9 @@
       gridBottom: 190,
       height: 620,
       showLegend: true,
+      legendTop: 4,
+      legendLeft: 0,
+      legendFontSize: 11,
       x: [
         "Islandia", "Paises Bajos", "Suecia", "Chequia", "Estonia", "Suiza", "Dinamarca", "Hungria", "Alemania", "Irlanda",
         "Portugal", "Polonia", "Eslovenia", "Eslovaquia", "Austria", "Lituania", "Finlandia", "Francia", "Belgica", "Croacia",
@@ -769,7 +772,18 @@
       ],
       series: [
         {
+          name: "Espana",
+          stack: "empleo",
+          data: [
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, { value: 72.0, itemStyle: { color: "#2b2b2b" } }, null, null
+          ],
+          barMaxWidth: 18
+        },
+        {
           name: "Paises europeos",
+          stack: "empleo",
           data: [
             { value: 85.5, itemStyle: { color: "#f3c400" } },
             { value: 82.3, itemStyle: { color: "#f3c400" } },
@@ -795,15 +809,6 @@
             null,
             { value: 70.5, itemStyle: { color: "#f3c400" } },
             { value: 67.6, itemStyle: { color: "#f3c400" } }
-          ],
-          barMaxWidth: 18
-        },
-        {
-          name: "Espana",
-          data: [
-            null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null,
-            null, { value: 72.0, itemStyle: { color: "#2b2b2b" } }, null, null
           ],
           barMaxWidth: 18
         },
@@ -840,6 +845,7 @@
           type: "line",
           excludeFromLegend: true,
           stack: "brecha-salarial",
+          smooth: false,
           data: [0.0, 0.5, -1.2, -2.5, -5.4, -5.0, -4.2, -4.0, -5.0, -4.1, -3.8, -3.5, -1.9, 1.8, -3.2, -2.3],
           color: "rgba(0,0,0,0)",
           symbol: "none",
@@ -852,6 +858,7 @@
           type: "line",
           excludeFromLegend: true,
           stack: "brecha-salarial",
+          smooth: false,
           data: [0.0, 1.6, 5.7, 7.5, 11.7, 13.7, 16.4, 18.8, 20.6, 20.8, 21.3, 22.3, 24.5, 24.4, 24.2, 30.9],
           color: "rgba(0,0,0,0)",
           symbol: "none",
@@ -864,7 +871,7 @@
           type: "line",
           data: [0.0, 2.1, 4.5, 5.0, 6.3, 8.7, 12.2, 14.8, 15.6, 16.7, 17.5, 18.8, 22.6, 26.2, 21.0, 28.6],
           color: "#f3c400",
-          smooth: true,
+          smooth: false,
           symbolSize: 5
         },
         {
@@ -872,7 +879,7 @@
           type: "line",
           data: [0.0, 0.5, -1.2, -2.5, -5.4, -5.0, -4.2, -4.0, -5.0, -4.1, -3.8, -3.5, -1.9, 1.8, -3.2, -2.3],
           color: "#6b4a00",
-          smooth: true,
+          smooth: false,
           symbolSize: 5
         }
       ],

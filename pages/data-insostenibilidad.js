@@ -555,6 +555,10 @@
         exactness: "reconstruida visualmente",
         unit: "miles de millones",
         barBorderRadius: [0, 0, 0, 0],
+        legendTop: 6,
+        legendLeft: 0,
+        legendFontSize: 11,
+        legendItemGap: 10,
         xLabelInterval: 1,
         x: [
           "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
@@ -562,20 +566,20 @@
         ],
         series: [
           {
-            name: "Prestamos del Estado",
-            stack: "deuda-negativa",
+            name: "Prestamos Estado",
+            stack: "deuda-neta",
             data: [-20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20, -20],
             color: "#6b4a00"
           },
           {
             name: "Deuda acumulada",
-            stack: "deuda-negativa",
+            stack: "deuda-neta",
             data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20, -40, -52, -100, -90, -88, -93, -100],
             color: "#9b7700"
           },
           {
             name: "Fondo de Reserva",
-            stack: "activos-positivos",
+            stack: "deuda-neta",
             data: [35, 42, 50, 60, 63, 68, 72, 70, 66, 58, 45, 38, 20, 12, 8, 6, 5, 8, 10, 12],
             color: "#f3c400"
           }

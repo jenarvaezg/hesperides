@@ -598,19 +598,40 @@
 
   function valueFormatter(unit) {
     const normalized = String(unit || "").toLowerCase();
+    const toSafeNumber = (value) => {
+      if (value === null || value === undefined || value === "") return null;
+      const num = Number(value);
+      return Number.isFinite(num) ? num : null;
+    };
+
     if (normalized.includes("%")) {
-      return (value) => `${formatNumber(value, 1)}%`;
+      return (value) => {
+        const num = toSafeNumber(value);
+        return num === null ? "-" : `${formatNumber(num, 1)}%`;
+      };
     }
     if (normalized.includes("euros")) {
-      return (value) => `${formatInt(value)} EUR`;
+      return (value) => {
+        const num = toSafeNumber(value);
+        return num === null ? "-" : `${formatInt(num)} EUR`;
+      };
     }
     if (normalized.includes("m")) {
-      return (value) => `${formatInt(value)} M`;
+      return (value) => {
+        const num = toSafeNumber(value);
+        return num === null ? "-" : `${formatInt(num)} M`;
+      };
     }
     if (normalized.includes("viviendas")) {
-      return (value) => `${formatInt(value)} viviendas`;
+      return (value) => {
+        const num = toSafeNumber(value);
+        return num === null ? "-" : `${formatInt(num)} viviendas`;
+      };
     }
-    return (value) => formatNumber(value, 1);
+    return (value) => {
+      const num = toSafeNumber(value);
+      return num === null ? "-" : formatNumber(num, 1);
+    };
   }
 
   function renderInlineTable(chart, host) {
@@ -1128,16 +1149,19 @@
       legend: {
         show: typeof chart.showLegend === "boolean" ? chart.showLegend : (chart.series || []).length > 1,
         data: legendData.length ? legendData : undefined,
-        top: 0,
-        left: "left",
+        top: chart.legendTop ?? 0,
+        left: chart.legendLeft ?? "left",
+        orient: chart.legendOrient || "horizontal",
+        itemGap: Number.isFinite(chart.legendItemGap) ? chart.legendItemGap : 12,
         textStyle: {
           color: "#3f3a2f",
-          fontFamily: "IBM Plex Sans"
+          fontFamily: "IBM Plex Sans",
+          fontSize: chart.legendFontSize || 12
         }
       },
       toolbox: {
-        right: 0,
-        top: 0,
+        right: chart.toolboxRight ?? 0,
+        top: chart.toolboxTop ?? 0,
         itemSize: 14,
         feature: {
           myDownload: {
