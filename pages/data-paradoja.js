@@ -130,6 +130,7 @@
       title: "Gráfico 2. Crisis habitacional en España",
       subtitle: "Cambio en el precio de la vivienda (dic-2020 a jun-2025) e IPC",
       orientation: "horizontal",
+      yAxisInverse: true,
       unit: "%",
       exactness: "exacta del gráfico",
       source: "INE (IPV e IPC)",
@@ -209,6 +210,8 @@
       title: "Gráfico 4. Vivienda nueva iniciada por cada 1.000 personas",
       subtitle: "La señal de precio no se traduce en más inicios",
       unit: "viviendas / 1.000 hab.",
+      tooltipUnit: "viviendas",
+      tooltipMultiplier: 1000,
       exactness: "reconstruida visualmente",
       source: "MIVAU (visados), INE (censo), Eurostat (población)",
       x: [
@@ -542,7 +545,9 @@
           x: "2020",
           label: "Revisión CTE 2020"
         }
-      ]
+      ],
+      min: 750,
+      max: 1350
     },
     g12: {
       id: "g12",
@@ -648,7 +653,8 @@
           data: [29.28, 29.0, 27.0, 26.5, 25.8, 25.0, 24.8, 25.0, 25.1, 25.1, 25.2, 25.3, 25.6, 24.8, 28.0, 32.0, 31.0, 30.5, 32.0, 31.1, 31.4, 30.8, 31.2, 31.0, 29.8, 29.5, 29.3, 27.2, 27.5, 27.0, 26.24],
           color: "#f3c400"
         }
-      ]
+      ],
+      min: 20
     },
     g14: {
       id: "g14",
@@ -680,6 +686,7 @@
       unit: "% del empleo",
       exactness: "reconstruida visualmente",
       source: "EPA (INE)",
+      xLabelInterval: (index, value) => index % 2 === 0 || value === "2024",
       x: [
         "1996",
         "1997",
@@ -805,7 +812,9 @@
           data: [100.0, 105.0, 107.0, 109.8, 111.0, 111.1, 111.8, 111.0, 109.0, 106.6, 106.7, 107.0, 105.0, 105.0, 105.5, 103.0, 100.8],
           color: "#f3c400"
         }
-      ]
+      ],
+      min: 95,
+      max: 115
     },
     g18: {
       id: "g18",
@@ -857,7 +866,9 @@
           data: [100, 105, 108, 110, 112, 118, 121, 123, 124, 124, 125, 125, 126, 125, 125, 124.7],
           color: "#907b3b"
         }
-      ]
+      ],
+      min: 100,
+      max: 190
     }
   }
 };
@@ -917,7 +928,7 @@
 
   const sueloChapter = chapters.find((chapter) => chapter.id === "s4");
   if (sueloChapter) {
-    sueloChapter.charts.push("t1", "t2");
+    sueloChapter.charts = ["t1", "t2", ...(sueloChapter.charts || [])];
   }
 
   window.REPORT_DATA = {

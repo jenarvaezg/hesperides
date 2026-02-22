@@ -142,7 +142,7 @@
         eventLines: [
           { x: "2008", label: "Ano 2008" }
         ],
-        min: 35,
+        min: 32,
         max: 51
       },
       i03: {
@@ -371,7 +371,7 @@
         exactness: "reconstruida visualmente",
         type: "line",
         unit: "miles de millones",
-        showLegend: false,
+        showLegend: true,
         x: [
           "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
           "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"
@@ -467,8 +467,9 @@
         orientation: "horizontal",
         yAxisInverse: true,
         noWrapLabels: true,
-        height: 640,
-        gridLeft: 145,
+        height: 720,
+        gridLeft: 118,
+        gridRight: 12,
         yLabelFontSize: 12,
         unit: "M€",
         x: [
@@ -495,7 +496,27 @@
         series: [
           {
             name: "Saldo contributivo",
-            data: [1353, 884, 13, 12, -228, -291, -358, -444, -799, -967, -1143, -1398, -2422, -3259, -3914, -4149, -4417, -4478, -5487],
+            data: [
+              { value: 1353, label: { show: true, position: "insideRight", formatter: "1 353", color: "#2b2b2b", fontWeight: 700 } },
+              { value: 884, label: { show: true, position: "insideRight", formatter: "884", color: "#2b2b2b", fontWeight: 700 } },
+              { value: 13, label: { show: true, position: "right", formatter: "13", color: "#2b2b2b", fontWeight: 700 } },
+              { value: 12, label: { show: true, position: "right", formatter: "12", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -228, label: { show: true, position: "insideLeft", formatter: "-228", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -291, label: { show: true, position: "insideLeft", formatter: "-291", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -358, label: { show: true, position: "insideLeft", formatter: "-358", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -444, label: { show: true, position: "insideLeft", formatter: "-444", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -799, label: { show: true, position: "insideLeft", formatter: "-799", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -967, label: { show: true, position: "insideLeft", formatter: "-967", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -1143, label: { show: true, position: "insideLeft", formatter: "-1 143", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -1398, label: { show: true, position: "insideLeft", formatter: "-1 398", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -2422, label: { show: true, position: "insideLeft", formatter: "-2 422", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -3259, label: { show: true, position: "insideLeft", formatter: "-3 259", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -3914, label: { show: true, position: "insideLeft", formatter: "-3 914", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -4149, label: { show: true, position: "insideLeft", formatter: "-4 149", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -4417, label: { show: true, position: "insideLeft", formatter: "-4 417", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -4478, label: { show: true, position: "insideLeft", formatter: "-4 478", color: "#2b2b2b", fontWeight: 700 } },
+              { value: -5487, label: { show: true, position: "insideLeft", formatter: "-5 487", color: "#2b2b2b", fontWeight: 700 } }
+            ],
             color: "#f3c400",
             barMaxWidth: 20
           }
@@ -531,6 +552,7 @@
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         unit: "miles de millones",
+        barBorderRadius: [0, 0, 0, 0],
         xLabelInterval: 1,
         x: [
           "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
@@ -546,13 +568,13 @@
           {
             name: "Deuda acumulada",
             stack: "deuda-negativa",
-            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20, -40, -50, -100, -90, -88, -95],
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20, -40, -52, -100, -90, -88, -93, -100],
             color: "#9b7700"
           },
           {
             name: "Fondo de Reserva",
             stack: "activos-positivos",
-            data: [41, 46, 51, 59, 62, 64, 68, 70, 68, 59, 52, 46, 39, 28, 23, 21, 20, 20, 21, 22],
+            data: [35, 42, 50, 60, 63, 68, 72, 70, 66, 58, 45, 38, 20, 12, 8, 6, 5, 8, 10, 12],
             color: "#f3c400"
           }
         ],
@@ -567,11 +589,12 @@
         sourceUrl: "https://hesperides.edu.es/documentos_pdf/La_(in)sostenibilidad_de_la_Seguridad_Social.pdf",
         exactness: "reconstruida visualmente",
         unit: "%",
-        noWrapLabels: true,
-        xLabelRotate: 90,
-        xLabelFontSize: 8,
-        height: 560,
-        gridBottom: 210,
+        xLabelRotate: 65,
+        xLabelInterval: 0,
+        xLabelFontSize: 9,
+        height: 620,
+        gridBottom: 250,
+        labelWrapLength: 12,
         x: [
           "Japon",
           "Canada",
@@ -602,7 +625,33 @@
         series: [
           {
             name: "Rentabilidad real",
-            data: [19.5, 11.9, 10.3, 10.1, 7.6, 6.3, 6.1, 6.1, 5.8, 5.3, 5.0, 5.0, 4.9, 4.5, 4.0, 3.8, 3.5, 3.3, 3.2, 3.1, 2.8, 2.0, 1.4, -0.9, -1.3],
+            data: [
+              19.5,
+              11.9,
+              10.3,
+              10.1,
+              7.6,
+              6.3,
+              6.1,
+              6.1,
+              5.8,
+              5.3,
+              5.0,
+              5.0,
+              4.9,
+              4.5,
+              4.0,
+              3.8,
+              3.5,
+              3.3,
+              3.2,
+              3.1,
+              2.8,
+              2.0,
+              1.4,
+              { value: -0.9, itemStyle: { color: "#6b4a00" } },
+              -1.3
+            ],
             color: "#f3c400"
           }
         ],
@@ -660,6 +709,10 @@
         coordinate: "xy",
         xLabel: "Saldo fiscal promedio 2013-2022",
         yLabel: "Cambio de gasto en pensiones 2022-2045",
+        xAxisName: "Saldo fiscal medio 2013-2022 (% PIB)",
+        yAxisName: "Cambio previsto gasto pensiones 2022-2045 (% PIB)",
+        xAxisNameGap: 42,
+        yAxisNameGap: 70,
         xUnit: "% del PIB",
         yUnit: "% del PIB",
         xMin: -0.8,

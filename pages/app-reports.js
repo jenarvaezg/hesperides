@@ -98,7 +98,7 @@
 
   function isHeadingLikeLine(line) {
     const headingPattern =
-      /^(?:[0-9]+(?:\.[0-9]+)*[.)-]?\s+.+|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?|bibliografia|bibliografía)$/i;
+      /^(?:(?:[1-9](?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?|bibliografia|bibliografía)$/i;
     return headingPattern.test(String(line || "").trim());
   }
 
@@ -216,7 +216,7 @@
     const blocks = [];
     let currentParagraph = [];
     const headingPattern =
-      /^(?:[0-9]+(?:\.[0-9]+)*[.)-]?\s+.+|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?)$/i;
+      /^(?:(?:[1-9](?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?)$/i;
     const bulletPattern = /^[•*-]\s*/;
 
     const flushParagraph = () => {
@@ -954,7 +954,8 @@
     const tickFormatter = axisFormatter(chart.unit);
     const xTickFormatter = axisFormatter(chart.xUnit || chart.unit);
     const yTickFormatter = axisFormatter(chart.yUnit || chart.unit);
-    const tooltipFormatter = valueFormatter(chart.unit);
+    const tooltipFormatter = valueFormatter(chart.tooltipUnit || chart.unit);
+    const tooltipMultiplier = Number.isFinite(chart.tooltipMultiplier) ? Number(chart.tooltipMultiplier) : 1;
     const xTooltipFormatter = valueFormatter(chart.xUnit || chart.unit);
     const yTooltipFormatter = valueFormatter(chart.yUnit || chart.unit);
     const anyLineSeries = (chart.series || []).some((serie) => (serie.type || defaultType) === "line");
@@ -1007,10 +1008,21 @@
       }
 
       if (!isLine && !isScatter) {
+        const defaultRadius = isHorizontal ? [0, 6, 6, 0] : [6, 6, 0, 0];
+        const resolvedRadius =
+          serie.barBorderRadius !== undefined
+            ? serie.barBorderRadius
+            : chart.barBorderRadius !== undefined
+              ? chart.barBorderRadius
+              : defaultRadius;
+
         base.itemStyle = {
-          ...(base.itemStyle || {}),
-          borderRadius: isHorizontal ? [0, 6, 6, 0] : [6, 6, 0, 0]
+          ...(base.itemStyle || {})
         };
+
+        if (resolvedRadius !== false && resolvedRadius !== null) {
+          base.itemStyle.borderRadius = resolvedRadius;
+        }
       }
 
       if (serie.areaStyle) {
@@ -1087,7 +1099,11 @@
           const items = Array.isArray(params) ? params : [params];
           const lines = [`<strong>${items[0].axisValueLabel}</strong>`];
           items.forEach((item) => {
-            lines.push(`${item.marker} ${item.seriesName}: ${tooltipFormatter(item.value)}`);
+            let value = item.value;
+            if (typeof value === "number" && tooltipMultiplier !== 1) {
+              value *= tooltipMultiplier;
+            }
+            lines.push(`${item.marker} ${item.seriesName}: ${tooltipFormatter(value)}`);
           });
           return lines.join("<br>");
         }

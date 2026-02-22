@@ -20,6 +20,15 @@
 - Grafico 17: eje Y de 95 a 115.
 - Grafico 18: eje Y de 100 a 190.
 
+## /informe-dia-d-pensiones
+- Grafico 1, colorea el area debajo de la curva, en positivo y negativo en color amarillo
+- Grafico 3, el layout deberia ser 4 arriba y 4 abajo, no un grid de 3x3 (con un hueco)
+- Grafico 13 Se sale la etiqueta de España por la derecha, y si pones una leyenda?
+- Grafico 16, esta mal la leyenda, pone que los paises europeos son grises y españa que esta en ngro (bien) no sale en la leyenda
+- Grafico 17, colorea el area entre las dos curvas
+- EN la parte: 4.1.La ruptura intergeneracional: nivel de vida trabajadores vs jubilados sale "65 años." en grande como si fuese un titulo por algun motivo
+- Le pasa lo mismo a este texto: 11 35 años si se jubila con el sistema de pensiones de 1985 (escenario 1A) y 37 años si se jubila con el sistema de pensiones de 2025 (escenario 2A). Revisa si le pasa a algun texto mas, porque no he estado atento.
+
 ## /sistemas-de-pensiones-comparados
 - TBD
 
@@ -34,3 +43,4 @@
 
 ## /home-catalogo
 - TBD
+

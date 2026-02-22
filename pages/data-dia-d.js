@@ -40,6 +40,7 @@
           type: "line",
           data: [2.77, 2.5, 2.1, 1.8, 1.6, 1.35, 1.19, 1.18, 1.27, 1.45, 1.32, 1.24, 1.12],
           color: "#f3c400",
+          areaStyle: { color: "rgba(243, 196, 0, 0.18)" },
           symbolSize: 5
         },
         {
@@ -127,6 +128,7 @@
       exactness: "reconstruida visualmente",
       renderAs: "small-multiples",
       smallMultiplesType: "bar",
+      smallMultiplesColumns: 4,
       unit: "millones",
       x: ["Nacidos", "5-14 anos", "15-24 anos", "25-34 anos", "35-44 anos", "45-54 anos", "55-64 anos", "65-74 anos", "75+ anos"],
       smallMultiplesAxis: {
@@ -624,7 +626,7 @@
       exactness: "reconstruida visualmente",
       type: "line",
       unit: "%",
-      showLegend: false,
+      showLegend: true,
       xLabelInterval: (index) => index % 2 === 0 || index === 24,
       x: [
         "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
@@ -638,18 +640,7 @@
           data: [
             37.2, 37.5, 37.9, 37.1, 37.4, 37.6, 37.8, 37.0, 36.2, 36.6,
             38.5, 39.2, 39.3, 39.4, 38.0, 37.8, 37.7, 37.8, 37.9, 37.2,
-            36.9, 37.8, 38.2, 39.0,
-            {
-              value: 39.5,
-              label: {
-                show: true,
-                position: "right",
-                formatter: "Espana\\n39,5%",
-                color: "#7f5b00",
-                fontSize: 10,
-                fontWeight: 700
-              }
-            }
+            36.9, 37.8, 38.2, 39.0, 39.5
           ],
           color: "#f3c400",
           smooth: true,
@@ -661,18 +652,7 @@
           data: [
             41.2, 40.6, 40.1, 39.7, 39.2, 39.1, 38.8, 38.2, 37.8, 37.2,
             38.1, 38.8, 39.2, 39.1, 38.9, 38.4, 38.0, 37.8, 37.7, 37.6,
-            37.4, 37.2, 37.3, 37.5,
-            {
-              value: 37.6,
-              label: {
-                show: true,
-                position: "right",
-                formatter: "Union Europea\\n37,6%",
-                color: "#8a6a1a",
-                fontSize: 10,
-                fontWeight: 700
-              }
-            }
+            37.4, 37.2, 37.3, 37.5, 37.6
           ],
           color: "#9b7700",
           lineStyle: { type: "dashed", width: 2 },
@@ -685,18 +665,7 @@
           data: [
             33.8, 33.5, 33.3, 33.1, 32.9, 32.8, 32.6, 32.4, 32.0, 31.7,
             31.9, 32.1, 32.2, 32.0, 31.8, 31.7, 31.6, 31.5, 31.3, 31.2,
-            30.9, 31.1, 31.2, 31.3,
-            {
-              value: 31.3,
-              label: {
-                show: true,
-                position: "right",
-                formatter: "OCDE\\n31,3%",
-                color: "#6b4a00",
-                fontSize: 10,
-                fontWeight: 700
-              }
-            }
+            30.9, 31.1, 31.2, 31.3, 31.3
           ],
           color: "#6b4a00",
           lineStyle: { type: "dashed", width: 2 },
@@ -823,9 +792,18 @@
             { value: 75.5, itemStyle: { color: "#f3c400" } },
             { value: 74.9, itemStyle: { color: "#f3c400" } },
             { value: 73.0, itemStyle: { color: "#f3c400" } },
-            { value: 72.0, itemStyle: { color: "#2b2b2b" } },
+            null,
             { value: 70.5, itemStyle: { color: "#f3c400" } },
             { value: 67.6, itemStyle: { color: "#f3c400" } }
+          ],
+          barMaxWidth: 18
+        },
+        {
+          name: "Espana",
+          data: [
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, { value: 72.0, itemStyle: { color: "#2b2b2b" } }, null, null
           ],
           barMaxWidth: 18
         },
@@ -850,12 +828,35 @@
       exactness: "reconstruida visualmente",
       type: "line",
       unit: "%",
+      showLegend: false,
       xLabelInterval: (index) => index % 2 === 0 || index === 15,
       x: [
         "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015",
         "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"
       ],
       series: [
+        {
+          name: "base-diferencia",
+          type: "line",
+          stack: "brecha-salarial",
+          data: [0.0, 0.5, -1.2, -2.5, -5.4, -5.0, -4.2, -4.0, -5.0, -4.1, -3.8, -3.5, -1.9, 1.8, -3.2, -2.3],
+          color: "rgba(0,0,0,0)",
+          symbol: "none",
+          lineStyle: { opacity: 0 },
+          areaStyle: { opacity: 0 },
+          tooltip: { show: false }
+        },
+        {
+          name: "diferencia-pension-salario",
+          type: "line",
+          stack: "brecha-salarial",
+          data: [0.0, 1.6, 5.7, 7.5, 11.7, 13.7, 16.4, 18.8, 20.6, 20.8, 21.3, 22.3, 24.5, 24.4, 24.2, 30.9],
+          color: "rgba(0,0,0,0)",
+          symbol: "none",
+          lineStyle: { opacity: 0 },
+          areaStyle: { color: "rgba(243, 196, 0, 0.20)" },
+          tooltip: { show: false }
+        },
         {
           name: "Pension media",
           type: "line",
