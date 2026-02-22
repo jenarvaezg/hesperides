@@ -35,7 +35,8 @@
   function resolveAssetUrl(rawUrl) {
     const value = String(rawUrl || "").trim();
     if (!value) return value;
-    if (/^(https?:)?\/\//i.test(value) || value.startsWith("data:")) return value;
+    if (/^(https?:)?\/\//i.test(value) || value.startsWith("data:"))
+      return value;
     if (value.startsWith("/")) return value;
 
     const normalized = value.replace(/\\/g, "/");
@@ -137,7 +138,11 @@
       const parts = [candidate.content];
       consumedIndices.add(index);
 
-      for (let lookahead = index + 1; lookahead < lines.length; lookahead += 1) {
+      for (
+        let lookahead = index + 1;
+        lookahead < lines.length;
+        lookahead += 1
+      ) {
         const nextLine = String(lines[lookahead] || "").trim();
         if (!nextLine) {
           consumedIndices.add(lookahead);
@@ -153,31 +158,45 @@
         index = lookahead;
       }
 
-      definitions[candidate.number] = parts.join(" ").replace(/\s+/g, " ").trim();
+      definitions[candidate.number] = parts
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .trim();
     }
 
     return { definitions, consumedIndices };
   }
 
   function cleanSourceTextLines(rawText) {
-    const withoutCarriage = String(rawText || "").replace(/\r/g, "").replace(/\f/g, "\n");
-    const lines = withoutCarriage.split("\n").map((line) => line.replace(/\s+/g, " ").trim());
+    const withoutCarriage = String(rawText || "")
+      .replace(/\r/g, "")
+      .replace(/\f/g, "\n");
+    const lines = withoutCarriage
+      .split("\n")
+      .map((line) => line.replace(/\s+/g, " ").trim());
 
     const skipLinePatterns = [
       /^centro$/i,
       /^ruth richardson$/i,
       /^hesperides\.edu\.es$/i,
       /^\d+$/,
-      /^las reformas de la seguridad social en espana: un desequilibrio permanente$/i
+      /^las reformas de la seguridad social en espana: un desequilibrio permanente$/i,
     ];
 
-    const filtered = lines.filter((line) => !skipLinePatterns.some((pattern) => pattern.test(line)));
+    const filtered = lines.filter(
+      (line) => !skipLinePatterns.some((pattern) => pattern.test(line)),
+    );
     const merged = [];
 
     for (let index = 0; index < filtered.length; index += 1) {
       let line = filtered[index];
 
-      while (line && line.endsWith("-") && index + 1 < filtered.length && filtered[index + 1]) {
+      while (
+        line &&
+        line.endsWith("-") &&
+        index + 1 < filtered.length &&
+        filtered[index + 1]
+      ) {
         line = `${line.slice(0, -1)}${filtered[index + 1]}`;
         index += 1;
       }
@@ -225,13 +244,17 @@
       if (!currentParagraph.length) return;
       blocks.push({
         type: "paragraph",
-        text: currentParagraph.join(" ")
+        text: currentParagraph.join(" "),
       });
       currentParagraph = [];
     };
 
     const flushList = () => {
-      if (!currentList || !Array.isArray(currentList.items) || !currentList.items.length) {
+      if (
+        !currentList ||
+        !Array.isArray(currentList.items) ||
+        !currentList.items.length
+      ) {
         currentList = null;
         return;
       }
@@ -242,7 +265,7 @@
       if (normalizedItems.length) {
         blocks.push({
           type: currentList.type,
-          items: normalizedItems
+          items: normalizedItems,
         });
       }
       currentList = null;
@@ -262,13 +285,17 @@
       if (!match) return null;
       return {
         number: Number(match[1]),
-        text: match[2]
+        text: match[2],
       };
     };
 
     const findSiblingOrderedMarker = (fromIndex, step) => {
       let traversed = 0;
-      for (let index = fromIndex + step; index >= 0 && index < lines.length && traversed < 10; index += step) {
+      for (
+        let index = fromIndex + step;
+        index >= 0 && index < lines.length && traversed < 10;
+        index += step
+      ) {
         const candidate = String(lines[index] || "").trim();
         if (!candidate) break;
         traversed += 1;
@@ -310,11 +337,13 @@
         flushParagraph();
         flushList();
         const numberMatch = line.match(/^\s*([0-9]+(?:\.[0-9]+)*)[.)-]?\s+/);
-        const headingLevel = numberMatch ? Math.min(4, numberMatch[1].split(".").length + 1) : 2;
+        const headingLevel = numberMatch
+          ? Math.min(4, numberMatch[1].split(".").length + 1)
+          : 2;
         blocks.push({
           type: "heading",
           text: line,
-          level: headingLevel
+          level: headingLevel,
         });
         return;
       }
@@ -363,8 +392,12 @@
       /(\b\d{4})([1-9]\d?)\.(?=\s|$|[,:;!?])|([A-Za-zÁÉÍÓÚÜÑáéíóúüñ)\]])([1-9]\d?)\.(?=\s|$|[,:;!?])|(^|\s)([1-9]\d?)\.(?=\s|$|[,:;!?])/g;
 
     const shouldIgnoreByContext = (matchStartIndex) => {
-      const leftContext = normalizeLookup(rawText.slice(Math.max(0, matchStartIndex - 40), matchStartIndex));
-      return /\b(grafico|grafica|tabla|figura|seccion|capitulo|pagina|ano|punto)\s*$/.test(leftContext);
+      const leftContext = normalizeLookup(
+        rawText.slice(Math.max(0, matchStartIndex - 40), matchStartIndex),
+      );
+      return /\b(grafico|grafica|tabla|figura|seccion|capitulo|pagina|ano|punto)\s*$/.test(
+        leftContext,
+      );
     };
 
     let html = "";
@@ -414,15 +447,20 @@
     return {
       definitions: {
         ...(liveTextGlobalFootnotes || {}),
-        ...(liveTextFootnotesByChapter[chapterId] || {})
+        ...(liveTextFootnotesByChapter[chapterId] || {}),
       },
       seen: new Set(),
-      order: []
+      order: [],
     };
   }
 
   function renderChapterFootnotes(footnoteContext, chapterContainer) {
-    if (!footnoteContext || !Array.isArray(footnoteContext.order) || !footnoteContext.order.length) return;
+    if (
+      !footnoteContext ||
+      !Array.isArray(footnoteContext.order) ||
+      !footnoteContext.order.length
+    )
+      return;
 
     const wrapper = document.createElement("section");
     wrapper.className = "chapter-footnotes";
@@ -453,7 +491,7 @@
 
     return {
       kind: match[1].startsWith("tabla") ? "tabla" : "grafico",
-      number: Number(match[2])
+      number: Number(match[2]),
     };
   }
 
@@ -464,7 +502,7 @@
 
     return {
       kind: match[1].startsWith("tabla") ? "tabla" : "grafico",
-      number: Number(match[2])
+      number: Number(match[2]),
     };
   }
 
@@ -476,14 +514,18 @@
   function cleanChapterTextBlocks(blocks, chapterTitle) {
     if (!Array.isArray(blocks) || !blocks.length) return [];
 
-    const chapterComparable = normalizeLookup(stripNumericHeadingPrefix(chapterTitle));
+    const chapterComparable = normalizeLookup(
+      stripNumericHeadingPrefix(chapterTitle),
+    );
     let removedDuplicateHeading = false;
 
     return blocks.filter((block) => {
       if (!block || !block.text) return false;
 
       if (!removedDuplicateHeading && block.type === "heading") {
-        const headingComparable = normalizeLookup(stripNumericHeadingPrefix(block.text));
+        const headingComparable = normalizeLookup(
+          stripNumericHeadingPrefix(block.text),
+        );
         if (headingComparable && headingComparable === chapterComparable) {
           removedDuplicateHeading = true;
           return false;
@@ -500,7 +542,9 @@
     if (!Array.isArray(blocks) || !blocks.length) return empty;
 
     const chartQueuesByReference = {};
-    const orderedChartIds = Array.isArray(chapterChartIds) ? chapterChartIds : [];
+    const orderedChartIds = Array.isArray(chapterChartIds)
+      ? chapterChartIds
+      : [];
 
     orderedChartIds.forEach((chartKey) => {
       const chart = report.charts && report.charts[chartKey];
@@ -529,7 +573,10 @@
       const queue = chartQueuesByReference[referenceKey];
       if (queue && queue.length) {
         const chartKey = queue.shift();
-        beforeByChart[chartKey] = [...(beforeByChart[chartKey] || []), ...cleaned];
+        beforeByChart[chartKey] = [
+          ...(beforeByChart[chartKey] || []),
+          ...cleaned,
+        ];
         hasMatchedMarker = true;
         return;
       }
@@ -556,28 +603,31 @@
 
     if (!hasMatchedMarker && trailing.length && orderedChartIds.length) {
       const firstChartKey = orderedChartIds[0];
-      beforeByChart[firstChartKey] = [...(beforeByChart[firstChartKey] || []), ...trailing];
+      beforeByChart[firstChartKey] = [
+        ...(beforeByChart[firstChartKey] || []),
+        ...trailing,
+      ];
       return {
         beforeByChart,
-        tailBlocks: unmatchedBlocks
+        tailBlocks: unmatchedBlocks,
       };
     }
 
     return {
       beforeByChart,
-      tailBlocks: [...unmatchedBlocks, ...trailing]
+      tailBlocks: [...unmatchedBlocks, ...trailing],
     };
   }
 
   const formatNumber = (value, decimals = 1) =>
     new Intl.NumberFormat("es-ES", {
       minimumFractionDigits: decimals,
-      maximumFractionDigits: decimals
+      maximumFractionDigits: decimals,
     }).format(value);
 
   const formatInt = (value) =>
     new Intl.NumberFormat("es-ES", {
-      maximumFractionDigits: 0
+      maximumFractionDigits: 0,
     }).format(value);
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -631,13 +681,18 @@
   }
 
   function axisFormatter(unit, decimalsOverride) {
-    const hasOverride = Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
+    const hasOverride =
+      Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
     const normalized = String(unit || "").toLowerCase();
     if (normalized.includes("%")) {
       const decimals = hasOverride ? decimalsOverride : 0;
       return (value) => `${formatNumber(value, decimals)}%`;
     }
-    if (normalized.includes("m") || normalized.includes("viviendas") || normalized.includes("euros")) {
+    if (
+      normalized.includes("m") ||
+      normalized.includes("viviendas") ||
+      normalized.includes("euros")
+    ) {
       if (hasOverride) {
         return (value) => formatNumber(value, decimalsOverride);
       }
@@ -650,15 +705,28 @@
   function getAxisUnitProfile(chart) {
     const unit = String(chart.unit || "").toLowerCase();
 
-    if (unit === "%" || unit.includes("% del pib") || unit.includes("% del empleo")) {
+    if (
+      unit === "%" ||
+      unit.includes("% del pib") ||
+      unit.includes("% del empleo")
+    ) {
       return { suffix: "%", decimals: 0, integerOnly: true };
     }
 
-    if (unit.includes("€/m²") || unit.includes("eur/m²") || unit.includes("euros")) {
+    if (
+      unit.includes("€/m²") ||
+      unit.includes("eur/m²") ||
+      unit.includes("euros")
+    ) {
       return { suffix: "", decimals: 0, integerOnly: true };
     }
 
-    if (unit === "indice" || unit === "índice" || unit === "saldo" || unit === "percentil") {
+    if (
+      unit === "indice" ||
+      unit === "índice" ||
+      unit === "saldo" ||
+      unit === "percentil"
+    ) {
       return { suffix: "", decimals: 0, integerOnly: true };
     }
 
@@ -670,17 +738,23 @@
   }
 
   function formatAxisTick(value, chart, decimalsOverride) {
-    if (value === undefined || value === null || Number.isNaN(value)) return "-";
+    if (value === undefined || value === null || Number.isNaN(value))
+      return "-";
     const normalized = Math.abs(value) < 1e-9 ? 0 : value;
     const profile = getAxisUnitProfile(chart);
-    const hasOverride = Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
+    const hasOverride =
+      Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
     const resolvedDecimals = hasOverride ? decimalsOverride : profile.decimals;
-    const text = profile.integerOnly && !hasOverride ? formatNumber(normalized, 0) : formatNumber(normalized, resolvedDecimals);
+    const text =
+      profile.integerOnly && !hasOverride
+        ? formatNumber(normalized, 0)
+        : formatNumber(normalized, resolvedDecimals);
     return `${text}${profile.suffix}`;
   }
 
   function valueFormatter(unit, decimalsOverride) {
-    const hasOverride = Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
+    const hasOverride =
+      Number.isFinite(decimalsOverride) && decimalsOverride >= 0;
     const normalized = String(unit || "").toLowerCase();
     const toSafeNumber = (value) => {
       if (value === null || value === undefined || value === "") return null;
@@ -699,21 +773,27 @@
       return (value) => {
         const num = toSafeNumber(value);
         if (num === null) return "-";
-        return hasOverride ? `${formatNumber(num, decimalsOverride)} EUR` : `${formatInt(num)} EUR`;
+        return hasOverride
+          ? `${formatNumber(num, decimalsOverride)} EUR`
+          : `${formatInt(num)} EUR`;
       };
     }
     if (normalized.includes("m")) {
       return (value) => {
         const num = toSafeNumber(value);
         if (num === null) return "-";
-        return hasOverride ? `${formatNumber(num, decimalsOverride)} M` : `${formatInt(num)} M`;
+        return hasOverride
+          ? `${formatNumber(num, decimalsOverride)} M`
+          : `${formatInt(num)} M`;
       };
     }
     if (normalized.includes("viviendas")) {
       return (value) => {
         const num = toSafeNumber(value);
         if (num === null) return "-";
-        return hasOverride ? `${formatNumber(num, decimalsOverride)} viviendas` : `${formatInt(num)} viviendas`;
+        return hasOverride
+          ? `${formatNumber(num, decimalsOverride)} viviendas`
+          : `${formatInt(num)} viviendas`;
       };
     }
     const decimals = hasOverride ? decimalsOverride : 1;
@@ -728,9 +808,14 @@
     const rows = Array.isArray(chart.tableRows)
       ? chart.tableRows
       : (chart.x || []).map((label, index) => {
-          const values = (chart.series && chart.series[0] && chart.series[0].data) || [];
+          const values =
+            (chart.series && chart.series[0] && chart.series[0].data) || [];
           const value = values[index];
-          return [String(index + 1), label, value === undefined ? "-" : String(value)];
+          return [
+            String(index + 1),
+            label,
+            value === undefined ? "-" : String(value),
+          ];
         });
 
     const wrapper = document.createElement("div");
@@ -774,7 +859,9 @@
         const cellClassKeyA = `${index}:${cellIndex}`;
         const cellClassKeyB = `${index},${cellIndex}`;
         const cellClassName =
-          chart.tableCellClasses && (chart.tableCellClasses[cellClassKeyA] || chart.tableCellClasses[cellClassKeyB]);
+          chart.tableCellClasses &&
+          (chart.tableCellClasses[cellClassKeyA] ||
+            chart.tableCellClasses[cellClassKeyB]);
         if (cellClassName) {
           String(cellClassName)
             .split(/\s+/)
@@ -792,7 +879,9 @@
   }
 
   function getReportUrl() {
-    return report.meta && report.meta.reportUrl ? report.meta.reportUrl : window.location.href;
+    return report.meta && report.meta.reportUrl
+      ? report.meta.reportUrl
+      : window.location.href;
   }
 
   function downloadCanvasWithMetaFromImage(image, chart) {
@@ -872,7 +961,7 @@
     const chartDataUrl = instance.getDataURL({
       pixelRatio: 2,
       backgroundColor: "#fffdf8",
-      excludeComponents: ["toolbox"]
+      excludeComponents: ["toolbox"],
     });
 
     const image = new Image();
@@ -893,9 +982,14 @@
     const rows = Array.isArray(chart.tableRows)
       ? chart.tableRows
       : (chart.x || []).map((label, index) => {
-          const values = (chart.series && chart.series[0] && chart.series[0].data) || [];
+          const values =
+            (chart.series && chart.series[0] && chart.series[0].data) || [];
           const value = values[index];
-          return [String(index + 1), label, value === undefined ? "-" : String(value)];
+          return [
+            String(index + 1),
+            label,
+            value === undefined ? "-" : String(value),
+          ];
         });
 
     const padding = 42;
@@ -917,11 +1011,20 @@
 
     ctx.font = headCellFont;
     const colWidths = columns.map((col, colIndex) => {
-      let width = Math.max(minColWidth, Math.min(maxColWidth, ctx.measureText(String(col)).width + cellPaddingX * 2));
+      let width = Math.max(
+        minColWidth,
+        Math.min(
+          maxColWidth,
+          ctx.measureText(String(col)).width + cellPaddingX * 2,
+        ),
+      );
       ctx.font = bodyCellFont;
       rows.forEach((row) => {
         const value = String(row[colIndex] ?? "");
-        const measured = Math.min(maxColWidth, ctx.measureText(value).width + cellPaddingX * 2);
+        const measured = Math.min(
+          maxColWidth,
+          ctx.measureText(value).width + cellPaddingX * 2,
+        );
         width = Math.max(width, measured);
       });
       ctx.font = headCellFont;
@@ -933,14 +1036,22 @@
     const tableLeft = Math.round((contentWidth - tableWidth) / 2);
 
     ctx.font = titleFont;
-    const titleLines = wrapLines(ctx, chart.title || "", contentWidth - padding * 2);
+    const titleLines = wrapLines(
+      ctx,
+      chart.title || "",
+      contentWidth - padding * 2,
+    );
     ctx.font = subtitleFont;
-    const subtitleLines = wrapLines(ctx, chart.subtitle || "", contentWidth - padding * 2);
+    const subtitleLines = wrapLines(
+      ctx,
+      chart.subtitle || "",
+      contentWidth - padding * 2,
+    );
     ctx.font = sourceFont;
     const sourceLines = wrapLines(
       ctx,
       `Fuente: ${chart.source || "Informe original"} · Informe: ${getReportUrl()}`,
-      contentWidth - padding * 2
+      contentWidth - padding * 2,
     );
 
     const headerRowHeight = lineHeight + cellPaddingY * 2;
@@ -948,18 +1059,27 @@
       let maxLines = 1;
       row.forEach((cell, colIndex) => {
         ctx.font = bodyCellFont;
-        const wrapped = wrapLines(ctx, String(cell ?? ""), colWidths[colIndex] - cellPaddingX * 2);
+        const wrapped = wrapLines(
+          ctx,
+          String(cell ?? ""),
+          colWidths[colIndex] - cellPaddingX * 2,
+        );
         maxLines = Math.max(maxLines, wrapped.length || 1);
       });
       return maxLines * lineHeight + cellPaddingY * 2;
     });
 
-    const tableHeight = headerRowHeight + bodyRowHeights.reduce((acc, value) => acc + value, 0);
+    const tableHeight =
+      headerRowHeight + bodyRowHeights.reduce((acc, value) => acc + value, 0);
     const titleLineHeight = 52;
     const subtitleLineHeight = 36;
     const sourceLineHeight = 28;
     const topContentHeight =
-      padding + titleLines.length * titleLineHeight + 8 + subtitleLines.length * subtitleLineHeight + 30;
+      padding +
+      titleLines.length * titleLineHeight +
+      8 +
+      subtitleLines.length * subtitleLineHeight +
+      30;
     const bottomContentHeight = 18 + sourceLines.length * sourceLineHeight + 24;
 
     canvas.width = contentWidth;
@@ -1022,9 +1142,17 @@
       let cursorX = tableLeft;
       row.forEach((cell, colIndex) => {
         const colWidth = colWidths[colIndex];
-        const wrapped = wrapLines(ctx, String(cell ?? ""), colWidth - cellPaddingX * 2);
+        const wrapped = wrapLines(
+          ctx,
+          String(cell ?? ""),
+          colWidth - cellPaddingX * 2,
+        );
         wrapped.forEach((line, lineIndex) => {
-          ctx.fillText(line, cursorX + cellPaddingX, cursorY + cellPaddingY + lineIndex * lineHeight);
+          ctx.fillText(
+            line,
+            cursorX + cellPaddingX,
+            cursorY + cellPaddingY + lineIndex * lineHeight,
+          );
         });
         cursorX += colWidth;
       });
@@ -1054,12 +1182,17 @@
 
   function buildChartOption(chart) {
     const wrapLength =
-      Number.isFinite(chart.labelWrapLength) && chart.labelWrapLength > 0 ? chart.labelWrapLength : 14;
+      Number.isFinite(chart.labelWrapLength) && chart.labelWrapLength > 0
+        ? chart.labelWrapLength
+        : 14;
     const xLabels = (chart.x || []).map((label) =>
-      chart.noWrapLabels ? String(label) : wrapCategoryLabel(label, wrapLength)
+      chart.noWrapLabels ? String(label) : wrapCategoryLabel(label, wrapLength),
     );
     const categoryCount = xLabels.length;
-    const maxCategoryLabelLength = xLabels.reduce((max, label) => Math.max(max, String(label || "").length), 0);
+    const maxCategoryLabelLength = xLabels.reduce(
+      (max, label) => Math.max(max, String(label || "").length),
+      0,
+    );
     const computedXLabelInterval =
       chart.xLabelInterval !== undefined
         ? chart.xLabelInterval
@@ -1067,32 +1200,148 @@
           ? Math.max(1, Math.ceil(categoryCount / 12) - 1)
           : 0;
     const computedXLabelRotate =
-      chart.xLabelRotate !== undefined ? chart.xLabelRotate : maxCategoryLabelLength > 14 && categoryCount > 6 ? 25 : 0;
+      chart.xLabelRotate !== undefined
+        ? chart.xLabelRotate
+        : maxCategoryLabelLength > 14 && categoryCount > 6
+          ? 25
+          : 0;
     const computedXLabelFontSize =
-      chart.xLabelFontSize || (categoryCount > 20 ? 8 : categoryCount > 14 ? 9 : 11);
-    const computedYLabelFontSize = chart.yLabelFontSize || (categoryCount > 18 ? 10 : 11);
+      chart.xLabelFontSize ||
+      (categoryCount > 20 ? 8 : categoryCount > 14 ? 9 : 11);
+    const computedYLabelFontSize =
+      chart.yLabelFontSize || (categoryCount > 18 ? 10 : 11);
+    const isPie = chart.type === "pie";
     const isHorizontal = chart.orientation === "horizontal";
-    const isXY = chart.coordinate === "xy";
-    const defaultType = isXY ? "scatter" : chart.type === "line" ? "line" : "bar";
+    const isXYCategoryY = chart.coordinate === "xy-category-y";
+    const isXY = chart.coordinate === "xy" || isXYCategoryY;
+    const defaultType = isXY
+      ? "scatter"
+      : chart.type === "line"
+        ? "line"
+        : "bar";
     const tickFormatter = axisFormatter(chart.unit, chart.axisDecimals);
-    const xTickFormatter = axisFormatter(chart.xUnit || chart.unit, chart.xAxisDecimals ?? chart.axisDecimals);
-    const yTickFormatter = axisFormatter(chart.yUnit || chart.unit, chart.yAxisDecimals ?? chart.axisDecimals);
-    const tooltipFormatter = valueFormatter(chart.tooltipUnit || chart.unit, chart.tooltipDecimals);
-    const tooltipMultiplier = Number.isFinite(chart.tooltipMultiplier) ? Number(chart.tooltipMultiplier) : 1;
-    const xTooltipFormatter = valueFormatter(chart.xUnit || chart.unit, chart.xTooltipDecimals ?? chart.tooltipDecimals);
-    const yTooltipFormatter = valueFormatter(chart.yUnit || chart.unit, chart.yTooltipDecimals ?? chart.tooltipDecimals);
-    const anyLineSeries = (chart.series || []).some((serie) => (serie.type || defaultType) === "line");
-    const colors = (chart.series || []).map((serie) => serie.color).filter(Boolean);
+    const xTickFormatter = axisFormatter(
+      chart.xUnit || chart.unit,
+      chart.xAxisDecimals ?? chart.axisDecimals,
+    );
+    const yTickFormatter = axisFormatter(
+      chart.yUnit || chart.unit,
+      chart.yAxisDecimals ?? chart.axisDecimals,
+    );
+    const tooltipFormatter = valueFormatter(
+      chart.tooltipUnit || chart.unit,
+      chart.tooltipDecimals,
+    );
+    const tooltipMultiplier = Number.isFinite(chart.tooltipMultiplier)
+      ? Number(chart.tooltipMultiplier)
+      : 1;
+    const xTooltipFormatter = valueFormatter(
+      chart.xUnit || chart.unit,
+      chart.xTooltipDecimals ?? chart.tooltipDecimals,
+    );
+    const yTooltipFormatter = valueFormatter(
+      chart.yUnit || chart.unit,
+      chart.yTooltipDecimals ?? chart.tooltipDecimals,
+    );
+    const anyLineSeries = (chart.series || []).some(
+      (serie) => (serie.type || defaultType) === "line",
+    );
+    const colors = (chart.series || [])
+      .map((serie) => serie.color)
+      .filter(Boolean);
     const legendData = (chart.series || [])
       .filter((serie) => !serie.excludeFromLegend)
       .map((serie) => serie.name)
       .filter(Boolean);
 
+    if (isPie) {
+      const pieSeries = (chart.series || []).map((serie, seriesIndex) => {
+        const data = (serie.data || []).map((item, index) => {
+          if (typeof item === "number") {
+            return {
+              name: (chart.x || [])[index] || `Item ${index + 1}`,
+              value: item,
+            };
+          }
+          return item;
+        });
+
+        return {
+          name: serie.name || chart.title || `Serie ${seriesIndex + 1}`,
+          type: "pie",
+          radius:
+            serie.radius ||
+            chart.radius ||
+            (chart.donut ? ["45%", "72%"] : "72%"),
+          center: serie.center || chart.center || ["50%", "54%"],
+          itemStyle: serie.itemStyle,
+          label: serie.label || {
+            show: true,
+            position: chart.pieLabelPosition || "inside",
+            formatter: chart.pieLabelFormatter || "{b}\n{d}%",
+          },
+          labelLine: serie.labelLine,
+          data,
+        };
+      });
+
+      return {
+        animationDuration: 400,
+        color: colors.length ? colors : undefined,
+        tooltip: {
+          trigger: "item",
+          backgroundColor: "rgba(23, 23, 23, 0.92)",
+          borderColor: "#f3c400",
+          borderWidth: 1,
+          textStyle: {
+            color: "#f9f9f9",
+          },
+          formatter: (params) => {
+            const value =
+              typeof params.value === "number"
+                ? tooltipFormatter(params.value)
+                : params.value;
+            return `<strong>${escapeHtml(params.name || "")}</strong><br>${value}`;
+          },
+        },
+        legend: {
+          show: typeof chart.showLegend === "boolean" ? chart.showLegend : true,
+          top: chart.legendTop ?? 0,
+          left: chart.legendLeft ?? "left",
+          orient: chart.legendOrient || "horizontal",
+          itemGap: Number.isFinite(chart.legendItemGap)
+            ? chart.legendItemGap
+            : 10,
+          textStyle: {
+            color: "#3f3a2f",
+            fontFamily: "IBM Plex Sans",
+            fontSize: chart.legendFontSize || 12,
+          },
+        },
+        toolbox: {
+          right: chart.toolboxRight ?? 0,
+          top: chart.toolboxTop ?? 0,
+          itemSize: 14,
+          feature: {
+            myDownload: {
+              show: true,
+              title: "Descargar",
+              icon: "path://M512 128c17.7 0 32 14.3 32 32v256h96L384 704 128 416h96V160c0-17.7 14.3-32 32-32h256zM128 768h512v64H128v-64z",
+              onclick: () => {},
+            },
+          },
+        },
+        series: pieSeries,
+      };
+    }
+
     const baseSeries = (chart.series || []).map((serie) => {
       const serieType = serie.type || defaultType;
       const isLine = serieType === "line";
       const isScatter = serieType === "scatter";
-      const highlightCategories = Array.isArray(chart.highlights) ? chart.highlights : [];
+      const highlightCategories = Array.isArray(chart.highlights)
+        ? chart.highlights
+        : [];
       const highlightedColor =
         !isLine && !isScatter && highlightCategories.length
           ? (params) => {
@@ -1112,24 +1361,32 @@
         stack: serie.stack || chart.stack || undefined,
         yAxisIndex: Number.isInteger(serie.yAxisIndex) ? serie.yAxisIndex : 0,
         barMaxWidth: serie.barMaxWidth || chart.barMaxWidth || 28,
-        smooth: isLine ? (serie.smooth !== undefined ? Boolean(serie.smooth) : true) : false,
-        symbol: isLine || isScatter ? serie.symbol || "circle" : serie.symbol || "none",
-        symbolSize: isLine || isScatter ? (serie.symbolSize || 6) : serie.symbolSize || 0,
+        smooth: isLine
+          ? serie.smooth !== undefined
+            ? Boolean(serie.smooth)
+            : true
+          : false,
+        symbol:
+          isLine || isScatter
+            ? serie.symbol || "circle"
+            : serie.symbol || "none",
+        symbolSize:
+          isLine || isScatter ? serie.symbolSize || 6 : serie.symbolSize || 0,
         label: serie.label,
         lineStyle: serie.lineStyle,
         itemStyle: serie.itemStyle,
-        tooltip: serie.tooltip
+        tooltip: serie.tooltip,
       };
 
       if (highlightedColor) {
         base.itemStyle = {
           ...(base.itemStyle || {}),
-          color: highlightedColor
+          color: highlightedColor,
         };
         if (isLine) {
           base.lineStyle = {
             ...(base.lineStyle || {}),
-            color: serie.color
+            color: serie.color,
           };
         }
       }
@@ -1144,7 +1401,7 @@
               : defaultRadius;
 
         base.itemStyle = {
-          ...(base.itemStyle || {})
+          ...(base.itemStyle || {}),
         };
 
         if (resolvedRadius !== false && resolvedRadius !== null) {
@@ -1173,17 +1430,17 @@
           position: axis.position || "left",
           axisLabel: {
             color: "#4f4f4f",
-            formatter: axisFormatter(axis.unit || chart.unit)
+            formatter: axisFormatter(axis.unit || chart.unit),
           },
           axisLine: {
             lineStyle: {
-              color: "#8f8574"
-            }
+              color: "#8f8574",
+            },
           },
           splitLine: {
             show: axis.position !== "right",
-            lineStyle: { color: "rgba(137, 128, 106, 0.25)" }
-          }
+            lineStyle: { color: "rgba(137, 128, 106, 0.25)" },
+          },
         }))
       : null;
 
@@ -1194,8 +1451,10 @@
         left: chart.gridLeft ?? (isHorizontal ? 130 : 56),
         right: chart.gridRight ?? 26,
         top: chart.gridTop ?? 28,
-        bottom: chart.gridBottom ?? (xLabels.length > 8 && !isHorizontal && !isXY ? 92 : 58),
-        containLabel: true
+        bottom:
+          chart.gridBottom ??
+          (xLabels.length > 8 && !isHorizontal && !isXY ? 92 : 58),
+        containLabel: true,
       },
       tooltip: {
         trigger: isXY ? "item" : "axis",
@@ -1203,10 +1462,10 @@
         borderColor: "#f3c400",
         borderWidth: 1,
         textStyle: {
-          color: "#f9f9f9"
+          color: "#f9f9f9",
         },
         axisPointer: {
-          type: isXY || anyLineSeries ? "cross" : "shadow"
+          type: isXY || anyLineSeries ? "cross" : "shadow",
         },
         formatter: (params) => {
           if (isXY) {
@@ -1216,11 +1475,22 @@
               : Array.isArray(item.data && item.data.value)
                 ? item.data.value
                 : [item.value, null];
-            const label = item.data && item.data.name ? item.data.name : item.seriesName;
+            const yValue = isXYCategoryY
+              ? (() => {
+                  if (typeof point[1] === "string") return point[1];
+                  if (typeof point[1] === "number") {
+                    const category = (chart.x || [])[Math.round(point[1])];
+                    return category !== undefined ? category : point[1];
+                  }
+                  return point[1];
+                })()
+              : point[1];
+            const label =
+              item.data && item.data.name ? item.data.name : item.seriesName;
             return [
               `<strong>${escapeHtml(label || "")}</strong>`,
               `${escapeHtml(chart.xLabel || "X")}: ${xTooltipFormatter(point[0])}`,
-              `${escapeHtml(chart.yLabel || "Y")}: ${yTooltipFormatter(point[1])}`
+              `${escapeHtml(chart.yLabel || "Y")}: ${isXYCategoryY ? escapeHtml(String(yValue ?? "")) : yTooltipFormatter(point[1])}`,
             ].join("<br>");
           }
           const items = Array.isArray(params) ? params : [params];
@@ -1230,23 +1500,30 @@
             if (typeof value === "number" && tooltipMultiplier !== 1) {
               value *= tooltipMultiplier;
             }
-            lines.push(`${item.marker} ${item.seriesName}: ${tooltipFormatter(value)}`);
+            lines.push(
+              `${item.marker} ${item.seriesName}: ${tooltipFormatter(value)}`,
+            );
           });
           return lines.join("<br>");
-        }
+        },
       },
       legend: {
-        show: typeof chart.showLegend === "boolean" ? chart.showLegend : (chart.series || []).length > 1,
+        show:
+          typeof chart.showLegend === "boolean"
+            ? chart.showLegend
+            : (chart.series || []).length > 1,
         data: legendData.length ? legendData : undefined,
         top: chart.legendTop ?? 0,
         left: chart.legendLeft ?? "left",
         orient: chart.legendOrient || "horizontal",
-        itemGap: Number.isFinite(chart.legendItemGap) ? chart.legendItemGap : 12,
+        itemGap: Number.isFinite(chart.legendItemGap)
+          ? chart.legendItemGap
+          : 12,
         textStyle: {
           color: "#3f3a2f",
           fontFamily: "IBM Plex Sans",
-          fontSize: chart.legendFontSize || 12
-        }
+          fontSize: chart.legendFontSize || 12,
+        },
       },
       toolbox: {
         right: chart.toolboxRight ?? 0,
@@ -1256,11 +1533,10 @@
           myDownload: {
             show: true,
             title: "Descargar",
-            icon:
-              "path://M512 128c17.7 0 32 14.3 32 32v256h96L384 704 128 416h96V160c0-17.7 14.3-32 32-32h256zM128 768h512v64H128v-64z",
-            onclick: () => {}
-          }
-        }
+            icon: "path://M512 128c17.7 0 32 14.3 32 32v256h96L384 704 128 416h96V160c0-17.7 14.3-32 32-32h256zM128 768h512v64H128v-64z",
+            onclick: () => {},
+          },
+        },
       },
       xAxis: isXY
         ? {
@@ -1273,128 +1549,176 @@
             nameTextStyle: {
               color: "#4f4f4f",
               fontSize: 11,
-              fontWeight: 600
+              fontWeight: 600,
             },
             axisLabel: {
               color: "#4f4f4f",
-              formatter: xTickFormatter
+              formatter: xTickFormatter,
             },
             splitLine: {
               lineStyle: {
-                color: "rgba(137, 128, 106, 0.25)"
-              }
+                color: "rgba(137, 128, 106, 0.25)",
+              },
             },
             axisLine: {
               lineStyle: {
-                color: "#8f8574"
-              }
-            }
+                color: "#8f8574",
+              },
+            },
           }
-        : isHorizontal
+        : isXYCategoryY
           ? {
               type: "value",
+              min: chart.xMin,
+              max: chart.xMax,
+              name: chart.xAxisName || chart.xLabel || undefined,
+              nameLocation: "middle",
+              nameGap: chart.xAxisNameGap || 34,
+              nameTextStyle: {
+                color: "#4f4f4f",
+                fontSize: 11,
+                fontWeight: 600,
+              },
               axisLabel: {
                 color: "#4f4f4f",
-                formatter: xTickFormatter
-              },
-              axisLine: {
-                lineStyle: {
-                  color: "#8f8574"
-                }
+                formatter: xTickFormatter,
               },
               splitLine: {
                 lineStyle: {
-                  color: "rgba(137, 128, 106, 0.25)"
-                }
-              },
-              min: chart.min,
-              max: chart.max
-            }
-          : {
-              type: "category",
-              data: xLabels,
-              axisLabel: {
-                color: "#4f4f4f",
-                interval: computedXLabelInterval,
-                rotate: computedXLabelRotate,
-                fontSize: computedXLabelFontSize,
-                hideOverlap: true,
-                lineHeight: 14
+                  color: "rgba(137, 128, 106, 0.25)",
+                },
               },
               axisLine: {
                 lineStyle: {
-                  color: "#8f8574"
-                }
+                  color: "#8f8574",
+                },
               },
-              axisTick: { alignWithLabel: true }
-            },
-      yAxis: yAxisOption || (isXY
-        ? {
-            type: "value",
-            min: chart.min,
-            max: chart.max,
-            name: chart.yAxisName || chart.yLabel || undefined,
-            nameLocation: "middle",
-            nameGap: chart.yAxisNameGap || 52,
-            nameRotate: 90,
-            nameTextStyle: {
-              color: "#4f4f4f",
-              fontSize: 11,
-              fontWeight: 600
-            },
-            axisLabel: {
-              color: "#4f4f4f",
-              formatter: yTickFormatter
-            },
-            splitLine: {
-              lineStyle: {
-                color: "rgba(137, 128, 106, 0.25)"
-              }
-            },
-            axisLine: {
-              lineStyle: {
-                color: "#8f8574"
-              }
             }
-          }
-        : isHorizontal
+          : isHorizontal
+            ? {
+                type: "value",
+                axisLabel: {
+                  color: "#4f4f4f",
+                  formatter: xTickFormatter,
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: "#8f8574",
+                  },
+                },
+                splitLine: {
+                  lineStyle: {
+                    color: "rgba(137, 128, 106, 0.25)",
+                  },
+                },
+                min: chart.min,
+                max: chart.max,
+              }
+            : {
+                type: "category",
+                data: xLabels,
+                axisLabel: {
+                  color: "#4f4f4f",
+                  interval: computedXLabelInterval,
+                  rotate: computedXLabelRotate,
+                  fontSize: computedXLabelFontSize,
+                  hideOverlap: true,
+                  lineHeight: 14,
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: "#8f8574",
+                  },
+                },
+                axisTick: { alignWithLabel: true },
+              },
+      yAxis:
+        yAxisOption ||
+        (isXY
           ? {
-              type: "category",
-              data: xLabels,
-              inverse: Boolean(chart.yAxisInverse),
-              axisLabel: {
+              type: "value",
+              min: chart.min,
+              max: chart.max,
+              name: chart.yAxisName || chart.yLabel || undefined,
+              nameLocation: "middle",
+              nameGap: chart.yAxisNameGap || 52,
+              nameRotate: 90,
+              nameTextStyle: {
                 color: "#4f4f4f",
-                interval: 0,
-                fontSize: computedYLabelFontSize,
-                hideOverlap: false,
-                lineHeight: 14
+                fontSize: 11,
+                fontWeight: 600,
               },
-              axisLine: {
-                lineStyle: {
-                  color: "#8f8574"
-                }
-              }
-            }
-          : {
-              type: chart.yAxisType || "value",
               axisLabel: {
                 color: "#4f4f4f",
-                formatter: yTickFormatter
+                formatter: yTickFormatter,
               },
               splitLine: {
                 lineStyle: {
-                  color: "rgba(137, 128, 106, 0.25)"
-                }
+                  color: "rgba(137, 128, 106, 0.25)",
+                },
               },
               axisLine: {
                 lineStyle: {
-                  color: "#8f8574"
-                }
+                  color: "#8f8574",
+                },
               },
-              min: chart.min,
-              max: chart.max
-            }),
-      series: baseSeries
+            }
+          : isXYCategoryY
+            ? {
+                type: "category",
+                data: xLabels,
+                inverse: Boolean(chart.yAxisInverse),
+                axisLabel: {
+                  color: "#4f4f4f",
+                  interval: 0,
+                  fontSize: computedYLabelFontSize,
+                  hideOverlap: false,
+                  lineHeight: 14,
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: "#8f8574",
+                  },
+                },
+              }
+            : isHorizontal
+              ? {
+                  type: "category",
+                  data: xLabels,
+                  inverse: Boolean(chart.yAxisInverse),
+                  axisLabel: {
+                    color: "#4f4f4f",
+                    interval: 0,
+                    fontSize: computedYLabelFontSize,
+                    hideOverlap: false,
+                    lineHeight: 14,
+                  },
+                  axisLine: {
+                    lineStyle: {
+                      color: "#8f8574",
+                    },
+                  },
+                }
+              : {
+                  type: chart.yAxisType || "value",
+                  axisLabel: {
+                    color: "#4f4f4f",
+                    formatter: yTickFormatter,
+                  },
+                  splitLine: {
+                    lineStyle: {
+                      color: "rgba(137, 128, 106, 0.25)",
+                    },
+                  },
+                  axisLine: {
+                    lineStyle: {
+                      color: "#8f8574",
+                    },
+                  },
+                  min: chart.min,
+                  max: chart.max,
+                }),
+      series: baseSeries,
     };
 
     if (chart.dataZoom) {
@@ -1403,18 +1727,22 @@
       option.dataZoom = [{ type: "inside" }];
     }
 
-    if (Array.isArray(chart.markAreas) && chart.markAreas.length > 0 && baseSeries.length > 0) {
+    if (
+      Array.isArray(chart.markAreas) &&
+      chart.markAreas.length > 0 &&
+      baseSeries.length > 0
+    ) {
       baseSeries[0].markArea = {
         silent: true,
         itemStyle: {
-          color: "rgba(243, 196, 0, 0.14)"
+          color: "rgba(243, 196, 0, 0.14)",
         },
         data: chart.markAreas.map((area) => {
           if (isXY) {
             return [{ xAxis: area.from }, { xAxis: area.to }];
           }
           return [{ xAxis: area.from }, { xAxis: area.to }];
-        })
+        }),
       };
     }
 
@@ -1423,9 +1751,9 @@
         symbol: "none",
         lineStyle: {
           color: "#7c7468",
-          type: "dashed"
+          type: "dashed",
         },
-        data: [isHorizontal ? { xAxis: 0 } : { yAxis: 0 }]
+        data: [isHorizontal ? { xAxis: 0 } : { yAxis: 0 }],
       };
     }
 
@@ -1440,16 +1768,16 @@
         xAxis: eventLine.x,
         lineStyle: {
           color: eventLine.color || "#d26d6d",
-          type: "dashed"
-        }
+          type: "dashed",
+        },
       }));
       const yLines = (chart.eventLinesY || []).map((eventLine) => ({
         name: eventLine.label,
         yAxis: eventLine.y,
         lineStyle: {
           color: eventLine.color || "#d26d6d",
-          type: "dashed"
-        }
+          type: "dashed",
+        },
       }));
 
       baseSeries[0].markLine = {
@@ -1460,29 +1788,33 @@
           color: "#6e4f4f",
           fontSize: 10,
           backgroundColor: "rgba(255,255,255,0.78)",
-          padding: [2, 4]
+          padding: [2, 4],
         },
-        data: [...xLines, ...yLines]
+        data: [...xLines, ...yLines],
       };
-    } else if (Array.isArray(chart.eventLines) && chart.eventLines.length > 0 && baseSeries.length > 0) {
+    } else if (
+      Array.isArray(chart.eventLines) &&
+      chart.eventLines.length > 0 &&
+      baseSeries.length > 0
+    ) {
       baseSeries[0].markLine = {
         ...(baseSeries[0].markLine || {}),
         symbol: "none",
         lineStyle: {
           color: "#7c7468",
-          type: "dashed"
+          type: "dashed",
         },
         label: {
           formatter: (params) => params.name,
           color: "#524a3b",
           fontSize: 10,
           backgroundColor: "rgba(255,255,255,0.7)",
-          padding: [2, 4]
+          padding: [2, 4],
         },
         data: chart.eventLines.map((eventLine) => ({
           name: eventLine.label,
-          xAxis: eventLine.x
-        }))
+          xAxis: eventLine.x,
+        })),
       };
     }
 
@@ -1492,7 +1824,10 @@
   function renderSmallMultiplesChart(chart, host) {
     const container = document.createElement("div");
     container.className = "chart-canvas chart-canvas--multiples";
-    if (Number.isInteger(chart.smallMultiplesColumns) && chart.smallMultiplesColumns > 0) {
+    if (
+      Number.isInteger(chart.smallMultiplesColumns) &&
+      chart.smallMultiplesColumns > 0
+    ) {
       container.style.gridTemplateColumns = `repeat(${chart.smallMultiplesColumns}, minmax(0, 1fr))`;
     }
     host.appendChild(container);
@@ -1510,7 +1845,11 @@
     const tickIndices = new Set(
       Array.isArray(axisPreset.xTickIndices)
         ? axisPreset.xTickIndices
-        : [0, Math.floor(((chart.x || []).length - 1) / 2), (chart.x || []).length - 1]
+        : [
+            0,
+            Math.floor(((chart.x || []).length - 1) / 2),
+            (chart.x || []).length - 1,
+          ],
     );
     const labelMap = axisPreset.xLabelMap || {};
 
@@ -1519,7 +1858,8 @@
       const isBar = serieType === "bar";
       const panelMin = typeof serie.min === "number" ? serie.min : yMin;
       const panelMax = typeof serie.max === "number" ? serie.max : yMax;
-      const panelInterval = typeof serie.interval === "number" ? serie.interval : yInterval;
+      const panelInterval =
+        typeof serie.interval === "number" ? serie.interval : yInterval;
       const panel = document.createElement("div");
       panel.className = "mini-chart-canvas";
       container.appendChild(panel);
@@ -1535,9 +1875,14 @@
           borderColor: "#f3c400",
           borderWidth: 1,
           textStyle: {
-            color: "#f9f9f9"
+            color: "#f9f9f9",
           },
-          valueFormatter: (value) => formatAxisTick(value, chart, chart.yAxisDecimals ?? chart.axisDecimals)
+          valueFormatter: (value) =>
+            formatAxisTick(
+              value,
+              chart,
+              chart.yAxisDecimals ?? chart.axisDecimals,
+            ),
         },
         title: {
           text: serie.name,
@@ -1547,14 +1892,14 @@
             fontSize: 12,
             fontWeight: 700,
             fontFamily: "IBM Plex Sans",
-            color: "#3f3a2f"
-          }
+            color: "#3f3a2f",
+          },
         },
         grid: {
           left: 44,
           right: 10,
           top: 34,
-          bottom: 36
+          bottom: 36,
         },
         xAxis: {
           type: "category",
@@ -1568,13 +1913,13 @@
             formatter: (value, index) => {
               if (!tickIndices.has(index)) return "";
               return labelMap[value] || value;
-            }
+            },
           },
           axisLine: {
             lineStyle: {
-              color: "#8f8574"
-            }
-          }
+              color: "#8f8574",
+            },
+          },
         },
         yAxis: {
           type: "value",
@@ -1586,13 +1931,18 @@
             color: "#4f4f4f",
             fontSize: 10,
             hideOverlap: true,
-            formatter: (value) => formatAxisTick(value, chart, chart.yAxisDecimals ?? chart.axisDecimals)
+            formatter: (value) =>
+              formatAxisTick(
+                value,
+                chart,
+                chart.yAxisDecimals ?? chart.axisDecimals,
+              ),
           },
           splitLine: {
             lineStyle: {
-              color: "rgba(137, 128, 106, 0.25)"
-            }
-          }
+              color: "rgba(137, 128, 106, 0.25)",
+            },
+          },
         },
         series: [
           ...(isBar
@@ -1605,29 +1955,38 @@
                   label: serie.label,
                   itemStyle: {
                     color: serie.color,
-                    borderRadius: [4, 4, 0, 0]
-                  }
-                }
+                    borderRadius: [4, 4, 0, 0],
+                  },
+                },
               ]
             : serie.splitAreaByZero
               ? [
                   {
                     type: "line",
-                    data: (serie.data || []).map((value) => (value > 0 ? value : null)),
+                    data: (serie.data || []).map((value) =>
+                      value > 0 ? value : null,
+                    ),
                     smooth: 0.15,
                     symbol: "none",
                     lineStyle: { opacity: 0 },
-                    areaStyle: { color: serie.positiveAreaColor || "rgba(170,170,170,0.32)" },
-                    stack: `split-${serie.name}`
+                    areaStyle: {
+                      color:
+                        serie.positiveAreaColor || "rgba(170,170,170,0.32)",
+                    },
+                    stack: `split-${serie.name}`,
                   },
                   {
                     type: "line",
-                    data: (serie.data || []).map((value) => (value < 0 ? value : null)),
+                    data: (serie.data || []).map((value) =>
+                      value < 0 ? value : null,
+                    ),
                     smooth: 0.15,
                     symbol: "none",
                     lineStyle: { opacity: 0 },
-                    areaStyle: { color: serie.negativeAreaColor || "rgba(243,196,0,0.25)" },
-                    stack: `split-${serie.name}`
+                    areaStyle: {
+                      color: serie.negativeAreaColor || "rgba(243,196,0,0.25)",
+                    },
+                    stack: `split-${serie.name}`,
                   },
                   {
                     name: serie.name,
@@ -1638,12 +1997,12 @@
                     symbolSize: 5,
                     lineStyle: {
                       color: serie.color,
-                      width: 2.2
+                      width: 2.2,
                     },
                     itemStyle: {
-                      color: serie.color
-                    }
-                  }
+                      color: serie.color,
+                    },
+                  },
                 ]
               : [
                   {
@@ -1655,20 +2014,22 @@
                     symbolSize: 5,
                     lineStyle: {
                       color: serie.color,
-                      width: 2.2
+                      width: 2.2,
                     },
                     itemStyle: {
-                      color: serie.color
+                      color: serie.color,
                     },
                     ...(serie.areaStyle
                       ? {
                           areaStyle:
-                            typeof serie.areaStyle === "object" ? serie.areaStyle : { opacity: 0.16 }
+                            typeof serie.areaStyle === "object"
+                              ? serie.areaStyle
+                              : { opacity: 0.16 },
                         }
-                      : {})
-                  }
-                ])
-        ]
+                      : {}),
+                  },
+                ]),
+        ],
       });
     });
   }
@@ -1688,8 +2049,13 @@
 
     const instance = echarts.init(canvas, null, { renderer: "canvas" });
     const option = buildChartOption(chart);
-    if (option.toolbox && option.toolbox.feature && option.toolbox.feature.myDownload) {
-      option.toolbox.feature.myDownload.onclick = () => downloadChartWithMeta(instance, chart);
+    if (
+      option.toolbox &&
+      option.toolbox.feature &&
+      option.toolbox.feature.myDownload
+    ) {
+      option.toolbox.feature.myDownload.onclick = () =>
+        downloadChartWithMeta(instance, chart);
     }
     instance.setOption(option);
 
@@ -1711,19 +2077,28 @@
   }
 
   function getViewToggleLabel() {
-    return currentViewMode === VIEW_MODE_MIXED ? "Mostrar solo graficas" : "Mostrar graficas + texto";
+    return currentViewMode === VIEW_MODE_MIXED
+      ? "Mostrar solo graficas"
+      : "Mostrar graficas + texto";
   }
 
   function syncViewModeUI() {
-    document.body.classList.toggle("view-mode-charts", currentViewMode === VIEW_MODE_CHARTS);
+    document.body.classList.toggle(
+      "view-mode-charts",
+      currentViewMode === VIEW_MODE_CHARTS,
+    );
     if (viewToggleButton) {
       viewToggleButton.textContent = getViewToggleLabel();
-      viewToggleButton.setAttribute("aria-pressed", currentViewMode === VIEW_MODE_CHARTS ? "true" : "false");
+      viewToggleButton.setAttribute(
+        "aria-pressed",
+        currentViewMode === VIEW_MODE_CHARTS ? "true" : "false",
+      );
     }
   }
 
   function toggleViewMode() {
-    currentViewMode = currentViewMode === VIEW_MODE_MIXED ? VIEW_MODE_CHARTS : VIEW_MODE_MIXED;
+    currentViewMode =
+      currentViewMode === VIEW_MODE_MIXED ? VIEW_MODE_CHARTS : VIEW_MODE_MIXED;
     saveViewModePreference(currentViewMode);
     syncViewModeUI();
   }
@@ -1739,7 +2114,9 @@
 
       if (block.type === "heading") {
         const heading = document.createElement("p");
-        const headingLevel = Number.isInteger(block.level) ? Math.min(Math.max(block.level, 2), 4) : 2;
+        const headingLevel = Number.isInteger(block.level)
+          ? Math.min(Math.max(block.level, 2), 4)
+          : 2;
         heading.className = `chapter-text-heading level-${headingLevel}`;
         heading.textContent = block.text;
         wrapper.appendChild(heading);
@@ -1755,12 +2132,20 @@
       }
 
       if (block.type === "ordered-list" || block.type === "unordered-list") {
-        const list = document.createElement(block.type === "ordered-list" ? "ol" : "ul");
-        list.className = block.type === "ordered-list" ? "chapter-text-ordered-list" : "chapter-text-unordered-list";
+        const list = document.createElement(
+          block.type === "ordered-list" ? "ol" : "ul",
+        );
+        list.className =
+          block.type === "ordered-list"
+            ? "chapter-text-ordered-list"
+            : "chapter-text-unordered-list";
 
         (block.items || []).forEach((itemText) => {
           const item = document.createElement("li");
-          item.innerHTML = renderInlineFootnoteReferences(itemText, footnoteContext);
+          item.innerHTML = renderInlineFootnoteReferences(
+            itemText,
+            footnoteContext,
+          );
           list.appendChild(item);
         });
 
@@ -1770,7 +2155,10 @@
 
       const paragraph = document.createElement("p");
       paragraph.className = "chapter-text-paragraph";
-      paragraph.innerHTML = renderInlineFootnoteReferences(block.text, footnoteContext);
+      paragraph.innerHTML = renderInlineFootnoteReferences(
+        block.text,
+        footnoteContext,
+      );
       wrapper.appendChild(paragraph);
     });
 
@@ -1779,7 +2167,12 @@
 
   async function loadLiveTextContent() {
     const textConfig = report.text;
-    if (!textConfig || !textConfig.sourcePath || !Array.isArray(textConfig.ranges) || !textConfig.ranges.length) {
+    if (
+      !textConfig ||
+      !textConfig.sourcePath ||
+      !Array.isArray(textConfig.ranges) ||
+      !textConfig.ranges.length
+    ) {
       return;
     }
 
@@ -1803,7 +2196,10 @@
       }
 
       if (!response || !response.ok) {
-        console.error("No se pudo cargar el texto del informe con ninguna ruta candidata:", candidates);
+        console.error(
+          "No se pudo cargar el texto del informe con ninguna ruta candidata:",
+          candidates,
+        );
         return;
       }
 
@@ -1811,7 +2207,8 @@
       const lines = cleanSourceTextLines(rawText);
       const chapterBlocks = {};
       const chapterFootnotes = {};
-      const globalFootnoteExtraction = collectFootnoteDefinitionsFromLines(lines);
+      const globalFootnoteExtraction =
+        collectFootnoteDefinitionsFromLines(lines);
       liveTextGlobalFootnotes = globalFootnoteExtraction.definitions;
       let cursor = 0;
 
@@ -1819,10 +2216,14 @@
         const chapterId = range.chapterId;
         if (!chapterId) return;
 
-        const startIndex = range.start ? findLineIndexByMarker(lines, range.start, cursor) : cursor;
+        const startIndex = range.start
+          ? findLineIndexByMarker(lines, range.start, cursor)
+          : cursor;
         const resolvedStart = startIndex >= 0 ? startIndex : cursor;
 
-        let endIndex = range.end ? findLineIndexByMarker(lines, range.end, resolvedStart + 1) : lines.length;
+        let endIndex = range.end
+          ? findLineIndexByMarker(lines, range.end, resolvedStart + 1)
+          : lines.length;
         if (endIndex < 0 || endIndex <= resolvedStart) {
           endIndex = lines.length;
         }
@@ -1830,7 +2231,9 @@
         const segment = lines.slice(resolvedStart, endIndex);
         const extraction = collectFootnoteDefinitionsFromLines(segment);
         const chapterDefinitions = extraction.definitions;
-        const contentLines = segment.filter((line, index) => !extraction.consumedIndices.has(index));
+        const contentLines = segment.filter(
+          (line, index) => !extraction.consumedIndices.has(index),
+        );
 
         chapterBlocks[chapterId] = linesToTextBlocks(contentLines);
         chapterFootnotes[chapterId] = chapterDefinitions;
@@ -1887,7 +2290,11 @@
       article.appendChild(title);
 
       const chapterFootnoteContext = createChapterFootnoteContext(sectionId);
-      const chapterNarrative = buildChapterNarrativePlan(sectionId, chapter.title, chapter.charts || []);
+      const chapterNarrative = buildChapterNarrativePlan(
+        sectionId,
+        chapter.title,
+        chapter.charts || [],
+      );
 
       (chapter.charts || []).forEach((chartKey) => {
         const chart = report.charts[chartKey];
@@ -1895,13 +2302,19 @@
 
         const narrativeBeforeChart = chapterNarrative.beforeByChart[chartKey];
         if (narrativeBeforeChart && narrativeBeforeChart.length) {
-          renderChapterLiveText(narrativeBeforeChart, article, chapterFootnoteContext);
+          renderChapterLiveText(
+            narrativeBeforeChart,
+            article,
+            chapterFootnoteContext,
+          );
         }
 
         const card = document.createElement("article");
         card.className = "chart-card";
 
-        const badgeClass = String(chart.exactness || "").toLowerCase().includes("reconstruida")
+        const badgeClass = String(chart.exactness || "")
+          .toLowerCase()
+          .includes("reconstruida")
           ? "reconstruida"
           : "exacta";
 
@@ -1952,7 +2365,11 @@
       });
 
       if (chapterNarrative.tailBlocks && chapterNarrative.tailBlocks.length) {
-        renderChapterLiveText(chapterNarrative.tailBlocks, article, chapterFootnoteContext);
+        renderChapterLiveText(
+          chapterNarrative.tailBlocks,
+          article,
+          chapterFootnoteContext,
+        );
       }
 
       renderChapterFootnotes(chapterFootnoteContext, article);
@@ -1968,12 +2385,14 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             links.forEach((link) => link.classList.remove("active"));
-            const active = chapterNav.querySelector(`a[href=\"#${entry.target.id}\"]`);
+            const active = chapterNav.querySelector(
+              `a[href=\"#${entry.target.id}\"]`,
+            );
             if (active) active.classList.add("active");
           }
         });
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0.01 }
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0.01 },
     );
 
     sections.forEach((section) => chapterObserver.observe(section));
@@ -1984,7 +2403,9 @@
   }
 
   function renderPlaygrounds() {
-    const definitions = Array.isArray(report.playgrounds) ? report.playgrounds : [];
+    const definitions = Array.isArray(report.playgrounds)
+      ? report.playgrounds
+      : [];
     if (!definitions.length) return;
 
     const sourcesSection = document.querySelector(".sources-section");
@@ -2032,7 +2453,10 @@
         const infoTip = document.createElement("button");
         infoTip.type = "button";
         infoTip.className = "info-tip";
-        infoTip.setAttribute("aria-label", `Metodologia de ${definition.title || `simulador ${index + 1}`}`);
+        infoTip.setAttribute(
+          "aria-label",
+          `Metodologia de ${definition.title || `simulador ${index + 1}`}`,
+        );
         infoTip.setAttribute("data-tip", definition.methodology);
         infoTip.textContent = "?";
         titleRow.appendChild(infoTip);
@@ -2070,7 +2494,10 @@
           input.inputMode = "decimal";
         }
 
-        const output = control.showOutput === false ? null : document.createElement("output");
+        const output =
+          control.showOutput === false
+            ? null
+            : document.createElement("output");
         if (output) output.htmlFor = control.id;
 
         label.appendChild(input);
@@ -2093,7 +2520,11 @@
         controlBindings.forEach(({ control, output }) => {
           if (!output) return;
           if (typeof control.display === "function") {
-            output.textContent = control.display(state[control.id], helpers, state);
+            output.textContent = control.display(
+              state[control.id],
+              helpers,
+              state,
+            );
           } else if (control.type === "number") {
             output.textContent = String(state[control.id]);
           } else {
@@ -2102,9 +2533,13 @@
         });
 
         try {
-          const payload = typeof definition.compute === "function" ? definition.compute(state, helpers) : null;
+          const payload =
+            typeof definition.compute === "function"
+              ? definition.compute(state, helpers)
+              : null;
           if (!payload) {
-            resultBox.innerHTML = '<p class="play-result-empty">Ajusta los controles para ver resultados.</p>';
+            resultBox.innerHTML =
+              '<p class="play-result-empty">Ajusta los controles para ver resultados.</p>';
             return;
           }
 
@@ -2113,7 +2548,10 @@
             .map((item) => {
               const value =
                 typeof item.value === "number"
-                  ? formatNumber(item.value, item.decimals !== undefined ? item.decimals : 1)
+                  ? formatNumber(
+                      item.value,
+                      item.decimals !== undefined ? item.decimals : 1,
+                    )
                   : String(item.value ?? "-");
               const style = item.color ? ` style="color:${item.color};"` : "";
               return `
@@ -2193,7 +2631,10 @@
 
     document.title = `${report.meta.title} | Informe Interactivo`;
 
-    if (eyebrow) eyebrow.textContent = report.meta.eyebrow || "Centro Ruth Richardson - Universidad de las Hesperides";
+    if (eyebrow)
+      eyebrow.textContent =
+        report.meta.eyebrow ||
+        "Centro Ruth Richardson - Universidad de las Hesperides";
     if (title) title.textContent = report.meta.title;
     if (lead) lead.textContent = report.meta.lead;
     if (pdfLink) {
@@ -2219,7 +2660,8 @@
       homeLink.textContent = "Volver a Informes";
       actionRow.appendChild(homeLink);
 
-      const hasPlaygrounds = Array.isArray(report.playgrounds) && report.playgrounds.length > 0;
+      const hasPlaygrounds =
+        Array.isArray(report.playgrounds) && report.playgrounds.length > 0;
       if (hasPlaygrounds) {
         const playgroundLink = document.createElement("a");
         playgroundLink.className = "pdf-link home-link";
@@ -2237,15 +2679,27 @@
 
       const toggleButton = document.createElement("button");
       toggleButton.type = "button";
-      toggleButton.className = "pdf-link home-link hero-action-btn view-toggle-btn";
+      toggleButton.className =
+        "pdf-link home-link hero-action-btn view-toggle-btn";
       toggleButton.addEventListener("click", toggleViewMode);
       actionRow.appendChild(toggleButton);
       viewToggleButton = toggleButton;
     }
 
-    if (caveat) caveat.textContent = report.meta.caveat || "Datos tomados del informe original y complementados para visualizacion interactiva.";
+    if (caveat)
+      caveat.textContent =
+        report.meta.caveat ||
+        "Datos tomados del informe original y complementados para visualizacion interactiva.";
 
     if (heroMetrics) {
+      if (report.meta.keyFinding) {
+        const kf = document.createElement("div");
+        kf.className = "hero-keyfinding";
+        kf.innerHTML = `<span class="keyfinding-kpi">${report.meta.keyFinding.kpi}</span>
+                         <span class="keyfinding-text">${report.meta.keyFinding.text}</span>`;
+        heroMetrics.insertAdjacentElement("beforebegin", kf);
+      }
+
       heroMetrics.innerHTML = (report.metrics || [])
         .map(
           (item) => `
@@ -2253,9 +2707,16 @@
               <span class="kpi">${item.kpi}</span>
               <span class="label">${item.label}</span>
             </article>
-          `
+          `,
         )
         .join("");
+
+      if (report.meta.contentBadge) {
+        const badge = document.createElement("span");
+        badge.className = "hero-content-badge";
+        badge.textContent = report.meta.contentBadge;
+        heroMetrics.insertAdjacentElement("afterend", badge);
+      }
     }
 
     syncViewModeUI();

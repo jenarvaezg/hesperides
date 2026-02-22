@@ -107,6 +107,46 @@ h1 {
   color: var(--muted);
 }
 
+/* Key finding callout */
+.hero-keyfinding {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 1.2rem 0 0.4rem;
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  background: rgba(243, 196, 0, 0.08);
+}
+
+.keyfinding-kpi {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--brown);
+  white-space: nowrap;
+}
+
+.keyfinding-text {
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Content badge pill */
+.hero-content-badge {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brown);
+  background: rgba(243, 196, 0, 0.15);
+  border: 1px solid rgba(243, 196, 0, 0.35);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+}
+
 .caveat {
   margin-top: 1rem;
   margin-bottom: 0;
@@ -841,5 +881,9 @@ output {
 
   .kpi-row {
     grid-template-columns: 1fr;
+  }
+
+  .hero-keyfinding {
+    flex-direction: column;
   }
 }
