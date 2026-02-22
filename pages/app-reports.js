@@ -1218,7 +1218,7 @@
               type: "value",
               axisLabel: {
                 color: "#4f4f4f",
-                formatter: tickFormatter
+                formatter: xTickFormatter
               },
               axisLine: {
                 lineStyle: {
@@ -1302,7 +1302,7 @@
               type: chart.yAxisType || "value",
               axisLabel: {
                 color: "#4f4f4f",
-                formatter: tickFormatter
+                formatter: yTickFormatter
               },
               splitLine: {
                 lineStyle: {
