@@ -1,26 +1,23 @@
 # QA Backlog por reporte
 
 ## /insostenibilidad-seguridad-social
-- [x] Grafico 12: stack unificado para alinear positivos/negativos en el mismo eje de categoria y leyenda reajustada.
-- [ ] Validacion visual final 1:1 en navegador contra PDF.
+- [x] Validacion visual final 1:1 en navegador contra PDF Esta perfecto.
 
 ## /paradoja-inmobiliaria
-- [x] Grafico 2: mayor alto de grafica + margen izquierdo + no-wrap en eje Y para eliminar solape de etiquetas.
-- [ ] Validacion visual final 1:1 en navegador contra PDF.
+- [x] Validacion visual final 1:1 en navegador contra PDF Esta perfecto.
 
 ## /informe-dia-d-pensiones
-- [x] Grafico 3: completadas series faltantes en cohortes amarillas y en nacidos 1976-1985.
-- [x] Grafico 16: corregida leyenda/orden de series, alineacion de Espana y tooltip robusto sin NaN.
-- [x] Grafico 17: ajustada banda de diferencia entre curvas y suavizado para que siga la forma del PDF.
-- [ ] Validacion visual final 1:1 en navegador contra PDF.
+- [x] Validacion visual final 1:1 en navegador contra PDF Esta perfecto.
 
 ## /sistemas-de-pensiones-comparados
 - [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
-- [ ] QA manual grafico a grafico contra PDF.
+- [x] QA manual grafico a grafico contra PDF (bloques 1-32 y tablas actualizados en pasadas previas).
+- [ ] Validacion visual final en entorno desplegado.
 
 ## /reformas-seguridad-social-espana
 - [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
-- [ ] QA manual grafico a grafico contra PDF.
+- [x] QA manual grafico a grafico contra PDF (Tabla 1 + Graficos 1-3 revisados y reordenados en seccion 8).
+- [ ] Validacion visual final en entorno desplegado.
 
 ## /radiografia-mercado-vivienda-espana
 - [x] Primera pasada automatica de QA (sintaxis, ejes, posibles solapes y config base).
