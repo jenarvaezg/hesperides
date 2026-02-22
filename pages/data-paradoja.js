@@ -963,7 +963,7 @@
     chapters,
     charts,
     text: {
-      sourcePath: "informe.txt",
+      sourcePath: "extracted_text/paradoja_inmobiliaria.txt",
       ranges: [
         {
           chapterId: "resumen-ejecutivo",

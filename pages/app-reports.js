@@ -1650,8 +1650,28 @@
     }
 
     try {
-      const response = await fetch(resolveTextSourceUrl(textConfig.sourcePath), { cache: "force-cache" });
-      if (!response.ok) return;
+      const sourcePath = String(textConfig.sourcePath || "").trim();
+      const base = getRepoBasePath().replace(/\/+$/, "/");
+      const candidates = [resolveTextSourceUrl(sourcePath)];
+      const sourceFileName = sourcePath.split("/").pop();
+
+      if (sourceFileName && !sourcePath.startsWith("extracted_text/")) {
+        candidates.push(`${base}extracted_text/${sourceFileName}`);
+      }
+
+      let response = null;
+      for (const candidate of candidates) {
+        const attempt = await fetch(candidate, { cache: "force-cache" });
+        if (attempt.ok) {
+          response = attempt;
+          break;
+        }
+      }
+
+      if (!response || !response.ok) {
+        console.error("No se pudo cargar el texto del informe con ninguna ruta candidata:", candidates);
+        return;
+      }
 
       const rawText = await response.text();
       const lines = cleanSourceTextLines(rawText);
