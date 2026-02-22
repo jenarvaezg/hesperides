@@ -396,23 +396,18 @@
     ],
     chapters: [
       { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
-      { id: "introduccion", title: "Introducción: Una radiografía (breve)", charts: [] },
-      { id: "sec-11", title: "1.1 La situación en el segmento de la compraventa", charts: makeIds("f", 1, 3) },
-      { id: "sec-12", title: "1.2. La situación del mercado del alquiler", charts: makeIds("f", 4, 6) },
-      { id: "sec-13", title: "1.3. El coste de pagar el alquiler", charts: makeIds("f", 7, 8) },
-      { id: "sec-14", title: "1.4. Los jóvenes, los más perjudicados", charts: makeIds("f", 9, 10) },
-      { id: "sec-15", title: "1.5. El precio de los alquileres: una subida sin freno", charts: makeIds("f", 11, 13) },
-      { id: "sec-21", title: "2.1. La heterogeneidad regional", charts: makeIds("f", 14, 16) },
-      { id: "sec-22", title: "2.2. El impulso demográfico hace crecer la demanda", charts: makeIds("f", 17, 18) },
       {
-        id: "sec-23",
-        title: "2.3. El problema por el lado de la oferta: sin suelo y con costes crecientes",
-        charts: makeIds("f", 19, 21)
+        id: "primera-parte",
+        title: "Primera parte: Introducción: Una radiografía (breve) del mercado de la vivienda",
+        charts: makeIds("f", 1, 14)
       },
-      { id: "sec-24", title: "2.4. Oferta y demanda influyen en el precio", charts: makeIds("f", 22, 24) },
-      { id: "sec-31", title: "3.1. La evidencia sobre la regulación de los alquileres", charts: makeIds("f", 25, 28) },
-      { id: "sec-32", title: "3.2. El impacto del alquiler vacacional en los precios de la vivienda", charts: makeIds("f", 29, 31) },
-      { id: "conclusiones", title: "Conclusiones y recomendaciones de política económica", charts: [] },
+      { id: "segunda-parte", title: "Segunda parte: Determinantes del aumento de los precios", charts: makeIds("f", 15, 24) },
+      {
+        id: "tercera-parte",
+        title: "Tercera parte: Los chivos expiatorios: regulación de los precios del alquiler",
+        charts: makeIds("f", 25, 31)
+      },
+      { id: "cuarta-parte", title: "Cuarta parte: Conclusiones y recomendaciones de política económica", charts: [] },
       { id: "bibliografia", title: "Bibliografía", charts: [] }
     ],
     charts,
@@ -422,71 +417,26 @@
         {
           chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
-          end: "Introducción: Una radiografía (breve)"
+          end: "Primera parte"
         },
         {
-          chapterId: "introduccion",
-          start: "Introducción: Una radiografía (breve)",
-          end: "1.1 La situación en el segmento de la compraventa"
+          chapterId: "primera-parte",
+          start: "Primera parte",
+          end: "Segunda parte"
         },
         {
-          chapterId: "sec-11",
-          start: "1.1 La situación en el segmento de la compraventa",
-          end: "1.2. La situación del mercado del alquiler"
+          chapterId: "segunda-parte",
+          start: "Segunda parte",
+          end: "Tercera parte"
         },
         {
-          chapterId: "sec-12",
-          start: "1.2. La situación del mercado del alquiler",
-          end: "1.3. El coste de pagar el alquiler"
+          chapterId: "tercera-parte",
+          start: "Tercera parte",
+          end: "Cuarta parte"
         },
         {
-          chapterId: "sec-13",
-          start: "1.3. El coste de pagar el alquiler",
-          end: "1.4. Los jóvenes, los más perjudicados"
-        },
-        {
-          chapterId: "sec-14",
-          start: "1.4. Los jóvenes, los más perjudicados",
-          end: "1.5. El precio de los alquileres: una subida sin freno"
-        },
-        {
-          chapterId: "sec-15",
-          start: "1.5. El precio de los alquileres: una subida sin freno",
-          end: "2.1. La heterogeneidad regional"
-        },
-        {
-          chapterId: "sec-21",
-          start: "2.1. La heterogeneidad regional",
-          end: "2.2. El impulso demográfico hace crecer la demanda"
-        },
-        {
-          chapterId: "sec-22",
-          start: "2.2. El impulso demográfico hace crecer la demanda",
-          end: "2.3. El problema por el lado de la oferta: sin suelo y con cos"
-        },
-        {
-          chapterId: "sec-23",
-          start: "2.3. El problema por el lado de la oferta: sin suelo y con cos",
-          end: "2.4. Oferta y demanda influyen en el precio"
-        },
-        {
-          chapterId: "sec-24",
-          start: "2.4. Oferta y demanda influyen en el precio",
-          end: "3.1. La evidencia sobre la regulación de los alquileres"
-        },
-        {
-          chapterId: "sec-31",
-          start: "3.1. La evidencia sobre la regulación de los alquileres",
-          end: "3.2. El impacto del alquiler vacacional en los precios de la"
-        },
-        {
-          chapterId: "sec-32",
-          start: "3.2. El impacto del alquiler vacacional en los precios de la",
-          end: "Conclusiones y recomendaciones de"
-        },
-        {
-          chapterId: "conclusiones",
-          start: "Conclusiones y recomendaciones de",
+          chapterId: "cuarta-parte",
+          start: "Cuarta parte",
           end: "Bibliografía"
         },
         {

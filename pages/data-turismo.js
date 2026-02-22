@@ -270,16 +270,10 @@
     ],
     chapters: [
       { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
-      { id: "introduccion", title: "Introducción", charts: [] },
-      { id: "sec-31", title: "3.1 El eslabón perdido: la oferta de vivienda", charts: makeIds("f", 1, 7) },
-      { id: "sec-32", title: "3.2 La creación de hogares", charts: makeIds("f", 8, 9) },
-      { id: "sec-33", title: "3.3 El tercero en discordia: el turismo", charts: makeIds("f", 10, 13) },
-      { id: "sec-41", title: "4.1 Evolución legislativa del alquiler", charts: ["f14"] },
-      { id: "sec-42", title: "4.2 Desahucios y cambio de estrategia", charts: ["f15"] },
-      { id: "sec-5", title: "5. Prosperidad, turismo y vivienda", charts: ["f16"] },
-      { id: "sec-51", title: "5.1 El turismo como quintaesencia del capitalismo popular", charts: ["f17"] },
-      { id: "sec-52", title: "5.2 La Ley podría destruir el capitalismo popular", charts: ["f18", "f19"] },
-      { id: "conclusion", title: "Conclusión", charts: [] }
+      { id: "primera-parte", title: "Primera parte: Introducción", charts: [] },
+      { id: "segunda-parte", title: "Segunda parte: El espíritu de la Ley de vivienda vacacional", charts: [] },
+      { id: "tercera-parte", title: "Tercera parte: Omisiones del Proyecto de Ley", charts: makeIds("f", 1, 16) },
+      { id: "cuarta-parte", title: "Cuarta parte: Seguridad jurídica y fragmentación del mercado", charts: makeIds("f", 17, 19) }
     ],
     charts,
     text: {
@@ -288,56 +282,26 @@
         {
           chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
-          end: "Introducción"
+          end: "Primera parte"
         },
         {
-          chapterId: "introduccion",
-          start: "Introducción",
-          end: "3.1 El eslabón perdido: la oferta de vivienda"
+          chapterId: "primera-parte",
+          start: "Primera parte",
+          end: "Segunda parte"
         },
         {
-          chapterId: "sec-31",
-          start: "3.1 El eslabón perdido: la oferta de vivienda",
-          end: "3.2 La creación de hogares"
+          chapterId: "segunda-parte",
+          start: "Segunda parte",
+          end: "Tercera parte"
         },
         {
-          chapterId: "sec-32",
-          start: "3.2 La creación de hogares",
-          end: "3.3 El tercero en discordia: el turismo"
+          chapterId: "tercera-parte",
+          start: "Tercera parte",
+          end: "Cuarta parte"
         },
         {
-          chapterId: "sec-33",
-          start: "3.3 El tercero en discordia: el turismo",
-          end: "4.1 Evolución legislativa del alquiler"
-        },
-        {
-          chapterId: "sec-41",
-          start: "4.1 Evolución legislativa del alquiler",
-          end: "4.2 Desahucios y cambio de estrategia"
-        },
-        {
-          chapterId: "sec-42",
-          start: "4.2 Desahucios y cambio de estrategia",
-          end: "5. Prosperidad, turismo y vivienda"
-        },
-        {
-          chapterId: "sec-5",
-          start: "5. Prosperidad, turismo y vivienda",
-          end: "5.1 El turismo como quintaesencia del capitalismo popular"
-        },
-        {
-          chapterId: "sec-51",
-          start: "5.1 El turismo como quintaesencia del capitalismo popular",
-          end: "5.2 La Ley podría destruir el capitalismo popular"
-        },
-        {
-          chapterId: "sec-52",
-          start: "5.2 La Ley podría destruir el capitalismo popular",
-          end: "Conclusión"
-        },
-        {
-          chapterId: "conclusion",
-          start: "Conclusión"
+          chapterId: "cuarta-parte",
+          start: "Cuarta parte"
         }
       ]
     },

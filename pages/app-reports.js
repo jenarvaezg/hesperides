@@ -215,9 +215,11 @@
   function linesToTextBlocks(lines) {
     const blocks = [];
     let currentParagraph = [];
+    let currentList = null;
     const headingPattern =
-      /^(?:(?:[1-9][0-9]*(?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?)$/i;
+      /^(?:(?:[1-9][0-9]*(?:\.[0-9]+)*[.)-]\s+.+|[1-9]\s+.+)|resumen ejecutivo|los 5 puntos clave del informe|introduccion|introducción|primera parte|segunda parte|tercera parte|cuarta parte|conclusiones?|agradecimiento|bibliograf(ia|ía)|referencias?)$/i;
     const bulletPattern = /^[•*-]\s*/;
+    const orderedPattern = /^([0-9]{1,3})[.)-]\s+(.+)$/;
 
     const flushParagraph = () => {
       if (!currentParagraph.length) return;
@@ -228,14 +230,85 @@
       currentParagraph = [];
     };
 
-    lines.forEach((line) => {
+    const flushList = () => {
+      if (!currentList || !Array.isArray(currentList.items) || !currentList.items.length) {
+        currentList = null;
+        return;
+      }
+
+      const normalizedItems = currentList.items
+        .map((itemLines) => itemLines.join(" ").replace(/\s+/g, " ").trim())
+        .filter(Boolean);
+      if (normalizedItems.length) {
+        blocks.push({
+          type: currentList.type,
+          items: normalizedItems
+        });
+      }
+      currentList = null;
+    };
+
+    const ensureList = (type) => {
+      if (currentList && currentList.type !== type) {
+        flushList();
+      }
+      if (!currentList) {
+        currentList = { type, items: [] };
+      }
+    };
+
+    const parseOrderedMarker = (line) => {
+      const match = String(line || "").match(orderedPattern);
+      if (!match) return null;
+      return {
+        number: Number(match[1]),
+        text: match[2]
+      };
+    };
+
+    const findSiblingOrderedMarker = (fromIndex, step) => {
+      let traversed = 0;
+      for (let index = fromIndex + step; index >= 0 && index < lines.length && traversed < 10; index += step) {
+        const candidate = String(lines[index] || "").trim();
+        if (!candidate) break;
+        traversed += 1;
+
+        const parsed = parseOrderedMarker(candidate);
+        if (parsed) return parsed;
+      }
+      return null;
+    };
+
+    const isLikelyOrderedListItem = (index, parsedMarker) => {
+      if (!parsedMarker || !Number.isFinite(parsedMarker.number)) return false;
+
+      const previous = findSiblingOrderedMarker(index, -1);
+      if (previous && previous.number === parsedMarker.number - 1) return true;
+
+      const next = findSiblingOrderedMarker(index, 1);
+      if (next && next.number === parsedMarker.number + 1) return true;
+
+      return false;
+    };
+
+    lines.forEach((line, index) => {
       if (!line) {
         flushParagraph();
+        flushList();
+        return;
+      }
+
+      const orderedMarker = parseOrderedMarker(line);
+      if (orderedMarker && isLikelyOrderedListItem(index, orderedMarker)) {
+        flushParagraph();
+        ensureList("ordered-list");
+        currentList.items.push([orderedMarker.text]);
         return;
       }
 
       if (headingPattern.test(line)) {
         flushParagraph();
+        flushList();
         const numberMatch = line.match(/^\s*([0-9]+(?:\.[0-9]+)*)[.)-]?\s+/);
         const headingLevel = numberMatch ? Math.min(4, numberMatch[1].split(".").length + 1) : 2;
         blocks.push({
@@ -248,10 +321,13 @@
 
       if (bulletPattern.test(line)) {
         flushParagraph();
-        blocks.push({
-          type: "bullet",
-          text: line.replace(bulletPattern, "")
-        });
+        ensureList("unordered-list");
+        currentList.items.push([line.replace(bulletPattern, "")]);
+        return;
+      }
+
+      if (currentList && currentList.items.length) {
+        currentList.items[currentList.items.length - 1].push(line);
         return;
       }
 
@@ -259,6 +335,7 @@
     });
 
     flushParagraph();
+    flushList();
     return blocks;
   }
 
@@ -1674,6 +1751,20 @@
         bullet.className = "chapter-text-bullet";
         bullet.innerHTML = `• ${renderInlineFootnoteReferences(block.text, footnoteContext)}`;
         wrapper.appendChild(bullet);
+        return;
+      }
+
+      if (block.type === "ordered-list" || block.type === "unordered-list") {
+        const list = document.createElement(block.type === "ordered-list" ? "ol" : "ul");
+        list.className = block.type === "ordered-list" ? "chapter-text-ordered-list" : "chapter-text-unordered-list";
+
+        (block.items || []).forEach((itemText) => {
+          const item = document.createElement("li");
+          item.innerHTML = renderInlineFootnoteReferences(itemText, footnoteContext);
+          list.appendChild(item);
+        });
+
+        wrapper.appendChild(list);
         return;
       }
 

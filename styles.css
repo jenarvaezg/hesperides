@@ -299,6 +299,34 @@ h1 {
   margin-top: 0;
 }
 
+.chapter-text-ordered-list,
+.chapter-text-unordered-list {
+  margin: 0.55rem 0 0;
+  max-width: 75ch;
+  padding-left: 1.4rem;
+}
+
+.chapter-text-ordered-list {
+  list-style: decimal;
+}
+
+.chapter-text-unordered-list {
+  list-style: disc;
+}
+
+.chapter-text-ordered-list li,
+.chapter-text-unordered-list li {
+  margin: 0.38rem 0 0;
+  font-size: 1.01rem;
+  line-height: 1.6;
+  color: #3a352a;
+}
+
+.chapter-text-ordered-list li:first-child,
+.chapter-text-unordered-list li:first-child {
+  margin-top: 0;
+}
+
 .chapter-live-text + .chart-card {
   margin-top: 0.35rem;
 }
