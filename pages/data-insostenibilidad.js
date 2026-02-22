@@ -378,6 +378,205 @@
         max: 0
       }
     },
+    playgroundIntro:
+      "Simuladores para tension financiera y uso del Fondo de Reserva con los mismos ordenes de magnitud del informe.",
+    playgrounds: [
+      {
+        id: "balance-contributivo",
+        title: "Simulador de balance contributivo",
+        description:
+          "Proyecta cotizaciones, gasto y transferencias para estimar saldo contributivo y deficit relativo en el horizonte elegido.",
+        methodology:
+          "Base: Graficos 5, 6, 7 y 8. Se proyectan cotizaciones y gasto con crecimiento compuesto anual y se incorpora una transferencia estatal exogena para obtener saldo final.",
+        methodologyShort:
+          "Proyeccion compuesta de ingresos y gasto con transferencia exogena para estimar saldo y deficit relativo.",
+        controls: [
+          {
+            id: "crecimiento_cotizaciones",
+            label: "Crecimiento anual de cotizaciones",
+            type: "range",
+            min: 0,
+            max: 6,
+            step: 0.1,
+            value: 2.8,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "crecimiento_gasto",
+            label: "Crecimiento anual del gasto contributivo",
+            type: "range",
+            min: 1,
+            max: 7,
+            step: 0.1,
+            value: 4.2,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "transferencias_estado",
+            label: "Transferencias del Estado (M EUR / ano)",
+            type: "range",
+            min: 30000,
+            max: 70000,
+            step: 500,
+            value: 54000,
+            display: (value, h) => `${h.formatInt(value)} M EUR`
+          },
+          {
+            id: "horizonte",
+            label: "Horizonte de proyeccion",
+            type: "range",
+            min: 1,
+            max: 12,
+            step: 1,
+            value: 6,
+            display: (value, h) => `${h.formatInt(value)} anos`
+          }
+        ],
+        compute: (state, h) => {
+          const years = Math.max(1, Math.round(state.horizonte));
+          const baseCot = 174250;
+          const baseGasto = 242253;
+          const pibRef = 1742263;
+
+          const cotizaciones = baseCot * Math.pow(1 + state.crecimiento_cotizaciones / 100, years);
+          const gasto = baseGasto * Math.pow(1 + state.crecimiento_gasto / 100, years);
+          const saldo = cotizaciones + state.transferencias_estado - gasto;
+
+          const deficitPIB = (-saldo / pibRef) * 100;
+          const deficitGasto = (-saldo / gasto) * 100;
+          const ajusteAnual = saldo < 0 ? -saldo / years : 0;
+          const senal = h.clamp(50 + saldo / 2000, 0, 100);
+          const color = saldo >= 0 ? "#1f8f45" : saldo > -25000 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            saldo >= 0
+              ? "El escenario entra en equilibrio contributivo en el horizonte seleccionado."
+              : saldo > -25000
+                ? "El desequilibrio se reduce, pero sigue siendo relevante en terminos macrofiscales."
+                : "La brecha permanece alta y requeriria ajustes permanentes de ingresos, gasto o ambas.";
+
+          return {
+            kpis: [
+              { value: `${h.formatInt(Math.round(saldo))} M EUR`, desc: "Saldo contributivo proyectado", color },
+              { value: `${h.formatNumber(deficitPIB, 2)}% PIB`, desc: "Deficit relativo sobre PIB" },
+              { value: `${h.formatNumber(deficitGasto, 2)}%`, desc: "Deficit sobre gasto contributivo" },
+              { value: `${h.formatInt(Math.round(ajusteAnual))} M EUR`, desc: "Ajuste anual medio necesario" }
+            ],
+            thermometer: {
+              value: senal,
+              color,
+              ariaLabel: "Senal de equilibrio contributivo"
+            },
+            narrative: narrativa,
+            note:
+              "El modelo mantiene PIB de referencia constante para lectura comparativa rapida, por lo que no sustituye una senda macro completa."
+          };
+        }
+      },
+      {
+        id: "fondo-reserva",
+        title: "Simulador de Fondo de Reserva",
+        description:
+          "Evalua como evolucionaria la hucha bajo distintos ritmos de aportacion, retiradas y rentabilidad financiera anual.",
+        methodology:
+          "Base: Graficos 10, 11, 13 y 14. Se simula un stock inicial de 9.300 M EUR con dinamica anual: saldo(t+1)=saldo(t)*(1+r)+aportaciones-retiros.",
+        methodologyShort:
+          "Simulacion de stock anual con rendimiento compuesto y flujos netos de caja sobre un saldo inicial de 9.300 M EUR.",
+        controls: [
+          {
+            id: "aportacion_anual",
+            label: "Aportacion anual al fondo",
+            type: "range",
+            min: 0,
+            max: 12000,
+            step: 250,
+            value: 3500,
+            display: (value, h) => `${h.formatInt(value)} M EUR`
+          },
+          {
+            id: "rentabilidad",
+            label: "Rentabilidad financiera anual",
+            type: "range",
+            min: 0,
+            max: 8,
+            step: 0.1,
+            value: 2.2,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "retiro_anual",
+            label: "Retiro anual para cubrir deficit",
+            type: "range",
+            min: 0,
+            max: 15000,
+            step: 250,
+            value: 5000,
+            display: (value, h) => `${h.formatInt(value)} M EUR`
+          },
+          {
+            id: "horizonte",
+            label: "Horizonte de simulacion",
+            type: "range",
+            min: 1,
+            max: 15,
+            step: 1,
+            value: 8,
+            display: (value, h) => `${h.formatInt(value)} anos`
+          }
+        ],
+        compute: (state, h) => {
+          const years = Math.max(1, Math.round(state.horizonte));
+          const monthlyPensions = 13000;
+          let fondo = 9300;
+
+          for (let year = 0; year < years; year += 1) {
+            fondo = Math.max(0, fondo * (1 + state.rentabilidad / 100) + state.aportacion_anual - state.retiro_anual);
+          }
+
+          let agotamiento = null;
+          let sim = 9300;
+          for (let year = 1; year <= 35; year += 1) {
+            sim = Math.max(0, sim * (1 + state.rentabilidad / 100) + state.aportacion_anual - state.retiro_anual);
+            if (sim <= 0.0001) {
+              agotamiento = year;
+              break;
+            }
+          }
+
+          const mesesCobertura = fondo / monthlyPensions;
+          const diasCobertura = mesesCobertura * 30;
+          const senal = h.clamp((mesesCobertura / 12) * 100, 0, 100);
+          const color = mesesCobertura >= 12 ? "#1f8f45" : mesesCobertura >= 6 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            mesesCobertura >= 12
+              ? "La reserva recupera capacidad de cobertura por encima de una anualidad completa."
+              : mesesCobertura >= 6
+                ? "Se mantiene una cobertura intermedia: util como colchon, pero insuficiente ante shocks largos."
+                : "La capacidad de cobertura sigue reducida y vulnerable a retiradas persistentes.";
+
+          return {
+            kpis: [
+              { value: `${h.formatInt(Math.round(fondo))} M EUR`, desc: "Fondo estimado al final del horizonte", color },
+              { value: `${h.formatNumber(mesesCobertura, 2)} meses`, desc: "Cobertura sobre una mensualidad de pensiones" },
+              { value: `${h.formatInt(Math.round(diasCobertura))} dias`, desc: "Cobertura equivalente en dias" },
+              {
+                value: agotamiento ? `${agotamiento} anos` : "Sin agotamiento <35 anos",
+                desc: "Momento estimado de agotamiento del fondo"
+              }
+            ],
+            thermometer: {
+              value: senal,
+              color,
+              ariaLabel: "Robustez temporal del Fondo de Reserva"
+            },
+            narrative: narrativa,
+            note:
+              "No incluye cambios de ciclo ni nuevas reglas institucionales; la simulacion solo ilustra sensibilidad a flujos y rentabilidad."
+          };
+        }
+      }
+    ],
     sources: [
       {
         name: "PDF original",

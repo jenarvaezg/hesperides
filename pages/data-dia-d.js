@@ -523,6 +523,203 @@
       }
     ],
     charts,
+    playgroundIntro:
+      "Simuladores para estresar supuestos demograficos y ensayar combinaciones de ajuste sobre la brecha de financiacion hasta 2050.",
+    playgrounds: [
+      {
+        id: "presion-demografica",
+        title: "Simulador de presion demografica 2025-2050",
+        description:
+          "Combina fecundidad, empleo, edad efectiva de retiro y productividad para estimar su impacto agregado sobre gasto y equilibrio del sistema.",
+        methodology:
+          "Base: Graficos 3, 7, 17, 18 y 19. Se calibra una funcion simplificada que desplaza el escenario base 2050 (14,9% PIB) en funcion de variaciones demograficas y laborales.",
+        methodologyShort:
+          "Desplazamiento del escenario base 2050 con elasticidades simplificadas para fecundidad, empleo, retiro y productividad.",
+        controls: [
+          {
+            id: "fecundidad",
+            label: "Fecundidad media",
+            type: "range",
+            min: 1,
+            max: 1.8,
+            step: 0.01,
+            value: 1.3,
+            display: (value, h) => `${h.formatNumber(value, 2)} hijos/mujer`
+          },
+          {
+            id: "tasa_empleo",
+            label: "Tasa de empleo agregada",
+            type: "range",
+            min: 68,
+            max: 78,
+            step: 0.1,
+            value: 74,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "edad_efectiva",
+            label: "Edad efectiva de retiro",
+            type: "range",
+            min: 63.5,
+            max: 66.5,
+            step: 0.1,
+            value: 64.9,
+            display: (value, h) => `${h.formatNumber(value)} anos`
+          },
+          {
+            id: "productividad",
+            label: "Crecimiento real de productividad",
+            type: "range",
+            min: 0.2,
+            max: 1.8,
+            step: 0.1,
+            value: 0.9,
+            display: (value, h) => `${h.formatNumber(value)}% anual`
+          }
+        ],
+        compute: (state, h) => {
+          const gasto2050 = h.clamp(
+            14.9 +
+              (1.3 - state.fecundidad) * 2.4 +
+              (74 - state.tasa_empleo) * 0.12 +
+              (64.9 - state.edad_efectiva) * 0.55 +
+              (0.9 - state.productividad) * 0.9,
+            12.5,
+            18.5
+          );
+
+          const ratioCotizantes = h.clamp(
+            2.1 - (gasto2050 - 12.2) * 0.09 + (state.tasa_empleo - 74) * 0.01 + (state.edad_efectiva - 64.9) * 0.04,
+            1.3,
+            2.4
+          );
+
+          const brecha2050 = h.clamp(-4.5 - (gasto2050 - 14.9) * 0.65, -7.2, -2.5);
+          const presion = gasto2050 - 14.9;
+          const senal = h.clamp(((ratioCotizantes - 1.3) / 1.1) * 100, 0, 100);
+          const color = ratioCotizantes > 1.95 ? "#1f8f45" : ratioCotizantes > 1.7 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            ratioCotizantes > 1.95
+              ? "El escenario conserva una relacion laboral relativamente robusta y contiene la desviacion del gasto."
+              : ratioCotizantes > 1.7
+                ? "Se modera la presion, pero la brecha de financiacion permanece estructural."
+                : "La combinacion de supuestos amplifica la tension demografica y acelera el desequilibrio.";
+
+          return {
+            kpis: [
+              { value: `${h.formatNumber(gasto2050, 2)}% PIB`, desc: "Gasto en pensiones estimado en 2050" },
+              { value: `${h.formatNumber(ratioCotizantes, 2)}`, desc: "Cotizantes por pensionista (proxy)", color },
+              { value: `${h.formatNumber(brecha2050, 2)}% PIB`, desc: "Brecha de financiacion estimada en 2050" },
+              { value: `${h.formatNumber(presion, 2)} p.p.`, desc: "Desviacion frente al escenario base 2050" }
+            ],
+            thermometer: {
+              value: senal,
+              color,
+              ariaLabel: "Robustez demografico-laboral del escenario"
+            },
+            narrative: narrativa,
+            note:
+              "La relacion cotizantes/pensionista se usa como aproximacion de equilibrio y no como proyeccion demografica completa."
+          };
+        }
+      },
+      {
+        id: "mix-ajuste",
+        title: "Simulador de mix de ajuste fiscal",
+        description:
+          "Permite repartir el esfuerzo entre ingresos, edad de retiro, revalorizacion real y mejora de empleo para medir la brecha residual.",
+        methodology:
+          "Base: Graficos 19 y 20. Se parte de una brecha estructural del 4,5% PIB en 2050 y se asignan impactos simplificados por palanca para estimar ajuste pendiente.",
+        methodologyShort:
+          "Descomposicion lineal de una brecha base del 4,5% PIB en funcion de cuatro palancas de politica.",
+        controls: [
+          {
+            id: "ingresos_extra",
+            label: "Ingresos adicionales estructurales",
+            type: "range",
+            min: 0,
+            max: 3,
+            step: 0.1,
+            value: 1,
+            display: (value, h) => `${h.formatNumber(value)}% PIB`
+          },
+          {
+            id: "retraso_jubilacion",
+            label: "Retraso adicional de edad efectiva",
+            type: "range",
+            min: 0,
+            max: 3,
+            step: 0.1,
+            value: 1,
+            display: (value, h) => `${h.formatNumber(value)} anos`
+          },
+          {
+            id: "ajuste_revalorizacion",
+            label: "Menor revalorizacion real anual",
+            type: "range",
+            min: 0,
+            max: 1.5,
+            step: 0.1,
+            value: 0.4,
+            display: (value, h) => `${h.formatNumber(value)} p.p.`
+          },
+          {
+            id: "mejora_empleo",
+            label: "Mejora de tasa de empleo",
+            type: "range",
+            min: 0,
+            max: 4,
+            step: 0.1,
+            value: 1.2,
+            display: (value, h) => `${h.formatNumber(value)} p.p.`
+          }
+        ],
+        compute: (state, h) => {
+          const brechaBase = 4.5;
+          const impacto =
+            state.ingresos_extra +
+            state.retraso_jubilacion * 0.35 +
+            state.ajuste_revalorizacion * 0.8 +
+            state.mejora_empleo * 0.22;
+
+          const brechaResidualMagnitud = brechaBase - impacto;
+          const brechaResidual = h.clamp(-brechaResidualMagnitud, -6.5, 1.0);
+          const ajustePendiente = Math.max(0, 1.0 - Math.min(1, impacto / brechaBase));
+          const gastoAjustado = h.clamp(14.9 - state.retraso_jubilacion * 0.25 - state.ajuste_revalorizacion * 0.4, 12.5, 15.2);
+          const transferenciasEquivalentes = Math.max(0, (-brechaResidual * 1742263) / 100);
+          const senal = h.clamp((impacto / brechaBase) * 100, 0, 100);
+          const color = brechaResidual >= -1.0 ? "#1f8f45" : brechaResidual >= -2.5 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            brechaResidual >= -1.0
+              ? "El paquete de medidas casi cierra la brecha estructural del sistema."
+              : brechaResidual >= -2.5
+                ? "La correccion es apreciable, pero todavia queda una brecha relevante por cubrir."
+                : "El mix actual reduce tension, aunque insuficiente para estabilizar la senda de largo plazo.";
+
+          return {
+            kpis: [
+              { value: `${h.formatNumber(brechaResidual, 2)}% PIB`, desc: "Brecha residual estimada en 2050", color },
+              { value: `${h.formatNumber(impacto, 2)} p.p.`, desc: "Impacto agregado de las palancas" },
+              { value: `${h.formatNumber(gastoAjustado, 2)}% PIB`, desc: "Gasto 2050 tras ajustes de parametros" },
+              {
+                value: `${h.formatInt(Math.round(transferenciasEquivalentes))} M EUR`,
+                desc: "Transferencia equivalente para cubrir brecha residual"
+              }
+            ],
+            thermometer: {
+              value: senal,
+              color,
+              ariaLabel: "Cobertura de la brecha estructural"
+            },
+            narrative: narrativa,
+            note:
+              "La conversion a millones usa PIB de referencia constante para facilitar comparabilidad entre escenarios."
+          };
+        }
+      }
+    ],
     sources: [
       {
         name: "PDF original",

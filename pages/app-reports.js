@@ -51,6 +51,8 @@
       maximumFractionDigits: 0
     }).format(value);
 
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
   function slugify(text) {
     return String(text)
       .toLowerCase()
@@ -750,6 +752,195 @@
     sections.forEach((section) => observer.observe(section));
   }
 
+  function getDefaultPlaygroundIntro() {
+    return "Modelos simplificados para experimentar con los supuestos del informe y observar su impacto en sostenibilidad, oferta o accesibilidad.";
+  }
+
+  function renderPlaygrounds() {
+    const definitions = Array.isArray(report.playgrounds) ? report.playgrounds : [];
+    if (!definitions.length) return;
+
+    const sourcesSection = document.querySelector(".sources-section");
+    if (!sourcesSection || !sourcesSection.parentNode) return;
+
+    let section = document.getElementById("playground");
+    if (!section) {
+      section = document.createElement("section");
+      section.id = "playground";
+      section.className = "playground-section";
+      sourcesSection.parentNode.insertBefore(section, sourcesSection);
+    }
+
+    section.innerHTML = "";
+
+    const title = document.createElement("h2");
+    title.textContent = report.playgroundTitle || "Playgrounds";
+    section.appendChild(title);
+
+    const intro = document.createElement("p");
+    intro.className = "playground-intro";
+    intro.textContent = report.playgroundIntro || getDefaultPlaygroundIntro();
+    section.appendChild(intro);
+
+    const grid = document.createElement("div");
+    grid.className = "playgrounds-grid";
+    section.appendChild(grid);
+
+    const helpers = { formatNumber, formatInt, clamp };
+
+    definitions.forEach((definition, index) => {
+      const card = document.createElement("article");
+      card.className = "play-card";
+      grid.appendChild(card);
+
+      const titleRow = document.createElement("div");
+      titleRow.className = "play-title-row";
+      card.appendChild(titleRow);
+
+      const h3 = document.createElement("h3");
+      h3.textContent = definition.title || `Simulador ${index + 1}`;
+      titleRow.appendChild(h3);
+
+      if (definition.methodology) {
+        const infoTip = document.createElement("button");
+        infoTip.type = "button";
+        infoTip.className = "info-tip";
+        infoTip.setAttribute("aria-label", `Metodologia de ${definition.title || `simulador ${index + 1}`}`);
+        infoTip.setAttribute("data-tip", definition.methodology);
+        infoTip.textContent = "?";
+        titleRow.appendChild(infoTip);
+      }
+
+      if (definition.description) {
+        const description = document.createElement("p");
+        description.textContent = definition.description;
+        card.appendChild(description);
+      }
+
+      if (definition.methodologyShort) {
+        const method = document.createElement("p");
+        method.className = "play-method";
+        method.textContent = `Metodologia: ${definition.methodologyShort}`;
+        card.appendChild(method);
+      }
+
+      const controlsHost = document.createElement("div");
+      controlsHost.className = "control-grid";
+      card.appendChild(controlsHost);
+
+      const controlBindings = [];
+      (definition.controls || []).forEach((control) => {
+        const label = document.createElement("label");
+        label.textContent = control.label || control.id;
+
+        const input = document.createElement("input");
+        input.type = control.type || "range";
+        if (control.min !== undefined) input.min = String(control.min);
+        if (control.max !== undefined) input.max = String(control.max);
+        if (control.step !== undefined) input.step = String(control.step);
+        if (control.value !== undefined) input.value = String(control.value);
+        if (input.type === "number") {
+          input.inputMode = "decimal";
+        }
+
+        const output = control.showOutput === false ? null : document.createElement("output");
+        if (output) output.htmlFor = control.id;
+
+        label.appendChild(input);
+        if (output) label.appendChild(output);
+        controlsHost.appendChild(label);
+
+        controlBindings.push({ control, input, output });
+      });
+
+      const resultBox = document.createElement("div");
+      resultBox.className = "results";
+      card.appendChild(resultBox);
+
+      const update = () => {
+        const state = {};
+        controlBindings.forEach(({ control, input }) => {
+          state[control.id] = Number(input.value);
+        });
+
+        controlBindings.forEach(({ control, output }) => {
+          if (!output) return;
+          if (typeof control.display === "function") {
+            output.textContent = control.display(state[control.id], helpers, state);
+          } else if (control.type === "number") {
+            output.textContent = String(state[control.id]);
+          } else {
+            output.textContent = `${formatNumber(state[control.id])}`;
+          }
+        });
+
+        try {
+          const payload = typeof definition.compute === "function" ? definition.compute(state, helpers) : null;
+          if (!payload) {
+            resultBox.innerHTML =
+              '<p style="margin:0; font-size:0.84rem; color:#4c4639;">Ajusta los controles para ver resultados.</p>';
+            return;
+          }
+
+          const kpis = Array.isArray(payload.kpis) ? payload.kpis : [];
+          const kpiMarkup = kpis
+            .map((item) => {
+              const value =
+                typeof item.value === "number"
+                  ? formatNumber(item.value, item.decimals !== undefined ? item.decimals : 1)
+                  : String(item.value ?? "-");
+              const style = item.color ? ` style="color:${item.color};"` : "";
+              return `
+                <div class="kpi-box">
+                  <span class="value"${style}>${value}</span>
+                  <span class="desc">${item.desc || ""}</span>
+                </div>
+              `;
+            })
+            .join("");
+
+          const hasThermometer =
+            payload.thermometer &&
+            typeof payload.thermometer === "object" &&
+            Number.isFinite(Number(payload.thermometer.value));
+
+          const thermometerMarkup = hasThermometer
+            ? `
+              <div class="thermometer" aria-label="${payload.thermometer.ariaLabel || "Indicador sintetico"}">
+                <div style="width:${clamp(Number(payload.thermometer.value), 0, 100).toFixed(0)}%; background:${payload.thermometer.color || "#f3c400"};"></div>
+              </div>
+            `
+            : "";
+
+          const narrativeMarkup = payload.narrative
+            ? `<p style="margin:0.55rem 0 0; font-size:0.84rem; color:#4c4639;">${payload.narrative}</p>`
+            : "";
+          const noteMarkup = payload.note
+            ? `<p style="margin:0.35rem 0 0; font-size:0.78rem; color:#5e584b;">${payload.note}</p>`
+            : "";
+
+          resultBox.innerHTML = `
+            <div class="kpi-row">${kpiMarkup}</div>
+            ${thermometerMarkup}
+            ${narrativeMarkup}
+            ${noteMarkup}
+          `;
+        } catch (error) {
+          resultBox.innerHTML =
+            '<p style="margin:0; font-size:0.84rem; color:#7a2017;">No se pudo calcular este simulador con los valores actuales.</p>';
+          console.error("Playground computation error:", error);
+        }
+      };
+
+      controlBindings.forEach(({ input }) => {
+        input.addEventListener("input", update);
+        input.addEventListener("change", update);
+      });
+
+      update();
+    });
+  }
+
   function renderSources() {
     const list = document.getElementById("sources-list");
     if (!list) return;
@@ -809,6 +1000,7 @@
   function init() {
     initHero();
     renderSections();
+    renderPlaygrounds();
     renderSources();
 
     window.addEventListener("resize", () => {

@@ -489,6 +489,224 @@
       }
     ],
     charts,
+    playgroundIntro:
+      "Explora como cambian sostenibilidad y adecuacion de ingresos cuando se ajustan cobertura complementaria, ahorro y parametros de retiro.",
+    playgrounds: [
+      {
+        id: "transicion-mixto",
+        title: "Simulador de transicion a modelo mixto (Espana)",
+        description:
+          "Estimacion simplificada del impacto de ampliar pilares complementarios y retrasar retiro efectivo sobre gasto, brecha fiscal y cotizacion necesaria.",
+        methodology:
+          "Base de referencia: Graficas 26, 27, 30 y 31. El modelo interpola entre status quo y reforma gradual aplicando elasticidades simplificadas sobre gasto/PIB, brecha fiscal y tipo contributivo.",
+        methodologyShort:
+          "Interpolacion entre status quo y reforma gradual con elasticidades lineales sobre gasto, brecha y cotizacion.",
+        controls: [
+          {
+            id: "cobertura_complementaria",
+            label: "Cobertura complementaria de trabajadores",
+            type: "range",
+            min: 20,
+            max: 80,
+            step: 0.5,
+            value: 38,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "aportacion_extra",
+            label: "Aportacion adicional al pilar privado (% salario)",
+            type: "range",
+            min: 0,
+            max: 8,
+            step: 0.1,
+            value: 2.4,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "retraso_retiro",
+            label: "Retraso de retiro efectivo (anos)",
+            type: "range",
+            min: 0,
+            max: 3,
+            step: 0.1,
+            value: 1,
+            display: (value, h) => `${h.formatNumber(value)} anos`
+          },
+          {
+            id: "mejora_productividad",
+            label: "Mejora anual de productividad real",
+            type: "range",
+            min: 0,
+            max: 2,
+            step: 0.1,
+            value: 0.8,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          }
+        ],
+        compute: (state, h) => {
+          const mixRatio = h.clamp((state.cobertura_complementaria - 26) / 39, 0, 1);
+          const extraRatio = h.clamp(state.aportacion_extra / 8, 0, 1);
+          const retiroRatio = h.clamp(state.retraso_retiro / 3, 0, 1);
+          const prodRatio = h.clamp(state.mejora_productividad / 2, 0, 1);
+
+          const gasto2035 = h.clamp(
+            15.4 - 0.55 * mixRatio - 0.18 * extraRatio - 0.22 * retiroRatio - 0.12 * prodRatio,
+            13.6,
+            15.6
+          );
+
+          const brechaFiscal = h.clamp(
+            4.7 -
+              (15.4 - gasto2035) * 0.82 -
+              state.aportacion_extra * 0.23 -
+              state.retraso_retiro * 0.19 -
+              state.mejora_productividad * 0.16,
+            2.4,
+            5.2
+          );
+
+          const cotizacionNecesaria = h.clamp(
+            37.5 -
+              state.aportacion_extra * 0.7 -
+              state.retraso_retiro * 0.6 -
+              state.mejora_productividad * 0.4 -
+              mixRatio * 1.6,
+            32,
+            38.5
+          );
+
+          const tension = h.clamp(
+            100 - (15.4 - gasto2035) * 18 - (4.7 - brechaFiscal) * 10 - (37.5 - cotizacionNecesaria) * 3,
+            55,
+            105
+          );
+
+          const solvencia = h.clamp(((105 - tension) / 50) * 100, 0, 100);
+          const color = tension < 75 ? "#1f8f45" : tension < 90 ? "#d19800" : "#b23b1d";
+          const narrativa =
+            tension < 75
+              ? "La combinacion de palancas aproxima el resultado al escenario de reforma con menor tension actuarial."
+              : tension < 90
+                ? "Hay mejora parcial, pero la brecha fiscal sigue requiriendo ajustes adicionales."
+                : "La intensidad de reforma es insuficiente para cambiar el perfil de tension de largo plazo.";
+
+          return {
+            kpis: [
+              { value: `${h.formatNumber(gasto2035, 2)}%`, desc: "Gasto en pensiones estimado en 2035" },
+              { value: `${h.formatNumber(brechaFiscal, 2)}% PIB`, desc: "Brecha fiscal estimada" },
+              { value: `${h.formatNumber(cotizacionNecesaria, 2)}%`, desc: "Tipo contributivo requerido" },
+              { value: `${h.formatNumber(tension, 1)}`, desc: "Indice sintetico de tension (100 = alta)", color }
+            ],
+            thermometer: {
+              value: solvencia,
+              color,
+              ariaLabel: "Senal de sostenibilidad del escenario"
+            },
+            narrative: narrativa,
+            note:
+              "Modelo orientativo: no sustituye una proyeccion actuarial completa y usa coeficientes calibrados con las graficas del informe."
+          };
+        }
+      },
+      {
+        id: "adecuacion-ingresos",
+        title: "Simulador de adecuacion de ingresos en jubilacion",
+        description:
+          "Relaciona cobertura complementaria y peso del ahorro privado con la tasa de reemplazo total y el riesgo de pobreza relativa en mayores.",
+        methodology:
+          "Base de referencia: Graficas 3, 4, 8, 20 y 29. Se aplica una funcion simplificada de mezcla publico-privada para estimar reemplazo agregado y variacion de riesgo social.",
+        methodologyShort:
+          "Combinacion lineal de reemplazo publico y componente privado ajustada por cobertura y rentabilidad real.",
+        controls: [
+          {
+            id: "tasa_publica",
+            label: "Tasa de reemplazo del pilar publico",
+            type: "range",
+            min: 60,
+            max: 85,
+            step: 0.5,
+            value: 79,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "peso_privado",
+            label: "Peso de ingresos no publicos en jubilacion",
+            type: "range",
+            min: 10,
+            max: 60,
+            step: 0.5,
+            value: 22,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "cobertura",
+            label: "Cobertura de pilares complementarios",
+            type: "range",
+            min: 20,
+            max: 90,
+            step: 0.5,
+            value: 40,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "rentabilidad_real",
+            label: "Rentabilidad real anual del ahorro",
+            type: "range",
+            min: 0,
+            max: 4,
+            step: 0.1,
+            value: 1.3,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          }
+        ],
+        compute: (state, h) => {
+          const contribPrivada = state.peso_privado * 0.22;
+          const ajusteCobertura = (state.cobertura - 26) * 0.08;
+          const ajusteRentabilidad = state.rentabilidad_real * 1.25;
+
+          const reemplazoTotal = h.clamp(
+            state.tasa_publica + contribPrivada + ajusteCobertura + ajusteRentabilidad,
+            55,
+            96
+          );
+
+          const riesgoPobreza = h.clamp(
+            20.5 - (reemplazoTotal - 79) * 0.55 - (state.cobertura - 26) * 0.09,
+            8,
+            30
+          );
+
+          const diversificacion = h.clamp(state.peso_privado + (state.cobertura - 26) * 0.25, 8, 65);
+          const colchon = reemplazoTotal - 60;
+          const robustez = h.clamp(((30 - riesgoPobreza) / 22) * 100, 0, 100);
+          const color = riesgoPobreza < 16 ? "#1f8f45" : riesgoPobreza < 22 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            riesgoPobreza < 16
+              ? "La combinacion mejora claramente la adecuacion y reduce exposicion a pobreza relativa."
+              : riesgoPobreza < 22
+                ? "La mejora existe, pero todavia queda una zona de vulnerabilidad para rentas bajas."
+                : "Persisten riesgos altos de adecuacion; haria falta mayor cobertura y acumulacion de ahorro.";
+
+          return {
+            kpis: [
+              { value: `${h.formatNumber(reemplazoTotal, 2)}%`, desc: "Tasa de reemplazo total estimada" },
+              { value: `${h.formatNumber(riesgoPobreza, 2)}%`, desc: "Riesgo de pobreza relativa 65+" , color},
+              { value: `${h.formatNumber(diversificacion, 1)}%`, desc: "Diversificacion de ingresos no publicos" },
+              { value: `${h.formatNumber(colchon, 1)} p.p.`, desc: "Colchon sobre umbral 60% de reemplazo" }
+            ],
+            thermometer: {
+              value: robustez,
+              color,
+              ariaLabel: "Robustez social del escenario"
+            },
+            narrative: narrativa,
+            note:
+              "La estimacion usa coeficientes simplificados para mantener coherencia visual con el informe comparado."
+          };
+        }
+      }
+    ],
     sources: [
       {
         name: "PDF original",

@@ -298,6 +298,195 @@
       }
     ],
     charts,
+    playgroundIntro:
+      "Simuladores para comparar restriccion turistica y reforma de oferta residencial en su impacto sobre alquiler y tension habitacional.",
+    playgrounds: [
+      {
+        id: "restriccion-vs-oferta",
+        title: "Simulador de restriccion turistica vs reforma de oferta",
+        description:
+          "Contrasta el efecto de restringir vivienda vacacional frente a acelerar licencias y activar suelo para aliviar la tension residencial.",
+        methodology:
+          "Base: Graficos 14, 15 y 16. Se aplica un modelo simplificado donde la restriccion reduce parcialmente crecimiento de alquiler y la oferta adicional actua con mayor efecto estructural.",
+        methodologyShort:
+          "Combinacion de dos palancas (restriccion y oferta) sobre crecimiento de alquiler, deficit anual e indice de oferta efectiva.",
+        controls: [
+          {
+            id: "restriccion_turistica",
+            label: "Intensidad de restriccion turistica",
+            type: "range",
+            min: 0,
+            max: 100,
+            step: 1,
+            value: 60,
+            display: (value, h) => `${h.formatInt(value)} / 100`
+          },
+          {
+            id: "aceleracion_licencias",
+            label: "Aceleracion de licencias",
+            type: "range",
+            min: 0,
+            max: 100,
+            step: 1,
+            value: 45,
+            display: (value, h) => `${h.formatInt(value)} / 100`
+          },
+          {
+            id: "activacion_suelo",
+            label: "Activacion adicional de suelo",
+            type: "range",
+            min: 0,
+            max: 100,
+            step: 1,
+            value: 40,
+            display: (value, h) => `${h.formatInt(value)} / 100`
+          },
+          {
+            id: "horizonte",
+            label: "Horizonte de impacto",
+            type: "range",
+            min: 2,
+            max: 8,
+            step: 1,
+            value: 5,
+            display: (value, h) => `${h.formatInt(value)} anos`
+          }
+        ],
+        compute: (state, h) => {
+          const horizonFactor = state.horizonte / 5;
+          const efectoRestriccion = state.restriccion_turistica * 0.05;
+          const efectoOferta = state.aceleracion_licencias * 0.07 + state.activacion_suelo * 0.08;
+
+          const variacionAlquiler2030 = h.clamp(29 - efectoRestriccion - efectoOferta * horizonFactor, 8, 32);
+          const ofertaExtra = (state.aceleracion_licencias * 35 + state.activacion_suelo * 34) * horizonFactor;
+          const deficitAnual = h.clamp(7000 - ofertaExtra * 0.12 + state.restriccion_turistica * 18, 1500, 12000);
+          const indiceOferta2030 = h.clamp(105 - state.restriccion_turistica * 0.03 - efectoOferta * 0.05, 95, 107);
+
+          const senal = h.clamp(((32 - variacionAlquiler2030) / 24) * 100, 0, 100);
+          const color = variacionAlquiler2030 < 18 ? "#1f8f45" : variacionAlquiler2030 < 24 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            variacionAlquiler2030 < 18
+              ? "La estrategia combinada logra una desaceleracion intensa del alquiler con mejora de oferta efectiva."
+              : variacionAlquiler2030 < 24
+                ? "Hay desaceleracion moderada: la tension mejora, pero sigue presente en municipios de mayor demanda."
+                : "Predomina una correccion limitada; la oferta adicional no compensa del todo la presion de demanda.";
+
+          return {
+            kpis: [
+              { value: `${h.formatNumber(variacionAlquiler2030, 1)}%`, desc: "Variacion acumulada del alquiler a 2030", color },
+              { value: `${h.formatInt(Math.round(deficitAnual))}`, desc: "Deficit anual estimado de vivienda" },
+              { value: `${h.formatNumber(indiceOferta2030, 1)}`, desc: "Indice de oferta efectiva (2030)" },
+              { value: `${h.formatInt(Math.round(ofertaExtra))}`, desc: "Oferta adicional potencial acumulada" }
+            ],
+            thermometer: {
+              value: senal,
+              color,
+              ariaLabel: "Alivio estimado de tension en alquiler"
+            },
+            narrative: narrativa,
+            note:
+              "La conversion de palancas a oferta extra es orientativa y busca mantener coherencia de orden de magnitud con los escenarios del informe."
+          };
+        }
+      },
+      {
+        id: "riesgo-insular",
+        title: "Simulador de riesgo de tension por isla",
+        description:
+          "Estima sobrecarga y presion de precios en una isla tipo segun peso vacacional, dinamica de rentas y ritmo de nueva oferta.",
+        methodology:
+          "Base: Graficos 10, 11 y 12. Se construye un indice sintentico de riesgo combinando peso vacacional, brecha alquiler-renta y oferta nueva por 1.000 habitantes.",
+        methodologyShort:
+          "Indice sintetico de riesgo local con tres canales: intensidad vacacional, brecha de renta y oferta nueva relativa.",
+        controls: [
+          {
+            id: "peso_vacacional",
+            label: "Peso de vivienda vacacional en la isla",
+            type: "range",
+            min: 4,
+            max: 20,
+            step: 0.1,
+            value: 10,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "crec_alquiler",
+            label: "Crecimiento anual del alquiler",
+            type: "range",
+            min: 0,
+            max: 10,
+            step: 0.1,
+            value: 4.3,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "crec_renta",
+            label: "Crecimiento anual de renta salarial",
+            type: "range",
+            min: 0,
+            max: 6,
+            step: 0.1,
+            value: 1.8,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "oferta_nueva",
+            label: "Nueva oferta por 1.000 habitantes",
+            type: "range",
+            min: 0.5,
+            max: 6,
+            step: 0.1,
+            value: 2,
+            display: (value, h) => `${h.formatNumber(value)}`
+          }
+        ],
+        compute: (state, h) => {
+          const brechaRenta = state.crec_alquiler - state.crec_renta;
+          const sobrecarga = h.clamp(
+            30 + state.peso_vacacional * 0.9 + brechaRenta * 2.6 - state.oferta_nueva * 2.8,
+            18,
+            60
+          );
+          const presionPrecios = h.clamp(
+            100 + state.peso_vacacional * 1.5 + brechaRenta * 4 - state.oferta_nueva * 3.5,
+            85,
+            155
+          );
+          const riesgo = h.clamp(
+            ((sobrecarga - 18) / 42) * 60 + ((presionPrecios - 85) / 70) * 40,
+            0,
+            100
+          );
+          const deficitLocal = h.clamp(7000 + (sobrecarga - 41) * 110 - (state.oferta_nueva - 2) * 350, 3000, 12000);
+          const color = riesgo < 40 ? "#1f8f45" : riesgo < 65 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            riesgo < 40
+              ? "El escenario local sugiere tension contenida y mejor equilibrio entre demanda y oferta."
+              : riesgo < 65
+                ? "Existe tension relevante: se recomienda reforzar oferta estable para evitar deterioro adicional."
+                : "La configuracion es de riesgo alto para accesibilidad, con fuerte presion sobre precios y sobrecarga.";
+
+          return {
+            kpis: [
+              { value: `${h.formatNumber(sobrecarga, 1)}%`, desc: "Sobrecarga estimada en hogares arrendatarios" },
+              { value: `${h.formatNumber(presionPrecios, 1)}`, desc: "Indice de presion de precios (100 = neutral)" },
+              { value: `${h.formatNumber(riesgo, 1)}`, desc: "Indice sintetico de riesgo insular", color },
+              { value: `${h.formatInt(Math.round(deficitLocal))}`, desc: "Deficit anual local de referencia" }
+            ],
+            thermometer: {
+              value: riesgo,
+              color,
+              ariaLabel: "Riesgo de tension residencial insular"
+            },
+            narrative: narrativa,
+            note:
+              "El simulador describe una isla tipo y no sustituye un modelo municipal detallado con microdatos."
+          };
+        }
+      }
+    ],
     sources: [
       {
         name: "PDF original",

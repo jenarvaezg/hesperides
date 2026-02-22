@@ -433,6 +433,222 @@
       }
     ],
     charts,
+    playgroundIntro:
+      "Simuladores de accesibilidad y oferta para probar de forma interactiva los mecanismos que explican precios, alquiler y deficit habitacional.",
+    playgrounds: [
+      {
+        id: "accesibilidad-compra",
+        title: "Simulador de accesibilidad de compra",
+        description:
+          "Calcula cuota hipotecaria, esfuerzo de pago y senal de incentivo de oferta segun precio, financiacion y renta del hogar comprador.",
+        methodology:
+          "Base: Graficos 4, 5, 6 y 24. Se usa una hipoteca de amortizacion francesa sobre el valor neto financiado y se compara la cuota con la renta mensual del hogar.",
+        methodologyShort:
+          "Hipoteca francesa simplificada + esfuerzo cuota/renta para aproximar accesibilidad y senal de oferta.",
+        controls: [
+          {
+            id: "precio_m2",
+            label: "Precio de compraventa",
+            type: "range",
+            min: 1800,
+            max: 5000,
+            step: 10,
+            value: 3200,
+            display: (value, h) => `${h.formatInt(value)} EUR/m2`
+          },
+          {
+            id: "superficie",
+            label: "Superficie de la vivienda",
+            type: "range",
+            min: 50,
+            max: 120,
+            step: 1,
+            value: 80,
+            display: (value, h) => `${h.formatInt(value)} m2`
+          },
+          {
+            id: "entrada",
+            label: "Entrada inicial",
+            type: "range",
+            min: 10,
+            max: 40,
+            step: 1,
+            value: 20,
+            display: (value, h) => `${h.formatInt(value)}%`
+          },
+          {
+            id: "tipo",
+            label: "Tipo hipotecario",
+            type: "range",
+            min: 1,
+            max: 7,
+            step: 0.1,
+            value: 3.2,
+            display: (value, h) => `${h.formatNumber(value)}%`
+          },
+          {
+            id: "plazo",
+            label: "Plazo del prestamo",
+            type: "range",
+            min: 15,
+            max: 35,
+            step: 1,
+            value: 30,
+            display: (value, h) => `${h.formatInt(value)} anos`
+          },
+          {
+            id: "renta_mensual",
+            label: "Renta neta mensual del hogar",
+            type: "range",
+            min: 1400,
+            max: 5000,
+            step: 50,
+            value: 2500,
+            display: (value, h) => `${h.formatInt(value)} EUR/mes`
+          }
+        ],
+        compute: (state, h) => {
+          const precioTotal = state.precio_m2 * state.superficie;
+          const principal = precioTotal * (1 - state.entrada / 100);
+          const monthlyRate = state.tipo / 100 / 12;
+          const n = state.plazo * 12;
+          const cuota =
+            monthlyRate <= 0
+              ? principal / n
+              : (principal * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+
+          const esfuerzo = (cuota / state.renta_mensual) * 100;
+          const margenPromotor = h.clamp(7 + (state.precio_m2 - 3200) / 220 - (state.tipo - 3.2) * 1.1, -2, 18);
+          const iniciosTeoricos = h.clamp(2.7 + (margenPromotor - 7) * 0.12 - (esfuerzo - 39) * 0.03, 0.5, 6);
+          const senal = h.clamp(((50 - esfuerzo) / 30) * 100, 0, 100);
+          const color = esfuerzo < 30 ? "#1f8f45" : esfuerzo < 40 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            esfuerzo < 30
+              ? "El esfuerzo hipotecario se mantiene en rango saludable para primer acceso."
+              : esfuerzo < 40
+                ? "La accesibilidad es fragil: pequenos cambios de tipo o precio tensionan rapidamente la demanda."
+                : "El esfuerzo de compra es elevado y limita el acceso de hogares de entrada.";
+
+          return {
+            kpis: [
+              { value: `${h.formatInt(Math.round(precioTotal))} EUR`, desc: "Precio total de la vivienda" },
+              { value: `${h.formatInt(Math.round(cuota))} EUR/mes`, desc: "Cuota hipotecaria estimada" },
+              { value: `${h.formatNumber(esfuerzo, 2)}%`, desc: "Cuota sobre renta mensual del hogar", color },
+              { value: `${h.formatNumber(margenPromotor, 2)}%`, desc: "Margen promotor estimado" },
+              { value: `${h.formatNumber(iniciosTeoricos, 2)} / 1.000`, desc: "Inicios teoricos de vivienda" }
+            ],
+            thermometer: {
+              value: senal,
+              color,
+              ariaLabel: "Indice de accesibilidad de compra"
+            },
+            narrative: narrativa,
+            note:
+              "No incorpora fiscalidad, gastos de cierre ni heterogeneidad territorial; sirve para comparar sensibilidad entre supuestos."
+          };
+        }
+      },
+      {
+        id: "oferta-deficit",
+        title: "Simulador de oferta y deficit 2035",
+        description:
+          "Relaciona nueva oferta anual, plazos de maduracion y formacion de hogares con el deficit acumulado y la tension del alquiler.",
+        methodology:
+          "Base: Graficos 25, 27, 28 y 29. Se parte del deficit 2035 en status quo y se aplica una reduccion proporcional a oferta adicional efectiva ajustada por maduracion.",
+        methodologyShort:
+          "Reduccion del deficit proyectado por oferta efectiva anual ajustada por plazos y sensibilidad de precios.",
+        controls: [
+          {
+            id: "viviendas_adicionales",
+            label: "Oferta adicional anual por reformas",
+            type: "range",
+            min: 0,
+            max: 80000,
+            step: 1000,
+            value: 47000,
+            display: (value, h) => `${h.formatInt(value)} viviendas/ano`
+          },
+          {
+            id: "maduracion",
+            label: "Anos de maduracion de la oferta",
+            type: "range",
+            min: 2,
+            max: 10,
+            step: 1,
+            value: 5,
+            display: (value, h) => `${h.formatInt(value)} anos`
+          },
+          {
+            id: "hogares_nuevos",
+            label: "Nuevos hogares anuales",
+            type: "range",
+            min: 90000,
+            max: 180000,
+            step: 1000,
+            value: 130000,
+            display: (value, h) => `${h.formatInt(value)} hogares/ano`
+          },
+          {
+            id: "elasticidad_precio",
+            label: "Elasticidad precio respecto al deficit",
+            type: "range",
+            min: 0.1,
+            max: 1,
+            step: 0.05,
+            value: 0.45,
+            display: (value, h) => h.formatNumber(value, 2)
+          }
+        ],
+        compute: (state, h) => {
+          const maturityFactor = h.clamp((11 - state.maduracion) / 6, 0.35, 1.5);
+          const deficit2035 = h.clamp(
+            671000 - state.viviendas_adicionales * 4.35 * maturityFactor + (state.hogares_nuevos - 130000) * 2.4,
+            350000,
+            900000
+          );
+
+          const reduccion = 671000 - deficit2035;
+          const alquiler2035 = h.clamp(
+            223 - (reduccion / 12000) * (0.8 + state.elasticidad_precio),
+            170,
+            240
+          );
+          const sobrecarga2035 = h.clamp(
+            45 - (reduccion / 16000) * (0.7 + state.elasticidad_precio),
+            20,
+            55
+          );
+          const impactoRelativo = h.clamp((reduccion / 671000) * 100, -20, 55);
+          const senal = h.clamp(((55 - sobrecarga2035) / 35) * 100, 0, 100);
+          const color = sobrecarga2035 < 33 ? "#1f8f45" : sobrecarga2035 < 40 ? "#d19800" : "#b23b1d";
+
+          const narrativa =
+            sobrecarga2035 < 33
+              ? "La reforma de oferta reduce de forma visible tension de alquiler y deficit acumulado."
+              : sobrecarga2035 < 40
+                ? "La mejora existe, pero todavia persiste un mercado tensionado en zonas de mayor demanda."
+                : "Con estos supuestos, el ajuste de oferta no basta para contener la sobrecarga de costes.";
+
+          return {
+            kpis: [
+              { value: `${h.formatInt(Math.round(deficit2035))}`, desc: "Deficit habitacional proyectado en 2035" },
+              { value: `${h.formatNumber(alquiler2035, 1)}`, desc: "Indice de alquiler proyectado (2035)" },
+              { value: `${h.formatNumber(sobrecarga2035, 1)}%`, desc: "Sobrecarga de alquiler proyectada", color },
+              { value: `${h.formatNumber(impactoRelativo, 1)}%`, desc: "Reduccion relativa del deficit vs status quo" }
+            ],
+            thermometer: {
+              value: senal,
+              color,
+              ariaLabel: "Senal de alivio del mercado de alquiler"
+            },
+            narrative: narrativa,
+            note:
+              "La traduccion de oferta a precios es simplificada: sirve para comparar ordenes de magnitud entre escenarios de politica."
+          };
+        }
+      }
+    ],
     sources: [
       {
         name: "PDF original",
