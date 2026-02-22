@@ -666,62 +666,145 @@
       max: 100
     },
     20: {
-      title: "Grafica 20. Reemplazo para salarios bajos",
-      subtitle: "Cobertura de pension en el primer decil salarial",
-      orientation: "horizontal",
+      title: "Grafica 20. Los jubilados alemanes tienen una distribucion de ingresos similar a la de los espanoles",
+      subtitle: "Fuente de ingresos de las personas de mas de 65 anos en Alemania y Espana, en porcentaje del ingreso bruto equivalente",
       unit: "%",
-      x: countries,
-      series: [{ name: "Tasa de reemplazo (decil bajo)", data: [85, 60, 66, 49], color: "#f3c400" }],
+      x: ["Transferencias Estado", "Planes privados y capital", "Ingreso trabajo"],
+      barBorderRadius: false,
+      series: [
+        {
+          name: "Alemania",
+          data: [68.0, 13.9, 18.1],
+          color: "#7f5b00",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "Espana",
+          data: [71.9, 8.6, 19.5],
+          color: "#f3c400",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
       min: 0,
-      max: 100
+      max: 80
     },
     21: {
-      title: "Grafica 21. Envejecimiento demografico comparado",
-      subtitle: "Mayores de 65 por cada 100 personas 20-64",
-      type: "line",
+      title: "Grafica 21. Alemania incentiva las pensiones privadas con deducciones fiscales",
+      subtitle: "Deducciones fiscales en el sistema privado de pensiones en terminos de salario medio",
+      orientation: "horizontal",
       unit: "%",
-      x: years,
+      x: ["Alemania", "Espana"],
+      yAxisInverse: false,
+      showLegend: false,
+      barBorderRadius: false,
       series: [
-        { name: "Espana", type: "line", data: [27, 30, 31, 34, 37, 41, 46], color: "#f3c400" },
-        { name: "Alemania", type: "line", data: [31, 33, 35, 37, 40, 43, 47], color: "#2b2b2b" },
-        { name: "Suecia", type: "line", data: [30, 31, 32, 34, 36, 38, 41], color: "#7f5b00" },
-        { name: "Chile", type: "line", data: [12, 14, 17, 20, 24, 29, 35], color: "#2b2b2b" }
+        {
+          name: "Deduccion fiscal",
+          data: [58.4, 4.5],
+          itemStyle: {
+            color: (params) => (params.dataIndex === 0 ? "#7f5b00" : "#f3c400")
+          },
+          label: { show: true, position: "insideRight", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
       ],
-      min: 10,
-      max: 50
+      min: 0,
+      max: 60
     },
     22: {
-      title: "Grafica 22. Fecundidad comparada",
-      subtitle: "Hijos por mujer",
+      title: "Grafica 22. Alemania estabiliza el porcentaje de gasto en pensiones, Espana lo dispara",
+      subtitle: "Gasto en pensiones publicas, en porcentaje del PIB",
       type: "line",
-      unit: "indice",
-      x: years,
+      unit: "%",
+      showLegend: false,
+      x: makeYearRange(1980, 2021),
       series: [
-        { name: "Espana", type: "line", data: [1.34, 1.38, 1.33, 1.19, 1.24, 1.28, 1.30], color: "#f3c400" },
-        { name: "Alemania", type: "line", data: [1.34, 1.39, 1.50, 1.53, 1.57, 1.60, 1.62], color: "#2b2b2b" },
-        { name: "Suecia", type: "line", data: [1.77, 1.98, 1.85, 1.67, 1.75, 1.78, 1.80], color: "#7f5b00" },
-        { name: "Chile", type: "line", data: [1.96, 1.90, 1.78, 1.54, 1.48, 1.45, 1.43], color: "#2b2b2b" }
+        {
+          name: "Espana",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1980, 2021), [
+            [1980, 10.4], [1985, 10.5], [1990, 10.1], [1992, 9.2], [1995, 10.3], [1998, 10.8], [2002, 10.9],
+            [2005, 11.3], [2008, 10.5], [2009, 10.2], [2010, 11.0], [2012, 10.2], [2014, 10.1], [2016, 10.0],
+            [2018, 9.8], [2020, 10.0], [2021, 9.8]
+          ]),
+          color: "#f3c400"
+        },
+        {
+          name: "Alemania",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1980, 2021), [
+            [1980, 6.2], [1985, 7.3], [1990, 7.1], [1995, 8.6], [1998, 8.9], [2002, 8.0], [2007, 7.6],
+            [2009, 7.5], [2012, 9.5], [2014, 10.8], [2016, 11.1], [2018, 10.9], [2020, 11.0], [2021, 10.6]
+          ]),
+          color: "#7f5b00"
+        },
+        {
+          name: "OCDE",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1980, 2021), [
+            [1980, 5.7], [1985, 6.1], [1990, 6.2], [1994, 6.5], [1998, 6.6], [2005, 6.8], [2010, 6.7],
+            [2012, 7.6], [2016, 8.0], [2019, 7.9], [2021, 8.0]
+          ]),
+          color: "#d5a700"
+        }
       ],
-      min: 1,
-      max: 2.2
+      min: 0,
+      max: 13
     },
     23: {
-      title: "Grafica 23. Crecimiento salarial real medio",
-      subtitle: "Variacion media anual estimada",
+      title: "Grafica 23. La pension en Alemania es menor que en Espana",
+      subtitle: "Tasa de sustitucion neta para diferentes porcentajes de salario medio (ano 2022)",
       unit: "%",
-      x: countries,
-      series: [{ name: "Crecimiento salarial real", data: [0.3, 0.7, 1.0, 1.1], color: "#2b2b2b" }],
+      barBorderRadius: false,
+      x: ["Alemania", "Espana", "OCDE"],
+      series: [
+        {
+          name: "50% salario medio",
+          data: [59.2, 86.4, 72.9],
+          color: "#5a4100",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "100% salario medio",
+          data: [55.3, 86.5, 61.0],
+          color: "#a98700",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        },
+        {
+          name: "200% salario medio",
+          data: [43.2, 57.6, 52.4],
+          color: "#f3c400",
+          label: { show: true, position: "insideTop", formatter: ({ value }) => `${String(value).replace(".", ",")}%` }
+        }
+      ],
       min: 0,
-      max: 1.5
+      max: 95
     },
     24: {
-      title: "Grafica 24. Crecimiento de productividad",
-      subtitle: "Variacion media anual estimada",
+      title: "Grafica 24. La pension publica en Alemania ha caido hasta el 48% del salario de los trabajadores",
+      subtitle: "Nivel de pension neto antes de impuestos para los antiguos Bundeslander (1977-2024)",
+      type: "line",
       unit: "%",
-      x: countries,
-      series: [{ name: "Productividad", data: [0.4, 0.9, 1.1, 1.2], color: "#f3c400" }],
-      min: 0,
-      max: 1.6
+      x: makeYearRange(1977, 2024),
+      showLegend: false,
+      series: [
+        {
+          name: "Pension neta",
+          type: "line",
+          smooth: false,
+          data: interpolateSeries(makeYearRange(1977, 2024), [
+            [1977, 60.0], [1979, 57.5], [1981, 58.4], [1983, 57.8], [1985, 56.2], [1988, 56.3], [1991, 53.2],
+            [1993, 54.9], [1995, 53.4], [1997, 54.1], [2000, 53.1], [2003, 52.7], [2005, 53.3], [2008, 52.3],
+            [2009, 50.5], [2010, 52.0], [2011, 51.5], [2012, 49.8], [2013, 49.2], [2014, 48.8], [2015, 47.8],
+            [2017, 48.2], [2019, 48.1], [2021, 48.2], [2022, 49.4], [2023, 48.1], [2024, 48.0]
+          ]),
+          color: "#f3c400"
+        }
+      ],
+      min: 46,
+      max: 60
     },
     25: {
       title: "Grafica 25. Esfuerzo fiscal proyectado",
