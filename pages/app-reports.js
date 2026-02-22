@@ -5,6 +5,13 @@
   }
 
   const chartInstances = [];
+  let chapterObserver = null;
+  const VIEW_MODE_STORAGE_KEY = "hesperides-report-view-mode";
+  const VIEW_MODE_MIXED = "mixed";
+  const VIEW_MODE_CHARTS = "charts";
+  let currentViewMode = VIEW_MODE_MIXED;
+  let liveTextBlocksByChapter = {};
+  let viewToggleButton = null;
 
   function getRepoBasePath() {
     const path = window.location.pathname || "/";
@@ -38,6 +45,144 @@
     }
 
     return value;
+  }
+
+  function resolveTextSourceUrl(rawPath) {
+    const value = String(rawPath || "").trim();
+    if (!value) return value;
+    if (/^(https?:)?\/\//i.test(value)) return value;
+    if (value.startsWith("/")) return value;
+    const base = getRepoBasePath().replace(/\/+$/, "/");
+    return `${base}${value.replace(/^\/+/, "")}`;
+  }
+
+  function readViewModePreference() {
+    try {
+      const saved = window.localStorage.getItem(VIEW_MODE_STORAGE_KEY);
+      if (saved === VIEW_MODE_MIXED || saved === VIEW_MODE_CHARTS) {
+        return saved;
+      }
+    } catch (error) {
+      // Ignore storage access errors.
+    }
+    return VIEW_MODE_MIXED;
+  }
+
+  function saveViewModePreference(mode) {
+    try {
+      window.localStorage.setItem(VIEW_MODE_STORAGE_KEY, mode);
+    } catch (error) {
+      // Ignore storage access errors.
+    }
+  }
+
+  function normalizeLookup(text) {
+    return String(text || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function cleanSourceTextLines(rawText) {
+    const withoutCarriage = String(rawText || "").replace(/\r/g, "").replace(/\f/g, "\n");
+    const lines = withoutCarriage.split("\n").map((line) => line.replace(/\s+/g, " ").trim());
+
+    const skipLinePatterns = [
+      /^centro$/i,
+      /^ruth richardson$/i,
+      /^hesperides\.edu\.es$/i,
+      /^\d+$/,
+      /^las reformas de la seguridad social en espana: un desequilibrio permanente$/i
+    ];
+
+    const filtered = lines.filter((line) => !skipLinePatterns.some((pattern) => pattern.test(line)));
+    const merged = [];
+
+    for (let index = 0; index < filtered.length; index += 1) {
+      let line = filtered[index];
+
+      while (line && line.endsWith("-") && index + 1 < filtered.length && filtered[index + 1]) {
+        line = `${line.slice(0, -1)}${filtered[index + 1]}`;
+        index += 1;
+      }
+
+      merged.push(line);
+    }
+
+    const compacted = [];
+    merged.forEach((line) => {
+      if (!line) {
+        if (compacted.length && compacted[compacted.length - 1] !== "") {
+          compacted.push("");
+        }
+        return;
+      }
+      compacted.push(line);
+    });
+
+    return compacted;
+  }
+
+  function findLineIndexByMarker(lines, marker, fromIndex = 0) {
+    const target = normalizeLookup(marker);
+    if (!target) return -1;
+
+    for (let index = fromIndex; index < lines.length; index += 1) {
+      if (normalizeLookup(lines[index]).includes(target)) {
+        return index;
+      }
+    }
+
+    return -1;
+  }
+
+  function linesToTextBlocks(lines) {
+    const blocks = [];
+    let currentParagraph = [];
+    const headingPattern =
+      /^(?:[0-9]+(?:\.[0-9]+)*[.)-]?\s+.+|resumen ejecutivo|introduccion|introducción|primera parte|segunda parte|tercera parte|conclusiones?|agradecimiento|referencias?)$/i;
+    const bulletPattern = /^[•*-]\s*/;
+
+    const flushParagraph = () => {
+      if (!currentParagraph.length) return;
+      blocks.push({
+        type: "paragraph",
+        text: currentParagraph.join(" ")
+      });
+      currentParagraph = [];
+    };
+
+    lines.forEach((line) => {
+      if (!line) {
+        flushParagraph();
+        return;
+      }
+
+      if (headingPattern.test(line)) {
+        flushParagraph();
+        blocks.push({
+          type: "heading",
+          text: line
+        });
+        return;
+      }
+
+      if (bulletPattern.test(line)) {
+        flushParagraph();
+        blocks.push({
+          type: "bullet",
+          text: line.replace(bulletPattern, "")
+        });
+        return;
+      }
+
+      currentParagraph.push(line);
+    });
+
+    flushParagraph();
+    return blocks;
   }
 
   const formatNumber = (value, decimals = 1) =>
@@ -110,6 +255,38 @@
       return (value) => formatInt(value);
     }
     return (value) => formatNumber(value, 0);
+  }
+
+  function getAxisUnitProfile(chart) {
+    const unit = String(chart.unit || "").toLowerCase();
+
+    if (unit === "%" || unit.includes("% del pib") || unit.includes("% del empleo")) {
+      return { suffix: "%", decimals: 0, integerOnly: true };
+    }
+
+    if (unit.includes("€/m²") || unit.includes("eur/m²") || unit.includes("euros")) {
+      return { suffix: "", decimals: 0, integerOnly: true };
+    }
+
+    if (unit === "indice" || unit === "índice" || unit === "saldo" || unit === "percentil") {
+      return { suffix: "", decimals: 0, integerOnly: true };
+    }
+
+    if (unit.includes("viviendas")) {
+      return { suffix: "", decimals: 0, integerOnly: true };
+    }
+
+    return { suffix: "", decimals: 0, integerOnly: false };
+  }
+
+  function formatAxisTick(value, chart) {
+    if (value === undefined || value === null || Number.isNaN(value)) return "-";
+    const normalized = Math.abs(value) < 1e-9 ? 0 : value;
+    const profile = getAxisUnitProfile(chart);
+    const text = profile.integerOnly
+      ? formatNumber(normalized, 0)
+      : formatNumber(normalized, profile.decimals);
+    return `${text}${profile.suffix}`;
   }
 
   function valueFormatter(unit) {
@@ -444,6 +621,18 @@
     const baseSeries = (chart.series || []).map((serie) => {
       const serieType = serie.type || defaultType;
       const isLine = serieType === "line";
+      const highlightCategories = Array.isArray(chart.highlights) ? chart.highlights : [];
+      const highlightedColor =
+        !isLine && highlightCategories.length
+          ? (params) => {
+              const category = (chart.x || [])[params.dataIndex];
+              if (highlightCategories.includes(category)) {
+                if (category === "IPC") return "#2b2b2b";
+                return "#d6a900";
+              }
+              return serie.color || "#f3c400";
+            }
+          : serie.color;
       const base = {
         name: serie.name,
         type: serieType,
@@ -457,10 +646,10 @@
         symbolSize: isLine ? (serie.symbolSize || 6) : serie.symbolSize || 0
       };
 
-      if (serie.color) {
+      if (highlightedColor) {
         base.itemStyle = {
           ...(base.itemStyle || {}),
-          color: serie.color
+          color: highlightedColor
         };
         if (isLine) {
           base.lineStyle = {
@@ -644,10 +833,165 @@
       option.dataZoom = [{ type: "inside" }];
     }
 
+    if (chart.zeroLine && baseSeries.length > 0) {
+      baseSeries[0].markLine = {
+        symbol: "none",
+        lineStyle: {
+          color: "#7c7468",
+          type: "dashed"
+        },
+        data: [isHorizontal ? { xAxis: 0 } : { yAxis: 0 }]
+      };
+    }
+
+    if (!isHorizontal && Array.isArray(chart.eventLines) && chart.eventLines.length > 0 && baseSeries.length > 0) {
+      baseSeries[0].markLine = {
+        ...(baseSeries[0].markLine || {}),
+        symbol: "none",
+        lineStyle: {
+          color: "#7c7468",
+          type: "dashed"
+        },
+        label: {
+          formatter: (params) => params.name,
+          color: "#524a3b",
+          fontSize: 10,
+          backgroundColor: "rgba(255,255,255,0.7)",
+          padding: [2, 4]
+        },
+        data: chart.eventLines.map((eventLine) => ({
+          name: eventLine.label,
+          xAxis: eventLine.x
+        }))
+      };
+    }
+
     return option;
   }
 
+  function renderSmallMultiplesChart(chart, host) {
+    const container = document.createElement("div");
+    container.className = "chart-canvas chart-canvas--multiples";
+    host.appendChild(container);
+
+    const allValues = (chart.series || []).flatMap((serie) => serie.data || []);
+    if (!allValues.length) return;
+
+    const minValue = Math.min(...allValues);
+    const maxValue = Math.max(...allValues);
+    const yPadding = Math.max(2, (maxValue - minValue) * 0.1);
+    const axisPreset = chart.smallMultiplesAxis || {};
+    const yMin = axisPreset.yMin ?? Math.floor((minValue - yPadding) / 5) * 5;
+    const yMax = axisPreset.yMax ?? Math.ceil((maxValue + yPadding) / 5) * 5;
+    const yInterval = axisPreset.yInterval ?? null;
+    const tickIndices = new Set(
+      Array.isArray(axisPreset.xTickIndices)
+        ? axisPreset.xTickIndices
+        : [0, Math.floor(((chart.x || []).length - 1) / 2), (chart.x || []).length - 1]
+    );
+    const labelMap = axisPreset.xLabelMap || {};
+
+    (chart.series || []).forEach((serie) => {
+      const panel = document.createElement("div");
+      panel.className = "mini-chart-canvas";
+      container.appendChild(panel);
+
+      const instance = echarts.init(panel, null, { renderer: "canvas" });
+      chartInstances.push(instance);
+
+      instance.setOption({
+        animationDuration: 650,
+        tooltip: {
+          trigger: "axis",
+          backgroundColor: "rgba(23, 23, 23, 0.92)",
+          borderColor: "#f3c400",
+          borderWidth: 1,
+          textStyle: {
+            color: "#f9f9f9"
+          },
+          valueFormatter: (value) => formatAxisTick(value, chart)
+        },
+        title: {
+          text: serie.name,
+          left: 8,
+          top: 4,
+          textStyle: {
+            fontSize: 12,
+            fontWeight: 700,
+            fontFamily: "IBM Plex Sans",
+            color: "#3f3a2f"
+          }
+        },
+        grid: {
+          left: 44,
+          right: 10,
+          top: 34,
+          bottom: 36
+        },
+        xAxis: {
+          type: "category",
+          boundaryGap: false,
+          data: chart.x,
+          axisLabel: {
+            color: "#4f4f4f",
+            fontSize: 10,
+            interval: 0,
+            formatter: (value, index) => {
+              if (!tickIndices.has(index)) return "";
+              return labelMap[value] || value;
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#8f8574"
+            }
+          }
+        },
+        yAxis: {
+          type: "value",
+          min: yMin,
+          max: yMax,
+          interval: yInterval === null ? undefined : yInterval,
+          minInterval: getAxisUnitProfile(chart).integerOnly ? 1 : 0,
+          axisLabel: {
+            color: "#4f4f4f",
+            fontSize: 10,
+            hideOverlap: true,
+            formatter: (value) => formatAxisTick(value, chart)
+          },
+          splitLine: {
+            lineStyle: {
+              color: "rgba(137, 128, 106, 0.25)"
+            }
+          }
+        },
+        series: [
+          {
+            name: serie.name,
+            type: "line",
+            data: serie.data,
+            smooth: 0.15,
+            symbol: "circle",
+            symbolSize: 5,
+            lineStyle: {
+              color: serie.color,
+              width: 2.2
+            },
+            itemStyle: {
+              color: serie.color
+            }
+          }
+        ]
+      });
+    });
+  }
+
   function renderChart(chart, host) {
+    if (chart.renderAs === "small-multiples") {
+      renderSmallMultiplesChart(chart, host);
+      return;
+    }
+
     const canvas = document.createElement("div");
     canvas.className = "chart-canvas";
     host.appendChild(canvas);
@@ -676,11 +1020,119 @@
     host.appendChild(shell);
   }
 
+  function getViewToggleLabel() {
+    return currentViewMode === VIEW_MODE_MIXED ? "Mostrar solo graficas" : "Mostrar graficas + texto";
+  }
+
+  function syncViewModeUI() {
+    document.body.classList.toggle("view-mode-charts", currentViewMode === VIEW_MODE_CHARTS);
+    if (viewToggleButton) {
+      viewToggleButton.textContent = getViewToggleLabel();
+      viewToggleButton.setAttribute("aria-pressed", currentViewMode === VIEW_MODE_CHARTS ? "true" : "false");
+    }
+  }
+
+  function toggleViewMode() {
+    currentViewMode = currentViewMode === VIEW_MODE_MIXED ? VIEW_MODE_CHARTS : VIEW_MODE_MIXED;
+    saveViewModePreference(currentViewMode);
+    syncViewModeUI();
+  }
+
+  function renderChapterLiveText(chapterId, chapterContainer) {
+    const blocks = liveTextBlocksByChapter[chapterId];
+    if (!Array.isArray(blocks) || !blocks.length) return;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "chapter-live-text";
+
+    blocks.forEach((block) => {
+      if (!block || !block.text) return;
+
+      if (block.type === "heading") {
+        const heading = document.createElement("p");
+        heading.className = "chapter-text-heading";
+        heading.textContent = block.text;
+        wrapper.appendChild(heading);
+        return;
+      }
+
+      if (block.type === "bullet") {
+        const bullet = document.createElement("p");
+        bullet.className = "chapter-text-bullet";
+        bullet.textContent = `• ${block.text}`;
+        wrapper.appendChild(bullet);
+        return;
+      }
+
+      const paragraph = document.createElement("p");
+      paragraph.className = "chapter-text-paragraph";
+      paragraph.textContent = block.text;
+      wrapper.appendChild(paragraph);
+    });
+
+    chapterContainer.appendChild(wrapper);
+  }
+
+  async function loadLiveTextContent() {
+    const textConfig = report.text;
+    if (!textConfig || !textConfig.sourcePath || !Array.isArray(textConfig.ranges) || !textConfig.ranges.length) {
+      return;
+    }
+
+    try {
+      const response = await fetch(resolveTextSourceUrl(textConfig.sourcePath), { cache: "force-cache" });
+      if (!response.ok) return;
+
+      const rawText = await response.text();
+      const lines = cleanSourceTextLines(rawText);
+      const chapterBlocks = {};
+      let cursor = 0;
+
+      textConfig.ranges.forEach((range) => {
+        const chapterId = range.chapterId;
+        if (!chapterId) return;
+
+        const startIndex = range.start ? findLineIndexByMarker(lines, range.start, cursor) : cursor;
+        const resolvedStart = startIndex >= 0 ? startIndex : cursor;
+
+        let endIndex = range.end ? findLineIndexByMarker(lines, range.end, resolvedStart + 1) : lines.length;
+        if (endIndex < 0 || endIndex <= resolvedStart) {
+          endIndex = lines.length;
+        }
+
+        const segment = lines.slice(resolvedStart, endIndex);
+        chapterBlocks[chapterId] = linesToTextBlocks(segment);
+        cursor = endIndex;
+      });
+
+      liveTextBlocksByChapter = chapterBlocks;
+      renderSections();
+      syncViewModeUI();
+    } catch (error) {
+      console.error("No se pudo cargar el texto completo del informe:", error);
+    }
+  }
+
   function renderSections() {
     const chapterNav = document.getElementById("chapter-nav");
     const container = document.getElementById("report-sections");
 
     if (!chapterNav || !container) return;
+
+    if (chapterObserver) {
+      chapterObserver.disconnect();
+      chapterObserver = null;
+    }
+
+    while (chartInstances.length) {
+      const instance = chartInstances.pop();
+      if (!instance) continue;
+      try {
+        instance.dispose();
+      } catch (error) {
+        // Ignore disposal issues and continue rendering.
+      }
+    }
 
     chapterNav.innerHTML = "";
     container.innerHTML = "";
@@ -707,6 +1159,8 @@
         p.textContent = paragraph;
         article.appendChild(p);
       });
+
+      renderChapterLiveText(sectionId, article);
 
       (chapter.charts || []).forEach((chartKey) => {
         const chart = report.charts[chartKey];
@@ -771,7 +1225,7 @@
     const links = [...chapterNav.querySelectorAll("a")];
     const sections = [...container.querySelectorAll(".chapter")];
 
-    const observer = new IntersectionObserver(
+    chapterObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -784,7 +1238,7 @@
       { rootMargin: "-45% 0px -45% 0px", threshold: 0.01 }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => chapterObserver.observe(section));
   }
 
   function getDefaultPlaygroundIntro() {
@@ -1007,14 +1461,50 @@
     if (pdfLink) {
       pdfLink.href = report.meta.reportUrl || report.meta.pdfUrl;
       pdfLink.textContent = "Abrir informe original";
+      pdfLink.className = "pdf-link";
     }
-    if (pdfLink && !document.querySelector(".hero .home-link")) {
+
+    if (pdfLink) {
+      let actionRow = document.querySelector(".hero .hero-actions");
+      if (!actionRow) {
+        actionRow = document.createElement("div");
+        actionRow.className = "hero-actions";
+        pdfLink.insertAdjacentElement("afterend", actionRow);
+      }
+
+      actionRow.innerHTML = "";
+      actionRow.appendChild(pdfLink);
+
       const homeLink = document.createElement("a");
       homeLink.className = "pdf-link home-link";
       homeLink.href = getCatalogHomeHref();
       homeLink.textContent = "Volver a Informes";
-      pdfLink.insertAdjacentElement("afterend", homeLink);
+      actionRow.appendChild(homeLink);
+
+      const hasPlaygrounds = Array.isArray(report.playgrounds) && report.playgrounds.length > 0;
+      if (hasPlaygrounds) {
+        const playgroundLink = document.createElement("a");
+        playgroundLink.className = "pdf-link home-link";
+        playgroundLink.href = "#playground";
+        playgroundLink.textContent = "Ir al Playground";
+        playgroundLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          const playground = document.getElementById("playground");
+          if (playground) {
+            playground.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+        actionRow.appendChild(playgroundLink);
+      }
+
+      const toggleButton = document.createElement("button");
+      toggleButton.type = "button";
+      toggleButton.className = "pdf-link home-link hero-action-btn view-toggle-btn";
+      toggleButton.addEventListener("click", toggleViewMode);
+      actionRow.appendChild(toggleButton);
+      viewToggleButton = toggleButton;
     }
+
     if (caveat) caveat.textContent = report.meta.caveat || "Datos tomados del informe original y complementados para visualizacion interactiva.";
 
     if (heroMetrics) {
@@ -1029,13 +1519,18 @@
         )
         .join("");
     }
+
+    syncViewModeUI();
   }
 
   function init() {
+    currentViewMode = readViewModePreference();
     initHero();
     renderSections();
     renderPlaygrounds();
     renderSources();
+    loadLiveTextContent();
+    syncViewModeUI();
 
     window.addEventListener("resize", () => {
       chartInstances.forEach((instance) => instance.resize());

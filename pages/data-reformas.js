@@ -121,6 +121,20 @@
         max: 170
       }
     },
+    text: {
+      sourcePath: "extracted_text/reformas_seguridad_social_espana.txt",
+      ranges: [
+        {
+          chapterId: "reformas-cronologia",
+          start: "Resumen ejecutivo",
+          end: "8. Algunos datos para concluir"
+        },
+        {
+          chapterId: "reformas-tendencias",
+          start: "8. Algunos datos para concluir"
+        }
+      ]
+    },
     playgroundIntro:
       "Simuladores de sensibilidad sobre gasto, presion contributiva y divergencia pension-salario en el marco de reformas.",
     playgrounds: [

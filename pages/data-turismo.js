@@ -298,6 +298,25 @@
       }
     ],
     charts,
+    text: {
+      sourcePath: "extracted_text/turismo_vivienda_canarias.txt",
+      ranges: [
+        {
+          chapterId: "bloque-1",
+          start: "Resumen ejecutivo",
+          end: "Segunda parte"
+        },
+        {
+          chapterId: "bloque-2",
+          start: "Segunda parte",
+          end: "Tercera parte"
+        },
+        {
+          chapterId: "bloque-3",
+          start: "Tercera parte"
+        }
+      ]
+    },
     playgroundIntro:
       "Simuladores para comparar restriccion turistica y reforma de oferta residencial en su impacto sobre alquiler y tension habitacional.",
     playgrounds: [

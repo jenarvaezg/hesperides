@@ -378,6 +378,30 @@
         max: 0
       }
     },
+    text: {
+      sourcePath: "extracted_text/la_insostenibilidad_de_la_seguridad_social.txt",
+      ranges: [
+        {
+          chapterId: "bloque-1",
+          start: "Resumen ejecutivo",
+          end: "3. La situación financiera de la Seguridad Social"
+        },
+        {
+          chapterId: "bloque-2",
+          start: "3. La situación financiera de la Seguridad Social",
+          end: "4. La (inexistente) “hucha” de las pensiones y la complicada"
+        },
+        {
+          chapterId: "bloque-3",
+          start: "4. La (inexistente) “hucha” de las pensiones y la complicada",
+          end: "5. La Seguridad Social es el elefante en la habitación de las"
+        },
+        {
+          chapterId: "bloque-4",
+          start: "5. La Seguridad Social es el elefante en la habitación de las"
+        }
+      ]
+    },
     playgroundIntro:
       "Simuladores para tension financiera y uso del Fondo de Reserva con los mismos ordenes de magnitud del informe.",
     playgrounds: [

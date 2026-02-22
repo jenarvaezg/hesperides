@@ -489,6 +489,25 @@
       }
     ],
     charts,
+    text: {
+      sourcePath: "extracted_text/sistemas_de_pensiones_comparados.txt",
+      ranges: [
+        {
+          chapterId: "bloque-1",
+          start: "Resumen ejecutivo",
+          end: "3. El modelo sueco: sostenibilidad y confianza intergeneracional"
+        },
+        {
+          chapterId: "bloque-2",
+          start: "3. El modelo sueco: sostenibilidad y confianza intergeneracional",
+          end: "6. Una problemática común"
+        },
+        {
+          chapterId: "bloque-3",
+          start: "6. Una problemática común"
+        }
+      ]
+    },
     playgroundIntro:
       "Explora como cambian sostenibilidad y adecuacion de ingresos cuando se ajustan cobertura complementaria, ahorro y parametros de retiro.",
     playgrounds: [

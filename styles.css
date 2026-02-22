@@ -126,14 +126,35 @@ h1 {
   font-weight: 700;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.2rem;
+}
+
+.hero-actions .pdf-link {
+  margin-top: 0;
+}
+
 .home-link {
   margin-left: 0.55rem;
   background: rgba(255, 252, 246, 0.92);
   border-color: rgba(94, 76, 20, 0.38);
 }
 
+.hero-actions .home-link {
+  margin-left: 0;
+  margin-top: 0;
+}
+
 .home-link:hover {
   background: #fff;
+}
+
+.hero-action-btn {
+  font: inherit;
+  cursor: pointer;
 }
 
 .layout {
@@ -228,6 +249,44 @@ h1 {
   font-size: 0.96rem;
   line-height: 1.5;
   color: #3d392f;
+}
+
+.chapter-live-text {
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(127, 91, 0, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 252, 245, 0.92);
+  padding: 0.8rem 0.9rem;
+}
+
+.chapter-text-heading {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #2d291f;
+}
+
+.chapter-text-heading:first-child {
+  margin-top: 0;
+}
+
+.chapter-text-paragraph,
+.chapter-text-bullet {
+  margin: 0.45rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.58;
+  color: #3f3a2f;
+}
+
+.chapter-text-paragraph:first-child,
+.chapter-text-bullet:first-child {
+  margin-top: 0;
+}
+
+.view-mode-charts .chapter-live-text {
+  display: none;
 }
 
 .chart-card {

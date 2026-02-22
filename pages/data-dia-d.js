@@ -523,6 +523,25 @@
       }
     ],
     charts,
+    text: {
+      sourcePath: "extracted_text/informe_dia_d_pensiones.txt",
+      ranges: [
+        {
+          chapterId: "bloque-1",
+          start: "Resumen ejecutivo",
+          end: "2. Economía, pensiones y demografía: España hace aguas"
+        },
+        {
+          chapterId: "bloque-2",
+          start: "2. Economía, pensiones y demografía: España hace aguas",
+          end: "3. El desajuste en el sistema de pensiones ocurre antes de"
+        },
+        {
+          chapterId: "bloque-3",
+          start: "3. El desajuste en el sistema de pensiones ocurre antes de"
+        }
+      ]
+    },
     playgroundIntro:
       "Simuladores para estresar supuestos demograficos y ensayar combinaciones de ajuste sobre la brecha de financiacion hasta 2050.",
     playgrounds: [

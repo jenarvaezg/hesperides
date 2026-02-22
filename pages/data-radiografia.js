@@ -433,6 +433,30 @@
       }
     ],
     charts,
+    text: {
+      sourcePath: "extracted_text/radiografia_mercado_vivienda_espana.txt",
+      ranges: [
+        {
+          chapterId: "bloque-1",
+          start: "Resumen ejecutivo",
+          end: "Segunda parte"
+        },
+        {
+          chapterId: "bloque-2",
+          start: "Segunda parte",
+          end: "Tercera parte"
+        },
+        {
+          chapterId: "bloque-3",
+          start: "Tercera parte",
+          end: "3.2. El impacto del alquiler vacacional en los precios de la"
+        },
+        {
+          chapterId: "bloque-4",
+          start: "3.2. El impacto del alquiler vacacional en los precios de la"
+        }
+      ]
+    },
     playgroundIntro:
       "Simuladores de accesibilidad y oferta para probar de forma interactiva los mecanismos que explican precios, alquiler y deficit habitacional.",
     playgrounds: [
