@@ -269,51 +269,75 @@
       { kpi: "0,7%", label: "Crecimiento parque residencial 2020-2023" }
     ],
     chapters: [
-      {
-        id: "bloque-1",
-        title: "1. Diagnostico inicial",
-        summary: [
-          "Bloque de apertura con dinamica de precios, oferta y tension entre uso residencial y turistico.",
-          "Se muestra que la restriccion de oferta estructural tiene un peso determinante."
-        ],
-        charts: makeIds("f", 1, 7)
-      },
-      {
-        id: "bloque-2",
-        title: "2. Evidencia empírica y marco",
-        summary: [
-          "Bloque central con indicadores por isla, correlaciones y tablas metodologicas.",
-          "Incluye instrumentos de politica evaluados en el informe."
-        ],
-        charts: makeIds("f", 8, 13)
-      },
-      {
-        id: "bloque-3",
-        title: "3. Escenarios de cierre",
-        summary: [
-          "Bloque final con escenarios de politica y su impacto esperado en oferta y precios.",
-          "Se comparan restricciones de uso turistico frente a reformas de oferta residencial."
-        ],
-        charts: makeIds("f", 14, 19)
-      }
+      { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
+      { id: "introduccion", title: "Introducción", charts: [] },
+      { id: "sec-31", title: "3.1 El eslabón perdido: la oferta de vivienda", charts: makeIds("f", 1, 7) },
+      { id: "sec-32", title: "3.2 La creación de hogares", charts: makeIds("f", 8, 9) },
+      { id: "sec-33", title: "3.3 El tercero en discordia: el turismo", charts: makeIds("f", 10, 13) },
+      { id: "sec-41", title: "4.1 Evolución legislativa del alquiler", charts: ["f14"] },
+      { id: "sec-42", title: "4.2 Desahucios y cambio de estrategia", charts: ["f15"] },
+      { id: "sec-5", title: "5. Prosperidad, turismo y vivienda", charts: ["f16"] },
+      { id: "sec-51", title: "5.1 El turismo como quintaesencia del capitalismo popular", charts: ["f17"] },
+      { id: "sec-52", title: "5.2 La Ley podría destruir el capitalismo popular", charts: ["f18", "f19"] },
+      { id: "conclusion", title: "Conclusión", charts: [] }
     ],
     charts,
     text: {
       sourcePath: "extracted_text/turismo_vivienda_canarias.txt",
       ranges: [
         {
-          chapterId: "bloque-1",
+          chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
-          end: "Segunda parte"
+          end: "Introducción"
         },
         {
-          chapterId: "bloque-2",
-          start: "Segunda parte",
-          end: "Tercera parte"
+          chapterId: "introduccion",
+          start: "Introducción",
+          end: "3.1 El eslabón perdido: la oferta de vivienda"
         },
         {
-          chapterId: "bloque-3",
-          start: "Tercera parte"
+          chapterId: "sec-31",
+          start: "3.1 El eslabón perdido: la oferta de vivienda",
+          end: "3.2 La creación de hogares"
+        },
+        {
+          chapterId: "sec-32",
+          start: "3.2 La creación de hogares",
+          end: "3.3 El tercero en discordia: el turismo"
+        },
+        {
+          chapterId: "sec-33",
+          start: "3.3 El tercero en discordia: el turismo",
+          end: "4.1 Evolución legislativa del alquiler"
+        },
+        {
+          chapterId: "sec-41",
+          start: "4.1 Evolución legislativa del alquiler",
+          end: "4.2 Desahucios y cambio de estrategia"
+        },
+        {
+          chapterId: "sec-42",
+          start: "4.2 Desahucios y cambio de estrategia",
+          end: "5. Prosperidad, turismo y vivienda"
+        },
+        {
+          chapterId: "sec-5",
+          start: "5. Prosperidad, turismo y vivienda",
+          end: "5.1 El turismo como quintaesencia del capitalismo popular"
+        },
+        {
+          chapterId: "sec-51",
+          start: "5.1 El turismo como quintaesencia del capitalismo popular",
+          end: "5.2 La Ley podría destruir el capitalismo popular"
+        },
+        {
+          chapterId: "sec-52",
+          start: "5.2 La Ley podría destruir el capitalismo popular",
+          end: "Conclusión"
+        },
+        {
+          chapterId: "conclusion",
+          start: "Conclusión"
         }
       ]
     },

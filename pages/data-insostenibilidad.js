@@ -16,42 +16,39 @@
       { kpi: "26,6%", label: "Deficit sobre gasto contributivo" }
     ],
     chapters: [
+      { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
       {
-        id: "bloque-1",
-        title: "1. Cuentas publicas y contexto",
-        summary: [
-          "El informe arranca con la fotografia de ingresos y gastos publicos, y su evolucion desde la crisis financiera.",
-          "Se introduce tambien el reparto funcional del gasto para ubicar el peso de proteccion social y pensiones."
-        ],
-        charts: ["i01", "i02", "i03", "i04", "i05"]
+        id: "sec-1",
+        title: "1. Introducción: las cuentas públicas no cuadran en España",
+        charts: ["i01", "i02", "i03"]
       },
       {
-        id: "bloque-2",
-        title: "2. Brecha financiera de la Seguridad Social",
-        summary: [
-          "Se representa la estructura de financiacion del sistema y la persistencia de saldos negativos durante mas de una decada.",
-          "Las curvas muestran la dependencia creciente respecto de transferencias estatales."
-        ],
-        charts: ["i06", "i07", "i08", "i09"]
+        id: "sec-2",
+        title: "2. Introducción: las cuentas públicas no cuadran en España",
+        charts: ["i04", "i05"]
       },
       {
-        id: "bloque-3",
-        title: "3. Desigualdad territorial del saldo contributivo",
-        summary: [
-          "El desequilibrio no se distribuye de forma homogenea entre territorios.",
-          "Solo unos pocos territorios mantienen superavit contributivo y el resto presenta saldos deficitarios relevantes."
-        ],
-        charts: ["i10"]
+        id: "sec-3",
+        title: "3. La situación financiera de la Seguridad Social",
+        charts: ["i06", "i07", "i08", "i09", "i10"]
       },
       {
-        id: "bloque-4",
-        title: "4. Fondo de reserva y cierre patrimonial",
-        summary: [
-          "El tramo final analiza la hucha de pensiones, su rentabilidad relativa y su insuficiencia frente al gasto corriente.",
-          "El mensaje central es que el problema exige reformas estructurales y no ajustes contables puntuales."
-        ],
-        charts: ["i11", "i12", "i13", "i14", "i15", "i16"]
-      }
+        id: "sec-4",
+        title: "4. La (inexistente) “hucha” de las pensiones y la complicada situación patrimonial de la Seguridad Social",
+        charts: ["i11", "i12", "i13", "i14"]
+      },
+      {
+        id: "sec-5",
+        title: "5. La Seguridad Social es el elefante en la habitación de las cuentas públicas españolas",
+        charts: ["i15", "i16"]
+      },
+      {
+        id: "conclusion",
+        title: "Conclusión: España necesita una reforma urgente en su sistema de pensiones",
+        charts: []
+      },
+      { id: "sec-6", title: "6. Agradecimiento", charts: [] },
+      { id: "referencias", title: "Referencias", charts: [] }
     ],
     charts: {
       i01: {
@@ -382,23 +379,48 @@
       sourcePath: "extracted_text/la_insostenibilidad_de_la_seguridad_social.txt",
       ranges: [
         {
-          chapterId: "bloque-1",
+          chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
+          end: "1. Introducción: las cuentas públicas no cuadran en España"
+        },
+        {
+          chapterId: "sec-1",
+          start: "1. Introducción: las cuentas públicas no cuadran en España",
+          end: "2. Introducción: las cuentas públicas no cuadran en España"
+        },
+        {
+          chapterId: "sec-2",
+          start: "2. Introducción: las cuentas públicas no cuadran en España",
           end: "3. La situación financiera de la Seguridad Social"
         },
         {
-          chapterId: "bloque-2",
+          chapterId: "sec-3",
           start: "3. La situación financiera de la Seguridad Social",
           end: "4. La (inexistente) “hucha” de las pensiones y la complicada"
         },
         {
-          chapterId: "bloque-3",
+          chapterId: "sec-4",
           start: "4. La (inexistente) “hucha” de las pensiones y la complicada",
           end: "5. La Seguridad Social es el elefante en la habitación de las"
         },
         {
-          chapterId: "bloque-4",
-          start: "5. La Seguridad Social es el elefante en la habitación de las"
+          chapterId: "sec-5",
+          start: "5. La Seguridad Social es el elefante en la habitación de las",
+          end: "Conclusión: España necesita una reforma urgente en su sistema de pensiones"
+        },
+        {
+          chapterId: "conclusion",
+          start: "Conclusión: España necesita una reforma urgente en su sistema de pensiones",
+          end: "6. Agradecimiento"
+        },
+        {
+          chapterId: "sec-6",
+          start: "6. Agradecimiento",
+          end: "Referencias"
+        },
+        {
+          chapterId: "referencias",
+          start: "Referencias"
         }
       ]
     },

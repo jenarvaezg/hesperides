@@ -16,24 +16,20 @@
       { kpi: "100%", label: "Visualizaciones interactivas" }
     ],
     chapters: [
+      { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
+      { id: "sec-1", title: "1. Introducción", charts: [] },
+      { id: "sec-2", title: "2. Reforma de 1985: Endurecimiento", charts: ["r01"] },
+      { id: "sec-3", title: "3. Reforma de 1997: El Pacto de Toledo", charts: [] },
+      { id: "sec-4", title: "4. Reforma de 2001/2002: Incentivos", charts: [] },
+      { id: "sec-5", title: "5. Reforma de 2007: Nuevos ajustes", charts: [] },
+      { id: "sec-6", title: "6. Reformas de 2011 y 2013:", charts: [] },
       {
-        id: "reformas-cronologia",
-        title: "1. Cronologia de reformas",
-        summary: [
-          "La tabla resume los hitos normativos que reconfiguraron edad, periodo de calculo y ajustes del sistema.",
-          "El objetivo fue contener un gasto estructuralmente creciente bajo envejecimiento demografico."
-        ],
-        charts: ["r01"]
+        id: "sec-7",
+        title: "7. Reformas de 2021 y 2023: Nuevo enfoque para la sostenibilidad y la equidad intergeneracional",
+        charts: []
       },
-      {
-        id: "reformas-tendencias",
-        title: "2. Tendencias estructurales",
-        summary: [
-          "Las tres visualizaciones recogen la evolucion del gasto, la dependencia pensionista-cotizante y la brecha entre pension media y salarios.",
-          "Los datos son reconstrucciones visuales coherentes con las magnitudes y mensajes del informe."
-        ],
-        charts: ["r02", "r03", "r04"]
-      }
+      { id: "sec-8", title: "8. Algunos datos para concluir", charts: ["r02", "r03", "r04"] },
+      { id: "bibliografia", title: "Bibliografía", charts: [] }
     ],
     charts: {
       r01: {
@@ -125,13 +121,53 @@
       sourcePath: "extracted_text/reformas_seguridad_social_espana.txt",
       ranges: [
         {
-          chapterId: "reformas-cronologia",
+          chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
+          end: "1. Introducción"
+        },
+        {
+          chapterId: "sec-1",
+          start: "1. Introducción",
+          end: "2. Reforma de 1985: Endurecimiento"
+        },
+        {
+          chapterId: "sec-2",
+          start: "2. Reforma de 1985: Endurecimiento",
+          end: "3. Reforma de 1997: El Pacto de Toledo"
+        },
+        {
+          chapterId: "sec-3",
+          start: "3. Reforma de 1997: El Pacto de Toledo",
+          end: "4. Reforma de 2001/2002: Incentivos"
+        },
+        {
+          chapterId: "sec-4",
+          start: "4. Reforma de 2001/2002: Incentivos",
+          end: "5. Reforma de 2007: Nuevos ajustes"
+        },
+        {
+          chapterId: "sec-5",
+          start: "5. Reforma de 2007: Nuevos ajustes",
+          end: "6. Reformas de 2011 y 2013:"
+        },
+        {
+          chapterId: "sec-6",
+          start: "6. Reformas de 2011 y 2013:",
+          end: "7. Reformas de 2021 y 2023: Nuevo"
+        },
+        {
+          chapterId: "sec-7",
+          start: "7. Reformas de 2021 y 2023: Nuevo",
           end: "8. Algunos datos para concluir"
         },
         {
-          chapterId: "reformas-tendencias",
-          start: "8. Algunos datos para concluir"
+          chapterId: "sec-8",
+          start: "8. Algunos datos para concluir",
+          end: "Bibliografía"
+        },
+        {
+          chapterId: "bibliografia",
+          start: "Bibliografía"
         }
       ]
     },

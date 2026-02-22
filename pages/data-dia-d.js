@@ -494,51 +494,69 @@
       { kpi: "2025-2050", label: "Horizonte principal de escenarios" }
     ],
     chapters: [
+      { id: "introduccion", title: "Introducción", charts: [] },
+      { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
       {
-        id: "bloque-1",
-        title: "1. Transicion demografica",
-        summary: [
-          "Bloque inicial sobre natalidad, envejecimiento y parametros estructurales del sistema.",
-          "Incluye tabla de cohortes y dinamicas demograficas de base."
-        ],
+        id: "sec-1",
+        title: "1. Los problemas demográficos de España: un país sin jóvenes",
         charts: makeIds("f", 1, 8)
       },
       {
-        id: "bloque-2",
-        title: "2. Presion economica y sostenibilidad",
-        summary: [
-          "Bloque central con gasto, ingresos, deficit y comparaciones internacionales.",
-          "Se visualiza la brecha creciente entre obligaciones y capacidad contributiva."
-        ],
-        charts: makeIds("f", 9, 17)
+        id: "sec-2",
+        title: "2. Economía, pensiones y demografía: España hace aguas",
+        charts: makeIds("f", 9, 14)
       },
       {
-        id: "bloque-3",
-        title: "3. Escenarios y ajustes requeridos",
-        summary: [
-          "Ultimo bloque con supuestos de simulacion y proyecciones de brecha financiera.",
-          "Se comparan escenarios base y estres hasta 2050."
-        ],
-        charts: makeIds("f", 18, 23)
-      }
+        id: "sec-3",
+        title: "3. El desajuste en el sistema de pensiones ocurre antes de tiempo",
+        charts: makeIds("f", 15, 18)
+      },
+      { id: "sec-4", title: "4. La amarga guerra intergeneracional en España", charts: makeIds("f", 19, 23) },
+      { id: "sec-5", title: "5 Conclusión", charts: [] },
+      { id: "sec-6", title: "6 Agradecimiento", charts: [] }
     ],
     charts,
     text: {
       sourcePath: "extracted_text/informe_dia_d_pensiones.txt",
       ranges: [
         {
-          chapterId: "bloque-1",
+          chapterId: "introduccion",
+          start: "Introducción",
+          end: "Resumen ejecutivo"
+        },
+        {
+          chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
+          end: "1. Los problemas demográficos de España: un país sin"
+        },
+        {
+          chapterId: "sec-1",
+          start: "1. Los problemas demográficos de España: un país sin",
           end: "2. Economía, pensiones y demografía: España hace aguas"
         },
         {
-          chapterId: "bloque-2",
+          chapterId: "sec-2",
           start: "2. Economía, pensiones y demografía: España hace aguas",
           end: "3. El desajuste en el sistema de pensiones ocurre antes de"
         },
         {
-          chapterId: "bloque-3",
-          start: "3. El desajuste en el sistema de pensiones ocurre antes de"
+          chapterId: "sec-3",
+          start: "3. El desajuste en el sistema de pensiones ocurre antes de",
+          end: "4. La amarga guerra intergeneracional en España"
+        },
+        {
+          chapterId: "sec-4",
+          start: "4. La amarga guerra intergeneracional en España",
+          end: "5 Conclusión"
+        },
+        {
+          chapterId: "sec-5",
+          start: "5 Conclusión",
+          end: "6 Agradecimiento"
+        },
+        {
+          chapterId: "sec-6",
+          start: "6 Agradecimiento"
         }
       ]
     },

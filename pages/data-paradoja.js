@@ -873,12 +873,25 @@
     ? blockedSeries.reduce((acc, value) => acc + value, 0) / blockedSeries.length
     : 0;
 
-  const chapters = (legacy.sections || []).map((section) => ({
-    id: section.id,
-    title: section.title,
-    summary: Array.isArray(section.summary) ? section.summary : [section.summary],
-    charts: Array.isArray(section.chartIds) ? [...section.chartIds] : []
-  }));
+  const chartsBySectionId = Object.fromEntries(
+    (legacy.sections || []).map((section) => [section.id, Array.isArray(section.chartIds) ? [...section.chartIds] : []])
+  );
+
+  const chapters = [
+    { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
+    { id: "introduccion", title: "1. Introducción", charts: [] },
+    { id: "s1", title: "1. La principal preocupación", charts: chartsBySectionId.s1 || [] },
+    { id: "s2", title: "2. El precio de la vivienda se dispara", charts: chartsBySectionId.s2 || [] },
+    { id: "s3", title: "3. Precio, rentabilidad y oferta de vivienda", charts: chartsBySectionId.s3 || [] },
+    {
+      id: "s4",
+      title: "4. La escasez artificial del suelo y edificabilidad disponible",
+      charts: chartsBySectionId.s4 || []
+    },
+    { id: "s5", title: "5. Regulación del producto vivienda", charts: chartsBySectionId.s5 || [] },
+    { id: "s6", title: "6. Dinámicas internas del sector", charts: chartsBySectionId.s6 || [] },
+    { id: "conclusiones", title: "7. Conclusiones", charts: [] }
+  ];
 
   const charts = {};
   Object.entries(legacy.charts || {}).forEach(([id, chart]) => {
@@ -942,8 +955,18 @@
       sourcePath: "informe.txt",
       ranges: [
         {
-          chapterId: "s1",
+          chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
+          end: "1. Introducción"
+        },
+        {
+          chapterId: "introduccion",
+          start: "1. Introducción",
+          end: "1. La principal preocupación"
+        },
+        {
+          chapterId: "s1",
+          start: "1. La principal preocupación",
           end: "2. El precio de la vivienda se dispara"
         },
         {
@@ -963,12 +986,17 @@
         },
         {
           chapterId: "s5",
-          start: "5. Regulación del producto",
+          start: "5. Regulación del producto vivienda",
           end: "6. Dinámicas internas"
         },
         {
           chapterId: "s6",
-          start: "6. Dinámicas internas"
+          start: "6. Dinámicas internas",
+          end: "7. Conclusiones"
+        },
+        {
+          chapterId: "conclusiones",
+          start: "7. Conclusiones"
         }
       ]
     },

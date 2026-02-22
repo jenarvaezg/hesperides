@@ -1469,13 +1469,6 @@
       title.textContent = chapter.title;
       article.appendChild(title);
 
-      (chapter.summary || []).forEach((paragraph) => {
-        const p = document.createElement("p");
-        p.className = "chapter-summary";
-        p.textContent = paragraph;
-        article.appendChild(p);
-      });
-
       const chapterFootnoteContext = createChapterFootnoteContext(sectionId);
       const chapterNarrative = buildChapterNarrativePlan(sectionId, chapter.title, chapter.charts || []);
 

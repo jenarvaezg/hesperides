@@ -460,51 +460,79 @@
       { kpi: "59", label: "Paginas del informe" }
     ],
     chapters: [
+      { id: "introduccion", title: "1. Introducción", charts: [] },
+      { id: "resumen-ejecutivo", title: "Resumen ejecutivo", charts: [] },
       {
-        id: "bloque-1",
-        title: "1. Marco comparado",
-        summary: [
-          "Bloque inicial de indicadores estructurales: contribuciones, cobertura, retiro y riesgo social.",
-          "Permite ubicar rapidamente las diferencias de diseno entre sistemas." 
-        ],
+        id: "sec-2",
+        title: "2. El diseño de los tres pilares en el sistema de pensiones",
         charts: makeIds("f", 1, 8)
       },
       {
-        id: "bloque-2",
-        title: "2. Funcionamiento y transicion",
-        summary: [
-          "Bloque central con dinamicas temporales de gasto, cotizacion, ahorro y ajuste automatico.",
-          "Incluye comparacion de pilares y resultados laborales en edades avanzadas."
-        ],
-        charts: makeIds("f", 9, 18)
+        id: "sec-3",
+        title: "3. El modelo sueco: sostenibilidad y confianza intergeneracional",
+        charts: makeIds("f", 9, 16)
       },
       {
-        id: "bloque-3",
-        title: "3. Riesgos y escenarios",
-        summary: [
-          "Bloque de cierre con tension demografica, brecha fiscal y simulaciones de reforma.",
-          "Integra la tabla de parametros y la tabla final de fortalezas/riesgos."
-        ],
-        charts: makeIds("f", 19, 34)
-      }
+        id: "sec-4",
+        title: "4. El éxito del sistema de pensiones de Chile",
+        charts: makeIds("f", 17, 22)
+      },
+      {
+        id: "sec-5",
+        title: "5. Tensiones del sistema alemán",
+        charts: makeIds("f", 23, 30)
+      },
+      { id: "sec-6", title: "6. Una problemática común", charts: makeIds("f", 31, 34) },
+      { id: "sec-7", title: "7. Conclusiones", charts: [] },
+      { id: "referencias", title: "7. Referencias", charts: [] }
     ],
     charts,
     text: {
       sourcePath: "extracted_text/sistemas_de_pensiones_comparados.txt",
       ranges: [
         {
-          chapterId: "bloque-1",
+          chapterId: "introduccion",
+          start: "1. Introducción",
+          end: "Resumen ejecutivo"
+        },
+        {
+          chapterId: "resumen-ejecutivo",
           start: "Resumen ejecutivo",
+          end: "2. El diseño de los tres pilares en el sistema de pensiones"
+        },
+        {
+          chapterId: "sec-2",
+          start: "2. El diseño de los tres pilares en el sistema de pensiones",
           end: "3. El modelo sueco: sostenibilidad y confianza intergeneracional"
         },
         {
-          chapterId: "bloque-2",
+          chapterId: "sec-3",
           start: "3. El modelo sueco: sostenibilidad y confianza intergeneracional",
+          end: "4. El éxito del sistema de pensiones de Chile"
+        },
+        {
+          chapterId: "sec-4",
+          start: "4. El éxito del sistema de pensiones de Chile",
+          end: "5. Tensiones del sistema alemán"
+        },
+        {
+          chapterId: "sec-5",
+          start: "5. Tensiones del sistema alemán",
           end: "6. Una problemática común"
         },
         {
-          chapterId: "bloque-3",
-          start: "6. Una problemática común"
+          chapterId: "sec-6",
+          start: "6. Una problemática común",
+          end: "7. Conclusiones"
+        },
+        {
+          chapterId: "sec-7",
+          start: "7. Conclusiones",
+          end: "7. Referencias"
+        },
+        {
+          chapterId: "referencias",
+          start: "7. Referencias"
         }
       ]
     },
