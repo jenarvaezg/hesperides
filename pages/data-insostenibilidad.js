@@ -380,6 +380,7 @@
           {
             name: "base-diferencia",
             type: "line",
+            excludeFromLegend: true,
             stack: "brecha-contributiva",
             data: [106.0, 109.0, 113.0, 118.0, 123.0, 127.0, 129.0, 127.0, 124.0, 119.0, 119.0, 119.0, 120.0, 122.0, 126.0, 133.0, 127.0, 136.0, 138.0, 146.4],
             color: "rgba(0,0,0,0)",
@@ -391,6 +392,7 @@
           {
             name: "Diferencia gastos-ingresos",
             type: "line",
+            excludeFromLegend: true,
             stack: "brecha-contributiva",
             data: [7.8, 5.0, 3.0, 3.0, 4.0, 2.0, 4.0, 10.0, 19.0, 30.0, 34.0, 39.0, 42.0, 45.0, 50.0, 52.0, 61.0, 48.0, 53.0, 52.9],
             color: "rgba(0,0,0,0)",

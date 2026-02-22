@@ -973,6 +973,10 @@
     const yTooltipFormatter = valueFormatter(chart.yUnit || chart.unit);
     const anyLineSeries = (chart.series || []).some((serie) => (serie.type || defaultType) === "line");
     const colors = (chart.series || []).map((serie) => serie.color).filter(Boolean);
+    const legendData = (chart.series || [])
+      .filter((serie) => !serie.excludeFromLegend)
+      .map((serie) => serie.name)
+      .filter(Boolean);
 
     const baseSeries = (chart.series || []).map((serie) => {
       const serieType = serie.type || defaultType;
@@ -1123,6 +1127,7 @@
       },
       legend: {
         show: typeof chart.showLegend === "boolean" ? chart.showLegend : (chart.series || []).length > 1,
+        data: legendData.length ? legendData : undefined,
         top: 0,
         left: "left",
         textStyle: {

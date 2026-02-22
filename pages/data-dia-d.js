@@ -838,6 +838,7 @@
         {
           name: "base-diferencia",
           type: "line",
+          excludeFromLegend: true,
           stack: "brecha-salarial",
           data: [0.0, 0.5, -1.2, -2.5, -5.4, -5.0, -4.2, -4.0, -5.0, -4.1, -3.8, -3.5, -1.9, 1.8, -3.2, -2.3],
           color: "rgba(0,0,0,0)",
@@ -849,6 +850,7 @@
         {
           name: "diferencia-pension-salario",
           type: "line",
+          excludeFromLegend: true,
           stack: "brecha-salarial",
           data: [0.0, 1.6, 5.7, 7.5, 11.7, 13.7, 16.4, 18.8, 20.6, 20.8, 21.3, 22.3, 24.5, 24.4, 24.2, 30.9],
           color: "rgba(0,0,0,0)",
